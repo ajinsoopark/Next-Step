@@ -1,0 +1,49 @@
+DROP DATABASE IF EXISTS nextstep;
+CREATE DATABASE nextstep;
+
+\c nextstep;
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  username VARCHAR NOT NULL UNIQUE,
+  first_name VARCHAR NOT NULL,
+  last_name VARCHAR,
+  email VARCHAR NOT NULL UNIQUE,
+  password_digest VARCHAR NOT NULL
+);
+
+CREATE TABLE categories (
+  id SERIAL PRIMARY KEY,
+  category VARCHAR NOT NULL
+);
+
+CREATE TABLE questions (
+  id SERIAL PRIMARY KEY,
+  category_id INT NOT NULL REFERENCES categories(id),
+  question_body VARCHAR NOT NULL
+);
+
+CREATE TABLE answers (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  question_id INT NOT NULL REFERENCES questions(id) ON DELETE CASCADE,
+  answer_body VARCHAR NOT NULL
+);
+
+CREATE TABLE feedback (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  answer_id INT NOT NULL REFERENCES answers(id) ON DELETE CASCADE,
+  feedback_body VARCHAR NOT NULL
+);
+
+CREATE TABLE likes (
+  id SERIAL PRIMARY KEY,
+  user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  answer_id INT NOT NULL REFERENCES answers(id) ON DELETE CASCADE
+);
+
+CREATE TABLE tips (
+  id SERIAL PRIMARY KEY,
+  tip_body VARCHAR NOT NULL
+);
