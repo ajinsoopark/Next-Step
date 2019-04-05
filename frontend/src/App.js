@@ -12,7 +12,7 @@ import PublicRoute from "./Auth/PublicRouting.js";
 
 
 // Redux Actions - for onLoad page - component did mount 
-import { connect } from "react-redux";
+import { connect } from "react-redux"
 import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
 
 
