@@ -1,4 +1,4 @@
-This is a readme file for ouThis is a readme file for our project Next-Step.
+This is a readme file for our project Next-Step.
 <h2>Description: </h2>
 
 Describe a time you went out of your way to please a customer.<br/>
