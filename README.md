@@ -39,6 +39,7 @@ Follow our progress through our <a href='https://trello.com/b/HhKQOq6N/51-capsto
         <li><a href='https://drive.google.com/open?id=1P3M5FFofWief-3CIW4DHJetjMV2lSlhI'>About Body 1</a></li>
         <li><a href='https://drive.google.com/open?id=1M1PaVlp2PsFVfGd7rAzSawn6OUPaYimq'>About Body 2</a></li>
         <li><a href='https://drive.google.com/open?id=15IdhE0lLELpJU8tBc3Ke9r5OfLWogeOD'> Sign Up </a></li>
+        <li><a href='https://drive.google.com/open?id=1f8D6hocuhWEf0lM_ZHmnCRnNP1S_auCk'> Dashboard </a></li>
       </ol>
     </li>
     <li>
