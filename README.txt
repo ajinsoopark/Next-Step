@@ -9,4 +9,4 @@ To use the app, select a question category, then pick the question you want to p
 The question will be read to you as if you were in an interview.
 You can submit your answer via text or an audio recording.
 Next, you can see answers submitted via other users.
-Each answer contains a comments section where our staff and other users have made to enhance each answer.
+Each answer contains a comments section where our staff and other users offer suggestions to enhance each answer.
