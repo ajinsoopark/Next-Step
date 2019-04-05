@@ -41,6 +41,7 @@ Follow our progress through our <a href='https://trello.com/b/HhKQOq6N/51-capsto
         <li><a href='https://drive.google.com/open?id=15IdhE0lLELpJU8tBc3Ke9r5OfLWogeOD'> Sign Up </a></li>
         <li><a href='https://drive.google.com/open?id=1f8D6hocuhWEf0lM_ZHmnCRnNP1S_auCk'> Dashboard </a></li>
         <li><a href='https://drive.google.com/open?id=1rTZHlG_4_Xsl-txFYRyB3qIM06MqJPSY'> Vertical Sidebar </a></li>
+        <li><a href='https://drive.google.com/open?id=1e74Bjo-yDa6TTiSe7R-de6jpvMJ09EWo'> Leaderboard </a></li>
       </ol>
     </li>
     <li>
