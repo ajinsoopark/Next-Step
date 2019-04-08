@@ -20,13 +20,12 @@ import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
 //CSS: 
 import './App.css';
 
-
 //Import Redux Containers from Redux
 
-
-
 // Import Component from Components
+// import PublicNavBar from "./navBar/public_navBar.js"
 import Home from "./landingPage/landing_page.js";
+import About from "./About/about.js"
 
 
 
@@ -37,12 +36,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
       <Switch>
 
       {/* <PublicRoute exact path = "/home" component = {}> </PublicRoute> */}
       {/* <PrivateRoute exact path = "/dashboard" component = {}> </PrivateRoute> */}
+      <Route exact path = "/about" component = {About} ></Route>
       <Route exact path = "/*" component = {Home} ></Route>
+
 
       </Switch>
 
