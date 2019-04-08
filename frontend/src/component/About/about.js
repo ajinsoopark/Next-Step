@@ -3,51 +3,47 @@ import NavBar from ".././navbar/navBar"
 
 import { Link } from 'react-router-dom'
 
-const logo_linkdin = "https://img.icons8.com/office/25/000000/linkedin.png"
-const logo_github = "https://img.icons8.com/material/25/000000/github.png"
+const logo_linkdin = "https://img.icons8.com/windows/30/000000/linkedin.png"
+const logo_github = "https://img.icons8.com/material/30/000000/github.png"
 
-const developers = { 
-  0 : ["Jhenya Ezhova", "https://banner2.kisspng.com/20180419/tdq/kisspng-user-silhouette-my-account-icon-5ad833d36feb49.1187422515241184834584.jpg", "https://www.linkedin.com/in/evgeniya-jhenya-ezhova/", "https://github.com/evgeniyaezhova"]
+const developers = {
+  0 : ["Jhenya Ezhova", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/evgeniya-jhenya-ezhova/", "https://github.com/evgeniyaezhova"]
   ,
-  1 : ["Tyson Pan", "https://banner2.kisspng.com/20180419/tdq/kisspng-user-silhouette-my-account-icon-5ad833d36feb49.1187422515241184834584.jpg", "https://www.linkedin.com/in/tysonpan/", "https://github.com/ThaiSonP" ]
+  1 : ["Tyson Pan", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/tysonpan/", "https://github.com/ThaiSonP" ]
   ,
-  2: ["Alex Park", "https://banner2.kisspng.com/20180419/tdq/kisspng-user-silhouette-my-account-icon-5ad833d36feb49.1187422515241184834584.jpg", "https://www.linkedin.com/in/alex-park-jinsoo/", "https://github.com/ajinsoopark" ]
+  2: ["Alex Park", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/alex-park-jinsoo/", "https://github.com/ajinsoopark" ]
   ,
-  3: ["Jacky Ong", "https://banner2.kisspng.com/20180419/tdq/kisspng-user-silhouette-my-account-icon-5ad833d36feb49.1187422515241184834584.jpg", "https://www.linkedin.com/in/jacky-ong/", "https://github.com/JJGITTY2018" ]
+  3: ["Jacky Ong", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/jacky-ong/", "https://github.com/JJGITTY2018" ]
 }
 
 class About extends Component {
 constructor (props) {
   super(props)
-
 }
-
 
 developers_map = (developers) =>{
+  let developersValues = Object.values(developers)
 
-
-  return(
-        
-          <div className = "developer_info">
-          <img src = "" />
-          <h2></h2>
+  return developersValues.map(el => {
+    return(
+        <div key = {el[0]} className = "developer_info">
+          <img src = {el[1]} width = "100" alt = "developer_profile" />
+          <h2>{el[0]}</h2>
 
           <div className = "developer_external" >
-          <a href = "">
-              <img src=""/>
+          <a href = {el[2]}>
+              <img src= {logo_linkdin} alt = "linkdin logo" />
           </a>
 
-          <a href = "">
-              <img src=""/>
+          <a href = {el[3]}>
+              <img src= {logo_github} alt = "github logo" />
           </a>
           </div>
           </div>
-
-  )
+    )
+    
+  })
 }
-
-
-
 
 
   render(){
@@ -87,7 +83,7 @@ developers_map = (developers) =>{
           <h1> Meet The Team </h1>
         </div>
 
-        {""}
+        {this.developers_map(developers)}
 
       </div>
 
@@ -106,3 +102,6 @@ developers_map = (developers) =>{
 
 
 export default About
+
+
+
