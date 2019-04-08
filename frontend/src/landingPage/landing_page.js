@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import {Switch,Route} from 'react-router-dom';
+
+import NavBar from './navBar.js';
 
 
 class Home extends Component{
@@ -11,7 +14,8 @@ class Home extends Component{
 render(){
   return(
     <>
-    Welcome to Landing Page!
+      <NavBar/>
+      Welcome to Landing Page!
     </>
 
   )
@@ -20,4 +24,3 @@ render(){
 
 
 export default Home
-
