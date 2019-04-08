@@ -1,0 +1,49 @@
+.about_component {
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 5%;
+  margin: 0%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  /* background-color: red; */
+  display: flex;
+  flex-direction: column;
+}
+
+.about_page_titles h1 {
+  font-size: 100%;
+  font-weight: 500;
+  margin: 10%;
+
+}
+
+.about_body {
+  background-color: aliceblue;
+}
+
+.about_body_headers h1 {
+  font-size: 110%;
+  font-weight: bolder;
+  text-align: left;
+  padding-top: 5vh;
+  padding-bottom: 1vh;
+}
+
+.about_body_headers p {
+  font-size: 100%;
+  text-align: left;
+}
+
+.developers {
+  /* background-color: aquamarine; */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-items: center;
+  /* flex-direction: row; */
+
+}
+
+.developer_info {
+  /* background-color: rgb(65, 197, 25); */
+  font-size: 1vw;
+}
