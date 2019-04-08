@@ -1,12 +1,16 @@
 .body1{
+  height: 92.4vh;
+  width: 100%;
   display: flex;
+  align-items: center;
   flex-direction: row;
   justify-content: space-around;
+  background-color: #97A5D8
 }
 
 .left{
-  width: 40%;
-  padding: 20px;
+  width: 50%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -14,20 +18,38 @@
 
 .left img{
   width: 600px;
-  height:300px;
+  height:auto;
 }
 
 .right{
   width: 50%;
-  padding: 20px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+.right img{
+  height: 65px;
+  width: 77px
+}
 .text{
-  height: 200px
+  height: 97px;
+  width: 600px;
+  margin-left: 75px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 .links{
   display: flex;
   justify-content: space-around;
+}
+
+.links button {
+  height: 57px;
+  width: 186px;
+  padding: 7px;
+  margin: 12px;
+  border-radius: 60px;
 }
