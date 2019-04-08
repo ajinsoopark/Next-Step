@@ -3,6 +3,8 @@ import NavBar from ".././navbar/navBar"
 
 import { Link } from 'react-router-dom'
 
+import "./about.css"
+
 const logo_linkdin = "https://img.icons8.com/windows/30/000000/linkedin.png"
 const logo_github = "https://img.icons8.com/material/30/000000/github.png"
 
@@ -27,7 +29,7 @@ developers_map = (developers) =>{
   return developersValues.map(el => {
     return(
         <div key = {el[0]} className = "developer_info">
-          <img src = {el[1]} width = "100" alt = "developer_profile" />
+          <img src = {el[1]}  alt = "developer_profile" />
           <h2>{el[0]}</h2>
 
           <div className = "developer_external" >
@@ -40,6 +42,7 @@ developers_map = (developers) =>{
           </a>
           </div>
           </div>
+        
     )
     
   })
@@ -83,7 +86,9 @@ developers_map = (developers) =>{
           <h1> Meet The Team </h1>
         </div>
 
-        {this.developers_map(developers)}
+        <div className = "developers" >
+          {this.developers_map(developers)}
+        </div>
 
       </div>
 
