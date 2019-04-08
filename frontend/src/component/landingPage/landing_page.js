@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {Switch,Route} from 'react-router-dom';
 
-import NavBar from './navBar.js';
+import NavBar from ".././navbar/navBar"
+
 import Body1 from './body1.js';
 import Body2 from './body2.js';
 

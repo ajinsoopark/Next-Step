@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import NavBar from "../landingPage/navBar"
+import NavBar from ".././navbar/navBar"
 
 import { Link } from 'react-router-dom'
 
