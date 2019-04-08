@@ -36,10 +36,14 @@ Follow our progress through our <a href='https://trello.com/b/HhKQOq6N/51-capsto
     <li>
       Wireframes: <br/>
       <ol>
-        <li><a href='https://drive.google.com/open?id=1P3M5FFofWief-3CIW4DHJetjMV2lSlhI'>About Body 1</a></li>
-        <li><a href='https://drive.google.com/open?id=1M1PaVlp2PsFVfGd7rAzSawn6OUPaYimq'>About Body 2</a></li>
+        <li><a href='https://drive.google.com/open?id=1RqS7IVDZCWxnBut68IQOm9Kg2DgeIkHI'> Landing Page 1</a></li>
+        <li><a href='https://drive.google.com/open?id=1BSRngrcY2ly1-ltLFlxVdkjUAQq7sLYz'> Landing Page 2</a></li>      
+        <li><a href='https://drive.google.com/open?id=1P3M5FFofWief-3CIW4DHJetjMV2lSlhI'> About Body 1</a></li>
+        <li><a href='https://drive.google.com/open?id=1M1PaVlp2PsFVfGd7rAzSawn6OUPaYimq'> About Body 2</a></li>
         <li><a href='https://drive.google.com/open?id=15IdhE0lLELpJU8tBc3Ke9r5OfLWogeOD'> Sign Up </a></li>
         <li><a href='https://drive.google.com/open?id=1f8D6hocuhWEf0lM_ZHmnCRnNP1S_auCk'> Dashboard </a></li>
+        <li><a href='https://drive.google.com/open?id=1rTZHlG_4_Xsl-txFYRyB3qIM06MqJPSY'> Vertical Sidebar </a></li>
+        <li><a href='https://drive.google.com/open?id=1e74Bjo-yDa6TTiSe7R-de6jpvMJ09EWo'> Leaderboard </a></li>
       </ol>
     </li>
     <li>
