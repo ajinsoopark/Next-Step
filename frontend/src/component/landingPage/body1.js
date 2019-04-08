@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import './body1.css'
-let logo = require('../images/Next_Step8.png')
+let logo = require('../../images/Next_Step8.png')
 
 
 class Body1 extends Component{
@@ -14,12 +14,15 @@ render(){
       </div>
       <div className='right'>
         <div className='text'>
-          <p>Next Step</p>
-          <p>Motto</p>
+          <img src='https://image.flaticon.com/icons/svg/50/50443.svg' alt=''/>
+          Next Step
+        </div>
+        <div className='text'>
+          Let's talk about your next step
         </div>
         <div className='links'>
-          <button>Demo</button>
-          <NavLink to='/signup'>Sign Up</NavLink>
+          <button>Demo Login</button>
+          <NavLink to='/signup'><button>Sign Up</button></NavLink>
         </div>
       </div>
     </div>

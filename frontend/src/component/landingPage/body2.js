@@ -12,7 +12,7 @@ render(){
       <div className = 'container'>
         <div className = 'cards'>
           <p>Practice</p><br/>
-          <p>Listen to interview quesitons, and give us your answers. We'll keep track of your answers & progress.</p>
+          <p>"Listen to interview quesitons, and give us your answers. We'll keep track of your answers & progress."</p>
         </div>
         <div className = 'cards'>
           <h2>Feedback</h2><br/>

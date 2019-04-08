@@ -24,8 +24,8 @@ import './App.css';
 
 // Import Component from Components
 // import PublicNavBar from "./navBar/public_navBar.js"
-import Home from "./landingPage/landing_page.js";
-import About from "./About/about.js"
+import Home from "./component/landingPage/landing_page";
+import About from "./component/About/about.js"
 
 
 
