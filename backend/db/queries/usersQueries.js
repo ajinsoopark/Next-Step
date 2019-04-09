@@ -1,6 +1,6 @@
 const { db } = require('../index');
 
-const authHelpers = require("../../auth/helpers");
+const authHelpers = require("../../auth/helper");
 
 const getAllUsers = (req, res, next) => {
   db.any("SELECT * FROM users")
@@ -73,15 +73,27 @@ const loginUser = (req, res) => {
   res.json(req.user);
 }
 
-const isLoggedIn = (req, res) => {
-  if (req.user) {
+function isLoggedIn(req, res) {
+  let loginUser = req.user
+  db.oneOrNone('SELECT * FROM USERS WHERE USERS.username=${params}',{
+    params: req.user
+  }).then((data)=>{
+    if(data){
     res.json({
-      id: req.user.id,
-      email: req.user.email,
-      username: req.user.username });
-  } else {
-    res.status(401).json({ err: "Nobody logged in" });
+      username: data.username,
+      userID: data.id
+    })
   }
+  else {
+    res.json({
+      username: null,
+      userID: null
+  })}
+}
+  )
+  .catch(err =>{
+    console.log(err)
+  })
 }
 
 module.exports = {
