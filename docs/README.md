@@ -1,4 +1,5 @@
-This is a readme file for our project Next-Step.
+# Next-Step
+[Trello Link](https://trello.com/b/HhKQOq6N/51-capstone-group-7)
 <h2>Description: </h2>
 
 Describe a time you went out of your way to please a customer.<br/>
@@ -12,8 +13,6 @@ You can submit your answer via text or an audio recording.
 Next, you can see answers submitted via other users.
 Each answer contains a comments section where our staff and other users offer suggestions to enhance each answer.
 
-Follow our progress through our <a href='https://trello.com/b/HhKQOq6N/51-capstone-group-7'> Tello</a>
-
 <section>
   <h2>
     Minimum Viable Product:
@@ -25,7 +24,7 @@ Follow our progress through our <a href='https://trello.com/b/HhKQOq6N/51-capsto
     <li> Users can “like” responses </li>
     <li> Users can leave feedback on other users’ answers </li>
     <li> Rank answers by the amount of likes </li>
-  <ul/>
+  </ul>
 </section>
 
 <section>
@@ -69,4 +68,4 @@ Follow our progress through our <a href='https://trello.com/b/HhKQOq6N/51-capsto
     
   </ul>  
 </section>
-r project Next-Step.
+
