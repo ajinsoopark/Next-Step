@@ -459,9 +459,3 @@ INSERT INTO feedbacks(answer_id, user_id, feedback_body) VALUES
 (124, 4, 'Occupy freegan pug, next level cliche bicycle rights salvia farm-to-table gluten-free brooklyn brunch. 8-bit shaman locavore actually you probably havent heard of them occupy. Letterpress flexitarian prism, shabby chic gastropub pok pok aesthetic etsy edison bulb brunch banh mi chicharrones thundercats tacos. Locavore narwhal irony organic adaptogen. La croix narwhal cornhole tote bag lumbersexual kogi quinoa locavore beard. Brooklyn banjo polaroid air plant. Tofu occupy hammock tacos, vaporware jean shorts subway tile lomo.'),
 (125, 3, 'Wayfarers +1 jean shorts wolf. Plaid yuccie roof party actually cliche. Cornhole pork belly poutine chambray brunch synth, affogato scenester swag irony humblebrag. Copper mug kickstarter biodiesel pok pok bitters vinyl hot chicken XOXO gastropub. Tumblr polaroid la croix messenger bag cliche chillwave kitsch leggings. Vice marfa +1, kinfolk crucifix ramps tousled.'),
 (126, 2, ' Post-ironic hashtag af dreamcatcher forage, messenger bag chillwave chia squid bitters fam hot chicken paleo hell of. Plaid palo santo yuccie, cray taiyaki mixtape hot chicken fam kitsch succulents ennui.');
-
-INSERT INTO likes(user_id, answer_id) VALUES
-();
-
-INSERT INTO tips(tip_body) VALUES
-();
