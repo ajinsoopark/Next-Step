@@ -7,8 +7,12 @@ import Auth from '../../Auth/Auth.js'
 class NavBar extends Component{
 
   logoutUser=()=>{
-    axios.post('/users/logout')
-    Auth.deauthenticateUser()
+    axios.post('/users/logout').then((res)=>{
+      console.log(res)
+      Auth.deauthenticateUser()
+    }).catch(err =>{
+      console.log(err)
+    })
   }
 
 
