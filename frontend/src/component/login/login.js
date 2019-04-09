@@ -8,8 +8,8 @@ class Login extends Component{
     super(props)
     this.state={
       current_user: null,
-      username: " ",
-      password: " "
+      username: "",
+      password: ""
     }
   }
 
