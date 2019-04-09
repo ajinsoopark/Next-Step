@@ -50,6 +50,7 @@ const deleteSingleUser = (req, res, next) => {
 
 const createUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
+  console.log(hash)
   db.none(
     "INSERT INTO users (username, first_name, last_name, email,  password_digest) VALUES (${username}, ${first_name}, ${last_name}, ${email}, ${password_digest})",
     { username: req.body.username, first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, password_digest: hash }
@@ -73,12 +74,13 @@ const loginUser = (req, res) => {
   res.json(req.user);
 }
 
-function isLoggedIn(req, res) {
+const isLoggedIn = (req, res) => {
   let loginUser = req.user
-  db.oneOrNone('SELECT * FROM USERS WHERE USERS.username=${params}',{
+  db.any('SELECT * FROM USERS WHERE username=${params}',{
     params: req.user
   }).then((data)=>{
-    if(data){
+    console.log(data)
+    if(data.length > 0){
     res.json({
       username: data.username,
       userID: data.id
@@ -96,12 +98,14 @@ function isLoggedIn(req, res) {
   })
 }
 
+
+
 module.exports = {
+  isLoggedIn,
   getAllUsers,
   getSingleUser,
   deleteSingleUser,
   createUser,
   logoutUser,
-  loginUser,
-  isLoggedIn
+  loginUser
 };

@@ -18,17 +18,22 @@ const { loginRequired } = require("../auth/helper");
 
 
 //Routes
+
+
+//placement matter for isLoggedIn
+router.get('/log', isLoggedIn);
+
+
 router.get('/', getAllUsers)
 router.get('/:id', getSingleUser)
-router.post('/', createUser)
+
+
 router.delete('/:id', deleteSingleUser)
 
 //creditinals logins routes
-router.get("/log", isLoggedIn);
 
-router.post('/sign_up', createUser)
-router.post("/login", passport.authenticate("local", {}),loginUser);
-
+router.post('/signup', createUser)
+router.post('/login', passport.authenticate("local", {}),loginUser);
 router.post("/logout", loginRequired, logoutUser);
 
 module.exports = router;
