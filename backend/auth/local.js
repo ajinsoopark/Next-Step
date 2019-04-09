@@ -12,7 +12,8 @@ const init = require("./passport");
 const helpers = require("./helper.js")
 
 //calling on database
-const {db} = require("../utils/utils.js")
+const { db } = require("../db/index.js");
+
 
 
 
