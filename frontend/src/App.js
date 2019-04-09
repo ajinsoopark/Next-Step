@@ -6,18 +6,18 @@ import {withRouter} from "react-router";
 import {Route, Switch} from "react-router-dom";
 
 
-// import UserAuthRoutings from "./Auth/Auth.js" - These are middleware - to reroute users if they have login or not login. 
+// import UserAuthRoutings from "./Auth/Auth.js" - These are middleware - to reroute users if they have login or not login.
 import PrivateRoute from "./Auth/PrivateRouting.js";
 import PublicRoute from "./Auth/PublicRouting.js";
 
 
-// Redux Actions - for onLoad page - component did mount 
+// Redux Actions - for onLoad page - component did mount
 import { connect } from "react-redux"
 import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
 
 
-// CSS RESET IS INSIDE INDEX.JS!!! 
-//CSS: 
+// CSS RESET IS INSIDE INDEX.JS!!!
+//CSS:
 import './App.css';
 
 //Import Redux Containers from Redux
@@ -25,6 +25,8 @@ import './App.css';
 // Import Component from Components
 // import PublicNavBar from "./navBar/public_navBar.js"
 import Home from "./component/landingPage/landing_page";
+import Signup from "./component/signup/signup";
+import Login from "./component/login/login";
 import About from "./component/About/about.js"
 
 
@@ -41,6 +43,8 @@ class App extends Component {
       {/* <PublicRoute exact path = "/home" component = {}> </PublicRoute> */}
       {/* <PrivateRoute exact path = "/dashboard" component = {}> </PrivateRoute> */}
       <Route exact path = "/about" component = {About} ></Route>
+      <Route exact path = "/signup" component = {Signup} ></Route>
+      <Route exact path = "/login" component = {Login} ></Route>
       <Route exact path = "/*" component = {Home} ></Route>
 
 
@@ -62,7 +66,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-  function_checkStatus:() => 
+  function_checkStatus:() =>
     dispatch(checkUserAuthStatus())
 }
 }
