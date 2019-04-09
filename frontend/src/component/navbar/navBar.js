@@ -6,13 +6,9 @@ import Auth from '../../Auth/Auth.js'
 
 class NavBar extends Component{
 
-  logoutUser=()=>{
-    axios.post('/users/logout')
-    Auth.deauthenticateUser()
-  }
-
-
   render (){
+    const{logoutUser}=this.props
+
     return(
       <div className='Menu'>
       <div className = 'logo'>
@@ -22,7 +18,7 @@ class NavBar extends Component{
       </div>
       <div className = 'buttons'>
         <NavLink to="/login" >Login</NavLink>
-        <button onClick={this.logOutUser}>logout</button>
+        <button onClick={logoutUser}>logout</button>
         <NavLink to='/signup'>Sign Up</NavLink>
         <NavLink to="/about" >About</NavLink>
       </div>

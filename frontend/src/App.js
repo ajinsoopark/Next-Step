@@ -122,9 +122,10 @@ login_user = (username, password) => {
   }
 
   render() {
+    console.log(this.state)
     return (
       <div className="App">
-      <NavBar / >
+      <NavBar logoutUser={this.logout_user}/ >
       <Switch>
 
       {/* <PublicRoute exact path = "/home" component = {}> </PublicRoute> */}
