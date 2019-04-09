@@ -44,10 +44,11 @@ class App extends Component {
       current_user: null
     })
   }
-  
+
 
   checkUserAuthStatus = () => {
-  console.log("CheckUserAuth")
+    console.log(Auth.getToken())
+  // console.log("CheckUserAuth")
   axios.get("/users/log").then(res => {
     if(res.data.username === Auth.getToken()){
       this.setState({

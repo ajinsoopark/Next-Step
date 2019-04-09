@@ -39,29 +39,19 @@ class Login extends Component{
   }
 
   render(){
-    // const {username,password}=this.state
+    const {username,password}=this.state
     return(
       <div className ='loginContainer'>
         <NavBar/>
-        
+
         <div>
           <p>Sign In!</p>
         </div>
 
-        <form>
-          <input onChange={this.handleChange}
-            type='text' name="username" placeholder="Username"
-            value = {this.state.username} />
-
-          <br/>
-
-          <input onChange={this.handleChange}
-            type='text' name="password" placeholder="Password" value = {this.state.password} />
-
-          <br/>
-
-
-          <input onSubmit={this.handleSubmit} name = "submit" type = 'submit'/>
+        <form onSubmit={this.handleSubmit} >
+          <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
+          <input onChange={this.handleChange} type='text' name="password" placeholder="Password" value = {password} /> <br/>
+          <input name = "submit" type = 'submit'/>
         </form>
         <div>
           <p>"Don't have an account?"</p>
