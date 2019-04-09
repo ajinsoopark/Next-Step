@@ -51,7 +51,8 @@ CREATE TABLE tips (
 INSERT INTO users(username, first_name, last_name, email, password_digest) VALUES
 ('Jhenya', 'Jhenya', 'Ezhova', 'evgeniyaezhova@pursuit.org', 'password1'),
 ('jinsoo93', 'Alex', 'Park', 'alexparkqueens@gmail.com', 'password2'),
-('thaiSonP', 'Tyson', 'Pan', 'tpan25@gmail', 'password3'),
+--  password3
+('thaiSonP', 'Tyson', 'Pan', 'tpan25@gmail', '$2a$10$wDfVs.zbsHLdELTYXEdI0uJXP017wdzjAJkH7H3YNXfI7BGG7AJve'),
 ('J@Pursuit', 'Jacky', 'O.', 'jackyong@pursuit.org', 'password4');
 
 INSERT INTO categories(category) VALUES
