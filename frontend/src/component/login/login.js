@@ -40,7 +40,7 @@ class Login extends Component{
           <input type = 'submit'/>
         </form>
         <div>
-          <p>Don't have an account?</p>
+          <p>"Don't have an account?"</p>
           <NavLink to='/signup'><button>Sign Up</button></NavLink>
         </div>
       </div>
