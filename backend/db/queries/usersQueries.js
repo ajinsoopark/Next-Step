@@ -75,12 +75,11 @@ const loginUser = (req, res) => {
 }
 
 const isLoggedIn = (req, res) => {
-  let loginUser = req.user
-  db.any('SELECT * FROM USERS WHERE username=${params}',{
+  db.one('SELECT * FROM USERS WHERE username=${params}',{
     params: req.user
   }).then((data)=>{
     console.log(data)
-    if(data.length > 0){
+    if(data){
     res.json({
       username: data.username,
       userID: data.id

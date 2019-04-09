@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import NavBar from '../navbar/navBar'
+import axios from 'axios'
 
 class Signup extends Component{
   constructor(props) {
     super(props)
     this.state={
-      firstname:null,
-      lastname:null,
-      username:null,
-      password:null,
-      email:null,
+      first_name:'',
+      last_name:'',
+      username:'',
+      password:'',
+      email:'',
     }
   }
 
@@ -20,35 +21,37 @@ class Signup extends Component{
     })
   }
 
-  handleSubmit = (e)=>{
+  handleSubmit = async (e) =>{
     e.preventDefault();
-    console.log(this.state)
+    const {username,first_name,last_name,email,password}=this.state;
+    await axios.post('/users/signup',{username,first_name,last_name,email,password})
+    .then(res=>{
+      this.setState({
+        first_name:'',
+        last_name:'',
+        username:'',
+        password:'',
+        email:''
+      })
+      console.log(res);
+    })
+
   }
 
   render(){
-    // const {firstname,lastname,username,password,email}=this.state
+    const {first_name,last_name,username,password,email}=this.state
     return(
       <div className ='loginContainer'>
         <NavBar/>
         <div>
           <p>Join the community, and practice review!</p>
         </div>
-        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <input
-            type='text' name="firstname" placeholder="First Name"
-          /><br/>
-          <input
-            type='text' name="lastname" placeholder="Last Name"
-          /><br/>
-          <input
-            type='text' name="username" placeholder="Username"
-          /><br/>
-          <input
-            type='text' name="password" placeholder="Password"
-          /><br/>
-          <input
-            type='text' name="email" placeholder="E-mail"
-          /><br/>
+        <form onSubmit={this.handleSubmit} >
+          <input type='text' name="first_name" value={first_name} placeholder="First Name" onChange={this.handleChange}/><br/>
+          <input type='text' name="last_name" value={last_name} placeholder="Last Name" onChange={this.handleChange}/><br/>
+          <input type='text' name="username" value={username} placeholder="Username" onChange={this.handleChange}/><br/>
+          <input type='text' name="password" value={password} placeholder="Password" onChange={this.handleChange}/><br/>
+          <input type='text' name="email" value={email} placeholder="E-mail" onChange={this.handleChange}/><br/>
           <input type = 'submit'/>
         </form>
         <div>
