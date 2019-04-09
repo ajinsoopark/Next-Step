@@ -71,11 +71,12 @@ const logoutUser = (req, res, next) => {
 }
 
 const loginUser = (req, res) => {
+  console.log(req.username)
   res.json(req.user);
 }
 
 const isLoggedIn = (req, res) => {
-  db.one('SELECT * FROM USERS WHERE username=${params}',{
+  db.oneOrNone('SELECT * FROM USERS WHERE username=${params}',{
     params: req.user
   }).then((data)=>{
     console.log(data)

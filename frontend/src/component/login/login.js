@@ -20,14 +20,13 @@ class Login extends Component{
   }
 
   handleSubmit = (e)=>{
-
     e.preventDefault();
 
     this.props.login_user(this.state.username,this.state.password)
 
     this.setState({
-      username: "",
-      password: ""
+      username: " ",
+      password: " "
     })
 
   }
@@ -48,7 +47,7 @@ class Login extends Component{
           <p>Sign In!</p>
         </div>
 
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange}
             type='text' name="username" placeholder="Username"
             value = {this.state.username} />
@@ -60,8 +59,7 @@ class Login extends Component{
 
           <br/>
 
-
-          <input onSubmit={this.handleSubmit} name = "submit" type = 'submit'/>
+          <input  name = "submit" type = 'submit'/>
         </form>
         <div>
           <p>"Don't have an account?"</p>
