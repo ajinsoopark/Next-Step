@@ -2,12 +2,14 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import NavBar from '../navbar/navBar'
 
+
 class Login extends Component{
   constructor(props) {
     super(props)
     this.state={
-      username:null,
-      password:null
+      current_user: null,
+      username: "",
+      password: ""
     }
   }
 
@@ -18,26 +20,38 @@ class Login extends Component{
   }
 
   handleSubmit = (e)=>{
+
     e.preventDefault();
-    console.log(this.state)
+
+    this.props.login_user(this.state.username,this.state.password)
+
+    this.setState({
+      username: "",
+      password: ""
+    })
+
+  }
+
+
+
+  componentDidMount() {
+    this.props.checkUserAuthStatus()
   }
 
   render(){
-    // const {username,password}=this.state
+    const {username,password}=this.state
     return(
       <div className ='loginContainer'>
         <NavBar/>
+
         <div>
           <p>Sign In!</p>
         </div>
-        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <input
-            type='text' name="username" placeholder="Username"
-          /><br/>
-          <input
-            type='text' name="password" placeholder="Password"
-          /><br/>
-          <input type = 'submit'/>
+
+        <form onSubmit={this.handleSubmit} >
+          <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
+          <input onChange={this.handleChange} type='text' name="password" placeholder="Password" value = {password} /> <br/>
+          <input name = "submit" type = 'submit'/>
         </form>
         <div>
           <p>"Don't have an account?"</p>
