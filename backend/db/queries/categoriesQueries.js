@@ -1,16 +1,21 @@
 const { db } = require('../index');
 
 const getAllCategories = (req, res, next) => {
-  db.any("SELECT * FROM categories")
+  db.any('SELECT * FROM categories')
     .then(categories => {
       res.status(200).json({
-        status: "success!",
+        status: 'success!',
         categories: categories,
-        message: "got all categories!"
+        message: 'got all categories!'
       });
     })
     .catch(err => {
-      return next(err)
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        return next(err)
     });
 };
 
