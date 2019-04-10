@@ -16,7 +16,6 @@ class Home extends Component{
 render(){
   return(
     <div className='landingPage'>
-      <NavBar/>
       <Body1/>
       <Body2/>
       Welcome to Landing Page!

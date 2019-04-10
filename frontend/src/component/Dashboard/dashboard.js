@@ -1,6 +1,3 @@
-import React from 'react' 
-
-
 import React, { Component } from 'react'
 
 class Dashboard extends Component {
@@ -12,9 +9,10 @@ class Dashboard extends Component {
   
   render () {
     return (
-      <div>
+
+      <>
       <h1> WELCOME TO THE DASHBOARD!</h1>
-      </div>
+      </>
     )
   }
 }
