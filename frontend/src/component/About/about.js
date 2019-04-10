@@ -92,7 +92,6 @@ developers_map = (developers) =>{
 
       </div>
 
-
   </div>
       </>
     )
