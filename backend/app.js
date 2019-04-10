@@ -11,8 +11,12 @@ const passport = require("./auth/local.js")
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const questionsRouter = require('./routes/questions')
-const answersRouter = require('./routes/answers')
+const questionsRouter = require('./routes/questions');
+const answersRouter = require('./routes/answers');
+const likesRouter = require('./routes/likes');
+const tipsRouter = require('./routes/tips');
+const categoriesRouter = require('./routes/categories');
+const feedbacksRouter = require('./routes/feedbacks');
 
 const app = express();
 
@@ -38,8 +42,12 @@ app.use(cookieParser("NextStepToTheNextStage"));
 
 
 app.use('/users', usersRouter);
-app.use('/questions', questionsRouter)
-app.use('/answers', answersRouter)
+app.use('/questions', questionsRouter);
+app.use('/answers', answersRouter);
+app.use('/categories', categoriesRouter);
+app.use('/tips', tipsRouter)
+app.use('/likes', likesRouter)
+app.use('/feedbacks',feedbacksRouter)
 app.use('/', indexRouter);
 // app.use('/*', indexRouter);
 

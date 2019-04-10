@@ -19,8 +19,7 @@ const getAllQuestions = (req, res, next) => {
 };
 
 const getQuestionsByCategory = (req, res, next) => {
-  let categoryId = parseInt(req.params.id)
-
+  let categoryId = parseInt(req.params.id);
   db.any('SELECT q.*, c.category FROM questions AS q FULL JOIN categories AS c on c.id = q.category_id WHERE category_id=$1', [categoryId])
   .then(questions => {
     res.status(200)
@@ -41,13 +40,12 @@ const getQuestionsByCategory = (req, res, next) => {
 
 const getSingleQuestion = (req, res, next) => {
   let questionId = parseInt(req.params.id)
-
-  db.one('SELECT q.*, c.category FROM questions AS q FULL JOIN categories AS c on c.id = q.category_id WHERE id=$1', [questionId])
+  db.one('SELECT q.*, c.category FROM questions AS q FULL JOIN categories AS c on c.id = q.category_id WHERE q.id=$1', [questionId])
   .then(question => {
     res.status(200)
     .json({
       status: 'Success',
-      question,
+      question: question,
       message: `Received question(${questionId})`
     })
   })
@@ -79,7 +77,8 @@ const getRandomQuestion = (req, res, next) => {
     })
     return next(err)
   })
-}
+};
+
 
 module.exports = {
   getAllQuestions,
