@@ -16,6 +16,14 @@ class Login extends Component{
     }
   }
 
+  handleRedirect = ()=>{
+    console.log(this.props)
+    if(this.props === "true"){
+      this.props.props.history.push("/dashboard")
+
+    }
+  }
+
   handleChange = (e)=>{
     this.setState({
       [e.target.name]:e.target.value
@@ -40,10 +48,10 @@ class Login extends Component{
     }, 550);
     
   }
-
-
+  
   componentDidMount() {
     this.props.checkUserAuthStatus()
+    this.handleRedirect()
   }
 
   render(){

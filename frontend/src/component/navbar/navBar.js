@@ -14,7 +14,6 @@ class NavBar extends Component{
     })
   }
 
-
   render (){
     return(
       <div className='Menu'>

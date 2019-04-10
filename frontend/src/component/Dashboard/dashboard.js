@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Axios from 'axios';
 
 class Dashboard extends Component {
   constructor (props) {
@@ -6,6 +7,15 @@ class Dashboard extends Component {
     
   }
 
+  getAllQuestions = () => {
+    Axios.get("/questions").then((res)=>{
+      console.log(res)
+    })
+  }
+
+  componentDidMount(){
+    this.getAllQuestions()
+  }
   
   render () {
     return (
