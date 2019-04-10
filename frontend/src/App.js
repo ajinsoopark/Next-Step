@@ -46,8 +46,6 @@ class App extends Component {
 
 
   checkUserAuthStatus = () => {
-    console.log(Auth.getToken())
-  // console.log("CheckUserAuth")
   axios.get("/users/log").then(res => {
     if(res.data.username === Auth.getToken()){
       this.setState({
@@ -84,7 +82,6 @@ class App extends Component {
           return res
         }
         ).then((res)=>{
-          console.log(res)
           Auth.authenticateUser(username)
           Auth.authenticateUserID(res.data.id)
         }).then(
@@ -95,7 +92,6 @@ class App extends Component {
         .catch(err => {
           console.log(err)
         })
-
   }
 
 
@@ -105,11 +101,16 @@ class App extends Component {
       <NavBar logoutUser={this.logout_user}/ >
       <Switch>
 
+      <Route exact path = "/about" component = {About} ></Route>
       {/* <PublicRoute exact path = "/home" component = {}> </PublicRoute> */}
       <PrivateRoute exact path = "/dashboard" component = {Dashboard}></PrivateRoute>
-      <Route exact path = "/about" component = {About} ></Route>
+
+      
       <PublicRoute exact path = "/signup" component = {Signup} ></PublicRoute>
-      <Route exact path = "/login" render = {props => <Login checkUserAuthStatus={this.checkUserAuthStatus} login_user = {this.login_user} props = {this.props} />}></Route>
+
+
+      <Route exact path = "/login" render = {props => <Login checkUserAuthStatus={this.checkUserAuthStatus} login_user = {this.login_user} props = {this.props} App_state = {this.state} />}></Route>
+      
       <Route exact path = "/*" component = {Home} ></Route>
 
 
