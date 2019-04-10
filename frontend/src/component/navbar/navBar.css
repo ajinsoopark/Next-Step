@@ -1,3 +1,7 @@
+.Menu {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: rgb(187, 236, 255)
+}
 .logo{
   margin-left: 160px;
   display: flex;

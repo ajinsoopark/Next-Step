@@ -42,7 +42,6 @@ class Signup extends Component{
     const {first_name,last_name,username,password,email}=this.state
     return(
       <div className ='loginContainer'>
-        <NavBar/>
         <div>
           <p>Join the community, and practice review!</p>
         </div>

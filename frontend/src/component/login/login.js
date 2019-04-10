@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+import {withRouter} from "react-router"
+
+import {NavLink, Redirect} from 'react-router-dom';
 import NavBar from '../navbar/navBar'
 
 
@@ -7,6 +9,7 @@ class Login extends Component{
   constructor(props) {
     super(props)
     this.state={
+      loggedin : false,
       current_user: null,
       username: "",
       password: ""
@@ -20,18 +23,23 @@ class Login extends Component{
   }
 
   handleSubmit = (e)=>{
-
     e.preventDefault();
 
     this.props.login_user(this.state.username,this.state.password)
 
     this.setState({
+      loggedin: true,
       username: "",
       password: ""
     })
-
+    
+    setTimeout(() => {
+      if(this.state.loggedin){
+      this.props.history.push("/dashboard")
+    }
+    }, 550);
+    
   }
-
 
 
   componentDidMount() {
@@ -42,15 +50,18 @@ class Login extends Component{
     const {username,password}=this.state
     return(
       <div className ='loginContainer'>
-        <NavBar/>
 
         <div>
           <p>Sign In!</p>
         </div>
 
         <form onSubmit={this.handleSubmit} >
+        
           <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
+
           <input onChange={this.handleChange} type='text' name="password" placeholder="Password" value = {password} /> <br/>
+
+
           <input name = "submit" type = 'submit'/>
         </form>
         <div>
@@ -62,4 +73,4 @@ class Login extends Component{
   }
 }
 
-export default Login
+export default withRouter(Login)

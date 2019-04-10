@@ -52,7 +52,6 @@ developers_map = (developers) =>{
   render(){
     return (
       <>
-      <NavBar /> 
   <div className = "about_component" >
         <div className = "about_page_titles" >
           <h1>  Welcome to Next Step, the site where you hone your skills. </h1>

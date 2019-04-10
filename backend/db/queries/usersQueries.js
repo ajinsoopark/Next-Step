@@ -66,16 +66,18 @@ const createUser = (req, res, next) => {
 }
 
 const logoutUser = (req, res, next) => {
+  console.log(req)
   req.logout();
   res.status(200).json({ message: "log out success" });
 }
 
 const loginUser = (req, res) => {
+  console.log(req.username)
   res.json(req.user);
 }
 
 const isLoggedIn = (req, res) => {
-  db.one('SELECT * FROM USERS WHERE username=${params}',{
+  db.oneOrNone('SELECT * FROM USERS WHERE username=${params}',{
     params: req.user
   }).then((data)=>{
     console.log(data)

@@ -14,8 +14,8 @@ import PublicRoute from "./Auth/PublicRouting.js";
 
 
 // Redux Actions - for onLoad page - component did mount
-import { connect } from "react-redux"
-import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
+// import { connect } from "react-redux"
+// import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
 
 
 // CSS RESET IS INSIDE INDEX.JS!!!
@@ -31,10 +31,9 @@ import Signup from "./component/signup/signup";
 import Login from "./component/login/login";
 import About from "./component/About/about.js"
 import NavBar from "./component/navbar/navBar.js"
+import Dashboard from "./component/Dashboard/dashboard.js"
 
 
-
-//-----------------------------------//
 
 class App extends Component {
   constructor(props) {
@@ -71,68 +70,46 @@ class App extends Component {
   })
 }
 
-login_user = (username, password) => {
-  console.log("CALLING LOGIN")
-    axios
-      .post("/users/login", {
-        username,
-        password
-      }).then(res => {
+  login_user = (username, password) => {
+      axios
+        .post("/users/login", {
+          username,
+          password
+        }).then(res => {
 
-        this.setState({
-          current_user: res.data
-        })
+          this.setState({
+            current_user: res.data
+          })
 
-         return res
-      }
-      ).then((res)=>{
-        console.log(res)
-        Auth.authenticateUser(username)
-        Auth.authenticateUserID(res.data.id)
-      }).then(
-        () => {
-          console.log(this.state)
+          return res
         }
-      )
-      .catch(err => {
-        console.log(err)
-      })
-
-}
-  logout_user = () => {
-  console.log("I AM LOGGING OUT YO.")
-    axios
-      .post("/users/logout")
-      .then(() => {
-        this.setState({
-          current_user: null
+        ).then((res)=>{
+          console.log(res)
+          Auth.authenticateUser(username)
+          Auth.authenticateUserID(res.data.id)
+        }).then(
+          () => {
+            console.log(this.state)
+          }
+        )
+        .catch(err => {
+          console.log(err)
         })
-        // dispatch({
-        //   type:LOG_OUT_USER,
-        //   payload: {}
-        // })
 
-      })
-      .then(() => {
-        Auth.deauthenticateUser()
-      }).then(()=>{
-        this.checkUserAuthStatus()
-
-      })
   }
 
+
   render() {
-    console.log(this.state)
     return (
       <div className="App">
       <NavBar logoutUser={this.logout_user}/ >
       <Switch>
 
       {/* <PublicRoute exact path = "/home" component = {}> </PublicRoute> */}
-      {/* <PrivateRoute exact path = "/dashboard" component = {}> </PrivateRoute> */}
+      <PrivateRoute exact path = "/dashboard" component = {Dashboard}></PrivateRoute>
       <Route exact path = "/about" component = {About} ></Route>
-      <Route exact path = "/signup" component = {Signup} ></Route>
-      <Route exact path = "/login" render = {props => <Login checkUserAuthStatus={this.checkUserAuthStatus} login_user = {this.login_user} />}></Route>
+      <PublicRoute exact path = "/signup" component = {Signup} ></PublicRoute>
+      <Route exact path = "/login" render = {props => <Login checkUserAuthStatus={this.checkUserAuthStatus} login_user = {this.login_user} props = {this.props} />}></Route>
       <Route exact path = "/*" component = {Home} ></Route>
 
 
@@ -142,22 +119,11 @@ login_user = (username, password) => {
       </div>
     );
   }
+  
 }
 
-//Redux - mapStates and dispatchs to App.
-
-const mapStateToProps = (state, ownProps) => {
-  return {
-    store: state
-  }
-}
-
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-  function_checkStatus:() =>
-    dispatch(checkUserAuthStatus())
-}
-}
+export default withRouter(App)
 
 
-export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
+
+
