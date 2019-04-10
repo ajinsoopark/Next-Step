@@ -16,15 +16,12 @@ const getAllFeedbacksForOneAnswer = (req, res, next) => {
 };
 
 const addNewFeedback = (req, res, next) => {
-  req.body.user_id = parseInt(req.body.user_id);
-  req.body.answer_id = parseInt(req.body.answer_id);
-  db.none(
-  'INSERT INTO feedbacks (answer_id, user_id, feedback_body) VALUES (${answer_id}, ${user_id}, {feedback_body})',
-  req.body)
+  db.none('INSERT INTO feedbacks(user_id, answer_id, feedback_body) VALUES (${user_id}, ${answer_id}, ${feedback_body})', req.body)
     .then(() => {
-      res.status(200).json({
+      res.status(200)
+      .json({
         message: "added new feedback"
-      });
+      })
     })
     .catch(err => {
         console.log(err)
