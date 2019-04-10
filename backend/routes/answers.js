@@ -13,7 +13,7 @@ router.get('/:id', getSingleAnswer);
 router.get('/user/:id', getAllQandAForOneUser);
 router.get('/count/user/:id', getCountAnswersofOneUser);
 router.post('/', addNewAnswer);
-router.patch('/', editSingleAnswer);
+router.patch('/:id', editSingleAnswer);
 router.delete('/:id', deleteSingleAnswer);
 
 module.exports = router;

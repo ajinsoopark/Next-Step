@@ -4,7 +4,7 @@ const { getAllFeedbacksForOneAnswer,
         addNewFeedback,
         deleteSingleFeedback } = require('../db/queries/feedbacksQueries')
 
-router.get('/:id', getAllFeedbacksForOneAnswer);
+router.get('/answer/:id', getAllFeedbacksForOneAnswer);
 router.post('/', addNewFeedback);
 router.delete('/:id', deleteSingleFeedback);
 

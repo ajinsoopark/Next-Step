@@ -100,11 +100,12 @@ const addNewAnswer = (req, res, next) => {
 };
 
 const editSingleAnswer = (req, res, next) => {
-  db.none('UPDATE answers SET answer_body=${comment_body}, user_id=${user_id}, question_id=${question_id} WHERE id=${commentId}', {
-    commentId: req.params.id,
-    comment_body: req.body.comment_body,
-    user_id: req.body.user_id,
-    song_id: req.body.song_id
+
+  db.none('UPDATE answers SET answer_body=${answer_body}, user_id=${user_id}, question_id=${question_id} WHERE id=${id}', {
+    id: parseInt(req.params.id),
+    answer_body: req.body.answer_body,
+    question_id: req.body.question_id,
+    user_id: req.body.user_id
   })
   .then(() => {
     res.status(200)
