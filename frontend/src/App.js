@@ -27,7 +27,7 @@ import './App.css';
 import Login from "./component/login/login_container.js";
 import NavBar from "./component/navbar/navBar_container"
 import Dashboard from "./component/Dashboard/dashboard_container.js"
-
+import QuestionsContainer from "./component/Questions/QuestionsContainer.js"
 
 
 
@@ -53,7 +53,7 @@ class App extends Component {
 
 
 
-  
+
   render() {
     return (
       <div className="App">
@@ -64,11 +64,13 @@ class App extends Component {
 
       <PrivateRoute exact path = "/dashboard" component = {Dashboard}></PrivateRoute>
 
+      <PrivateRoute exact path = "/questions" component = {QuestionsContainer}></PrivateRoute>
+
       <PublicRoute exact path = "/signup" component = {Signup} ></PublicRoute>
 
       <PublicRoute exact path = "/login" component = {Login} ></PublicRoute>
 
-      
+
       <Route exact path = "/*" component = {Home} ></Route>
 
 
@@ -90,7 +92,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-  function_checkStatus:() => 
+  function_checkStatus:() =>
     dispatch(checkUserAuthStatus())
 }
 }

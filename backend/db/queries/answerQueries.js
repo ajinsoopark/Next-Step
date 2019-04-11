@@ -101,8 +101,8 @@ const addNewAnswer = (req, res, next) => {
 
 const editSingleAnswer = (req, res, next) => {
 
-  db.none('UPDATE answers SET answer_body=${answer_body}, user_id=${user_id}, question_id=${question_id} WHERE id=${id}', {
-    id: parseInt(req.params.id),
+  db.none('UPDATE answers SET answer_body=${answer_body}, user_id=${user_id}, question_id=${question_id} WHERE id=${answerId}', {
+    answerId: req.params.id,
     answer_body: req.body.answer_body,
     question_id: req.body.question_id,
     user_id: req.body.user_id
