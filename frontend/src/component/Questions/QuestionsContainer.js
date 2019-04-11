@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import { QuestionList } from "./QuestionList";
-import { fetchAllCategories, fetchQuestionsByCategory } from "../actions/questionActions";
+import { fetchCategories, fetchQuestionsByCategory } from "../../redux/actions/questionsActions";
 
 const mapStateToProps = state => {
 
@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 
   return {
-    fetchAllCategories: () => dispatch(fetchAllCategories())
+    fetchCategories: () => dispatch(fetchCategories())
   };
 };
 
