@@ -38,7 +38,7 @@ class Progress extends Component {
 
 
   render () {
-    console.log(this.props)
+    // console.log(this.props)
     const {questions,answers}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
