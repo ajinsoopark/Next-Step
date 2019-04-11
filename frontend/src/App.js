@@ -8,14 +8,14 @@ import {Route, Switch} from "react-router-dom";
 
 
 // import UserAuthRoutings from "./Auth/Auth.js" - These are middleware - to reroute users if they have login or not login.
-import Auth from "./Auth/Auth.js"
+// import Auth from "./Auth/Auth.js"
 import PrivateRoute from "./Auth/PrivateRouting.js";
 import PublicRoute from "./Auth/PublicRouting.js";
 
 
 // Redux Actions - for onLoad page - component did mount
-// import { connect } from "react-redux"
-// import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
+import { connect } from "react-redux"
+import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
 
 
 // CSS RESET IS INSIDE INDEX.JS!!!
@@ -23,12 +23,15 @@ import PublicRoute from "./Auth/PublicRouting.js";
 import './App.css';
 
 //Import Redux Containers from Redux
+import Login from "./component/login/login_container.js";
+
+
 
 // Import Component from Components
 // import PublicNavBar from "./navBar/public_navBar.js"
 import Home from "./component/landingPage/landing_page";
 import Signup from "./component/signup/signup";
-import Login from "./component/login/login";
+// import Login from "./component/login/login";
 import About from "./component/About/about.js"
 import NavBar from "./component/navbar/navBar.js"
 import Dashboard from "./component/Dashboard/dashboard.js"
@@ -36,8 +39,8 @@ import Dashboard from "./component/Dashboard/dashboard.js"
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state= ({
       isLoggedin : null,
       current_user: null
@@ -45,7 +48,61 @@ class App extends Component {
   }
 
 
-  checkUserAuthStatus = () => {
+
+  
+  render() {
+    return (
+      <div className="App">
+      <NavBar logoutUser={this.logout_user}/ >
+      <Switch>
+
+      <Route exact path = "/about" component = {About} ></Route>
+
+      <PrivateRoute exact path = "/dashboard" component = {Dashboard}></PrivateRoute>
+
+      <PublicRoute exact path = "/signup" component = {Signup} ></PublicRoute>
+
+      <PublicRoute exact path = "/login" component = {Login} ></PublicRoute>
+
+      
+      <Route exact path = "/*" component = {Home} ></Route>
+
+
+      </Switch>
+
+
+      </div>
+    )
+  }
+}
+
+
+//Redux Code - Map State and Dispatcher to Props and export everything together.
+const mapStateToProps = (state, ownProps) => {
+  return {
+    AppStore: state
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+  function_checkStatus:() => 
+    dispatch(checkUserAuthStatus())
+}
+}
+
+
+export default withRouter(connect(mapStateToProps,mapDispatchToProps)(App));
+
+
+
+
+
+//Non-Redux Code
+{/* export default withRouter(App) */}
+
+//placeholder for react-state code
+{/* checkUserAuthStatus = () => {
   axios.get("/users/log").then(res => {
     if(res.data.username === Auth.getToken()){
       this.setState({
@@ -92,39 +149,8 @@ class App extends Component {
         .catch(err => {
           console.log(err)
         })
-  }
+  } */}
 
 
-  render() {
-    return (
-      <div className="App">
-      <NavBar logoutUser={this.logout_user}/ >
-      <Switch>
-
-      <Route exact path = "/about" component = {About} ></Route>
-      {/* <PublicRoute exact path = "/home" component = {}> </PublicRoute> */}
-      <PrivateRoute exact path = "/dashboard" component = {Dashboard}></PrivateRoute>
-
-      
-      <PublicRoute exact path = "/signup" component = {Signup} ></PublicRoute>
-
-
-      <Route exact path = "/login" render = {props => <Login checkUserAuthStatus={this.checkUserAuthStatus} login_user = {this.login_user} props = {this.props} App_state = {this.state} />}></Route>
-      
-      <Route exact path = "/*" component = {Home} ></Route>
-
-
-      </Switch>
-
-
-      </div>
-    );
-  }
-  
-}
-
-export default withRouter(App)
-
-
-
-
+//React - Route
+     {/* <Route exact path = "/login" render = {props => <Login checkUserAuthStatus={this.checkUserAuthStatus} login_user = {this.login_user} props = {this.props} App_state = {this.state} />}></Route> */}
