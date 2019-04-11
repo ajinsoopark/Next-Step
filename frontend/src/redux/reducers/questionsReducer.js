@@ -1,4 +1,4 @@
-import { RECEIVE_CATEGORIES } from "../actions/questionActions"
+import { RECEIVE_CATEGORIES } from "../actions/questionsActions"
 import merge from "lodash/merge";
 
 const normalize = (arrOfObj) => {
@@ -14,7 +14,7 @@ const normalize = (arrOfObj) => {
 const questionsReducer = (oldState = {}, action) => {
   switch (action.type) {
     case RECEIVE_CATEGORIES:
-      return normalize(action.pins);
+      return normalize(action.questions);
     default:
     return oldState
   }
