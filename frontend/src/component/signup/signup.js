@@ -46,11 +46,11 @@ class Signup extends Component{
     })
     .then(()=>{
         this.setState({
-          first_name:'',
-          last_name:'',
-          username:'',
-          password:'',
-          email:''
+          first_name:'Redirecting to Dashboard',
+          last_name:'Redirecting to Dashboard',
+          username:'Sign Up Complete',
+          password:'Good',
+          email:'Good'
         })
     })
 

@@ -24,6 +24,9 @@ import './App.css';
 
 //Import Redux Containers from Redux
 import Login from "./component/login/login_container.js";
+import NavBar from "./component/navbar/navBar_container"
+import Dashboard from "./component/Dashboard/dashboard_container.js"
+
 
 
 
@@ -32,9 +35,9 @@ import Login from "./component/login/login_container.js";
 import Home from "./component/landingPage/landing_page";
 import Signup from "./component/signup/signup";
 // import Login from "./component/login/login";
+// import NavBar from "./component/navbar/navBar.js"
 import About from "./component/About/about.js"
-import NavBar from "./component/navbar/navBar.js"
-import Dashboard from "./component/Dashboard/dashboard.js"
+// import Dashboard from "./component/Dashboard/dashboard.js"
 
 
 
