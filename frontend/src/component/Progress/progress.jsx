@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import "./progress.css"
+import Auth from '../../Auth/Auth.js'
 
 
 class Progress extends Component {
@@ -12,22 +13,21 @@ class Progress extends Component {
       answers: 0
     }
   }
-  componentDidMount = async ()=>{
-      // get the userId & see how many questions they've answered
+  componentDidMount  (){
 
-    await axios.get("/users/log").then((res)=>{
-      this.setState({
-        user:res.data.userID
+    // get the userId & see how many questions they've answered
+     this.setState({
+        user:Auth.getTokenID()
       })
-    axios.get(`answers/count/user/${res.data.userID}`).then(
+
+     axios.get(`answers/count/user/${Auth.getTokenID()}`).then(
       (res)=>{
           this.setState({answers:+(res.data.count[0].count)})
         }
       )
-    })
 
     // get a count of all questions
-    await axios.get('/questions/count').then((res)=>{
+     axios.get('/questions/count').then((res)=>{
       this.setState({
         questions:parseInt(res.data.count[0].count)
       })
@@ -38,6 +38,7 @@ class Progress extends Component {
 
 
   render () {
+    console.log(this.props)
     const {questions,answers}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
