@@ -79,10 +79,30 @@ const getRandomQuestion = (req, res, next) => {
   })
 };
 
+const getCountofAllQuestions = (req, res, next) => {
+    db.any('SELECT count(id) FROM questions ')
+    .then(count => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            count: count,
+            message: 'Received a count of all questions'
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        return next(err)
+    })
+};
 
 module.exports = {
   getAllQuestions,
   getQuestionsByCategory,
   getSingleQuestion,
-  getRandomQuestion
+  getRandomQuestion,
+  getCountofAllQuestions
 }

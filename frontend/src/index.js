@@ -10,12 +10,13 @@ import {createStore,applyMiddleware, compose} from "redux"
 import {Provider} from "react-redux"
 import logger from "redux-logger"
 import thunk from 'redux-thunk'
+
 import RootReducer from "./redux/reducers/RootReducer.js"
 
 
 let initialState = {}
 
-// const middleware = [thunk,logger]
+const middleware = [thunk,logger]
 
 let store = createStore(RootReducer, initialState, compose(applyMiddleware(thunk, logger)))
 

@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
 import NavBar from '../navbar/navBar'
 import axios from 'axios'
+import Auth from "../../Auth/Auth"
 
 class Signup extends Component{
   constructor(props) {
@@ -23,17 +24,34 @@ class Signup extends Component{
 
   handleSubmit = async (e) =>{
     e.preventDefault();
+    
     const {username,first_name,last_name,email,password}=this.state;
+
     await axios.post('/users/signup',{username,first_name,last_name,email,password})
     .then(res=>{
-      this.setState({
-        first_name:'',
-        last_name:'',
-        username:'',
-        password:'',
-        email:''
-      })
-      console.log(res);
+      //THIS IS CAN BE SHORTEN BY PASSING LOGIN USER FROM APPS JS. We currently do not want to lose Public Route function.
+
+      axios
+        .post("/users/login", {
+          username,
+          password
+        }).then((res)=>{
+          Auth.authenticateUser(username)
+          Auth.authenticateUserID(res.data.id)
+        }).then(()=>{
+            this.props.history.push("/dashboard")
+        }).catch((err)=>{
+          console.log(err)
+        })
+    })
+    .then(()=>{
+        this.setState({
+          first_name:'Redirecting to Dashboard',
+          last_name:'Redirecting to Dashboard',
+          username:'Sign Up Complete',
+          password:'Good',
+          email:'Good'
+        })
     })
 
   }
