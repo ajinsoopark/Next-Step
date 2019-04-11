@@ -1,0 +1,15 @@
+.pbar{
+  width: 300px;
+  height: 100px;
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  flex-direction: row;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
