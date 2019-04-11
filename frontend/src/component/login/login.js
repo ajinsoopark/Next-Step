@@ -10,7 +10,6 @@ class Login extends Component{
     super(props)
     this.state={
       loggedin : false,
-      current_user: null,
       username: "",
       password: ""
     }
@@ -33,25 +32,24 @@ class Login extends Component{
   handleSubmit = (e)=>{
     e.preventDefault();
 
-    this.props.login_user(this.state.username,this.state.password)
+    this.props.function_login_user(this.state.username,this.state.password)
 
     this.setState({
-      loggedin: true,
-      username: "",
-      password: ""
+    loggedin: true,
+    username: "",
+    password: ""
     })
-    
+  
     setTimeout(() => {
       if(this.state.loggedin){
       this.props.history.push("/dashboard")
-    }
+      }
     }, 550);
-    
+  
   }
   
   componentDidMount() {
-    this.props.checkUserAuthStatus()
-    this.handleRedirect()
+    this.props.function_checkStatus()
   }
 
   render(){
@@ -82,3 +80,26 @@ class Login extends Component{
 }
 
 export default withRouter(Login)
+
+
+
+
+//React - Code for Login
+  // handleSubmit = (e)=>{
+  //   e.preventDefault();
+
+  //   this.props.login_user(this.state.username,this.state.password)
+
+  //   this.setState({
+  //     loggedin: true,
+  //     username: "",
+  //     password: ""
+  //   })
+    
+  //   setTimeout(() => {
+  //     if(this.state.loggedin){
+  //     this.props.history.push("/dashboard")
+  //   }
+  //   }, 550);
+    
+  // }
