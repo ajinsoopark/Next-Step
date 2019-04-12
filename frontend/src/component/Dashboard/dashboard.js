@@ -6,8 +6,21 @@ class Dashboard extends Component {
   //   super(props)
   // }
 
+  
+  componentWillMount() {
+    this.props.function_checkStatus()
+    
+  }
+  
+
+  componentDidMount() {
+    console.log(this.props.state.CurrentAutState)
+
+  }
+  
 
   render () {
+    console.log(this.props.state.CurrentAutState.isLoggedin)
     return (
 
       <>

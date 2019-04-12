@@ -3,12 +3,14 @@ import * as questionsApi from "../utility/questionsUtil";
 export let RECEIVE_CATEGORIES = "RECEIVE_CATEGORIES"
 export let RECEIVE_QUESTIONS_BY_CATEGORY = "RECEIVE_QUESTIONS_BY_CATEGORY"
 
+
 export const receiveCategories = categories => {
   return {
     type: RECEIVE_CATEGORIES,
     categories: categories
-  };
-};
+  }
+}
+
 
 export const fetchCategories = () => dispatch => {
   return questionsApi
@@ -18,9 +20,9 @@ export const fetchCategories = () => dispatch => {
   })
   .catch(err => {
     console.log(err)
-  });
+  })
 
-};
+}
 
 export const receiveQuestionsByCategory = questions => {
   return {
@@ -33,7 +35,6 @@ export const fetchQuestionsByCategory = (id) => dispatch => {
   return questionsApi
   .fetchQuestionsByCategory(id)
   .then(res => {
-
     return dispatch(receiveQuestionsByCategory(res.data.questions))
   })
   .catch(err => {
