@@ -40,15 +40,15 @@ class Login extends Component{
     username: "",
     password: ""
     })
-  
+
     setTimeout(() => {
       if(this.state.loggedin){
       this.props.history.push("/")
       }
     }, 550);
-  
+
   }
-  
+
   componentDidMount() {
     console.log(this.props)
   }
@@ -63,10 +63,10 @@ class Login extends Component{
         </div>
 
         <form onSubmit={this.handleSubmit} >
-        
+
           <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
 
-          <input onChange={this.handleChange} type='text' name="password" placeholder="Password" value = {password} /> <br/>
+          <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
 
 
           <input name = "submit" type = 'submit'/>
@@ -96,11 +96,11 @@ export default withRouter(Login)
   //     username: "",
   //     password: ""
   //   })
-    
+
   //   setTimeout(() => {
   //     if(this.state.loggedin){
   //     this.props.history.push("/dashboard")
   //   }
   //   }, 550);
-    
+
   // }
