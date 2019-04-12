@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 
-import NavBar from "../Navbar/navBarContainer"
+import NavBar from "../Navbar/navBar"
 
 import Body1 from './body1.js';
 import Body2 from './body2.js';
@@ -22,7 +22,7 @@ render(){
       <NavBar/>
       <Route exact path ="/" render={() => {
         return (
-          <div> 
+          <div>
            <Body1/>
            <Body2/>
           </div>)
