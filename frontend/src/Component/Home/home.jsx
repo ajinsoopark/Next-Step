@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom'
 import SideNav from "../SideNav/sideNav"
 
 import './home.css'
+import About from '../About/about';
 
 class Home extends Component {
     constructor () {
@@ -28,11 +29,16 @@ class Home extends Component {
             <div>
                 <NavBar logoutUser={this.props.logout_user} />
                 <SideNav toggleSideNav={this.toggleSideNav}/>
-                    <div className={ expanded ? 'expanded' : 'unexpanded' }>
+                    <div className={ expanded ? 'expanded home' : 'unexpanded home' }>
                         <Switch>
                             <Route exact path='/' render={() => {
                                 return (
                                 <Progress/>)
+                            }}/>
+                            <Route exact path='/about' render={() => {
+                                return (
+                                    <About/>
+                                )
                             }}/>
                         </Switch>
                     </div>

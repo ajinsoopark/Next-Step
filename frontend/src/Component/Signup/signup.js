@@ -39,7 +39,7 @@ class Signup extends Component{
           Auth.authenticateUser(username)
           Auth.authenticateUserID(res.data.id)
         }).then(()=>{
-            this.props.history.push("/dashboard")
+            this.props.history.push("/")
         }).catch((err)=>{
           console.log(err)
         })
