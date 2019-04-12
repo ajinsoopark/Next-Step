@@ -74,7 +74,6 @@ export const logOutUser = ()=> dispatch => {
         Auth.deauthenticateUser()
       }).then(()=>{
         dispatch(checkUserAuthStatus())
-
       })
   }
 

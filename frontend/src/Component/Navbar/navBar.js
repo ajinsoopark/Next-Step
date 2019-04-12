@@ -26,7 +26,7 @@ class NavBar extends Component{
       </div>
       <div className = 'buttons'>
         <NavLink to="/login" >Login</NavLink>
-        <NavLink onClick={this.props.function_logout_user} to = "/logout"> Log Out </NavLink>
+        <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
         <NavLink to='/signup'>Sign Up</NavLink>
         <NavLink to="/about" >About</NavLink>
       </div>
