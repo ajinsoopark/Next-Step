@@ -23,7 +23,7 @@ render(){
   return(
 
         <div className="pinlist">
-        {this.displayQuestions()}
+        
         </div>
   )
 }

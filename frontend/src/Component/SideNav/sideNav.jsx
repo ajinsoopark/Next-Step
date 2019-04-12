@@ -24,7 +24,7 @@ class SideNavMenu extends Component {
                 <SideNav.Nav>
                     <NavItem>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={''}>
+                            <NavLink className='sideNavLink' to={"/home"}>
                                 <div className='sideBarIcon'>
                                     {questionsIcon}
                                 </div>

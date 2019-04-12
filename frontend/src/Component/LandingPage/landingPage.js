@@ -7,7 +7,7 @@ import Body1 from './body1.js';
 import Body2 from './body2.js';
 import About from '../About/about'
 import Signup from '../Signup/signup.js'
-import Login from '../Login/login.js'
+import Login from  "../Login/loginContainer.js"
 
 class Landing extends Component{
   constructor(props) {
