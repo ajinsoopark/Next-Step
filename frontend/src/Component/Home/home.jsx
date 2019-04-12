@@ -4,6 +4,7 @@ import LandingPage from "../LandingPage/landingPage.js"
 import NavBar from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
 import SideNav from "../SideNav/sideNav"
+import QuestionList from "../Questions/questionList"
 
 import './home.css'
 import About from '../About/about';
@@ -22,7 +23,7 @@ class Home extends Component {
         })
     }
 
-    render () { 
+    render () {
         const { expanded } = this.state
         console.log(this.state)
         return (
@@ -35,17 +36,23 @@ class Home extends Component {
                                 return (
                                 <Progress/>)
                             }}/>
+
+                            <Route exact path='/questions' render={() => {
+                                return (
+                                <QuestionList/>)
+
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
                                 )
+
                             }}/>
                         </Switch>
                     </div>
             </div>
         )
 }
- 
+
 
 }
 
