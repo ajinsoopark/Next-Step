@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import Progress from '../Progress/progress'
-import LandingPage from "../LandingPage/landingPage.js"
 import NavBar2 from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
 import SideNav from "../SideNav/sideNav"
 import QuestionList from "../Questions/questionList"
+import Dashboard from '../Dashboard/dashboardContainer'
 
 import './home.css'
 import About from '../About/about';
@@ -34,7 +34,7 @@ class Home extends Component {
                         <Switch>
                             <Route exact path='/' render={() => {
                                 return (
-                                <Progress/>)
+                                <Dashboard/>)
                             }}/>
 
                             <Route exact path='/questions' render={() => {
