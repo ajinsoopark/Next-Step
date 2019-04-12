@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {NavLink} from 'react-router-dom';
-import NavBar from '../navbar/navBar'
+import NavBar from "../Navbar/navBarContainer"
 import axios from 'axios'
 import Auth from "../../Auth/Auth"
 

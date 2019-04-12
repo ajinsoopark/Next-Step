@@ -1,9 +1,9 @@
 import {connect } from "react-redux";
 import {withRouter} from "react-router"
-import {login_user,checkUserAuthStatus,logOutUser} from "../../redux/actions/Auth_actions.js"
+import {login_user,checkUserAuthStatus,logOutUser} from "../../Redux/Actions/Auth_actions"
 
 
-import NavBar from "../navbar/navBar.js"
+import NavBar from "./navBar.js"
 // import App  from "../home/home.js"
 
 

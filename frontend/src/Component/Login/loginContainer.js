@@ -1,9 +1,9 @@
 import {connect } from "react-redux";
 import {withRouter} from "react-router"
-import {login_user,checkUserAuthStatus} from "../../redux/actions/Auth_actions.js"
+import {login_user,checkUserAuthStatus} from "../../Redux/Actions/Auth_actions.js"
 
 
-import Login from "../login/login.js"
+import Login from "../Login/login.js"
 // import App  from "../home/home.js"
 
 const mapStateToProps = (state, ownProps) => {

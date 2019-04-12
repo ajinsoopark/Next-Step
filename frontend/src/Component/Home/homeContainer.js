@@ -1,7 +1,7 @@
 import {connect } from "react-redux";
 import {withRouter} from "react-router"
 
-import {checkUserAuthStatus} from "../../redux/actions/Auth_actions.js"
+import {checkUserAuthStatus} from "../../Redux/Actions/Auth_actions.js"
 
 import Home from './home'
 

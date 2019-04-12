@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import Auth from "./Auth.js";
-import Landing from '../component/landingPage/landing_page';
+import Landing from "../Component/LandingPage/landingPage";
 
 const PrivateRoute = ({ component: Component, ...rest }) => (
   <Route

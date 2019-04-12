@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {withRouter} from "react-router"
 
 import {NavLink, Redirect} from 'react-router-dom';
-import NavBar from '../navbar/navBar'
+import NavBar from "../Navbar/navBarContainer"
 
 
 class Login extends Component{
@@ -49,7 +49,7 @@ class Login extends Component{
   }
   
   componentDidMount() {
-    this.props.function_checkStatus()
+    console.log(this.props)
   }
 
   render(){

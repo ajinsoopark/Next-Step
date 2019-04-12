@@ -11,7 +11,7 @@ import {Provider} from "react-redux"
 import logger from "redux-logger"
 import thunk from 'redux-thunk'
 
-import RootReducer from "./redux/reducers/RootReducer.js"
+import RootReducer from "./Redux/Reducers/rootReducer"
 
 
 let initialState = {}

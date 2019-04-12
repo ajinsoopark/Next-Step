@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Progress from '../Progress/progress'
-import LandingPage from '../landingPage/landing_page'
-import NavBar from '../navbar/navBar_container'
+import LandingPage from "../LandingPage/landingPage.js"
+import NavBar from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
-import SideNav from '../sideNav/sideNav'
+import SideNav from "../SideNav/sideNav"
 
 import './home.css'
 

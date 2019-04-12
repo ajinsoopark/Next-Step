@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import './body1.css'
-let logo = require('../../images/Next_Step_PlaceHolder.png')
+let logo = require("../../Images/nextStepPlaceHolder.png")
 
 
 class Body1 extends Component{

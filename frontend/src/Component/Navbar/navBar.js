@@ -4,7 +4,7 @@ import './navBar.css'
 // import axios from 'axios'
 // import Auth from '../../Auth/Auth.js'
 
-const logo = require("../../images/Next_Step_Logo.png")
+const logo = require("../../Images/nextStepLogo.png")
 
 class NavBar extends Component{
   constructor (props) {

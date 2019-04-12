@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 
-import NavBar from ".././navbar/navBar"
+import NavBar from "../Navbar/navBarContainer"
 
 import Body1 from './body1.js';
 import Body2 from './body2.js';
 import About from '../About/about'
-import Signup from '../signup/signup_container'
-import Login from '../login/login_container'
+import Signup from '../Signup/signup.js'
+import Login from '../Login/login.js'
 
 class Landing extends Component{
   constructor(props) {

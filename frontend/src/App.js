@@ -9,13 +9,13 @@ import {Route, Switch} from "react-router-dom";
 
 // import UserAuthRoutings from "./Auth/Auth.js" - These are middleware - to reroute users if they have login or not login.
 // import Auth from "./Auth/Auth.js"
-import PrivateRoute from "./Auth/PrivateRouting.js";
+import PrivateRoute from "./Auth/PrivateRouting.js"
 import PublicRoute from "./Auth/PublicRouting.js";
 
 
 // Redux Actions - for onLoad page - component did mount
 import { connect } from "react-redux"
-import {checkUserAuthStatus} from "./redux/actions/Auth_actions";
+import {checkUserAuthStatus} from "./Redux/Actions/Auth_actions"
 
 
 // CSS RESET IS INSIDE INDEX.JS!!!
@@ -24,21 +24,21 @@ import './App.css';
 
 
 //Import Redux Containers from Redux
-import Login from "./component/login/login_container.js";
-import NavBar from "./component/navbar/navBar_container"
+import Login from "./Component/Login/loginContainer"
+import NavBar from "./Component/Navbar/navBarContainer"
 // import Dashboard from "./component/Dashboard/dashboard_container.js"
-import QuestionsContainer from "./component/Questions/QuestionsContainer.js"
+// import Question from "./Component/Questions/questionsContainer"
 
 
 
 // Import Component from Components
 // import PublicNavBar from "./navBar/public_navBar.js"
-import Signup from "./component/signup/signup";
+import Signup from "./Component/Signup/signup";
 // import Login from "./component/login/login";
 // import NavBar from "./component/navbar/navBar.js"
-import About from "./component/About/about.js"
-import Home from './component/Home/homeContainer.js';
-import Landing from './component/landingPage/landing_page';
+import About from "./Component/About/about.js"
+import Home from './Component/Home/homeContainer.js';
+import Landing from './Component/LandingPage/landingPage'
 // import Dashboard from "./component/Dashboard/dashboard.js"
 
 
