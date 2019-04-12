@@ -18,7 +18,7 @@ class Login extends Component{
   handleRedirect = ()=>{
     console.log(this.props)
     if(this.props === "true"){
-      this.props.props.history.push("/dashboard")
+      this.props.props.history.push("/")
 
     }
   }
@@ -42,7 +42,7 @@ class Login extends Component{
   
     setTimeout(() => {
       if(this.state.loggedin){
-      this.props.history.push("/dashboard")
+      this.props.history.push("/")
       }
     }, 550);
   

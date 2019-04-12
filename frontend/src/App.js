@@ -26,18 +26,19 @@ import './App.css';
 //Import Redux Containers from Redux
 import Login from "./component/login/login_container.js";
 import NavBar from "./component/navbar/navBar_container"
-import Dashboard from "./component/Dashboard/dashboard_container.js"
+// import Dashboard from "./component/Dashboard/dashboard_container.js"
 import QuestionsContainer from "./component/Questions/QuestionsContainer.js"
 
 
 
 // Import Component from Components
 // import PublicNavBar from "./navBar/public_navBar.js"
-import Home from "./component/landingPage/landing_page";
 import Signup from "./component/signup/signup";
 // import Login from "./component/login/login";
 // import NavBar from "./component/navbar/navBar.js"
 import About from "./component/About/about.js"
+import Home from './component/Home/homeContainer.js';
+import Landing from './component/landingPage/landing_page';
 // import Dashboard from "./component/Dashboard/dashboard.js"
 
 
@@ -57,21 +58,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <NavBar logoutUser={this.logout_user}/ >
       <Switch>
 
-      <Route exact path = "/about" component = {About} ></Route>
-
-      <PrivateRoute exact path = "/dashboard" component = {Dashboard}></PrivateRoute>
-
-      <PrivateRoute exact path = "/questions" component = {QuestionsContainer}></PrivateRoute>
-
-      <PublicRoute exact path = "/signup" component = {Signup} ></PublicRoute>
-
-      <PublicRoute exact path = "/login" component = {Login} ></PublicRoute>
-
-
-      <Route exact path = "/*" component = {Home} ></Route>
+      <PrivateRoute exact path = "/*" component = {Home} ></PrivateRoute>
 
 
       </Switch>
