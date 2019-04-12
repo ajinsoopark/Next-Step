@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom'
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { questionsIcon, leaderboardIcon, answerIcon, tipsIcon, aboutIcon } from './icons'
 
+
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './sideNav.css'
 
@@ -11,7 +12,7 @@ class SideNavMenu extends Component {
     constructor () {
         super ()
         this.state = {
-        
+
         }
     }
 
@@ -24,7 +25,7 @@ class SideNavMenu extends Component {
                 <SideNav.Nav>
                     <NavItem>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={''}>
+                            <NavLink className='sideNavLink' to={'/questions'} >
                                 <div className='sideBarIcon'>
                                     {questionsIcon}
                                 </div>
@@ -100,4 +101,3 @@ class SideNavMenu extends Component {
 }
 
 export default SideNavMenu
-
