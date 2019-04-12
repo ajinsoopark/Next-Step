@@ -3,6 +3,7 @@
 import axios from "axios"
 import Auth from "../../Auth/Auth.js"
 
+
 //Redux - Checking Variable Names
 const LOGIN_USER = "LOGIN_USER"
 const CHECK_AUTH_USER = "CHECK_AUTH_USER"

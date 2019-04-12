@@ -8,7 +8,7 @@ const normalize = (arrOfObj) => {
   }
 
   return obj
-
+  
 }
 
 const questionsReducer = (oldState = {}, action) => {

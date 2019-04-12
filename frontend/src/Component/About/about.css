@@ -39,6 +39,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
+  grid-gap: 10px;
+  background-color: red;
+  padding-bottom: 25%;
   /* flex-direction: row; */
 
 }
@@ -47,3 +50,5 @@
   /* background-color: rgb(65, 197, 25); */
   font-size: 1vw;
 }
+
+
