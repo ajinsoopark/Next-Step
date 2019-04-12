@@ -7,11 +7,7 @@ import Body1 from './body1.js';
 import Body2 from './body2.js';
 import About from '../About/about'
 import Signup from '../Signup/signup.js'
-<<<<<<< HEAD
-import Login from  "../Login/loginContainer.js"
-=======
 import Login from '../Login/loginContainer'
->>>>>>> 1d4215236f4973dadad8696ee96eedb503b1184d
 
 class Landing extends Component{
   constructor(props) {
