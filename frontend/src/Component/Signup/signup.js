@@ -24,7 +24,7 @@ class Signup extends Component{
 
   handleSubmit = async (e) =>{
     e.preventDefault();
-    
+
     const {username,first_name,last_name,email,password}=this.state;
 
     await axios.post('/users/signup',{username,first_name,last_name,email,password})
@@ -39,7 +39,7 @@ class Signup extends Component{
           Auth.authenticateUser(username)
           Auth.authenticateUserID(res.data.id)
         }).then(()=>{
-            this.props.history.push("/dashboard")
+            this.props.history.push("/")
         }).catch((err)=>{
           console.log(err)
         })
@@ -67,7 +67,7 @@ class Signup extends Component{
           <input type='text' name="first_name" value={first_name} placeholder="First Name" onChange={this.handleChange}/><br/>
           <input type='text' name="last_name" value={last_name} placeholder="Last Name" onChange={this.handleChange}/><br/>
           <input type='text' name="username" value={username} placeholder="Username" onChange={this.handleChange}/><br/>
-          <input type='text' name="password" value={password} placeholder="Password" onChange={this.handleChange}/><br/>
+          <input type='password' name="password" value={password} placeholder="Password" onChange={this.handleChange}/><br/>
           <input type='text' name="email" value={email} placeholder="E-mail" onChange={this.handleChange}/><br/>
           <input type = 'submit'/>
         </form>

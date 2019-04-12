@@ -4,8 +4,10 @@ import LandingPage from "../LandingPage/landingPage.js"
 import NavBar2 from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
 import SideNav from "../SideNav/sideNav"
+import QuestionList from "../Questions/questionList"
 
 import './home.css'
+import About from '../About/about';
 
 class Home extends Component {
     constructor () {
@@ -28,11 +30,22 @@ class Home extends Component {
             <div>
                 <NavBar2 logoutUser={this.props.logout_user} />
                 <SideNav toggleSideNav={this.toggleSideNav}/>
-                    <div className={ expanded ? 'expanded' : 'unexpanded' }>
+                    <div className={ expanded ? 'expanded home' : 'unexpanded home' }>
                         <Switch>
                             <Route exact path='/' render={() => {
                                 return (
                                 <Progress/>)
+                            }}/>
+
+                            <Route exact path='/questions' render={() => {
+                                return (
+                                <QuestionList/>)
+                                }}/>        
+                            <Route exact path='/about' render={() => {
+                                return (
+                                    <About/>
+                                )
+
                             }}/>
                         </Switch>
                     </div>
