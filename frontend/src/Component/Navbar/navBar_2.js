@@ -1,12 +1,12 @@
 import React,{Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import './navBar.css'
-// import axios from 'axios'
-// import Auth from '../../Auth/Auth.js'
+
+// this is when the user is logged in
 
 const logo = require("../../Images/nextStepLogo.png")
 
-class NavBar extends Component{
+class NavBar2 extends Component{
   constructor (props) {
     super(props)
   }
@@ -25,8 +25,7 @@ class NavBar extends Component{
         </NavLink>
       </div>
       <div className = 'buttons'>
-        <NavLink to="/login" >Login</NavLink>
-        <NavLink to='/signup'>Sign Up</NavLink>
+        <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
         <NavLink to="/about" >About</NavLink>
       </div>
       </div>
@@ -35,15 +34,4 @@ class NavBar extends Component{
 
 
 }
-export default NavBar
-
-
-
-//React - Code for Logout Code
-  // logoutUser = () => {
-  //   axios.post('/users/logout').then((res)=>{
-  //     Auth.deauthenticateUser()
-  //   }).catch(err =>{
-  //     console.log(err)
-  //   })
-  // }
+export default NavBar2
