@@ -20,7 +20,7 @@ class SideNavMenu extends Component {
         return (
             <div className='sideContainer'>
                <SideNav>
-                <SideNav.Toggle />
+                <SideNav.Toggle onClick={this.props.toggleSideNav}/>
                 <SideNav.Nav>
                     <NavItem>
                         <NavIcon>
