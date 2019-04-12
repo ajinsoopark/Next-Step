@@ -40,7 +40,7 @@ class Home extends Component {
                             <Route exact path='/questions' render={() => {
                                 return (
                                 <QuestionList/>)
-
+                                }}/>        
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
