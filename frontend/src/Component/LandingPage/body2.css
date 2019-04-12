@@ -1,20 +1,23 @@
-.body2{
-  height: 80%;
-  text-align: center;
-  background-color: #2B3454
-}
-
-.container{
+.body2 {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
-
+  height: 800px;
+  align-items: center;
+  justify-content: center;
+  background-color: #2B3454;
 }
 
-.cards{
+.cardContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.cards {
   width: 250px;
-  /* height: 400px; */
-  /* display: flex;
-  flex-direction: row; */
+  height: 400px;
+  display: flex;
+  flex-direction: column;
   /* align-items: center; */
 }
