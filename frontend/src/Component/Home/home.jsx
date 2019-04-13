@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import Progress from '../Progress/progress'
+import NavBar2 from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
 
 
@@ -12,6 +14,7 @@ import Progress from '../Progress/progress'
 import QuestionList from "../Questions/questionList"
 import Question from "../Questions/question.js"
 
+import Dashboard from '../Dashboard/dashboardContainer'
 
 import './home.css'
 import About from '../About/about';
@@ -41,7 +44,7 @@ class Home extends Component {
                         <Switch>
                             <Route exact path='/' render={() => {
                                 return (
-                                <Progress/>)
+                                <Dashboard/>)
                             }}/>
 
                             <Route exact path='/questions' render={() => {
