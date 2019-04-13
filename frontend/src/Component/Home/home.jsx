@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import Progress from '../Progress/progress'
-import LandingPage from "../LandingPage/landingPage.js"
-import NavBar2 from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
+
+
+//Import Redux Containers
+import NavBar2 from "../Navbar/navBarContainer.js"
+
+//Import Components
+import LandingPage from "../LandingPage/landingPage.js"
 import SideNav from "../SideNav/sideNav"
+import Progress from '../Progress/progress'
 import QuestionList from "../Questions/questionList"
+import Question from "../Questions/question.js"
+
 
 import './home.css'
 import About from '../About/about';
@@ -45,7 +52,12 @@ class Home extends Component {
                                 return (
                                     <About/>
                                 )
+                            }}/>
 
+                            <Route exact path ="/question/:id" render = {()=>{
+                                return (
+                                    <Question/>
+                                )
                             }}/>
                         </Switch>
                     </div>

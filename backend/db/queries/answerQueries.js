@@ -134,6 +134,27 @@ const deleteSingleAnswer = (req, res, next) => {
   })
 };
 
+
+const getOneQuestionAnswers = (req, res, next) => {
+    db.any('')
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: 'Received all answers'
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        return next(err)
+    })
+}
+
 module.exports = {
     getAllAnswers,
     getSingleAnswer,
@@ -141,5 +162,6 @@ module.exports = {
     getCountAnswersofOneUser,
     addNewAnswer,
     editSingleAnswer,
-    deleteSingleAnswer
+    deleteSingleAnswer,
+    getOneQuestionAnswers
 }
