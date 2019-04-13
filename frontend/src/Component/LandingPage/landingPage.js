@@ -13,28 +13,27 @@ class Landing extends Component{
   constructor(props) {
     super(props)
   }
-
-
-
 render(){
   return(
     <div className='landingPage'>
       <NavBar/>
-      <Route exact path ="/" render={() => {
+      <Switch>
+      
+      <Route exact path = "/about" component = {About} ></Route>
+      <Route exact path = "/signup" component = {Signup} ></Route>
+      <Route exact path = "/login" component = {Login} ></Route>
+      <Route exact path ="/*" render={() => {
         return (
           <div>
            <Body1/>
            <Body2/>
           </div>)
       }}/>
-      <Route exact path = "/about" component = {About} ></Route>
-      <Route exact path = "/signup" component = {Signup} ></Route>
-      <Route exact path = "/login" component = {Login} ></Route>
-          </div>
+      </Switch>
+    </div>
 
   )
 }
 }
-
 
 export default Landing

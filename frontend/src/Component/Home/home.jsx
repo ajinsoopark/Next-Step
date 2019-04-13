@@ -1,13 +1,23 @@
 import React, { Component } from 'react'
-import Progress from '../Progress/progress'
-import NavBar2 from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
-import SideNav from "../SideNav/sideNav"
-import QuestionList from "../Questions/questionList"
-import Dashboard from '../Dashboard/dashboardContainer'
 
-import './home.css'
+
+//Import Redux Containers
+import NavBar2 from "../Navbar/navBarContainer.js"
+
+//Import Components
+import LandingPage from "../LandingPage/landingPage.js"
+import SideNav from "../SideNav/sideNav"
+import Progress from '../Progress/progress'
+import QuestionList from "../Questions/questionList"
+import Question from "../Question/question.js"
+
+import Dashboard from '../Dashboard/dashboardContainer'
 import About from '../About/about';
+
+
+//CSS
+import './home.css'
 
 class Home extends Component {
     constructor () {
@@ -45,7 +55,12 @@ class Home extends Component {
                                 return (
                                     <About/>
                                 )
+                            }}/>
 
+                            <Route exact path ="/question/:id" render = {()=>{
+                                return (
+                                    <Question/>
+                                )
                             }}/>
                         </Switch>
                     </div>

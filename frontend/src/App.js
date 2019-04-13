@@ -26,19 +26,19 @@ import './App.css';
 //Import Redux Containers from Redux
 import Login from "./Component/Login/loginContainer"
 import NavBar from "./Component/Navbar/navBarContainer"
+import Home from './Component/Home/homeContainer.js';
 // import Dashboard from "./component/Dashboard/dashboard_container.js"
 
 
 
 
 // Import Component from Components
-// import PublicNavBar from "./navBar/public_navBar.js"
 import Signup from "./Component/Signup/signup";
+import About from "./Component/About/about.js"
+// import PublicNavBar from "./navBar/public_navBar.js"
+import Landing from './Component/LandingPage/landingPage'
 // import Login from "./component/login/login";
 // import NavBar from "./component/navbar/navBar.js"
-import About from "./Component/About/about.js"
-import Home from './Component/Home/homeContainer.js';
-import Landing from './Component/LandingPage/landingPage'
 // import Dashboard from "./component/Dashboard/dashboard.js"
 
 
@@ -61,7 +61,6 @@ class App extends Component {
       <Switch>
 
       <PrivateRoute exact path = "/*" component = {Home} ></PrivateRoute>
-
 
       </Switch>
 

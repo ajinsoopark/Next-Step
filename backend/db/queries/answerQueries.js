@@ -134,6 +134,27 @@ const deleteSingleAnswer = (req, res, next) => {
   })
 };
 
+
+const getAllAnswersWithTheQuestion = (req, res, next) => {
+    db.any('SELECT questions.id AS Question_ID, question_body, answers.id AS answers_ID, answer_body, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1',req.params.id)
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: 'Received one question and multiple answers'
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed/ ERROR',
+            message: err
+        })
+        return next(err)
+    })
+}
+
 module.exports = {
     getAllAnswers,
     getSingleAnswer,
@@ -141,5 +162,6 @@ module.exports = {
     getCountAnswersofOneUser,
     addNewAnswer,
     editSingleAnswer,
-    deleteSingleAnswer
+    deleteSingleAnswer,
+    getAllAnswersWithTheQuestion
 }

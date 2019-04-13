@@ -6,14 +6,19 @@ const { getAllAnswers,
         getCountAnswersofOneUser,
         addNewAnswer,
         editSingleAnswer,
-        deleteSingleAnswer } = require('../db/queries/answerQueries')
+        deleteSingleAnswer,
+        getAllAnswersWithTheQuestion } = require('../db/queries/answerQueries')
 
 router.get('/', getAllAnswers);
-router.get('/:id', getSingleAnswer);
 router.get('/user/:id', getAllQandAForOneUser);
 router.get('/count/user/:id', getCountAnswersofOneUser);
+router.get('/:id/question/',getAllAnswersWithTheQuestion)
+router.get('/:id', getSingleAnswer);
+
+router.get('/', getAllAnswers);
 router.post('/', addNewAnswer);
 router.patch('/:id', editSingleAnswer);
 router.delete('/:id', deleteSingleAnswer);
+
 
 module.exports = router;
