@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 
 const DisplayQuestions = ({ allQuestions, selectedCategory }) => {
@@ -6,9 +7,9 @@ const DisplayQuestions = ({ allQuestions, selectedCategory }) => {
         if(question.category === selectedCategory){
             return(
             <div key={i}>
-                <p>
+                <Link to={"/questions/" + question.id}>
                 {question.question_body}
-                </p>
+                </Link>
             </div>
             )
 

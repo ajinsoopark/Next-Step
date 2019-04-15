@@ -1,21 +1,22 @@
 .sidenav---sidenav---_2tBP {
-    background-color: #232B49;
-    margin-top: 4.7%;
-    position: fixed;
+  background-color: #232B49;
+  margin-top: 4.7%;
+  position: fixed;
 }
 
 .sideBarIcon {
-    padding-top: 10%;
+  padding-top: 10%;
 }
 
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
-    max-width: 5%;
+
+  max-width: 5%;
 }
 
 .sidebarSVG {
-    fill: #97A5DB;
+  fill: #97A5DB;
 }
 
 .sideBarIcon:hover .sidebarSVG {
-    fill: whitesmoke;
+  fill: whitesmoke;
 }
