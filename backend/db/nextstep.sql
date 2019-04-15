@@ -514,4 +514,3 @@ INSERT INTO tips(tip_body) VALUES
 ('brush your teeth'),
 ('be cool'),
 ('behave yourself');
-

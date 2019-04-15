@@ -5,6 +5,7 @@ import NavBar2 from "../Navbar/navBarContainer.js"
 import { Switch, Route } from 'react-router-dom'
 import SideNav from "../SideNav/sideNav"
 import QuestionList from "../Questions/questionList"
+import Search from '../Search/search'
 
 import './home.css'
 import About from '../About/about';
@@ -40,12 +41,16 @@ class Home extends Component {
                             <Route exact path='/questions' render={() => {
                                 return (
                                 <QuestionList/>)
-                                }}/>        
+                                }}/>
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
                                 )
-
+                            }}/>
+                          <Route path='/search/:id' render={() => {
+                                return (
+                                    <Search/>
+                                )
                             }}/>
                         </Switch>
                     </div>

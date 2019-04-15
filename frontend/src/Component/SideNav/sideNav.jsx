@@ -32,7 +32,7 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink>
+                            <NavLink className='sideNavLink' to={'/questions'} >
                                 Questions
                             </NavLink>
                         </NavText>
@@ -88,7 +88,7 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink>
+                            <NavLink className='sideNavLink' to={'/about'}>
                                 About
                             </NavLink>
                         </NavText>
