@@ -30,7 +30,7 @@ class SideNavMenu extends Component {
                <SideNav>
                 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
                 <SideNav.Nav>
-                   
+
                     <NavItem className = "sideNav_leaderboard">
                         <NavIcon>
                             <NavLink className='sideNavLink' to={'/dashbaord'}>
@@ -42,13 +42,8 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavIcon>
                         <NavText>
-<<<<<<< HEAD
-                            <NavLink className='sideNavLink' to={'/questions'} >
-                                Questions
-=======
                             <NavLink className='sideNavLink' to={'/dashbaord'}>
                                 Leaderboard
->>>>>>> 3d43735e7011aac3165f40c9043d7dfd90d74e71
                             </NavLink>
                         </NavText>
                     </NavItem>
@@ -85,7 +80,7 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavText>
                     </NavItem>
-                    
+
 
                     <NavItem className = "sideNav_tips">
                         <NavIcon>
@@ -98,7 +93,7 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink to = {"/tips"}>                            
+                            <NavLink to = {"/tips"}>
                                 Tips & Tricks
                             </NavLink>
                         </NavText>
@@ -114,16 +109,12 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavIcon>
                         <NavText>
-<<<<<<< HEAD
-                            <NavLink className='sideNavLink' to={'/about'}>
-=======
                             <NavLink to = {"/about"}>
->>>>>>> 3d43735e7011aac3165f40c9043d7dfd90d74e71
                                 About
                             </NavLink>
                         </NavText>
                     </NavItem>
-                
+
                 </SideNav.Nav>
             </SideNav>
             </div>

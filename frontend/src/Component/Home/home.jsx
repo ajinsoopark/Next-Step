@@ -48,13 +48,10 @@ class Home extends Component {
                                 <Dashboard/>)
                             }}/>
 
-<<<<<<< HEAD
                             <Route exact path='/questions' render={() => {
                                 return (
                                 <QuestionList/>)
                                 }}/>
-=======
->>>>>>> 3d43735e7011aac3165f40c9043d7dfd90d74e71
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
@@ -66,16 +63,9 @@ class Home extends Component {
                                     <Question/>
                                 )
                             }}/>
-<<<<<<< HEAD
                           <Route path = '/search/:search/:filter'
                               render={(props) => <Search{...props} />}
                               />
-=======
-                            <Route path='/questions' render={() => {
-                                return (
-                                <QuestionList/>)
-                                }}/>        
->>>>>>> 3d43735e7011aac3165f40c9043d7dfd90d74e71
                         </Switch>
                     </div>
             </div>
