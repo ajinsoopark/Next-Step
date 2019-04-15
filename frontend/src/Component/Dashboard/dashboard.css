@@ -1,3 +1,19 @@
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: underline;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
 .splashContainer {
     display: flex;
     flex-direction: row;
@@ -45,5 +61,25 @@
 }
 
 .randomQuestionContainer {
-    padding-left: 2%;
+    padding: 2%;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-left: 2%;
+    width: 35%;
+    color: black;
+}
+
+.randomQuestionContainer:hover {
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+    transition: box-shadow 0.2s ease-in-out;
+  }
+
+.randomQuestionP {
+    font-size: 2vw;
+    padding: 2%;
+    padding-bottom: 4%;
+}
+
+.dashCategory {
+    padding-bottom: 5%;
 }
