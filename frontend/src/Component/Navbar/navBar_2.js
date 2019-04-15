@@ -25,8 +25,15 @@ class NavBar2 extends Component{
     })
   }
 
+  handleSubmit =(e)=>{
+    const{filter,search}=this.state
+    e.preventDefault()
+    this.props.history.push(`/search/${search}/${filter}`)
+
+  }
+
   render (){
-    console.log(this.state)
+    // console.log(this.state)
     return(
       <div className='Menu'>
       <div className = 'logo'>
@@ -35,12 +42,13 @@ class NavBar2 extends Component{
         </NavLink>
       </div>
       <div className = 'search'>
-        <form onChange={this.handleChange}>
-          <select>
-            <option  name='filter'>user</option>
-            <option  name='filter'>questions</option>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <select onChange={this.handleChange} name='search'>
+            <option value={null}></option>
+            <option value='users' >users</option>
+            <option value='questions' >questions</option>
           </select>
-          <input type='text' name='search' />
+          <input type='text' name='filter' />
           <input type='submit'/>
         </form>
       </div>

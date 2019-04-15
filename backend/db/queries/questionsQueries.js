@@ -38,6 +38,26 @@ const getQuestionsByCategory = (req, res, next) => {
   })
 }
 
+const getQuestionsBySearch = (req, res, next) => {
+  let searchQuery = (req.params.id).toLowerCase();
+  db.any(`SELECT  * FROM  questions WHERE LOWER (question_body) LIKE '%${searchQuery}%'`)
+  .then(questions => {
+    res.status(200)
+    .json({
+      status: 'Success',
+      questions,
+      message: `Received questions for search (${searchQuery})`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({
+      status: 'Failed',
+      message: err
+    })
+  })
+}
+
 const getSingleQuestion = (req, res, next) => {
   let questionId = parseInt(req.params.id)
   db.one('SELECT q.*, c.category FROM questions AS q FULL JOIN categories AS c on c.id = q.category_id WHERE q.id=$1', [questionId])
@@ -102,6 +122,7 @@ const getCountofAllQuestions = (req, res, next) => {
 module.exports = {
   getAllQuestions,
   getQuestionsByCategory,
+  getQuestionsBySearch,
   getSingleQuestion,
   getRandomQuestion,
   getCountofAllQuestions

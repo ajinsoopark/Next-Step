@@ -13,6 +13,7 @@ import QuestionList from "../Questions/questionList"
 import Question from "../Question/question.js"
 
 import Dashboard from '../Dashboard/dashboardContainer'
+import Search from '../Search/search'
 import About from '../About/about';
 
 
@@ -62,6 +63,9 @@ class Home extends Component {
                                     <Question/>
                                 )
                             }}/>
+                          <Route path = '/search/:search/:filter'
+                              render={(props) => <Search{...props} />}
+                              />
                         </Switch>
                     </div>
             </div>
