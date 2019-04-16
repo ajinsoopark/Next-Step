@@ -15,6 +15,7 @@ import Question from "../Question/question.js"
 import Dashboard from '../Dashboard/dashboardContainer'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
+import Tips from "../Tips/tips"
 
 
 //CSS
@@ -55,6 +56,12 @@ class Home extends Component {
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
+                                )
+                            }}/>
+
+                            <Route exact path='/advice' render={() => {
+                                return (
+                                    <Tips/>
                                 )
                             }}/>
 

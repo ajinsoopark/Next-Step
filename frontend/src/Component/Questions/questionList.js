@@ -1,7 +1,7 @@
 import React from "react"
 import axios from "axios"
-import DisplayQuestions from "./displayQuestions"
 import DisplayAllCategories from "./displayAllCategories"
+import "./categories.css"
 
 export default class QuestionList extends React.Component {
   constructor(){
@@ -51,6 +51,11 @@ render(){
   return(
 
         <div className="questionList">
+          <div className="questionsTitle">
+              <div className="questionsTitleChild">
+                <h1>Questions</h1>
+              </div>
+          </div>
           <div>
             <DisplayAllCategories allCategories={this.state.allCategories} selectedCategory={this.state.selectedCategory} allQuestions={this.state.allQuestions} handleChange={this.handleChange} />
           </div>
@@ -59,6 +64,3 @@ render(){
 }
 }
 
-          // <div>
-          //   <DisplayQuestions allQuestions={this.state.allQuestions} />
-          // </div>
