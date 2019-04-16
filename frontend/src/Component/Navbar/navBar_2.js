@@ -10,13 +10,9 @@ class NavBar2 extends Component{
   constructor (props) {
     super(props)
     this.state={
-      search:null,
+      search:'users',
       filter:null,
     }
-  }
-
-  componentDidMount() {
-    // console.log(this.props)
   }
 
   handleChange  =(e)=>{
@@ -28,12 +24,11 @@ class NavBar2 extends Component{
   handleSubmit =(e)=>{
     const{filter,search}=this.state
     e.preventDefault()
+    this.props.function_search(search, filter)
     this.props.history.push(`/search/${search}/${filter}`)
-
   }
 
   render (){
-    // console.log(this.state)
     return(
       <div className='Menu'>
       <div className = 'logo'>
@@ -44,7 +39,6 @@ class NavBar2 extends Component{
       <div className = 'search'>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <select onChange={this.handleChange} name='search'>
-            <option value={null}></option>
             <option value='users' >users</option>
             <option value='questions' >questions</option>
           </select>
