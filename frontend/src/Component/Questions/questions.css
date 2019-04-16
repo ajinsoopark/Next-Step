@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Poppins:500');
+
+.displayQuestions {
+    display: flex;
+    justify-content: center;
+}
+
+.displayQuestionsChild {
+    display: flexbox;
+    justify-content: center;
+    width: 70%;
+}
+
+.questionsParent {
+    border: 1px solid #171A26;
+    background-color: #CFD6ED;
+    height: 70px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+
+.questionBody {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    vertical-align: middle;
+    height: 60%;
+}
+
+.questionBody a {
+    color: #171A26
+}
+

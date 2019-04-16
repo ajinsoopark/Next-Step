@@ -4,6 +4,7 @@ const router = express.Router();
 
 const { getAllUsers,
         getSingleUser,
+        getSearchUser,
         createUser,
         deleteSingleUser,
         loginUser,
@@ -14,7 +15,7 @@ const { getAllUsers,
 
 
 
-//import require auth functions - password and helper functions 
+//import require auth functions - password and helper functions
 const passport = require("../auth/local");
 const { loginRequired } = require("../auth/helper");
 
@@ -30,6 +31,8 @@ router.get('/', getAllUsers)
 router.get('/:id', getSingleUser)
 router.get('/logtimes', getLastLoginTime)
 router.patch('/:id', editUser)
+router.get('/search/:id',getSearchUser)
+
 
 router.delete('/:id', deleteSingleUser)
 

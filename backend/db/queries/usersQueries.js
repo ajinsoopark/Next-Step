@@ -32,6 +32,26 @@ const getSingleUser = (req, res, next) => {
   })
 };
 
+const getSearchUser = (req, res, next) => {
+  let searchQuery = (req.params.id).toLowerCase();
+  db.any(`SELECT  * FROM  users WHERE LOWER (username) LIKE '%${searchQuery}%'`)
+  .then(users => {
+    res.status(200)
+    .json({
+      status: 'Success',
+      users,
+      message: `Received users for search (${searchQuery})`
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({
+      status: 'Failed',
+      message: err
+    })
+  })
+}
+
 
 const deleteSingleUser = (req, res, next) => {
   let userId = parseInt(req.params.id);
@@ -151,6 +171,7 @@ module.exports = {
   isLoggedIn,
   getAllUsers,
   getSingleUser,
+  getSearchUser,
   deleteSingleUser,
   createUser,
   logoutUser,

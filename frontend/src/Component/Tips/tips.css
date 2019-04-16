@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
+
+body {
+    background-color: #ECEEF7
+}
+
+.tipsTitle {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 20px;
+    font-style: #171A26;
+    font-family: 'Cabin', sans-serif;
+}
+
+.tipsTitleChild {
+    font-size: 45px;
+    font-weight: bold;
+}

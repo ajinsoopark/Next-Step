@@ -1,15 +1,18 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import "./questions.css"
 
 
 const DisplayQuestions = ({ allQuestions, selectedCategory }) => {
     return(allQuestions.map((question, i) => {
         if(question.category === selectedCategory){
             return(
-            <div key={i}>
-                <Link to={"/questions/" + question.id}>
-                {question.question_body}
-                </Link>
+            <div className="questionsParent">
+                <div key={i} className="questionBody">
+                    <Link to={"/questions/" + question.id}>
+                        <div className="questionBodyGC">{question.question_body}</div>
+                    </Link>
+                </div>
             </div>
             )
 

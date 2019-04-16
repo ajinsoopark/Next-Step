@@ -9,12 +9,24 @@ const logo = require("../../Images/nextStepLogo.png")
 class NavBar2 extends Component{
   constructor (props) {
     super(props)
+    this.state={
+      search:'users',
+      filter:null,
+    }
   }
 
-  componentDidMount() {
-    // console.log(this.props)
+  handleChange  =(e)=>{
+    this.setState({
+      [e.target.name]:e.target.value
+    })
   }
 
+  handleSubmit =(e)=>{
+    const{filter,search}=this.state
+    e.preventDefault()
+    this.props.function_search(search, filter)
+    this.props.history.push(`/search/${search}/${filter}`)
+  }
 
   render (){
     return(
@@ -24,9 +36,18 @@ class NavBar2 extends Component{
           <img src= {logo} alt="next-step_logo" />
         </NavLink>
       </div>
+      <div className = 'search'>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <select onChange={this.handleChange} name='search'>
+            <option value='users' >users</option>
+            <option value='questions' >questions</option>
+          </select>
+          <input type='text' name='filter' />
+          <input type='submit'/>
+        </form>
+      </div>
       <div className = 'buttons'>
         <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
-        <NavLink to="/about" >About</NavLink>
       </div>
       </div>
     )
