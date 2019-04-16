@@ -68,6 +68,52 @@ const deleteSingleUser = (req, res, next) => {
   })
 };
 
+const editUser = (req, res, next) => {
+
+  db.none('UPDATE users SET username=${username}, first_name=${first_name}, last_name=${last_name}, email=${email}, last_login=${last_login} WHERE id=${userId}', {
+    userId: req.params.id,
+    username: req.body.username,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name,
+    last_login: req.body.last_login,
+    email: req.body.email
+  })
+  .then(() => {
+    res.status(200)
+    .json({
+      status: 'Success',
+      message: 'Edited user'
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({
+      status: 'Failed',
+      message: err
+    })
+    next(err)
+  })
+}
+
+const getLastLoginTime = (req, res, next) => {
+  db.any('SELECT login_name [Login] , MAX(login_time) AS [Last Login Time] FROM sys.dm_exec_sessions GROUP BY login_name')
+  .then(res => {
+    res.status(200)
+    .json({
+      status: 'Success',
+      res
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.json({
+      status: 'Failed',
+      message: err
+    })
+    next(err)
+  })
+}
+
 const createUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
   console.log(hash)
@@ -129,5 +175,7 @@ module.exports = {
   deleteSingleUser,
   createUser,
   logoutUser,
-  loginUser
+  loginUser,
+  getLastLoginTime,
+  editUser
 };
