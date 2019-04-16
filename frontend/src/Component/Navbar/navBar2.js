@@ -26,11 +26,16 @@ class NavBar2 extends Component{
     e.preventDefault()
     this.props.function_search(search, filter)
     this.props.history.push(`/search/${search}/${filter}`)
+
+    this.setState({
+      filter:null
+    })
   }
 
   render (){
+    // console.log(this.props.state.CurrentAutState)
     return(
-      <div className='Menu'>
+    <div className='Menu'>
       <div className = 'logo'>
         <NavLink to="/" >
           <img src= {logo} alt="next-step_logo" />
@@ -47,9 +52,18 @@ class NavBar2 extends Component{
         </form>
       </div>
       <div className = 'buttons'>
-        <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
+        <button>
+          <NavLink to={`/users/${this.props.state.CurrentAutState.userID}`}>
+            {this.props.state.CurrentAutState.username}
+          </NavLink>
+        </button>
+        
+        <button>
+          <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
+        </button>
+
       </div>
-      </div>
+    </div>
     )
   }
 

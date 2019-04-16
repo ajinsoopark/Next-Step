@@ -1,7 +1,7 @@
 import React, {Component} from "react"
-import NavBar from "../Navbar/navBar.js"
+// import NavBar from "../Navbar/navBar.js"
 
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 import "./about.css"
 
@@ -19,9 +19,9 @@ const developers = {
 }
 
 class About extends Component {
-constructor (props) {
-  super(props)
-}
+// constructor (props) {
+//   super(props)
+// }
 
 developers_map = (developers) =>{
   let developersValues = Object.values(developers)
