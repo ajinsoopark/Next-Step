@@ -16,7 +16,7 @@ import Dashboard from '../Dashboard/dashboardContainer'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
-import AnswerFeed from '../Answers/answerFeed'
+import AnswerFeed from '../Answers/answerFeedContainer'
 
 
 //CSS
