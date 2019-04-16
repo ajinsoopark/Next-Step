@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 // import {Link} from "react-router-dom";
+import Auth from "../../Auth/Auth"
 import axios from "axios"
 import {withRouter} from "react-router"
 
@@ -25,21 +26,6 @@ class Question extends Component {
       })
   })}
 
-
-  mapAnswersToRender= (array) =>{
-    return( 
-      array.map(el => {
-        return (
-          <div className = "answer"> 
-          <h2> {el.author} </h2>
-          <p> {el.answer} </p>
-          </div>
-        )
-      })
-    )
-   
-  }
-
   axiosGetAnswers = () =>{
     let paramsID = this.props.match.params.id
 
@@ -50,6 +36,33 @@ class Question extends Component {
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
          CurrentAnswers: answersArray
+       })
+     }).then(() => {
+      //  console.log(this.state)
+     }).catch((err) => {
+       console.log(err)
+     })
+    :  
+    console.log("Is EMPTY?")
+  }
+
+  axiosGetUserAnswerByQuestion = () =>{
+    let paramsID = this.props.match.params.id
+    let userID = Auth.getTokenID()
+    // console.log(userID)
+    paramsID ? 
+   //THIS IS AXIOS BY A QUERY
+     axios.get(`/answers/byuser/byquestion`,
+     {
+       params : 
+       {userID : userID,
+       questionID: paramsID}
+     }
+     
+     ).then((res)=>{
+       this.setState({
+         userAnswerStatus: res.data.status,
+         userAnswer: res.data.answer
        })
      }).then(() => {
       //  console.log(this.state)
@@ -72,25 +85,27 @@ class Question extends Component {
   componentDidMount(){
     //get Answers based on params URL
     this.axiosGetAnswers()
-
-
+    this.axiosGetUserAnswerByQuestion()
 
   }
 
 render(){
-  console.log(this.state)
+  // console.log(this.state)
   return(
         <div className="Question">
         <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1>
         <div className = "Selection" >
-          <Selection tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange} />
-        </div>
-
-        <div className = "Answers">
+          <Selection tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
+          CurrentAnswers = {this.state.CurrentAnswers}
+          userAnswer = {this.state.userAnswer}
+          currentUser = {Auth.getTokenID()}
+          questionID = {this.props.match.params.id}
+          axiosGetUserAnswerByQuestion = {this.axiosGetUserAnswerByQuestion}
+           axiosGetAnswers = {this.axiosGetAnswers}          
+          
         
-        {this.mapAnswersToRender(this.state.CurrentAnswers)}
+          />
         </div>
-
 
         </div>
   )

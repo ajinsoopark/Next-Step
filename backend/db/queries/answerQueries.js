@@ -155,6 +155,28 @@ const getAllAnswersWithTheQuestion = (req, res, next) => {
     })
 }
 
+const getAnswerByQuestionByUser = (req, res, next) => {
+    // console.log(req.query.questionID)
+    // console.log(req.query.userID)
+    db.oneOrNone('SELECT questions.id AS Question_ID, answers.id AS answers_ID, answer_body, users.id AS user_id, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1 AND users.id = $2',[req.query.questionID, req.query.userID])
+    .then(answer => {
+        res.status(200)
+        .json({
+            status: '200',
+            answer,
+            message: 'Got answer of user by the question '
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: '404',
+            message: err
+        })
+        return next(err)
+    })
+}
+
 module.exports = {
     getAllAnswers,
     getSingleAnswer,
@@ -163,5 +185,6 @@ module.exports = {
     addNewAnswer,
     editSingleAnswer,
     deleteSingleAnswer,
-    getAllAnswersWithTheQuestion
+    getAllAnswersWithTheQuestion,
+    getAnswerByQuestionByUser
 }
