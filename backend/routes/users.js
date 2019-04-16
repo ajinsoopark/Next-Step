@@ -8,7 +8,9 @@ const { getAllUsers,
         deleteSingleUser,
         loginUser,
         logoutUser,
-        isLoggedIn } = require('../db/queries/usersQueries')
+        isLoggedIn,
+        getLastLoginTime,
+        editUser } = require('../db/queries/usersQueries')
 
 
 
@@ -26,7 +28,8 @@ router.get('/log', isLoggedIn);
 
 router.get('/', getAllUsers)
 router.get('/:id', getSingleUser)
-
+router.get('/logtimes', getLastLoginTime)
+router.patch('/:id', editUser)
 
 router.delete('/:id', deleteSingleUser)
 
