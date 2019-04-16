@@ -13,6 +13,7 @@ import QuestionList from "../Questions/questionList"
 import Question from "../Question/question.js"
 
 import Dashboard from '../Dashboard/dashboardContainer'
+import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
 
@@ -36,7 +37,7 @@ class Home extends Component {
 
     render () {
         const { expanded } = this.state
-        console.log(this.state)
+        // console.log(this.props)
         return (
             <div>
                 <NavBar2 logoutUser={this.props.logout_user} />
@@ -48,6 +49,10 @@ class Home extends Component {
                                 <Dashboard/>)
                             }}/>
 
+                            <Route exact path='/questions' render={() => {
+                                return (
+                                <QuestionList/>)
+                                }}/>
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
@@ -65,10 +70,9 @@ class Home extends Component {
                                     <Question/>
                                 )
                             }}/>
-                            <Route path='/questions' render={() => {
-                                return (
-                                <QuestionList/>)
-                                }}/>        
+                          <Route path = '/search/:search/:filter'
+                              render={(props) => <Search{...props} />}
+                              />
                         </Switch>
                     </div>
             </div>

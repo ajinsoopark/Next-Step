@@ -4,6 +4,7 @@ const router = express.Router();
 
 const { getAllUsers,
         getSingleUser,
+        getSearchUser,
         createUser,
         deleteSingleUser,
         loginUser,
@@ -12,7 +13,7 @@ const { getAllUsers,
 
 
 
-//import require auth functions - password and helper functions 
+//import require auth functions - password and helper functions
 const passport = require("../auth/local");
 const { loginRequired } = require("../auth/helper");
 
@@ -26,7 +27,7 @@ router.get('/log', isLoggedIn);
 
 router.get('/', getAllUsers)
 router.get('/:id', getSingleUser)
-
+router.get('/search/:id',getSearchUser)
 
 router.delete('/:id', deleteSingleUser)
 
