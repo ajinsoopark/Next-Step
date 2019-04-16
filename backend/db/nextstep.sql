@@ -10,7 +10,7 @@ CREATE TABLE users (
   last_name VARCHAR,
   email VARCHAR NOT NULL UNIQUE,
   password_digest VARCHAR NOT NULL,
-  last_login VARCHAR
+  last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE categories (
