@@ -1,22 +1,27 @@
 import React from "react";
 import DisplayQuestions from "./displayQuestions"
+import "./categories.css"
+import "./questions.css"
 
 const DisplayAllCategories = ({ allCategories, allQuestions, selectedCategory, handleChange }) => {
     let categoryList = allCategories.map((category, i) => {
         return(
-        <div key={i}>
-            <button type="button" onClick={handleChange} value={category.category}>{category.category}</button>
-        </div>
+            <div key={i} className="allButtons">
+                <button type="button" onClick={handleChange} value={category.category}>{category.category}</button>
+            </div>
+               
         )
     })
 
     return(
         <div>
-            <div>
+            <div className="categoryList">
                 {categoryList}
             </div>
-            <div>
-                <DisplayQuestions allQuestions={allQuestions} selectedCategory={selectedCategory} />
+            <div className="displayQuestions">
+                <div className="displayQuestionsChild">
+                    <DisplayQuestions allQuestions={allQuestions} selectedCategory={selectedCategory} />
+                </div>
             </div>
         </div>
     )
