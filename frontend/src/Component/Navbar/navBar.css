@@ -16,12 +16,13 @@ a{
   text-decoration: none;
 }
 .Menu{
-  height: 60px;
+  /* height: 60px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: sticky;
+  top: 0px;
   width: 100%;
 }
 .buttons{

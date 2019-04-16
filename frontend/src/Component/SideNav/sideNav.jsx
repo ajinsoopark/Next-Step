@@ -14,8 +14,6 @@ import leaderboardIcon2 from "../../Images/icons8-gold-medal-48.png"
 import tipsIcons2 from "../../Images/icons8-idea-filled-48.png"
 
 
-
-
 class SideNavMenu extends Component {
     constructor () {
         super ()

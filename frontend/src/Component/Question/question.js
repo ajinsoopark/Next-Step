@@ -1,15 +1,20 @@
 import React, {Component} from "react";
 // import {Link} from "react-router-dom";
+import Auth from "../../Auth/Auth"
 import axios from "axios"
 import {withRouter} from "react-router"
 
+import Selection from "./selector"
+
+import "./question.css"
 
 class Question extends Component {
   constructor (props) {
     super(props)
     this.state = ({
       CurrentQuestion: null,
-      CurrentAnswers: []
+      CurrentAnswers: [],
+      tabIndex: 0
     })
   }
 
@@ -20,22 +25,6 @@ class Question extends Component {
         answer: el.answer_body
       })
   })}
-
-
-  mapAnswersToRender= (array) =>{
-    return( 
-      array.map(el => {
-        return (
-          <div className = "answers"> 
-          <h2> By: {el.author} </h2>
-          <p> Answer: {el.answer} </p>
-          </div>
-        )
-      })
-
-    )
-   
-  }
 
   axiosGetAnswers = () =>{
     let paramsID = this.props.match.params.id
@@ -57,23 +46,67 @@ class Question extends Component {
     console.log("Is EMPTY?")
   }
 
+  axiosGetUserAnswerByQuestion = () =>{
+    let paramsID = this.props.match.params.id
+    let userID = Auth.getTokenID()
+    // console.log(userID)
+    paramsID ? 
+   //THIS IS AXIOS BY A QUERY
+     axios.get(`/answers/byuser/byquestion`,
+     {
+       params : 
+       {userID : userID,
+       questionID: paramsID}
+     }
+     
+     ).then((res)=>{
+       this.setState({
+         userAnswerStatus: res.data.status,
+         userAnswer: res.data.answer
+       })
+     }).then(() => {
+      //  console.log(this.state)
+     }).catch((err) => {
+       console.log(err)
+     })
+    :  
+    console.log("Is EMPTY?")
+  }
 
+  
+  TabSelectedChange = (tabIndex) =>{
+    this.setState({
+      tabIndex: tabIndex
+    })
+    console.log(this.state)
+  }
   
   
   componentDidMount(){
     //get Answers based on params URL
     this.axiosGetAnswers()
-
-
+    this.axiosGetUserAnswerByQuestion()
 
   }
 
 render(){
+  // console.log(this.state)
   return(
         <div className="Question">
-        <h1>This is one Question Component</h1>
-        <h1> {this.state.CurrentQuestion} </h1>
-        {this.mapAnswersToRender(this.state.CurrentAnswers)}
+        <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1>
+        <div className = "Selection" >
+          <Selection tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
+          CurrentAnswers = {this.state.CurrentAnswers}
+          userAnswer = {this.state.userAnswer}
+          currentUser = {Auth.getTokenID()}
+          questionID = {this.props.match.params.id}
+          axiosGetUserAnswerByQuestion = {this.axiosGetUserAnswerByQuestion}
+           axiosGetAnswers = {this.axiosGetAnswers}          
+          
+        
+          />
+        </div>
+
         </div>
   )
 }
