@@ -48,10 +48,6 @@ class Home extends Component {
                                 <Dashboard/>)
                             }}/>
 
-                            <Route exact path='/questions' render={() => {
-                                return (
-                                <QuestionList/>)
-                                }}/>        
                             <Route exact path='/about' render={() => {
                                 return (
                                     <About/>
@@ -64,11 +60,15 @@ class Home extends Component {
                                 )
                             }}/>
 
-                            <Route exact path ="/question/:id" render = {()=>{
+                            <Route exact path ="/questions/:id" render = {()=>{
                                 return (
                                     <Question/>
                                 )
                             }}/>
+                            <Route path='/questions' render={() => {
+                                return (
+                                <QuestionList/>)
+                                }}/>        
                         </Switch>
                     </div>
             </div>

@@ -4,12 +4,9 @@
     justify-content: space-between;
     height: 30%;
     width: 50%;
-    margin-top: 2%;
-    margin-left: 1%;
-    padding-top: 2%;
-    padding-left: 1%;
     border: 1px solid;
     padding: 2%;
+    border-radius: 5px;
 }
 
 .userSplashContainer {
@@ -36,4 +33,17 @@
 
 .userSplash {
     font-size: 6vw;
+}
+
+.splashAndQuestion {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2%;
+    margin-left: 1%;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.randomQuestionContainer {
+    padding-left: 2%;
 }
