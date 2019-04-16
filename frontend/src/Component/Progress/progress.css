@@ -1,15 +1,31 @@
 .pbar{
-  width: 300px;
-  height: 100px;
+  width: 80%;
+  height: 30%;
   border-style: solid;
   border-width: 1px;
   display: flex;
   flex-direction: row;
+  height: 7vh;
+  border-radius: 5px;
+  margin-top: 2%;
 }
 
-.container{
+.progressContainer{
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-radius: 5px;
+  border: 1px solid black;
+  margin-top: 7%;
+  margin-left: 2%;
+  width: 49%;
+  padding: 2%;
+}
+
+.percentDiv {
+  display: flex;
+  justify-content: flex-end;
+  width: 75%;
+  padding-top: 2%;
 }

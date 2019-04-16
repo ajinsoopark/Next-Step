@@ -48,14 +48,16 @@ class Progress extends Component {
     }
     return (
 
-      <div className='container'>
-        <p>{completion} completed<br/>
-        You have completed {answers} out of {questions} questions. <br/>
-        KEEP IT UP!
+      <div className='progressContainer'>
+        <p>
+          You have completed {answers} out of {questions} questions.
         </p>
         <div className='pbar'>
           <div className ='innerBar' style={style}>
           </div>
+        </div>
+        <div className='percentDiv'>
+          <p>{completion}</p>
         </div>
       </div>
     )

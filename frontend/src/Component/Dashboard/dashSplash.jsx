@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { smiley } from './smiley'
-
 const DashSplash = ({ userName }) => {
 
     return (
@@ -13,9 +11,6 @@ const DashSplash = ({ userName }) => {
                 <div className='userSplash'>
                     { userName ? userName : '' }
                 </div>
-            </div>
-            <div className='splashEmote'>
-                { smiley }
             </div>
         </div>
     )

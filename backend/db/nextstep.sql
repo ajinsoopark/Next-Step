@@ -9,7 +9,8 @@ CREATE TABLE users (
   first_name VARCHAR NOT NULL,
   last_name VARCHAR,
   email VARCHAR NOT NULL UNIQUE,
-  password_digest VARCHAR NOT NULL
+  password_digest VARCHAR NOT NULL,
+  last_login VARCHAR
 );
 
 CREATE TABLE categories (
