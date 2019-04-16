@@ -23,10 +23,10 @@ class Question extends Component {
 
 
   mapAnswersToRender= (array) =>{
-    return( 
-      array.map(el => {
+    return(
+      array.map((el,i )=> {
         return (
-          <div className = "answers"> 
+          <div className = "answers" key={i}> 
           <h2> By: {el.author} </h2>
           <p> Answer: {el.answer} </p>
           </div>
@@ -34,14 +34,14 @@ class Question extends Component {
       })
 
     )
-   
+
   }
 
   axiosGetAnswers = () =>{
     let paramsID = this.props.match.params.id
 
-    paramsID ? 
-    
+    paramsID ?
+
      axios.get(`/answers/${paramsID}/question`).then((res)=>{
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
@@ -53,13 +53,13 @@ class Question extends Component {
      }).catch((err) => {
        console.log(err)
      })
-    :  
+    :
     console.log("Is EMPTY?")
   }
 
 
-  
-  
+
+
   componentDidMount(){
     //get Answers based on params URL
     this.axiosGetAnswers()
