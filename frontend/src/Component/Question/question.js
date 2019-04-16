@@ -3,13 +3,17 @@ import React, {Component} from "react";
 import axios from "axios"
 import {withRouter} from "react-router"
 
+import Selection from "./selector"
+
+import "./question.css"
 
 class Question extends Component {
   constructor (props) {
     super(props)
     this.state = ({
       CurrentQuestion: null,
-      CurrentAnswers: []
+      CurrentAnswers: [],
+      tabIndex: 0
     })
   }
 
@@ -26,13 +30,12 @@ class Question extends Component {
     return( 
       array.map(el => {
         return (
-          <div className = "answers"> 
-          <h2> By: {el.author} </h2>
-          <p> Answer: {el.answer} </p>
+          <div className = "answer"> 
+          <h2> {el.author} </h2>
+          <p> {el.answer} </p>
           </div>
         )
       })
-
     )
    
   }
@@ -57,7 +60,13 @@ class Question extends Component {
     console.log("Is EMPTY?")
   }
 
-
+  
+  TabSelectedChange = (tabIndex) =>{
+    this.setState({
+      tabIndex: tabIndex
+    })
+    console.log(this.state)
+  }
   
   
   componentDidMount(){
@@ -69,11 +78,20 @@ class Question extends Component {
   }
 
 render(){
+  console.log(this.state)
   return(
         <div className="Question">
-        <h1>This is one Question Component</h1>
-        <h1> {this.state.CurrentQuestion} </h1>
+        <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1>
+        <div className = "Selection" >
+          <Selection tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange} />
+        </div>
+
+        <div className = "Answers">
+        
         {this.mapAnswersToRender(this.state.CurrentAnswers)}
+        </div>
+
+
         </div>
   )
 }
