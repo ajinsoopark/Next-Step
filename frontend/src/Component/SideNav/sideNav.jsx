@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, withRouter } from 'react-router-dom'
 
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import { questionsIcon, leaderboardIcon, answerIcon, tipsIcon, aboutIcon } from './icons'
@@ -18,98 +18,101 @@ class SideNavMenu extends Component {
     constructor () {
         super ()
         this.state = {
-
+            activeTab: ''
         }
     }
 
     render () {
+        const { activeTab } = this.state
+
         return (
             <div className='sideContainer'>
-               <SideNav>
+               <SideNav onSelect={(selected) => {
+                   const { location, history } = this.props
+                   const route = `/${selected}`
+                   if (location.pathname !== route) {
+                       history.push(route)
+                   }
+                   this.setState({ activeTab: selected })
+                }}>
                 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
                 <SideNav.Nav>
-
-                    <NavItem className = "sideNav_leaderboard">
+                    
+                    <NavItem 
+                    className = "sideNav_leaderboard" 
+                    eventKey='leaderboard' 
+                    active={activeTab === 'leaderboard' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/dashbaord'}>
                                 <div className='sideBarIcon'>
                                     {/* {leaderboardIcon} */}
                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
 
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink className='sideNavLink' to={'/dashbaord'}>
                                 Leaderboard
-                            </NavLink>
                         </NavText>
                     </NavItem>
-
-                    <NavItem className = "sideNav_questions" >
+        
+                    <NavItem 
+                    className = "sideNav_questions" 
+                    eventKey='questions'
+                    active={activeTab === 'questions' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/questions'} >
                                 <div className='sideBarIcon'>
                                     {/* {questionsIcon} */}
                                     <img src = {questionsIcon2} alt = "Circled Q" width= "35" />
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink to = {'/questions'}>
                                 Questions
-                            </NavLink>
                         </NavText>
                     </NavItem>
 
-                    <NavItem className = "sideNav_answers">
+                    <NavItem 
+                    className = "sideNav_answers" 
+                    eventKey='answers'
+                    active={activeTab === 'answers' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/answers'}>
                                 <div className='sideBarIcon'>
                                     {/* {answerIcon2} */}
                                     <img src = {answerIcon2} alt = "Circled A" width = "35" />
 
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink to = {"/answers"}>
-                                Answers
-                            </NavLink>
+                           My Answers
                         </NavText>
                     </NavItem>
 
 
-                    <NavItem className = "sideNav_tips">
+                    <NavItem 
+                    className = "sideNav_tips" 
+                    eventKey='advice'
+                    active={activeTab === 'advice' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/tips'}>
                                 <div className='sideBarIcon'>
                                     {/* {tipsIcon} */}
                                     <img src = {tipsIcons2} alt = "Light Bulb Icon" width = "35" />
-
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink to = {"/tips"}>
                                 Tips & Tricks
-                            </NavLink>
                         </NavText>
                     </NavItem>
 
-                    <NavItem className = "sideNav_about">
+                    <NavItem 
+                    className = "sideNav_about" 
+                    eventKey='about'
+                    active={activeTab === 'about' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/about'}>
                                 <div className='sideBarIcon'>
                                     {/* {aboutIcon2} */}
                                     <img src = {aboutIcon2} alt = "Circled A" width = "35" />
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink to = {"/about"}>
                                 About
-                            </NavLink>
                         </NavText>
                     </NavItem>
 
@@ -120,4 +123,4 @@ class SideNavMenu extends Component {
     }
 }
 
-export default SideNavMenu
+export default withRouter(SideNavMenu)
