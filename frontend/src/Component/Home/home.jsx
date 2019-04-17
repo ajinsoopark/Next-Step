@@ -16,7 +16,11 @@ import Dashboard from '../Dashboard/dashboardContainer'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
+
+import User from '../User/user'
+
 import AnswerFeed from '../Answers/answerFeedContainer'
+
 
 
 //CSS
@@ -74,7 +78,12 @@ class Home extends Component {
                           <Route path = '/search/:search/:filter'
                               render={(props) => <Search{...props} />}
                               />
+
+                            <Route path = '/users/:id'
+                              render={(props) => <User{...props} />}
+                              />
                           <Route path='/answers' render={() => <AnswerFeed />}/>
+
                         </Switch>
                     </div>
             </div>

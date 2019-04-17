@@ -1,6 +1,7 @@
 import React,{Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import './navBar.css'
+import Auth from '../../Auth/Auth.js'
 
 // this is when the user is logged in
 
@@ -29,16 +30,19 @@ class NavBar2 extends Component{
   }
 
   render (){
+    // console.log(this.props.state.CurrentAutState)
     return(
-      <div className='Menu'>
+    <div className='Menu'>
+
       <div className = 'logo'>
         <NavLink to="/" >
           <img src= {logo} alt="next-step_logo" />
         </NavLink>
       </div>
+
       <div className = 'search'>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-          <select onChange={this.handleChange} name='search'>
+          <select name='search'>
             <option value='users' >users</option>
             <option value='questions' >questions</option>
           </select>
@@ -46,10 +50,21 @@ class NavBar2 extends Component{
           <input type='submit'/>
         </form>
       </div>
+
       <div className = 'buttons'>
-        <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
+        <button>
+          <NavLink to={`/users/${Auth.getTokenID()}`}>
+
+            {Auth.getToken()}
+          </NavLink>
+        </button>
+
+        <button>
+          <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
+        </button>
+
       </div>
-      </div>
+    </div>
     )
   }
 
