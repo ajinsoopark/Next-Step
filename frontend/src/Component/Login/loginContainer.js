@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     function_login_user: (username, password) => dispatch(login_user(username,password)),
-  function_checkStatus:() => 
+  function_checkStatus:() =>
     dispatch(checkUserAuthStatus())
 }
 }

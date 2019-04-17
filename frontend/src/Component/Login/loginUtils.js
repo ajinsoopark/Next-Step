@@ -60,7 +60,7 @@ export const login_user = (username, password) => dispatch => {
       }).then(
         () => {
           console.log("End of LOGIN ACTON")
-        
+
         }
       )
       //TODO: CREATE A LOGIN STATUS ON LOGIN PAGE, IF FAIL SHOWS ERROR
@@ -90,3 +90,5 @@ export const logOutUser = ()=> dispatch => {
 
       })
   }
+
+  export default login_user

@@ -51,13 +51,14 @@ class SideNavMenu extends Component {
                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
 
                                 </div>
-
+                            </NavLink>
                         </NavIcon>
                         <NavText>
 
                             <NavLink className='sideNavLink' to={'/leaderboard'}>
 
                                 Leaderboard
+                            </NavLink>    
                         </NavText>
                     </NavItem>
 
