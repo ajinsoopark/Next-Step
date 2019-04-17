@@ -95,13 +95,14 @@ const editUser = (req, res, next) => {
   })
 }
 
-const getLastLoginTime = (req, res, next) => {
-  db.any('SELECT login_name [Login] , MAX(login_time) AS [Last Login Time] FROM sys.dm_exec_sessions GROUP BY login_name')
-  .then(res => {
+const updateLoginTime = (req, res, next) => {
+  let userId = parseInt(req.params.id)
+  db.none('UPDATE users SET last_login = CURRENT_TIMESTAMP WHERE id=$1', [userId])
+  .then(() => {
     res.status(200)
     .json({
       status: 'Success',
-      res
+      message: 'Updated login time'
     })
   })
   .catch(err => {
@@ -176,6 +177,6 @@ module.exports = {
   createUser,
   logoutUser,
   loginUser,
-  getLastLoginTime,
-  editUser
+  editUser,
+  updateLoginTime
 };

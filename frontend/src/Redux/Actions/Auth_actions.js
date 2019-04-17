@@ -48,10 +48,12 @@ export const login_user = (username, password) => dispatch => {
         console.log(res)
         Auth.authenticateUser(username)
         Auth.authenticateUserID(res.data.id)
-      }).then(()=>{
+        return res.data.id
+      }).then(userId => {
         dispatch(checkUserAuthStatus())
-      }).then(
-        () => {
+        return userId
+      }).then(userId => {
+        axios.patch(`/users/updatetime/${userId}`)
         }
       )
       .catch(err => {
