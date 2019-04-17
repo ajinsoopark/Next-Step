@@ -64,7 +64,7 @@ const getAllQandAForOneUser = (req, res, next) => {
 
 const getCountAnswersofOneUser = (req, res, next) => {
     let userId = parseInt(req.params.id);
-    db.any('SELECT COUNT(id) FROM answers WHERE user_id=$1', [userId])
+    db.any('SELECT COUNT(DISTINCT question_id) FROM answers WHERE user_id=$1', [userId])
     .then(count => {
         res.status(200)
         .json({
