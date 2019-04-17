@@ -18,12 +18,13 @@ class SideNavMenu extends Component {
     constructor () {
         super ()
         this.state = {
-
+            activeTab: ''
         }
     }
 
     render () {
-        console.log(this.props)
+        const { activeTab } = this.state
+
         return (
             <div className='sideContainer'>
                <SideNav onSelect={(selected) => {
@@ -32,11 +33,15 @@ class SideNavMenu extends Component {
                    if (location.pathname !== route) {
                        history.push(route)
                    }
+                   this.setState({ activeTab: selected })
                 }}>
                 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
                 <SideNav.Nav>
                     
-                    <NavItem className = "sideNav_leaderboard" eventKey='leaderboard'>
+                    <NavItem 
+                    className = "sideNav_leaderboard" 
+                    eventKey='leaderboard' 
+                    active={activeTab === 'leaderboard' ? true : false}>
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {leaderboardIcon} */}
@@ -48,8 +53,11 @@ class SideNavMenu extends Component {
                                 Leaderboard
                         </NavText>
                     </NavItem>
-
-                    <NavItem className = "sideNav_questions" eventKey='questions'>
+        
+                    <NavItem 
+                    className = "sideNav_questions" 
+                    eventKey='questions'
+                    active={activeTab === 'questions' ? true : false}>
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {questionsIcon} */}
@@ -61,7 +69,10 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
-                    <NavItem className = "sideNav_answers" eventKey='answers'>
+                    <NavItem 
+                    className = "sideNav_answers" 
+                    eventKey='answers'
+                    active={activeTab === 'answers' ? true : false}>
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {answerIcon2} */}
@@ -75,7 +86,10 @@ class SideNavMenu extends Component {
                     </NavItem>
 
 
-                    <NavItem className = "sideNav_tips" eventKey='advice'>
+                    <NavItem 
+                    className = "sideNav_tips" 
+                    eventKey='advice'
+                    active={activeTab === 'advice' ? true : false}>
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {tipsIcon} */}
@@ -87,7 +101,10 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
-                    <NavItem className = "sideNav_about" eventKey='about'>
+                    <NavItem 
+                    className = "sideNav_about" 
+                    eventKey='about'
+                    active={activeTab === 'about' ? true : false}>
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {aboutIcon2} */}
