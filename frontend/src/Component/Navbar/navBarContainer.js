@@ -5,7 +5,7 @@ import {onSearch} from "../../Redux/Actions/searchActions.js"
 
 
 // import NavBar from "./navBar.js"
-import NavBar2 from "./navBar_2.js"
+import NavBar2 from "./navBar2.js"
 // import App  from "../home/home.js"
 
 

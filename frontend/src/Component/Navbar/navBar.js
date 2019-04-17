@@ -7,9 +7,9 @@ import './navBar.css'
 const logo = require("../../Images/nextStepLogo.png")
 
 class NavBar extends Component{
-  constructor (props) {
-    super(props)
-  }
+  // constructor (props) {
+  //   super(props)
+  // }
 
   componentDidMount() {
     // console.log(this.props)

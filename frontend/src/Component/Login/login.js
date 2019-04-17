@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router"
 
-import {NavLink, Redirect} from 'react-router-dom';
-import NavBar from "../Navbar/navBarContainer"
+import {NavLink} from 'react-router-dom';
+// import NavBar from "../Navbar/navBarContainer"
 
 
 class Login extends Component{

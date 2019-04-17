@@ -29,8 +29,8 @@ class Question extends Component {
   axiosGetAnswers = () =>{
     let paramsID = this.props.match.params.id
 
-    paramsID ? 
-    
+    paramsID ?
+
      axios.get(`/answers/${paramsID}/question`).then((res)=>{
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
@@ -42,7 +42,7 @@ class Question extends Component {
      }).catch((err) => {
        console.log(err)
      })
-    :  
+    :
     console.log("Is EMPTY?")
   }
 
@@ -50,15 +50,15 @@ class Question extends Component {
     let paramsID = this.props.match.params.id
     let userID = Auth.getTokenID()
     // console.log(userID)
-    paramsID ? 
+    paramsID ?
    //THIS IS AXIOS BY A QUERY
      axios.get(`/answers/byuser/byquestion`,
      {
-       params : 
+       params :
        {userID : userID,
        questionID: paramsID}
      }
-     
+
      ).then((res)=>{
        this.setState({
          userAnswerStatus: res.data.status,
@@ -69,19 +69,19 @@ class Question extends Component {
      }).catch((err) => {
        console.log(err)
      })
-    :  
+    :
     console.log("Is EMPTY?")
   }
 
-  
+
   TabSelectedChange = (tabIndex) =>{
     this.setState({
       tabIndex: tabIndex
     })
     console.log(this.state)
   }
-  
-  
+
+
   componentDidMount(){
     
 
@@ -104,9 +104,9 @@ render(){
           currentUser = {Auth.getTokenID()}
           questionID = {this.props.match.params.id}
           axiosGetUserAnswerByQuestion = {this.axiosGetUserAnswerByQuestion}
-           axiosGetAnswers = {this.axiosGetAnswers}          
-          
-        
+           axiosGetAnswers = {this.axiosGetAnswers}
+
+
           />
         </div>
 

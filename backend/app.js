@@ -15,6 +15,7 @@ const questionsRouter = require('./routes/questions');
 const answersRouter = require('./routes/answers');
 const likesRouter = require('./routes/likes');
 const tipsRouter = require('./routes/tips');
+const tipcatsRouter = require('./routes/tipcats');
 const categoriesRouter = require('./routes/categories');
 const feedbacksRouter = require('./routes/feedbacks');
 
@@ -45,9 +46,10 @@ app.use('/users', usersRouter);
 app.use('/questions', questionsRouter);
 app.use('/answers', answersRouter);
 app.use('/categories', categoriesRouter);
-app.use('/tips', tipsRouter)
-app.use('/likes', likesRouter)
-app.use('/feedbacks',feedbacksRouter)
+app.use('/tips', tipsRouter);
+app.use('/tipcats', tipcatsRouter);
+app.use('/likes', likesRouter);
+app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 // app.use('/*', indexRouter);
 
