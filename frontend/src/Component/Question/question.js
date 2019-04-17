@@ -83,6 +83,8 @@ class Question extends Component {
   
   
   componentDidMount(){
+    
+
     //get Answers based on params URL
     this.axiosGetAnswers()
     this.axiosGetUserAnswerByQuestion()
@@ -90,7 +92,8 @@ class Question extends Component {
   }
 
 render(){
-  // console.log(this.state)
+  console.log(this.props)
+    console.log(this.state)
   return(
         <div className="Question">
         <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1>
