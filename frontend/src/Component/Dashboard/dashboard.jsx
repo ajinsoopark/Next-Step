@@ -5,6 +5,7 @@ import Progress from '../Progress/progress'
 import DashSplash from './dashSplash'
 import RandomQuestion from './randomQuestion'
 
+
 import './dashboard.css'
 
 class Dashboard extends Component {
@@ -18,6 +19,7 @@ class Dashboard extends Component {
         }
     }
     componentDidMount () {
+        console.log(this.props)
        this.props.function_checkStatus()
        axios.get('/questions/random')
        .then(res => {
