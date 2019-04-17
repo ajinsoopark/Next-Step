@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios'
 import './user.css'
+import Avatar from 'react-avatar';
 
 class User extends Component {
   constructor(props){
@@ -51,9 +52,7 @@ class User extends Component {
             <p>Full Name: {name}</p>
           </div>
           <div className='join'>
-            <p>
-              profile picture
-            </p>
+            <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
             <p>
               join data
             </p>

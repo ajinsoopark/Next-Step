@@ -199,6 +199,21 @@ const getAllAnswersWithQuestionsLikes = (req, res, next) => {
     })
 }
 
+const getAllUserProgress =(req,res)=>{
+  db.any('SELECT users.id, users.username, COUNT (DISTINCT question_id) FROM answers JOIN users ON answers.user_id=users.id GROUP BY users.id, users.username ORDER BY COUNT desc')
+  .then(response=>{
+    res.status(200)
+    .json({
+      status:'success',
+      response,
+      message: 'This is the current leaderboard of people who answered questions'
+    })
+  })
+  .catch(err=>{
+    console.log(err)
+  })
+}
+
 module.exports = {
     getAllAnswers,
     getSingleAnswer,
@@ -209,5 +224,6 @@ module.exports = {
     deleteSingleAnswer,
     getAllAnswersWithTheQuestion,
     getAnswerByQuestionByUser,
-    getAllAnswersWithQuestionsLikes
+    getAllAnswersWithQuestionsLikes,
+    getAllUserProgress
 }

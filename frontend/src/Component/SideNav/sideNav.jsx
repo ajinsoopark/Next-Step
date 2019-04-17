@@ -43,12 +43,18 @@ class SideNavMenu extends Component {
                     eventKey='leaderboard' 
                     active={activeTab === 'leaderboard' ? true : false}>
                         <NavIcon>
+
+                            <NavLink className='sideNavLink' to={'/leaderboard'}>
+
                                 <div className='sideBarIcon'>
                                     {/* {leaderboardIcon} */}
                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
                                 </div>
                         </NavIcon>
                         <NavText>
+
+                            <NavLink className='sideNavLink' to={'/leaderboard'}>
+
                                 Leaderboard
                         </NavText>
                     </NavItem>

@@ -9,9 +9,11 @@ const { getAllAnswers,
         deleteSingleAnswer,
         getAllAnswersWithTheQuestion,
         getAnswerByQuestionByUser,
-        getAllAnswersWithQuestionsLikes } = require('../db/queries/answerQueries')
+        getAllAnswersWithQuestionsLikes,
+        getAllUserProgress } = require('../db/queries/answerQueries')
 
 router.get('/', getAllAnswers);
+router.get('/progress',getAllUserProgress);
 router.get('/user/:id', getAllQandAForOneUser);
 router.get('/count/user/:id', getCountAnswersofOneUser);
 router.get('/:id/question/',getAllAnswersWithTheQuestion)
