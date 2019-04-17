@@ -16,6 +16,7 @@ import Dashboard from '../Dashboard/dashboardContainer'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
+import AnswerFeed from '../Answers/answerFeedContainer'
 
 
 //CSS
@@ -37,7 +38,7 @@ class Home extends Component {
 
     render () {
         const { expanded } = this.state
-        // console.log(this.props)
+
         return (
             <div>
                 <NavBar2 logoutUser={this.props.logout_user} />
@@ -73,6 +74,7 @@ class Home extends Component {
                           <Route path = '/search/:search/:filter'
                               render={(props) => <Search{...props} />}
                               />
+                          <Route path='/answers' render={() => <AnswerFeed />}/>
                         </Switch>
                     </div>
             </div>

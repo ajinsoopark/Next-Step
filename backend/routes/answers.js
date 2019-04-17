@@ -8,7 +8,8 @@ const { getAllAnswers,
         editSingleAnswer,
         deleteSingleAnswer,
         getAllAnswersWithTheQuestion,
-        getAnswerByQuestionByUser } = require('../db/queries/answerQueries')
+        getAnswerByQuestionByUser,
+        getAllAnswersWithQuestionsLikes } = require('../db/queries/answerQueries')
 
 router.get('/', getAllAnswers);
 router.get('/user/:id', getAllQandAForOneUser);
@@ -17,6 +18,8 @@ router.get('/:id/question/',getAllAnswersWithTheQuestion)
 router.get('/byuser/byquestion', getAnswerByQuestionByUser);
 //DO WE NEED THE ROUTE DOWN BELOW? - GET SINGLE ANSWER?
 router.get('/:id', getSingleAnswer);
+
+router.get('/withlikes/:id', getAllAnswersWithQuestionsLikes)
 
 router.get('/', getAllAnswers);
 router.post('/', addNewAnswer);
