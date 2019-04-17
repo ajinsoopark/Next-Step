@@ -31,7 +31,7 @@ class SideNavMenu extends Component {
 
                     <NavItem className = "sideNav_leaderboard">
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/dashbaord'}>
+                            <NavLink className='sideNavLink' to={'/leaderboard'}>
                                 <div className='sideBarIcon'>
                                     {/* {leaderboardIcon} */}
                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
@@ -40,7 +40,7 @@ class SideNavMenu extends Component {
                             </NavLink>
                         </NavIcon>
                         <NavText>
-                            <NavLink className='sideNavLink' to={'/dashbaord'}>
+                            <NavLink className='sideNavLink' to={'/leaderboard'}>
                                 Leaderboard
                             </NavLink>
                         </NavText>
