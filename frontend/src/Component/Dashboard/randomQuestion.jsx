@@ -1,19 +1,20 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const RandomQuestion = ({ questionId, categoryId, questionBody, category }) => {
 
     return (
-        <div className='randomQuestionContainer'>
-            <p>Random Question!</p>
-            <div className='randomQ'>
-                <div className='dashCategory'>
-                    {category}
+        <NavLink className='randomQuestionContainer' to={`/questions/${questionId}`}>
+                <p className='randomQuestionP'>Random Question!</p>
+                <div className='randomQ'>
+                    <div className='dashCategory'>
+                        <u>Category</u>: {category}
+                    </div>
+                    <div className='dashQuestion'>
+                        {questionBody}
+                    </div>
                 </div>
-                <div className='dashQuestion'>
-                    {questionBody}
-                </div>
-            </div>
-        </div>
+        </NavLink>
     )
 }
 

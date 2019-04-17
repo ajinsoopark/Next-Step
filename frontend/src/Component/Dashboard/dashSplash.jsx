@@ -1,6 +1,8 @@
 import React from 'react'
 
-import { smiley } from './smiley'
+//NPM REACT-AVAATAR
+import Avatar from 'react-avatar';
+
 
 const DashSplash = ({ userName }) => {
 
@@ -14,9 +16,7 @@ const DashSplash = ({ userName }) => {
                     { userName ? userName : '' }
                 </div>
             </div>
-            <div className='splashEmote'>
-                { smiley }
-            </div>
+        <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
         </div>
     )
 }

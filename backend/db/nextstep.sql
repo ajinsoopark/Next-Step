@@ -9,7 +9,8 @@ CREATE TABLE users (
   first_name VARCHAR NOT NULL,
   last_name VARCHAR,
   email VARCHAR NOT NULL UNIQUE,
-  password_digest VARCHAR NOT NULL
+  password_digest VARCHAR NOT NULL,
+  last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE categories (
@@ -516,6 +517,7 @@ INSERT INTO likes(answer_id, user_id) VALUES
 (101, 2),
 (102, 3);
 
+
 INSERT INTO tipcats(tipcat) VALUES 
 ('Before'),
 ('During'),
@@ -553,4 +555,3 @@ Also make a note of anything you wanted to say in the interview but didn’t get
 
 In addition to writing down the material that was covered, you should look at it with a critical eye to identify what went well and what didn’t. Take this information and use it to practice and improve for your next interview.  Analyzing your interview will help you identify any areas that you need to improve on, and will make sure you don’t forget any important details from the interview.'),
 (3, 'Be patient.', 'Waiting to hear back from a company after you’ve interviewed can be incredibly stressful. Remember that everything takes time, and it’s all part of the process. It’s easy to keep replaying the interview over and over in your mind, but doing that too much will only lead to frustration. The more you analyze something, the more critical you become. Add the stress of waiting and not knowing to the mix, and before you know it you’ll have found a hundred things you think you did wrong in the interview. It’s best to analyze once or twice at most, send your follow up messages, then try to relax knowing that you did everything you could.');
-

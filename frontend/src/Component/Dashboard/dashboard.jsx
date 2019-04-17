@@ -5,11 +5,12 @@ import Progress from '../Progress/progress'
 import DashSplash from './dashSplash'
 import RandomQuestion from './randomQuestion'
 
+
 import './dashboard.css'
 
 class Dashboard extends Component {
-    constructor () {
-        super ()
+    constructor (props) {
+        super (props)
         this.state = {
             questionId: '',
             categoryId: '',
@@ -18,6 +19,7 @@ class Dashboard extends Component {
         }
     }
     componentDidMount () {
+        console.log(this.props)
        this.props.function_checkStatus()
        axios.get('/questions/random')
        .then(res => {
@@ -32,18 +34,19 @@ class Dashboard extends Component {
     }
 
     render () {
+      // console.log(this.props.state.CurrentAutState.userID)
         const { questionId, categoryId, questionBody, category } = this.state
         return (
             <div className='dashboardContainer'>
                 <div className='splashAndQuestion'>
                     <DashSplash userName={ this.props.state.CurrentAutState.username }/>
-                    <RandomQuestion 
+                    <RandomQuestion
                      questionId={questionId}
                      categoryId={categoryId}
                      questionBody={questionBody}
                      category={category}/>
                 </div>
-                <Progress/>
+                <Progress userID={this.props.state.CurrentAutState.userID}/>
             </div>
         )
     }

@@ -1,0 +1,17 @@
+.userInfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.join{
+  display: flex;
+  flex-direction: column;
+}
+
+.completed{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%
+}
