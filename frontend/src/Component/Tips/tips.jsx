@@ -1,45 +1,53 @@
 import React from "react"
 import axios from "axios"
-import {Link} from "react-router-dom"
+import DisplayTipcats from "./displayTipcats"
 import "./tips.css"
 
 export default class Tips extends React.Component {
   constructor(){
     super()
     this.state = {
-      allTips: []
+      allTips: [],
+      allTipcats: [],
+      selectedTipcat: 1
     }
   }
 
   componentDidMount = () => {
     this.getAllTips()
+    this.getAllTipcats()
   }
 
   getAllTips = () => {
     axios
     .get("/tips")
     .then(res => {
-      console.log("this is ALL TIPS: ", res.data.tips)
+      console.log("this is ALL TIPS when component mounts: ", res.data.tips)
       this.setState({
         allTips:res.data.tips
       })
     })
   }
 
-  displayTips = (allTips) => {
-    return(allTips.map((tip, i) => {
-            return(
-            <div className="tipsParent">
-                <div key={i} className="tipsBody">
-                    <Link to={"/tips/" + tip.id}>
-                        <div className="tipBodyGC">{tip.tip_body}</div>
-                    </Link>
-                </div>
-            </div>
-            )
-    }))
-}
+  getAllTipcats = () => {
+    axios
+    .get("/tipcats")
+    .then(res => {
+      console.log("this is ALL TIPCATS when component mounts: ", res.data.tipcats)
+      this.setState({
+        allTipcats: res.data.tipcats
+      })
+      console.log("this is allTipcats state: ", this.state.allTipcats)
+    })
+  }
 
+  handleClick = (e) => {
+    this.setState({
+        selectedTipcat: e.target.value
+    })
+    console.log("this is TARGET VALUE ", e.target.value)
+    console.log("this is selectedTipcate after setState: ", this.state.selectedTipcat)
+  }
 
 render(){
   return(
@@ -51,7 +59,7 @@ render(){
               </div>
           </div>
           <div>
-            {this.displayTips(this.state.allTips)}
+            <DisplayTipcats allTips={this.state.allTips} allTipcats={this.state.allTipcats} selectedTipcat={this.state.selectedTipcat} handleClick={this.handleClick} />
           </div>
     
         </div>
