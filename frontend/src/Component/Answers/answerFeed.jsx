@@ -3,6 +3,8 @@ import axios from 'axios';
 
 import AnswerPost from './answerPost'
 
+import './answerFeed.css'
+
 class AnswerFeed extends Component {
     constructor () {
         super ()
@@ -55,11 +57,13 @@ class AnswerFeed extends Component {
                             }) : ''
 
         return (
-            <div className='answerFeedContainer'>
-                <div className='personalAnswers'>
+            <div className='personalAnswerFeedContainer'>
+                <div className='personalAnswer'>
                     Personal Answers
                 </div>
-                {displayAnswers}
+                <div className='personalAnswerFeed'>
+                    {displayAnswers}
+                </div>
             </div>
         )
     }

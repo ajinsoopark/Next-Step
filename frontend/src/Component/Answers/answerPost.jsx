@@ -13,19 +13,16 @@ class AnswerPost extends Component {
 
         return (
             <div className='answerQuestionPostContainer'>
-                <div className='answerQuestion'>
-                    { question_body }
-                </div>
                 <div className='userCategoryLikes'>
-                    <div className='userNameContainer'>
-                        {username}
-                    </div>
                     <div className='categoryContainer'>
                         {category}
                     </div>
                     <div className='likeContainer'>
-                        {like_count ? like_count : 0}
+                        {like_count ? like_count : 0} likes
                     </div>
+                </div>
+                <div className='answerQuestion'>
+                    { question_body }
                 </div>
                 <div className='answerBody'>
                     {answer_body}
