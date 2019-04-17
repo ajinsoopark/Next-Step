@@ -158,7 +158,7 @@ const getAllAnswersWithTheQuestion = (req, res, next) => {
 const getAnswerByQuestionByUser = (req, res, next) => {
     // console.log(req.query.questionID)
     // console.log(req.query.userID)
-    db.oneOrNone('SELECT questions.id AS Question_ID, answers.id AS answers_ID, answer_body, users.id AS user_id, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1 AND users.id = $2',[req.query.questionID, req.query.userID])
+    db.oneOrNone('SELECT questions.id AS Question_ID, answers.id AS answers_ID, answer_body, users.id AS user_id, username AS by_user, l.count AS like_count FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON ANSWERS.id = l.answer_id WHERE question_id = $1 AND users.id = $2',[req.query.questionID, req.query.userID])
     .then(answer => {
         res.status(200)
         .json({
