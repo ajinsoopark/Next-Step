@@ -7,6 +7,7 @@
     "@trendmicro/react-sidenav": "^0.4.5",
     "aos": "^2.3.4",
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
     "nodemon": "^1.18.10",
     "react": "^16.8.6",
     "react-avatar": "^3.6.0",

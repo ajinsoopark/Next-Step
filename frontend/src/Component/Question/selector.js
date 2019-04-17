@@ -3,6 +3,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
 
+
 class Selection extends Component {
 constructor (props) {
   super(props)
@@ -15,10 +16,11 @@ onChange = (event) =>{
   this.setState({
     [event.target.name] : event.target.value
   })
-  // console.log(this.state)
 }
 postAnswer = (event) => {
   event.preventDefault()
+
+  if(this.state.answer_body.length > 20){
   axios.post('/answers',{
     user_id: this.props.currentUser,
     question_id: this.props.questionID,
@@ -26,15 +28,19 @@ postAnswer = (event) => {
   }).then(()=>{
     this.props.axiosGetUserAnswerByQuestion()
     this.props.axiosGetAnswers()
+    this.setState({
+      answer_body: ""
+    })
   })
+  }
 }
 
 mapUserAnwerToRender = () => {
-  if(!this.props.userAnswer){
+  if(true){
     return (
       <div className = "userAnswerArea" >
-      <form onChange = {this.onChange} onSubmit = {this.postAnswer}> 
-        <textarea name = "answer_body"
+      <form onSubmit = {this.postAnswer}> 
+       <textarea onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
         placeholder = "Enter your Answer Here"> 
       </textarea>
       <input type = "Submit" />
@@ -75,11 +81,12 @@ render () {
 
         <TabList> 
         <Tab> Your Answer </Tab>
-        <Tab> Others Answers </Tab>
+        <Tab> All Answers </Tab>
         </TabList>
 
         <TabPanel> 
         {this.mapUserAnwerToRender()}
+
         </TabPanel>
         
         <TabPanel> 
@@ -88,9 +95,30 @@ render () {
         
         
         </Tabs>
+
+
+
+
       </>
   )
 }
 }
 
 export default Selection
+
+
+
+
+
+
+    // <TextField
+    //     id="standard-multiline-flexible"
+    //     label="Your Answer"
+    //     multiline
+    //     rowsMax="10"
+    //     value={this.state.answer_body}
+    //     name = "answer_body"
+    //     className= "enter_text"
+    //     margin="none"
+    //     fullWidth
+    //   />
