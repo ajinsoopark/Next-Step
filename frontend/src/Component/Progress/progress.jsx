@@ -8,7 +8,7 @@ class Progress extends Component {
   constructor (props) {
     super(props)
     this.state={
-      user:null,
+      user:Auth.getTokenID(),
       questions:null,
       answers: 0
     }
@@ -16,9 +16,6 @@ class Progress extends Component {
   componentDidMount  (){
 
     // get the userId & see how many questions they've answered
-     this.setState({
-        user:Auth.getTokenID()
-      })
 
      axios.get(`answers/count/user/${Auth.getTokenID()}`).then(
       (res)=>{
@@ -33,9 +30,6 @@ class Progress extends Component {
       })
     })
   }
-
-
-
 
   render () {
     // console.log(this.props)
@@ -52,13 +46,16 @@ class Progress extends Component {
         <p>
           You have completed {answers} out of {questions} questions.
         </p>
+
         <div className='pbar'>
           <div className ='innerBar' style={style}>
           </div>
         </div>
+
         <div className='percentDiv'>
           <p>{completion}</p>
         </div>
+        
       </div>
     )
   }
