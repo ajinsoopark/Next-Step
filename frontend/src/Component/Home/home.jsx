@@ -13,6 +13,7 @@ import QuestionList from "../Questions/questionList"
 import Question from "../Question/question.js"
 
 import Dashboard from '../Dashboard/dashboardContainer'
+import Leaderboard from '../Leaderboard/leaderboard'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
@@ -83,6 +84,7 @@ class Home extends Component {
                               render={(props) => <User{...props} />}
                               />
                           <Route path='/answers' render={() => <AnswerFeed />}/>
+                          <Route path='/leaderboard' render={() => <Leaderboard />}/>
 
                         </Switch>
                     </div>
