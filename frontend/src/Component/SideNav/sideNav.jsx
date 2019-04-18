@@ -49,7 +49,6 @@ class SideNavMenu extends Component {
                                 <div className='sideBarIcon'>
                                     {/* {leaderboardIcon} */}
                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
-
                                 </div>
                             </NavLink>
                         </NavIcon>

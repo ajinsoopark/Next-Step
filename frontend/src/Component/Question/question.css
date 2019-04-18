@@ -45,10 +45,51 @@
   line-height: 1.2;
 }
 
+.userAnswerArea form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.userAnswerArea textarea {
+  min-width: 66vw;
+  min-height: 15vh;
+  resize: none;
+  border: 1px solid rgb(106, 113, 138);
+  background-color: rgb(230, 232, 240);
+  border-radius: 5px;
+  margin: 1%;
+  padding: 1%;
+  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+}
+
+.userAnswerArea input[type="Submit"] {
+  margin: 1%;
+  /* padding: 1%; */
+  min-height: 15vh;
+  /* height: calc(25px + 6 * ((100vw - 320px) / 680)); */
+  border: 1px solid rgb(23, 48, 138);
+  background-color: rgb(230, 232, 240);
+  border-radius: 5px;
+  font-size: calc(15px + 6 * ((100vw - 320px) / 680));
+}
+
+
+.userAnswerArea input[type="Submit"]:hover {
+  transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+  background-color: rgb(128, 123, 207);
+}
+
+.userAnswerArea input[type="Submit"]:focus {
+  background-color: rgb(22, 134, 246);
+}
+
+
+
 @media screen and (max-width: 560px) {
   .QuestionTitle {
-    text-align: justify;
-    font-size: 100%;
+    text-align: center;
+    font-size: calc(18px + 6 * ((100vw - 560px) / 680));
     overflow: hidden;
     text-overflow: ellipsis;
   }
