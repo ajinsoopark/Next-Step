@@ -4,7 +4,7 @@ body {
     background-color: #ECEEF7
 }
 
-.tipsTitle {
+.adviceTitle {
     display: flex;
     justify-content: center;
     padding-bottom: 30px;
@@ -13,7 +13,15 @@ body {
     font-family: 'Cabin', sans-serif;
 }
 
-.tipsTitleChild {
+.adviceTitleChild {
     font-size: 45px;
     font-weight: bold;
+}
+
+
+.tipTitle {
+    display: flex;
+    justify-content: center;
+    font-style: #171A26;
+    font-family: 'Cabin', sans-serif;
 }

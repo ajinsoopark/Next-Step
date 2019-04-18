@@ -3,7 +3,6 @@ import DisplayTips from "./displayTips"
 
 
 const DisplayTipcats = ({ allTipcats, allTips, selectedTipcat, handleClick }) => {
-    console.log("THIS IS ALL TIPCATS: ", allTipcats)
     let tipcatList = allTipcats.map((tipcat, i) => {
         return(
             <div key={i} className="allButtons">
