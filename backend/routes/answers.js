@@ -16,7 +16,7 @@ router.get('/', getAllAnswers);
 router.get('/progress',getAllUserProgress);
 router.get('/user/:id', getAllQandAForOneUser);
 router.get('/count/user/:id', getCountAnswersofOneUser);
-router.get('/:id/question/',getAllAnswersWithTheQuestion)
+router.get('/question/',getAllAnswersWithTheQuestion)
 router.get('/byuser/byquestion', getAnswerByQuestionByUser);
 //DO WE NEED THE ROUTE DOWN BELOW? - GET SINGLE ANSWER?
 router.get('/:id', getSingleAnswer);
@@ -25,8 +25,8 @@ router.get('/withlikes/:id', getAllAnswersWithQuestionsLikes)
 
 router.get('/', getAllAnswers);
 router.post('/', addNewAnswer);
-router.patch('/:id', editSingleAnswer);
 router.delete('/:id', deleteSingleAnswer);
+router.patch('/:id', editSingleAnswer);
 
 
 module.exports = router;
