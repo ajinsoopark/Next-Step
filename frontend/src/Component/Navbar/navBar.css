@@ -24,6 +24,7 @@ a{
   position: sticky;
   top: 0px;
   width: 100%;
+  z-index: 999
 }
 .buttons{
   display: flex;

@@ -25,25 +25,7 @@
   place-items: center;
 }
 
-.answer {
-  border: 1px solid rgb(106, 113, 138);
-  background-color: rgb(198, 200, 206);
-  border-radius: 10px;
-  width: 80%;
-  margin: 2%;
-  padding: 4%;
-}
 
-.answer h2 {
-  text-align: left;
-  font-weight: bold;
-}
-
-.answer p {
-  margin: 1%;
-  padding: 1%;
-  line-height: 1.2;
-}
 
 .userAnswerArea form {
   display: flex;

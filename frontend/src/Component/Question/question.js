@@ -4,7 +4,7 @@ import Auth from "../../Auth/Auth"
 import axios from "axios"
 import {withRouter} from "react-router"
 
-import Selection from "./selector"
+import Answers from "./answers"
 
 import "./question.css"
 
@@ -14,7 +14,8 @@ class Question extends Component {
     this.state = ({
       CurrentQuestion: null,
       CurrentAnswers: [],
-      tabIndex: 0
+      tabIndex: 0,
+      userAnswer: []
     })
   }
 
@@ -29,10 +30,15 @@ class Question extends Component {
 
   axiosGetAnswers = () =>{
     let paramsID = this.props.match.params.id
-
+    let userID = Auth.getTokenID()
     paramsID ?
-
-     axios.get(`/answers/${paramsID}/question`).then((res)=>{
+     axios.get(`/answers/question`,{
+       params: 
+       {
+         id: paramsID,
+         user_id: userID
+       }
+     }).then((res)=>{
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
@@ -84,8 +90,6 @@ class Question extends Component {
 
 
   componentDidMount(){
-
-
     //get Answers based on params URL
     this.axiosGetAnswers()
     this.axiosGetUserAnswerByQuestion()
@@ -93,13 +97,11 @@ class Question extends Component {
   }
 
 render(){
-  // console.log(this.props)
-  console.log(this.state)
-  return(
+    return(
         <div className="Question">
         <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1>
-        <div className = "Selection" >
-          <Selection tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
+        <div className = "Answers" >
+          <Answers tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
           CurrentAnswers = {this.state.CurrentAnswers}
           userAnswer = {this.state.userAnswer}
           currentUser = {Auth.getTokenID()}

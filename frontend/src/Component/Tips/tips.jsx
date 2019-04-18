@@ -22,7 +22,6 @@ export default class Tips extends React.Component {
     axios
     .get("/tips")
     .then(res => {
-      console.log("this is ALL TIPS when component mounts: ", res.data.tips)
       this.setState({
         allTips:res.data.tips
       })
@@ -33,11 +32,9 @@ export default class Tips extends React.Component {
     axios
     .get("/tipcats")
     .then(res => {
-      console.log("this is ALL TIPCATS when component mounts: ", res.data.tipcats)
       this.setState({
         allTipcats: res.data.tipcats
       })
-      console.log("this is allTipcats state: ", this.state.allTipcats)
     })
   }
 
@@ -45,16 +42,14 @@ export default class Tips extends React.Component {
     this.setState({
         selectedTipcat: e.target.value
     })
-    console.log("this is TARGET VALUE ", e.target.value)
-    console.log("this is selectedTipcate after setState: ", this.state.selectedTipcat)
   }
 
 render(){
   return(
 
         <div className="tipsList">
-          <div className="tipsTitle">
-              <div className="tipsTitleChild">
+          <div className="adviceTitle">
+              <div className="adviceTitleChild">
                 <h1>Interview Advice</h1>
               </div>
           </div>
