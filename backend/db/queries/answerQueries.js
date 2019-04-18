@@ -136,7 +136,7 @@ const deleteSingleAnswer = (req, res, next) => {
 
 
 const getAllAnswersWithTheQuestion = (req, res, next) => {
-    db.any('SELECT questions.id AS Question_ID, question_body, answers.id AS answers_ID, answer_body, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1',req.params.id)
+    db.any('SELECT users.id AS user_id, questions.id AS Question_ID, question_body, answers.id AS answers_ID, answer_body, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1',req.params.id)
     .then(answers => {
         res.status(200)
         .json({
@@ -218,7 +218,7 @@ const getAllUserProgress =(req,res)=>{
 // queries from the lines below will be for a specified user
 // including the likes of the answers
 // question from where the answer came from
-// and category in which the question was in 
+// and category in which the question was in
 
 const getAnswersByCategoryAndOld = (req, res, next) => {
     let userId = parseInt(req.params.userId)

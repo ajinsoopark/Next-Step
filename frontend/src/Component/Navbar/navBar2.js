@@ -11,7 +11,7 @@ class NavBar2 extends Component{
   constructor (props) {
     super(props)
     this.state={
-      search:'users',
+      search:'questions',
       filter:null,
     }
   }
@@ -43,10 +43,10 @@ class NavBar2 extends Component{
       <div className = 'search'>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <select name='search'>
-            <option value='users' >users</option>
-            <option value='questions' >questions</option>
+            <option value='questions' >Questions</option>
+            <option value='users' >Users</option>
           </select>
-          <input type='text' name='filter' />
+          <input type='text' name='filter' placeholder=' Search'/>
           <input type='submit'/>
         </form>
       </div>
