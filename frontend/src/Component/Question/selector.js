@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
@@ -39,19 +40,19 @@ mapUserAnwerToRender = () => {
   if(true){
     return (
       <div className = "userAnswerArea" >
-      <form onSubmit = {this.postAnswer}> 
+      <form onSubmit = {this.postAnswer}>
        <textarea onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
-        placeholder = "Enter your Answer Here"> 
+        placeholder = "Enter your Answer Here">
       </textarea>
       <input type = "Submit" />
       </form>
       </div>
-    
+
     )
   }
   else {
     return (
-     <div className = "answer"> 
+     <div className = "answer">
      <h2> {this.props.userAnswer.by_user} </h2>
      <p> {this.props.userAnswer.answer_body} </p>
      </div>
@@ -60,11 +61,13 @@ mapUserAnwerToRender = () => {
 }
 
 mapAnswersToRender= (array) =>{
-  return( 
+  return(
     array.map(el => {
       return (
-        <div className = "answer" key ={el.author}> 
-        <h2> {el.author} </h2>
+        <div className = "answer" key ={el.author}>
+        <NavLink to={`/users/${el.authorId}`}>
+          <h2> {el.author} </h2>
+        </NavLink>
         <p> {el.answer} </p>
         </div>
       )
@@ -75,25 +78,26 @@ mapAnswersToRender= (array) =>{
 
 
 render () {
+  // console.log(this.props.CurrentAnswers)
   return (
       <>
         <Tabs selectedIndex={this.props.tabIndex} onSelect={tabIndex => this.props.TabSelectedChange(tabIndex)}>
 
-        <TabList> 
+        <TabList>
         <Tab> Your Answer </Tab>
         <Tab> All Answers </Tab>
         </TabList>
 
-        <TabPanel> 
+        <TabPanel>
         {this.mapUserAnwerToRender()}
 
         </TabPanel>
-        
-        <TabPanel> 
+
+        <TabPanel>
         {this.mapAnswersToRender(this.props.CurrentAnswers)}
         </TabPanel>
-        
-        
+
+
         </Tabs>
 
 
