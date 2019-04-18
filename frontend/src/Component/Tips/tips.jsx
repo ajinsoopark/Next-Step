@@ -13,7 +13,7 @@ export default class Tips extends React.Component {
     }
   }
 
-  componentDidMount = () => {
+  componentWillMount = () => {
     this.getAllTips()
     this.getAllTipcats()
   }
