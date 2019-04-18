@@ -215,6 +215,184 @@ const getAllUserProgress =(req,res)=>{
   })
 }
 
+
+// queries from the lines below will be for a specified user
+// including the likes of the answers
+// question from where the answer came from
+// and category in which the question was in
+
+const getAnswersByCategoryAndOld = (req, res, next) => {
+    let userId = parseInt(req.params.userId)
+    let categoryId = parseInt(req.params.catId)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 AND qc.category_id = $2 ORDER BY id ASC', [userId, categoryId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received oldest answers by category user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByCategoryAndNew = (req, res, next) => {
+    let userId = parseInt(req.params.userId)
+    let categoryId = parseInt(req.params.catId)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 AND qc.category_id = $2 ORDER BY id DESC', [userId, categoryId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received newest answers by category user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByCategoryAndMostPop = (req, res, next) => {
+    let userId = parseInt(req.params.userId)
+    let categoryId = parseInt(req.params.catId)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 AND qc.category_id = $2 ORDER BY like_count DESC', [userId, categoryId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received most popular answers by category for user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByCategoryAndLeastPop = (req, res, next) => {
+    let userId = parseInt(req.params.userId)
+    let categoryId = parseInt(req.params.catId)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 AND qc.category_id = $2 ORDER BY like_count ASC', [userId, categoryId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received least popular answers by category for user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByMostPop = (req, res, next) => {
+    let userId = parseInt(req.params.id)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 ORDER BY LIKE_count DESC', [userId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received most popular answers for user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByLeastPop = (req, res, next) => {
+    let userId = parseInt(req.params.id)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 ORDER BY LIKE_count ASC', [userId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received least popular answers for user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByNewest = (req, res, next) => {
+    let userId = parseInt(req.params.id)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 ORDER BY id DESC', [userId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received newest answers for user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
+const getAnswersByOldest = (req, res, next) => {
+    let userId = parseInt(req.params.id)
+    db.any('SELECT a.id, a.user_id, a.answer_body, u.username, qc.question_body, qc.category, COALESCE (l.count, 0) AS like_count FROM answers AS a FULL JOIN users AS u ON a.user_id = u.id FULL JOIN (SELECT q.id, q.question_body, c.category, q.category_id FROM questions AS q FULL JOIN categories AS c ON q.category_id = c.id) AS qc ON qc.id = a.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON a.id = l.answer_id WHERE a.user_id = $1 ORDER BY id ASC', [userId])
+    .then(answers => {
+        res.status(200)
+        .json({
+            status: 'Success',
+            answers,
+            message: `Received oldest answers for user(${userId})`
+        })
+    })
+    .catch(err => {
+        console.log(err)
+        res.json({
+            status: 'Failed',
+            message: err
+        })
+        next(err)
+    })
+}
+
 module.exports = {
     getAllAnswers,
     getSingleAnswer,
@@ -226,5 +404,13 @@ module.exports = {
     getAllAnswersWithTheQuestion,
     getAnswerByQuestionByUser,
     getAllAnswersWithQuestionsLikes,
-    getAllUserProgress
+    getAllUserProgress,
+    getAnswersByCategoryAndOld,
+    getAnswersByCategoryAndNew,
+    getAnswersByCategoryAndMostPop,
+    getAnswersByCategoryAndLeastPop,
+    getAnswersByLeastPop,
+    getAnswersByMostPop,
+    getAnswersByNewest,
+    getAnswersByOldest
 }

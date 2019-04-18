@@ -10,7 +10,15 @@ const { getAllAnswers,
         getAllAnswersWithTheQuestion,
         getAnswerByQuestionByUser,
         getAllAnswersWithQuestionsLikes,
-        getAllUserProgress } = require('../db/queries/answerQueries')
+        getAllUserProgress,
+        getAnswersByCategoryAndOld,
+        getAnswersByCategoryAndNew,
+        getAnswersByCategoryAndMostPop,
+        getAnswersByCategoryAndLeastPop,
+        getAnswersByLeastPop,
+        getAnswersByNewest,
+        getAnswersByOldest,
+        getAnswersByMostPop } = require('../db/queries/answerQueries')
 
 router.get('/', getAllAnswers);
 router.get('/progress',getAllUserProgress);
@@ -21,7 +29,18 @@ router.get('/byuser/byquestion', getAnswerByQuestionByUser);
 //DO WE NEED THE ROUTE DOWN BELOW? - GET SINGLE ANSWER?
 router.get('/:id', getSingleAnswer);
 
+//Answers with no sorting method
 router.get('/withlikes/:id', getAllAnswersWithQuestionsLikes)
+//Answers for user based on category, popularity, or time
+router.get('/category/old/:userId/:catId', getAnswersByCategoryAndOld)
+router.get('/category/new/:userId/:catId', getAnswersByCategoryAndNew)
+router.get('/category/popular/:userId/:catId', getAnswersByCategoryAndMostPop)
+router.get('/category/unpopular/:userId/:catId', getAnswersByCategoryAndLeastPop)
+//Answers for user based on popularity or time
+router.get('/old/:userId', getAnswersByOldest)
+router.get('/new/:userId', getAnswersByNewest)
+router.get('/popular/:userId', getAnswersByMostPop)
+router.get('/unpopular/:userId', getAnswersByLeastPop)
 
 router.get('/', getAllAnswers);
 router.post('/', addNewAnswer);

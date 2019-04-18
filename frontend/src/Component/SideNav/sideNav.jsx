@@ -37,10 +37,10 @@ class SideNavMenu extends Component {
                 }}>
                 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
                 <SideNav.Nav>
-                    
-                    <NavItem 
-                    className = "sideNav_leaderboard" 
-                    eventKey='leaderboard' 
+
+                    <NavItem
+                    className = "sideNav_leaderboard"
+                    eventKey='leaderboard'
                     active={activeTab === 'leaderboard' ? true : false}>
                         <NavIcon>
                             <NavLink className='sideNavLink' to={'/leaderboard'}>
@@ -49,20 +49,19 @@ class SideNavMenu extends Component {
                                     {/* {leaderboardIcon} */}
                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
                                 </div>
-                                </NavLink>
+                            </NavLink>
                         </NavIcon>
                         <NavText>
 
                             <NavLink className='sideNavLink' to={'/leaderboard'}>
 
                                 Leaderboard
-
-                                </NavLink>
+                            </NavLink>    
                         </NavText>
                     </NavItem>
-        
-                    <NavItem 
-                    className = "sideNav_questions" 
+
+                    <NavItem
+                    className = "sideNav_questions"
                     eventKey='questions'
                     active={activeTab === 'questions' ? true : false}>
                         <NavIcon>
@@ -76,8 +75,8 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
-                    <NavItem 
-                    className = "sideNav_answers" 
+                    <NavItem
+                    className = "sideNav_answers"
                     eventKey='answers'
                     active={activeTab === 'answers' ? true : false}>
                         <NavIcon>
@@ -93,8 +92,8 @@ class SideNavMenu extends Component {
                     </NavItem>
 
 
-                    <NavItem 
-                    className = "sideNav_tips" 
+                    <NavItem
+                    className = "sideNav_tips"
                     eventKey='advice'
                     active={activeTab === 'advice' ? true : false}>
                         <NavIcon>
@@ -108,8 +107,8 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
-                    <NavItem 
-                    className = "sideNav_about" 
+                    <NavItem
+                    className = "sideNav_about"
                     eventKey='about'
                     active={activeTab === 'about' ? true : false}>
                         <NavIcon>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
@@ -38,33 +39,6 @@ postAnswer = (event) => {
   }
 }
 
-deleteButton = (i,answers_id) => {
-console.log(this.state.xbutton) 
-console.log(answers_id)
-  if(parseInt(this.state.xbutton) === parseInt(answers_id)){
-    return (
-      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} > 
-    <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/ok.png" alt ="delete_icon"/ >
-
-    <p> confirm? </p>
-    </button>
-    )
-  }
-  else {
-
-  return( 
-    <>
-    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} > 
-    <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/cancel.png" alt ="delete_icon"/ >
-
-    <p> delete </p>
-    </button>
-    </>
-  )
-  }
-}
-
-
 mapUserAnswerToRender = (array) => {
   console.log(this.state)
   return( 
@@ -102,9 +76,9 @@ deleteActionFinal = (event) => {
 mapUserAnswerBoxToRender = (array) => {
     return (
       <div className = "userAnswerArea" >
-      <form onSubmit = {this.postAnswer}> 
+      <form onSubmit = {this.postAnswer}>
        <textarea onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
-        placeholder = "Enter your Answer Here"> 
+        placeholder = "Enter your Answer Here">
       </textarea>
       <input type = "Submit" />
       </form>
@@ -116,14 +90,14 @@ mapUserAnswerBoxToRender = (array) => {
   }
 
 mapAnswersToRender= (array) =>{
-  return( 
-    array.map((el,i)=> {
+  return(
+    array.map(el => {
       return (
-        <div className = "Answers" >
-        <div className = "answer" key ={i}> 
-        <h2> {el.author} </h2>
+        <div className = "answer" key ={el.author}>
+        <NavLink to={`/users/${el.authorId}`}>
+          <h2> {el.author} </h2>
+        </NavLink>
         <p> {el.answer} </p>
-        </div>
         </div>
       )
     })
@@ -131,13 +105,40 @@ mapAnswersToRender= (array) =>{
 
 }
 
+deleteButton = (i,answers_id) => {
+console.log(this.state.xbutton) 
+console.log(answers_id)
+  if(parseInt(this.state.xbutton) === parseInt(answers_id)){
+    return (
+      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} > 
+    <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/ok.png" alt ="delete_icon"/ >
+
+    <p> confirm? </p>
+    </button>
+    )
+  }
+  else {
+
+  return( 
+    <>
+    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} > 
+    <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/cancel.png" alt ="delete_icon"/ >
+
+    <p> delete </p>
+    </button>
+    </>
+  )
+  }
+}
+
 
 render () {
+  // console.log(this.props.CurrentAnswers)
   return (
       <>
         <Tabs selectedIndex={this.props.tabIndex} onSelect={tabIndex => this.props.TabSelectedChange(tabIndex)}>
 
-        <TabList> 
+        <TabList>
         <Tab> Your Answer </Tab>
         <Tab> Other Answers </Tab>
         </TabList>
@@ -147,8 +148,8 @@ render () {
         {this.mapUserAnswerToRender(this.props.userAnswer)}
 
         </TabPanel>
-        
-        <TabPanel> 
+
+        <TabPanel>
         {this.mapAnswersToRender(this.props.CurrentAnswers)}
         </TabPanel>
       
@@ -156,6 +157,7 @@ render () {
       </>
   )
 }
+
 }
 
 export default Answers
