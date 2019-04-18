@@ -43,7 +43,6 @@ class SideNavMenu extends Component {
                     eventKey='leaderboard'
                     active={activeTab === 'leaderboard' ? true : false}>
                         <NavIcon>
-
                             <NavLink className='sideNavLink' to={'/leaderboard'}>
 
                                 <div className='sideBarIcon'>

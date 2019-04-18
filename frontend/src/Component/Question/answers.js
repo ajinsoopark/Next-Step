@@ -3,13 +3,16 @@ import {NavLink} from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
+import "./answers.css"
 
 
-class Selection extends Component {
+
+class Answers extends Component {
 constructor (props) {
   super(props)
   this.state = {
-    answer_body: ""
+    answer_body: "",
+    xbutton: "140"
   }
 }
 
@@ -36,8 +39,41 @@ postAnswer = (event) => {
   }
 }
 
-mapUserAnwerToRender = () => {
-  if(true){
+mapUserAnswerToRender = (array) => {
+  console.log(this.state)
+  return( 
+    array.map((el,i) => {
+      return (
+        <div className = "Answers">
+        <div className = "answer" key = {el.answer_id}> 
+        <h2> {el.by_user} </h2>
+        <p> {el.answer_body} </p>
+        {this.deleteButton(i,el.answers_id)}
+        </div>
+        </div>
+      )
+    })
+  )
+}
+
+
+deleteAction = (event) => {
+  this.setState({
+    xbutton: event.currentTarget.value
+  })
+  
+}
+
+deleteActionFinal = (event) => {
+  let params = this.state.xbutton
+  axios.delete(`/answers/${params}`).then(()=>{
+    this.props.axiosGetUserAnswerByQuestion()
+    })
+  
+}
+
+
+mapUserAnswerBoxToRender = (array) => {
     return (
       <div className = "userAnswerArea" >
       <form onSubmit = {this.postAnswer}>
@@ -46,19 +82,12 @@ mapUserAnwerToRender = () => {
       </textarea>
       <input type = "Submit" />
       </form>
+      
       </div>
 
+      
     )
   }
-  else {
-    return (
-     <div className = "answer">
-     <h2> {this.props.userAnswer.by_user} </h2>
-     <p> {this.props.userAnswer.answer_body} </p>
-     </div>
-    )
-  }
-}
 
 mapAnswersToRender= (array) =>{
   return(
@@ -76,6 +105,32 @@ mapAnswersToRender= (array) =>{
 
 }
 
+deleteButton = (i,answers_id) => {
+console.log(this.state.xbutton) 
+console.log(answers_id)
+  if(parseInt(this.state.xbutton) === parseInt(answers_id)){
+    return (
+      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} > 
+    <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/ok.png" alt ="delete_icon"/ >
+
+    <p> confirm? </p>
+    </button>
+    )
+  }
+  else {
+
+  return( 
+    <>
+    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} > 
+    <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/cancel.png" alt ="delete_icon"/ >
+
+    <p> delete </p>
+    </button>
+    </>
+  )
+  }
+}
+
 
 render () {
   // console.log(this.props.CurrentAnswers)
@@ -85,30 +140,27 @@ render () {
 
         <TabList>
         <Tab> Your Answer </Tab>
-        <Tab> All Answers </Tab>
+        <Tab> Other Answers </Tab>
         </TabList>
 
-        <TabPanel>
-        {this.mapUserAnwerToRender()}
+        <TabPanel> 
+        {this.mapUserAnswerBoxToRender()}
+        {this.mapUserAnswerToRender(this.props.userAnswer)}
 
         </TabPanel>
 
         <TabPanel>
         {this.mapAnswersToRender(this.props.CurrentAnswers)}
         </TabPanel>
-
-
+      
         </Tabs>
-
-
-
-
       </>
   )
 }
+
 }
 
-export default Selection
+export default Answers
 
 
 
