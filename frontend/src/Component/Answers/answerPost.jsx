@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import Likes from '../Likes/likesContainer'
+
 class AnswerPost extends Component {
     constructor () {
         super ()
@@ -17,8 +19,11 @@ class AnswerPost extends Component {
                     <div className='categoryContainer'>
                         {category}
                     </div>
-                    <div className='likeContainer'>
-                        {like_count ? like_count : 0} likes
+                    <div className='answerLikeContainer'>
+                        <Likes 
+                         answer_id={id}
+                         category/>
+                        <div className='likeText'>{like_count ? like_count : 0} likes</div>
                     </div>
                 </div>
                 <div className='answerQuestion'>

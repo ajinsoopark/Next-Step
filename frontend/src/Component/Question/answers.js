@@ -4,7 +4,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
 import "./answers.css"
-
+import Likes from '../Likes/likes'
 
 
 class Answers extends Component {
@@ -94,9 +94,10 @@ mapAnswersToRender= (array) =>{
     array.map(el => {
       return (
         <div className = "answer" key ={el.author}>
-        <NavLink to={`/users/${el.authorId}`}>
+        <NavLink className='answerUserLink' to={`/users/${el.authorId}`}>
           <h2> {el.author} </h2>
         </NavLink>
+
         <p> {el.answer} </p>
         </div>
       )

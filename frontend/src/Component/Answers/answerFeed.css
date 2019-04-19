@@ -77,3 +77,10 @@
 .react-tabs__tab:hover {
     text-decoration: underline;
 }
+
+.answerLikeContainer {
+    display: flex;
+    flex-direction: row;
+    width: 6.5vw;
+    justify-content: space-between;
+}
