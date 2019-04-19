@@ -3,20 +3,20 @@
   background-color: rgb(187, 236, 255)
 }
 .logo{
-  margin-left: 160px;
+  margin-left: 3%;
   display: flex;
-  width: 100px;
+  width: 10%;
   height: 60px;
   justify-content: flex-end;
 }
 .logo img{
-  height: 60px;
+  padding-top: 13%;
+  height: 80%;
 }
 a{
   text-decoration: none;
 }
 .Menu{
-  /* height: 60px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,13 +24,37 @@ a{
   position: sticky;
   top: 0px;
   width: 100%;
-  z-index: 999
+  z-index: 999;
+  height: 5%;
 }
+
 .buttons{
   display: flex;
-  margin-right: 160px;
+  margin-right: 2%;
   height: 50px;
   width: 400px;
   justify-content: space-around;
   align-items: center;
+}
+
+.searchMenu {
+  font-size: 1.3vw;
+  margin-right: 2.5%;
+}
+
+.searchInput {
+  font-size: 1.4vw;
+  margin-right: 2%;
+  width: 50%;
+  outline: none;
+}
+
+.search {
+  width: 40%;
+  padding-left: 10%;
+}
+
+.searchSubmit {
+  font-size: 2vw;
+  cursor: pointer;
 }
