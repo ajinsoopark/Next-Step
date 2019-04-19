@@ -85,5 +85,5 @@ a {
 
 .demoSignup:hover {
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.719);
-  transition: box-shadow 0.3s ease-in-out;
+  transition: box-shadow 0.15s ease-in-out;
 }
