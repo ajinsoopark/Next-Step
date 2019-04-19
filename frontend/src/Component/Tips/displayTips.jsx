@@ -69,8 +69,8 @@ export default class DisplayTips extends React.Component {
         return(this.props.allTips.map((tip, i) => {
             if(tip.tip_category == this.props.selectedTipcat){     
                 return(
-                    <div key={i}>
-                        <div >
+                    <div key={i} className='tipPanels'>
+                        <div className='panel'>
                         <ExpansionPanel expanded={expanded === `panel${i}`} onChange={this.handleChange(`panel${i}`)} >
                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
                                 <Typography className="tipTypography">
