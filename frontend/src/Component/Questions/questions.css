@@ -1,35 +1,41 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Poppins:500');
 
 .displayQuestions {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 5vh;
 }
 
 .displayQuestionsChild {
-    display: flexbox;
-    justify-content: center;
-    width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 90%;
+  counter-reset: section;
 }
 
 .questionsParent {
-    border: 1px solid #171A26;
-    background-color: #CFD6ED;
-    height: 70px;
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-    vertical-align: middle;
+  vertical-align: middle;
+  border: 1px solid #171A26;
+  border-radius: 4px;
+  background-color: #CFD6ED;
+  text-align: justify;
+  font-size: 20px;
+  margin: 1%;
+  padding: 2%;
+  font-family: Poppins;
 }
 
+.questionsParent:hover {
+  color: #171A26;
+  text-decoration: none;
+  transition: ease-in;
+  transition-delay: 5ms;
+  background-color: rgba(139, 183, 255, 0.644);
 
-.questionBody {
-    font-size: 20px;
-    font-family: 'Poppins', sans-serif;
-    vertical-align: middle;
-    height: 60%;
 }
 
-.questionBody a {
-    color: #171A26
+.questionsParent::before {
+  counter-increment: section;
+  content: "Q"counter(section) ":  ";
 }
-

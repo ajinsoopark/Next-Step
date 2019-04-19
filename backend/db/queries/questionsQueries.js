@@ -1,12 +1,33 @@
 const { db } = require('../index');
 
 const getAllQuestions = (req, res, next) => {
-  db.any("SELECT q.*, c.category FROM questions AS q FULL JOIN categories AS c on c.id = q.category_id")
+  db.any("SELECT q.*, c.category FROM questions AS q FULL JOIN categories AS c ON c.id = q.category_id")
     .then(question => {
       res.status(200).json({
         status: "success!",
         question,
         message: "got all questions!"
+      });
+    })
+    .catch(err => {
+      console.log(err)
+      res.json({
+        status: 'Failed',
+        message: err
+      })
+    });
+};
+
+const getUserAnsweredQuestionList = (req, res, next) => {
+  // console.log(req.params)
+  db.any("SELECT DISTINCT(question_id) FROM ANSWERS WHERE USER_ID = $1",[req.params.userID])
+    .then(question => {
+      res.status(200).json({
+        status: "success!",
+        answered: question.map(el => {
+          return el.question_id
+        }),
+        message: "got a list of user answered!"
       });
     })
     .catch(err => {
@@ -125,5 +146,6 @@ module.exports = {
   getQuestionsBySearch,
   getSingleQuestion,
   getRandomQuestion,
-  getCountofAllQuestions
+  getCountofAllQuestions,
+  getUserAnsweredQuestionList
 }

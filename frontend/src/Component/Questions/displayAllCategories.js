@@ -3,13 +3,10 @@ import DisplayQuestions from "./displayQuestions"
 import "./categories.css"
 import "./questions.css"
 
-const DisplayAllCategories = ({ allCategories, allQuestions, selectedCategory, handleChange }) => {
+const DisplayAllCategories = ({ userAnsweredList,allCategories, allQuestions, selectedCategory, handleChange }) => {
     let categoryList = allCategories.map((category, i) => {
         return(
-            <div key={i} className="allButtons">
-                <button type="button" onClick={handleChange} value={category.category}>{category.category}</button>
-            </div>
-               
+                <button key = {i} className = "allButtons" type="button" onClick={handleChange} value={category.category}>{category.category}</button>
         )
     })
 
@@ -20,7 +17,7 @@ const DisplayAllCategories = ({ allCategories, allQuestions, selectedCategory, h
             </div>
             <div className="displayQuestions">
                 <div className="displayQuestionsChild">
-                    <DisplayQuestions allQuestions={allQuestions} selectedCategory={selectedCategory} />
+                    <DisplayQuestions userAnsweredList = {userAnsweredList} allQuestions={allQuestions} selectedCategory={selectedCategory} />
                 </div>
             </div>
         </div>
