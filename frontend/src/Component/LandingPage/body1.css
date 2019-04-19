@@ -1,3 +1,11 @@
+button {
+  outline: none;
+}
+
+a {
+  outline: none;
+}
+
 .body1{
   height: 88vh;
   width: 100vw;

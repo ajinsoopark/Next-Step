@@ -25,3 +25,17 @@ body {
     font-style: #171A26;
     font-family: 'Cabin', sans-serif;
 }
+
+.tipsContainer {
+    padding-top: 2%;
+    padding-bottom: 10%;
+}
+
+.tipPanels {
+    padding-top: .8%;
+}
+
+.MuiExpansionPanelSummary-root-255:hover {
+    background-color: wheat;
+    /* transition: background-color 0.2s ease-in-out; */
+}
