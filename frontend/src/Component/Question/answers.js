@@ -6,7 +6,7 @@ import Avatar from "react-avatar"
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
 import "./answers.css"
-
+import Likes from '../Likes/likes'
 
 
 
@@ -99,9 +99,12 @@ mapAnswersToRender= (array) =>{
     array.map(el => {
       return (
         <div className = "answer" key ={el.author}>
+        <NavLink className='answerUserLink' to={`/users/${el.authorId}`}>
+          <h2> {el.author} </h2>
         <NavLink to={`/users/${el.authorId}`}>
           <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
         </NavLink>
+
         <p> {el.answer} </p>
         </div>
       )
