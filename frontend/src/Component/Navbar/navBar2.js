@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 import {NavLink} from 'react-router-dom'
 import './navBar.css'
 import Auth from '../../Auth/Auth.js'
+import Avatar from "react-avatar"
 
 // this is when the user is logged in
 
@@ -52,12 +53,10 @@ class NavBar2 extends Component{
       </div>
 
       <div className = 'buttons'>
-        <button>
+      
           <NavLink to={`/users/${Auth.getTokenID()}`}>
-
-            {Auth.getToken()}
+            <Avatar size = "40" textSizeRatio = {2} max-initial = {3} name= {Auth.getToken()} round = {true}/>
           </NavLink>
-        </button>
 
         <button>
           <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
