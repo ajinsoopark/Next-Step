@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+import Avatar from "react-avatar"
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
 import "./answers.css"
+
 
 
 
@@ -46,7 +49,9 @@ mapUserAnswerToRender = (array) => {
       return (
         <div className = "Answers">
         <div className = "answer" key = {el.answer_id}> 
-        <h2> {el.by_user} </h2>
+        <h2> 
+        <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
+        </h2>
         <p> {el.answer_body} </p>
         {this.deleteButton(i,el.answers_id)}
         </div>
@@ -95,7 +100,7 @@ mapAnswersToRender= (array) =>{
       return (
         <div className = "answer" key ={el.author}>
         <NavLink to={`/users/${el.authorId}`}>
-          <h2> {el.author} </h2>
+          <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
         </NavLink>
         <p> {el.answer} </p>
         </div>
@@ -140,7 +145,7 @@ render () {
 
         <TabList>
         <Tab> Your Answer </Tab>
-        <Tab> Other Answers </Tab>
+        <Tab> All Answers </Tab>
         </TabList>
 
         <TabPanel> 
