@@ -1,12 +1,11 @@
 .body1{
-  height: 92.4vh;
+  height: 88vh;
   width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: space-around;
   background-color: #97A5D8;
-  padding-top: 5%;
 }
 
 .left{
@@ -28,21 +27,17 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 15%;
 }
 
-.right img{
-  height: 65px;
-  width: 77px
-}
-.text{
+.text {
   height: 97px;
-  /* width: 600px; */
   margin-left: 75px;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-.links{
+.links {
   display: flex;
   justify-content: space-around;
 }
@@ -61,4 +56,26 @@
 
 .landingPage {
   width: 100%;
+}
+
+.demoSignup {
+  background-color: white;
+  border-radius: 60px;
+  height: 57px;
+  width: 40%;
+  color: black;
+}
+
+.letsTalk {
+  font-size: 2.8vw;
+  padding: 5%;
+}
+
+.landingImg {
+  width: 10vw;
+}
+
+.demoSignup:hover {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.719);
+  transition: box-shadow 0.3s ease-in-out;
 }
