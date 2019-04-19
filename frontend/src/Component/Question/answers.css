@@ -32,3 +32,17 @@
 .deleteButton img:active {
   filter: invert(70%);
 }
+
+.react-tabs__tab--selected {
+  background-color: #ECEEF7;
+}
+
+.answered {
+  position: relative;
+  z-index: 0;
+  left: 0px;
+  bottom: -15px;
+  margin: 0;
+  padding: 0;
+
+}
