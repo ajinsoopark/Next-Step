@@ -2,21 +2,26 @@
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(187, 236, 255)
 }
-.logo{
-  margin-left: 160px;
-  display: flex;
-  width: 100px;
-  height: 60px;
-  justify-content: flex-end;
-}
 .logo img{
-  height: 60px;
+  width: 40%;
 }
-a{
+
+.logo {
+  width: 10.5%;
+  padding-left: 7%;
+}
+
+.logoLanding img{
+  display: flex;
+  width: 8%;
+  padding-left: 13%;
+}
+
+a {
   text-decoration: none;
 }
+
 .Menu{
-  /* height: 60px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -24,13 +29,37 @@ a{
   position: sticky;
   top: 0px;
   width: 100%;
-  z-index: 999
+  z-index: 999;
+  height: 8.5vh;
 }
+
 .buttons{
   display: flex;
-  margin-right: 160px;
+  margin-right: 2%;
   height: 50px;
   width: 400px;
   justify-content: space-around;
   align-items: center;
+}
+
+.searchMenu {
+  font-size: 1.3vw;
+  margin-right: 2.5%;
+}
+
+.searchInput {
+  font-size: 1.4vw;
+  margin-right: 2%;
+  width: 50%;
+  outline: none;
+}
+
+.search {
+  width: 40%;
+  padding-left: 10%;
+}
+
+.searchSubmit {
+  font-size: 2vw;
+  cursor: pointer;
 }
