@@ -2,20 +2,25 @@
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   background-color: rgb(187, 236, 255)
 }
-.logo{
-  margin-left: 3%;
-  display: flex;
-  width: 10%;
-  height: 60px;
-  justify-content: flex-end;
-}
 .logo img{
-  padding-top: 13%;
-  height: 80%;
+  width: 40%;
 }
-a{
+
+.logo {
+  width: 10.5%;
+  padding-left: 7%;
+}
+
+.logoLanding img{
+  display: flex;
+  width: 8%;
+  padding-left: 13%;
+}
+
+a {
   text-decoration: none;
 }
+
 .Menu{
   display: flex;
   flex-direction: row;
@@ -25,7 +30,7 @@ a{
   top: 0px;
   width: 100%;
   z-index: 999;
-  height: 5%;
+  height: 8.5vh;
 }
 
 .buttons{
