@@ -1,5 +1,24 @@
 const { db } = require('../index');
 
+const getAllLikesForUser = (req, res, next) => {
+  let userId = parseInt(req.params.id);
+  db.any('SELECT answer_id FROM likes WHERE user_id=$1', [userId])
+    .then((likes) => {
+      res.status(200).json({
+        message: "got all likes for one user", 
+        likes
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.json({
+          status: 'Failed',
+          message: err
+      })
+      return next(err)
+  })
+};
+
 const addNewLike = (req, res, next) => {
   req.body.user_id = parseInt(req.body.user_id);
   req.body.answer_id = parseInt(req.body.answer_id);
@@ -31,6 +50,7 @@ const deleteSingleLike = (req, res, next) => {
 };
 
 module.exports = {
+  getAllLikesForUser,
   addNewLike,
   deleteSingleLike
 };
