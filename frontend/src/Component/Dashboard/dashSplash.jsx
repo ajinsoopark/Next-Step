@@ -8,6 +8,7 @@ const DashSplash = ({ userName }) => {
 
     return (
         <div className='splashContainer'>
+         <Avatar size = "100" textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
             <div className='userSplashContainer'>
                 <div className='welcome'>
                     Welcome
@@ -16,7 +17,6 @@ const DashSplash = ({ userName }) => {
                     { userName ? userName : '' }
                 </div>
             </div>
-        <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
         </div>
     )
 }
