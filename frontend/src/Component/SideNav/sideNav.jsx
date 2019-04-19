@@ -8,7 +8,7 @@ import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './sideNav.css'
 
 import answerIcon2 from "../../Images/icons8-circled-a-48.png"
-import aboutIcon2 from "../../Images/icons8-circled-i-filled-48.png"
+import aboutIcon2 from "../../Images/icons8-info-50.png"
 import questionsIcon2 from "../../Images/icons8-circled-q-48.png"
 import leaderboardIcon2 from "../../Images/icons8-gold-medal-48.png"
 import tipsIcons2 from "../../Images/icons8-idea-filled-48.png"
@@ -114,7 +114,7 @@ class SideNavMenu extends Component {
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {aboutIcon2} */}
-                                    <img src = {aboutIcon2} alt = "Circled A" width = "35" />
+                                    <img src = {aboutIcon2} alt = "Circled I" width = "35" />
                                 </div>
                         </NavIcon>
                         <NavText>
