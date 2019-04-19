@@ -19,7 +19,7 @@ class NavBar extends Component{
   render (){
     return(
       <div className='Menu'>
-      <div className = 'logo'>
+      <div className = 'logoLanding'>
         <NavLink to="/" >
           <img src= {logo} alt="next-step_logo" />
         </NavLink>
