@@ -3,20 +3,41 @@ import {Link} from "react-router-dom";
 import "./questions.css"
 
 
-const DisplayQuestions = ({ allQuestions, selectedCategory }) => {
+const DisplayQuestions = ({ allQuestions, selectedCategory,userAnsweredList}) => {
     return(allQuestions.map((question, i) => {
-        if(question.category === selectedCategory){
+
+        if(userAnsweredList.includes(question.id)){
+                   if(question.category === selectedCategory){
             return(
-            <div className="questionsParent" key={i}>
-                <div key={i} className="questionBody">
-                    <Link to={"/questions/" + question.id}>
-                        <div className="questionBodyGC">{question.question_body}</div>
-                    </Link>
+                <Link  to={"/questions/" + question.id}>
+                
+                <div key = {i} className = "questionsParent">
+                  <img className = "answered" src = "https://img.icons8.com/color/45/000000/checked-checkbox.png" alt = "answered_logo" />
+                 {question.question_body}
                 </div>
-            </div>
+                 </Link>
+                  
+                    
             )
+        }
+        }
+
+        else {
+               if(question.category === selectedCategory){
+            return(
+                    <Link key = {i} className = "questionsParent" to={"/questions/" + question.id}>
+                    
+                    {question.question_body}
+
+
+                    </Link>
+            )
+        }
+
 
         }
+
+     
     }))
 }
 
