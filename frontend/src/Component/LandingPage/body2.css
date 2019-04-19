@@ -20,7 +20,7 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
-  border-radius: 7%;
+  border-radius: 20px;
 }
 
 .cardContainer {

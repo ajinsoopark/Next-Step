@@ -35,7 +35,7 @@ body {
     padding-top: .8%;
 }
 
-.MuiExpansionPanelSummary-root-255:hover {
+.MuiExpansionPanelSummary-root:hover {
     background-color: wheat;
-    /* transition: background-color 0.2s ease-in-out; */
+    transition: background-color 0.2s ease-in-out;
 }
