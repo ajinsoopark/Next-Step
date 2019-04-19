@@ -100,7 +100,7 @@ mapAnswersToRender= (array) =>{
       return (
         <div className = "answer" key ={el.author}>
         <NavLink to={`/users/${el.authorId}`}>
-          <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> </h2>
+          <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
         </NavLink>
         <p> {el.answer} </p>
         </div>
