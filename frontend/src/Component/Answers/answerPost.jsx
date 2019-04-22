@@ -20,11 +20,6 @@ class AnswerPost extends Component {
                         {category}
                     </div>
                     <div className='answerLikeContainer'>
-                        <Likes 
-                         answer_id={id}
-                         fetchSortedAnswers={this.props.fetchSortedAnswers}
-                         sortIndex={sortIndex}
-                         categoryIndex={categoryIndex}/>
                         <div className='likeText'>{like_count ? like_count : 0} likes</div>
                     </div>
                 </div>
