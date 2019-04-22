@@ -44,12 +44,12 @@ postAnswer = (event) => {
 
 mapUserAnswerToRender = (array) => {
   console.log(this.state)
-  return( 
+  return(
     array.map((el,i) => {
       return (
         <div className = "Answers">
-        <div className = "answer" key = {el.answer_id}> 
-        <h2> 
+        <div className = "answer" key = {el.answer_id}>
+        <h2>
         <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
         </h2>
         <p> {el.answer_body} </p>
@@ -66,7 +66,7 @@ deleteAction = (event) => {
   this.setState({
     xbutton: event.currentTarget.value
   })
-  
+
 }
 
 deleteActionFinal = (event) => {
@@ -74,7 +74,7 @@ deleteActionFinal = (event) => {
   axios.delete(`/answers/${params}`).then(()=>{
     this.props.axiosGetUserAnswerByQuestion()
     })
-  
+
 }
 
 
@@ -87,10 +87,10 @@ mapUserAnswerBoxToRender = (array) => {
       </textarea>
       <input type = "Submit" />
       </form>
-      
+
       </div>
 
-      
+
     )
   }
 
@@ -101,6 +101,7 @@ mapAnswersToRender= (array) =>{
         <div className = "answer" key ={el.author}>
         <NavLink className='answerUserLink' to={`/users/${el.authorId}`}>
           <h2> {el.author} </h2>
+        </NavLink>  
         <NavLink to={`/users/${el.authorId}`}>
           <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
         </NavLink>
@@ -114,11 +115,11 @@ mapAnswersToRender= (array) =>{
 }
 
 deleteButton = (i,answers_id) => {
-console.log(this.state.xbutton) 
+console.log(this.state.xbutton)
 console.log(answers_id)
   if(parseInt(this.state.xbutton) === parseInt(answers_id)){
     return (
-      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} > 
+      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} >
     <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/ok.png" alt ="delete_icon"/ >
 
     <p> confirm? </p>
@@ -127,9 +128,9 @@ console.log(answers_id)
   }
   else {
 
-  return( 
+  return(
     <>
-    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} > 
+    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} >
     <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/cancel.png" alt ="delete_icon"/ >
 
     <p> delete </p>
@@ -151,7 +152,7 @@ render () {
         <Tab> All Answers </Tab>
         </TabList>
 
-        <TabPanel> 
+        <TabPanel>
         {this.mapUserAnswerBoxToRender()}
         {this.mapUserAnswerToRender(this.props.userAnswer)}
 
@@ -160,7 +161,7 @@ render () {
         <TabPanel>
         {this.mapAnswersToRender(this.props.CurrentAnswers)}
         </TabPanel>
-      
+
         </Tabs>
       </>
   )
