@@ -1,0 +1,78 @@
+.feedbackButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.feedButton {
+    margin-left: 1%;
+}
+
+.fButton:hover {
+    color: aliceblue;
+    transition: color 0.1s ease-in-out;
+}
+
+.fButton {
+    padding: 1%;
+    width: 17.5%;
+}
+
+.feedbackFeedContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedbackInputContainer {
+    height: 0;
+    visibility: collapse;
+    opacity: 0;
+    transition: height 0.5s ease-in-out;
+    transition-delay: all 0.5s;
+}
+
+.feedbackInputContainer.show {
+    height: 20vh;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.5s;
+}
+
+.feedbackInput {
+    visibility: inherit;
+    transition: all 0.5s;
+    opacity: 1;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    padding: 1%;
+    margin: 2%;
+    text-transform: none;
+    height: 15vh;
+    font-size: 1.3em;
+    width: 80%;
+    border-radius: 7px;
+}
+
+.feedbackInputButton {
+    border-radius: 5px;
+    height: 5vh;
+    cursor: pointer;
+    outline: none;
+    padding: 1%;
+    padding-bottom: 3%;
+    font-size: 1em;
+}
+
+.feedbackInputButton:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.719);
+    transition: all 0.2s ease-in-out;
+  }
+
+.feedbackForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
