@@ -43,7 +43,7 @@ const getSingleAnswer = (req, res, next) => {
 
 const getAllQandAForOneUser = (req, res, next) => {
     let userId = parseInt(req.params.id);
-    db.any('SELECT username, question_body, answer_body, likesCount FROM answers JOIN users ON answers.user_id = users.id JOIN questions ON answers.question_id = questions.id FULL JOIN (SELECT answer_id, count(*) AS likesCount FROM likes GROUP BY answer_id) AS l ON answers.id = l.answer_id WHERE users.id=$1', [userId])
+    db.any('SELECT username, question_body, answer_body, answers.id, likesCount FROM answers JOIN users ON answers.user_id = users.id JOIN questions ON answers.question_id = questions.id FULL JOIN (SELECT answer_id, count(*) AS likesCount FROM likes GROUP BY answer_id) AS l ON answers.id = l.answer_id WHERE users.id=$1', [userId])
     .then(answers => {
         res.status(200)
         .json({

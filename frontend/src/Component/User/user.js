@@ -51,8 +51,8 @@ class User extends Component {
   }
 
   render(){
-    console.log(this.state.likes)
-    const {name,userName,questions,answers,data}=this.state
+    // console.log(this.state.likes)
+    const {name,userName,questions,answers,data,likes}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
     const style = {
@@ -86,7 +86,7 @@ class User extends Component {
         </div>
 
         <div>
-          <UsersAnswers data={data}/>
+          <UsersAnswers data={data} likes={likes}/>
         </div>
       </div>
     )
