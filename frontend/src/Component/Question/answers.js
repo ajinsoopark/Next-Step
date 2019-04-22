@@ -43,6 +43,7 @@ postAnswer = (event) => {
 }
 
 mapUserAnswerToRender = (array) => {
+<<<<<<< HEAD
   console.log(this.state)
   return(
     array.map((el,i) => {
@@ -52,6 +53,25 @@ mapUserAnswerToRender = (array) => {
         <h2>
         <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
         </h2>
+=======
+  return( 
+    array.map((el,i) => {
+      return (
+        <div className = "Answers" key={i}>
+        <div className = "answer"> 
+          <div className='avatarLikes'>
+          <h2> 
+          <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
+          </h2>
+          <div className='answerLikesContainer'>
+            <Likes 
+            axiosGetAnswers={this.props.axiosGetAnswers}
+            axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
+            answer_id={el.answers_id}/> 
+            {`${el.like_count} likes`}
+          </div>
+        </div>
+>>>>>>> 741c2193d75eaa90708d58905eff57520fc72610
         <p> {el.answer_body} </p>
         {this.deleteButton(i,el.answers_id)}
         </div>
@@ -99,6 +119,7 @@ mapAnswersToRender= (array) =>{
     array.map(el => {
       return (
         <div className = "answer" key ={el.author}>
+<<<<<<< HEAD
         <NavLink className='answerUserLink' to={`/users/${el.authorId}`}>
           <h2> {el.author} </h2>
         </NavLink>  
@@ -106,6 +127,20 @@ mapAnswersToRender= (array) =>{
           <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
         </NavLink>
 
+=======
+        <div className='avatarLikes'>
+          <NavLink to={`/users/${el.authorId}`}>
+            <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
+          </NavLink>
+          <div className='answerLikesContainer'>
+            <Likes 
+            axiosGetAnswers={this.props.axiosGetAnswers}
+            axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
+            answer_id={el.answers_id}/> 
+            {`${el.likeCount} likes`}
+          </div>
+        </div>
+>>>>>>> 741c2193d75eaa90708d58905eff57520fc72610
         <p> {el.answer} </p>
         </div>
       )
@@ -115,8 +150,11 @@ mapAnswersToRender= (array) =>{
 }
 
 deleteButton = (i,answers_id) => {
+<<<<<<< HEAD
 console.log(this.state.xbutton)
 console.log(answers_id)
+=======
+>>>>>>> 741c2193d75eaa90708d58905eff57520fc72610
   if(parseInt(this.state.xbutton) === parseInt(answers_id)){
     return (
       <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} >
@@ -142,7 +180,6 @@ console.log(answers_id)
 
 
 render () {
-  // console.log(this.props.CurrentAnswers)
   return (
       <>
         <Tabs selectedIndex={this.props.tabIndex} onSelect={tabIndex => this.props.TabSelectedChange(tabIndex)}>
