@@ -11,7 +11,7 @@ class AnswerPost extends Component {
     }
 
     render () {
-        const { id, user_id, answer_body, username, question_body, category, like_count } = this.props
+        const { id, answer_body, question_body, category, like_count, sortIndex, categoryIndex } = this.props
 
         return (
             <div className='answerQuestionPostContainer'>
@@ -22,7 +22,9 @@ class AnswerPost extends Component {
                     <div className='answerLikeContainer'>
                         <Likes 
                          answer_id={id}
-                         category/>
+                         fetchSortedAnswers={this.props.fetchSortedAnswers}
+                         sortIndex={sortIndex}
+                         categoryIndex={categoryIndex}/>
                         <div className='likeText'>{like_count ? like_count : 0} likes</div>
                     </div>
                 </div>
