@@ -44,5 +44,11 @@
   bottom: -15px;
   margin: 0;
   padding: 0;
+}
 
+.avatarLikes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-bottom: 2%;
 }

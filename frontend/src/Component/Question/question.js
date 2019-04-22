@@ -25,6 +25,8 @@ class Question extends Component {
         author: el.by_user,
         answer: el.answer_body,
         authorId: el.user_id,
+        answersId: el.answers_id,
+        likeCount: el.like_count
       })
   })}
 
@@ -45,7 +47,6 @@ class Question extends Component {
          CurrentAnswers: answersArray
        })
      }).then(() => {
-      //  console.log(this.state)
      }).catch((err) => {
        console.log(err)
      })
@@ -85,7 +86,6 @@ class Question extends Component {
     this.setState({
       tabIndex: tabIndex
     })
-    console.log(this.state)
   }
 
 
@@ -93,7 +93,6 @@ class Question extends Component {
     //get Answers based on params URL
     this.axiosGetAnswers()
     this.axiosGetUserAnswerByQuestion()
-
   }
 
 render(){
