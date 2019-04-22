@@ -6,7 +6,14 @@
     fill-opacity: 0.4;
 }
 
+.personalHeart:hover {
+    fill-opacity:  0.4;
+}
+
 .likeButton {
     width: 50%; 
 }
 
+.personalHeart {
+    width: 50%;
+}

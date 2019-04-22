@@ -2,7 +2,7 @@ const { db } = require('../index');
 
 const getAllLikesForUser = (req, res, next) => {
   let userId = parseInt(req.params.id);
-  db.any('SELECT answer_id FROM likes WHERE user_id=$1', [userId])
+  db.any('SELECT * FROM likes WHERE user_id=$1', [userId])
     .then((likes) => {
       res.status(200).json({
         message: "got all likes for one user", 

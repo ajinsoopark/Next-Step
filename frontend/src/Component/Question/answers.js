@@ -7,6 +7,7 @@ import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
 import "./answers.css"
 import Likes from '../Likes/likes'
+import Auth from '../../Auth/Auth';
 
 
 
@@ -53,10 +54,6 @@ mapUserAnswerToRender = (array) => {
           <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
           </h2>
           <div className='answerLikesContainer'>
-            <Likes 
-            axiosGetAnswers={this.props.axiosGetAnswers}
-            axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
-            answer_id={el.answers_id}/> 
             {`${el.like_count} likes`}
           </div>
         </div>
@@ -104,18 +101,19 @@ mapUserAnswerBoxToRender = (array) => {
 
 mapAnswersToRender= (array) =>{
   return(
-    array.map(el => {
+    array.map((el, i) => {
       return (
-        <div className = "answer" key ={el.author}>
+        <div className = "answer" key ={i}>
         <div className='avatarLikes'>
           <NavLink to={`/users/${el.authorId}`}>
             <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
           </NavLink>
           <div className='answerLikesContainer'>
-            <Likes 
-            axiosGetAnswers={this.props.axiosGetAnswers}
-            axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
-            answer_id={el.answers_id}/> 
+            { el.authorId === parseInt(Auth.getTokenID()) ? 
+              '' : <Likes 
+                    axiosGetAnswers={this.props.axiosGetAnswers}
+                    axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
+                    answer_id={el.answersId}/> }
             {`${el.likeCount} likes`}
           </div>
         </div>
