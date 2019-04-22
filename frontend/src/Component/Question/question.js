@@ -107,9 +107,7 @@ render(){
           currentUser = {Auth.getTokenID()}
           questionID = {this.props.match.params.id}
           axiosGetUserAnswerByQuestion = {this.axiosGetUserAnswerByQuestion}
-           axiosGetAnswers = {this.axiosGetAnswers}
-
-
+          axiosGetAnswers = {this.axiosGetAnswers}
           />
         </div>
 

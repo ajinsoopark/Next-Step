@@ -1,7 +1,7 @@
-.body2{
+.body2 {
   display: flex;
   flex-direction: column;
-  height: 800px;
+  height: 88vh;
   align-items: center;
   justify-content: center;
   background-color: #2B3454
@@ -12,15 +12,15 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  
 }
 
-.cards{
-  width: 250px;
-  height: 400px;
+.cards {
+  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: white;
+  border-radius: 20px;
 }
 
 .cardContainer {
@@ -31,5 +31,23 @@
 }
 
 .cardInfo {
-  padding-top: 17%;
+  padding: 10%;
+  font-size: 1.5vw;
+}
+
+.tools {
+  padding-bottom: 8%;
+  font-size: 4.7vw;
+  color: white;
+}
+
+.cardLabel {
+  padding-top: 10%;
+  font-size: 2vw;
+  text-decoration: underline;
+}
+
+.cards:hover {
+  box-shadow: 0 6px 10px rgba(255, 253, 253, 0.801);
+  transition: box-shadow 0.2s ease-in-out;
 }

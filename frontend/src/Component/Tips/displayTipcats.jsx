@@ -5,10 +5,9 @@ import DisplayTips from "./displayTips"
 const DisplayTipcats = ({ allTipcats, allTips, selectedTipcat, handleClick }) => {
     let tipcatList = allTipcats.map((tipcat, i) => {
         return(
-            <div key={i} className="allButtons">
-                <button type="button" onClick={handleClick} value={tipcat.id}>{tipcat.tipcat}</button>
-            </div>
-               
+            <button key={i} className="allButtons" type="button" onClick={handleClick} value={tipcat.id}>
+                {tipcat.tipcat}
+            </button>       
         )
     })
 
@@ -17,8 +16,8 @@ const DisplayTipcats = ({ allTipcats, allTips, selectedTipcat, handleClick }) =>
             <div className="categoryList">
                 {tipcatList}
             </div>
-            <div >
-                <div >
+            <div>
+                <div className='tipsContainer'>
                     <DisplayTips allTips={allTips} selectedTipcat={selectedTipcat} />
                 </div>
             </div>
