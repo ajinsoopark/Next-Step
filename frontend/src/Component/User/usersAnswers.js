@@ -1,29 +1,63 @@
-import React  from 'react';
+import React, {comp}  from 'react';
 import './usersAnswers.css'
 import axios from 'axios'
 
-const handleClick=console.log('like')
+const postLikes= (loggedInUser,answer_id,getData)=>{
+  axios.post(`/likes`,{
+    user_id:loggedInUser,
+    answer_id:answer_id
+  })
+  getData()
+}
 
-const UsersAnswers = ({ data, likes }) => {
+const disLikes= (loggedInUser,answer_id,getData)=>{
+  axios.delete(`/likes`,{
+    params: {
+
+        user_id:loggedInUser,
+        answer_id:answer_id
+
+    }
+
+
+  })
+  getData()
+}
+
+const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
+  console.log(data)
+  console.log(likes)
+
+
+
     if(data && likes){
-      likes=likes.map(a => a.answer_id)
-      // console.log(data)
-      // console.log(likes)
+    let likeThings=likes.map(a => a.answer_id)
+
       return (data.map((el,i)=>{
         return(
           <div key={i} className='answerContainer'>
             <div className='likes'>
               Likes: {el.likescount ? el.likescount : 0}
 
-              <button onClick={handleClick}>
-                {likes.includes(parseInt(el.id)) ? 'Unlike': 'Like'}
-              </button>
 
+                {likeThings.includes(parseInt(el.id)) ?
+                <button onClick = { () => {
+                    disLikes(loggedInUser,el.id,getData)}}>
+                    Dislike
+                  </button> :
+
+                <button onClick = { () => {
+                    postLikes(loggedInUser,el.id,getData)}}>
+                    Like
+              </button>
+            }
             </div>
+
             <div className='question'>Question:{el.question_body}</div>
             <div className='answers'>Answer:{el.answer_body}</div>
           </div>
         )
+
       }))
     }else{
       return null

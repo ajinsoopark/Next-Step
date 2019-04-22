@@ -14,7 +14,7 @@ class User extends Component {
     })
   }
 
-  componentDidMount(){
+ getData =()=>{
     const {userID,loggedInUser}=this.state
     axios.get(`/users/${userID}`).then(res=>{
       this.setState({
@@ -42,17 +42,18 @@ class User extends Component {
     })
 
     axios.get(`/likes/${loggedInUser}`).then(res=>{
-      // console.log(Object.keys(res.data.likes))
       this.setState({
-        // likes:Object.keys(res.data.likes)
         likes:res.data.likes
       })
     })
   }
+  componentDidMount(){
+    this.getData()
+  }
 
   render(){
     // console.log(this.state.likes)
-    const {name,userName,questions,answers,data,likes}=this.state
+    const {name,userName,questions,answers,data,likes,loggedInUser}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
     const style = {
@@ -86,7 +87,7 @@ class User extends Component {
         </div>
 
         <div>
-          <UsersAnswers data={data} likes={likes}/>
+          <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
         </div>
       </div>
     )

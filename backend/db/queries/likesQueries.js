@@ -49,8 +49,27 @@ const deleteSingleLike = (req, res, next) => {
   })
 };
 
+const deleteLikesWithUserID = (req, res, next) => {
+
+  let userID = parseInt(req.query.user_id);
+  let answerID = parseInt(req.query.answer_id);
+
+  db.result('DELETE FROM LIKES WHERE USER_ID = $1 AND ANSWER_ID = $2', [userID,answerID])
+  .then(result => {
+    res.status(200)
+    .json({
+      status: "success",
+      message: "deleted a single like modifitied"
+    });
+  })
+  .catch(err => {
+    return next(err)
+  })
+};
+
 module.exports = {
   getAllLikesForUser,
   addNewLike,
-  deleteSingleLike
+  deleteSingleLike,
+  deleteLikesWithUserID
 };

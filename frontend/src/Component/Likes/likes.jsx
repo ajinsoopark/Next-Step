@@ -60,7 +60,7 @@ class Likes extends Component {
             this.fetchLikes()
         }).catch(err => console.log(err))
     }
-    
+
     unlikeAnswer = () => {
         let likeId = this.state.likeId
         axios.delete(`/likes/${likeId}`)
@@ -82,6 +82,7 @@ class Likes extends Component {
     }
 
     render () {
+      console.log(this.sate)
         return (
             <div className='likesContainer'>
                 <button className='likeButton' onClick={this.handleLikeButton}>
