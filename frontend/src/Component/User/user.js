@@ -2,19 +2,21 @@ import React, {Component} from 'react';
 import axios from 'axios'
 import './user.css'
 import Avatar from 'react-avatar';
+import UsersAnswers from './usersAnswers'
+import Auth from '../../Auth/Auth.js'
 
 class User extends Component {
   constructor(props){
     super(props)
     this.state=({
       userID:+this.props.match.params.id,
+      loggedInUser:+Auth.getTokenID(),
     })
   }
 
-  componentDidMount(){
-    const {userID}=this.state
+ getData =()=>{
+    const {userID,loggedInUser}=this.state
     axios.get(`/users/${userID}`).then(res=>{
-
       this.setState({
         name:res.data.user.first_name +" "+ res.data.user.last_name,
         userName:res.data.user.username
@@ -32,11 +34,26 @@ class User extends Component {
         questions:+res.data.count[0].count
       })
     })
+
+    axios.get(`/answers/user/${userID}`).then(res=>{
+      this.setState({
+        data:res.data.answers
+      })
+    })
+
+    axios.get(`/likes/${loggedInUser}`).then(res=>{
+      this.setState({
+        likes:res.data.likes
+      })
+    })
+  }
+  componentDidMount(){
+    this.getData()
   }
 
   render(){
-    // console.log(this.state)
-    const {name,userName,questions,answers}=this.state
+    // console.log(this.state.likes)
+    const {name,userName,questions,answers,data,likes,loggedInUser}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
     const style = {
@@ -45,7 +62,7 @@ class User extends Component {
     }
 
     return(
-      <>
+      <div className = 'profileContainer'>
         <div className='userInfo'>
           <div className='words'>
             <p>UserName: {userName}</p>
@@ -69,7 +86,10 @@ class User extends Component {
           </div>
         </div>
 
-      </>
+        <div>
+          <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+        </div>
+      </div>
     )
   }
 }

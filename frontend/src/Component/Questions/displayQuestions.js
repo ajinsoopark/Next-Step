@@ -9,15 +9,15 @@ const DisplayQuestions = ({ allQuestions, selectedCategory,userAnsweredList}) =>
         if(userAnsweredList.includes(question.id)){
                    if(question.category === selectedCategory){
             return(
-                <NavLink  to={"/questions/" + question.id}>
-                
-                <div key = {i} className = "questionsParent">
+                <NavLink key = {i} to={"/questions/" + question.id}>
+
+                <div  className = "questionsParent">
                   <img className = "answered" src = "https://img.icons8.com/color/45/000000/checked-checkbox.png" alt = "answered_logo" />
                  {question.question_body}
                 </div>
                  </NavLink>
-                  
-                    
+
+
             )
         }
         }
@@ -26,7 +26,7 @@ const DisplayQuestions = ({ allQuestions, selectedCategory,userAnsweredList}) =>
                if(question.category === selectedCategory){
             return(
                     <NavLink key = {i} className = "questionsParent" to={"/questions/" + question.id}>
-                    
+
                     {question.question_body}
 
 
@@ -37,7 +37,7 @@ const DisplayQuestions = ({ allQuestions, selectedCategory,userAnsweredList}) =>
 
         }
 
-     
+
     }))
 }
 
