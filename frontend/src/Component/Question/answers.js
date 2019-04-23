@@ -8,7 +8,7 @@ import axios from 'axios';
 import "./answers.css"
 import Likes from '../Likes/likes'
 import Auth from '../../Auth/Auth';
-
+import Feedback from '../Feedback/container'
 
 
 class Answers extends Component {
@@ -60,6 +60,7 @@ mapUserAnswerToRender = (array) => {
         <p> {el.answer_body} </p>
         {this.deleteButton(i,el.answers_id)}
         </div>
+        <Feedback />
         </div>
       )
     })
@@ -118,6 +119,8 @@ mapAnswersToRender= (array) =>{
           </div>
         </div>
         <p> {el.answer} </p>
+        <Feedback 
+         answer_id={el.answersId}/>
         </div>
       )
     })
