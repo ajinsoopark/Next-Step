@@ -30,14 +30,14 @@ a {
   top: 0px;
   width: 100%;
   z-index: 999;
-  height: 12vh;
+  height: 15vh;
 }
 
 .buttons{
   display: flex;
   margin-right: 2%;
   height: 50px;
-  width: 400px;
+  width: 250px;
   justify-content: space-around;
   align-items: center;
 }

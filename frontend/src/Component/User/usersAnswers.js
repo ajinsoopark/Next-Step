@@ -25,10 +25,8 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
 }
 
 const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
-  console.log(data)
+  // console.log(data)
   console.log(likes)
-
-
 
     if(data && likes){
     let likeThings=likes.map(a => a.answer_id)

@@ -1,0 +1,35 @@
+.loginContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px
+}
+
+
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px
+}
+
+.login input{
+  height: 30px;
+  width: 240px;
+}
+.login button{
+  border-style: solid;
+  height: 40px
+}
+
+.signup{
+  display: flex;
+  flex-direction: column;
+  align-items:  center;
+}
+
+.signup button {
+  border-style: solid;
+  width: 100%;
+  height: 40px
+}
