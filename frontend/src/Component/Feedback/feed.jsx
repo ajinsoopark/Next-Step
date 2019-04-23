@@ -91,7 +91,8 @@ class FeedbackFeed extends Component {
                 </div>
                 <FeedbackInput 
                  expandedInput={this.state.expandedInput}
-                 answer_id={this.props.answer_id}/>
+                 answer_id={this.props.answer_id}
+                 fetchFeedback={this.fetchFeedback}/>
                  <FeedbackPosts 
                   expandedFeed={this.state.expandedFeed}
                   feedback={this.state.feedback}/>

@@ -30,8 +30,10 @@ class FeedbackPosts extends Component {
 
                               return (
             <div className={ this.containerClass(expandedFeed) }>
-                this is the feed for posts
-                {feedbackPosts}
+                <div className='feedbackP'>Feedback</div>
+                <div className='feedPosts'>
+                    {feedbackPosts}
+                </div>
             </div>
         )
     }

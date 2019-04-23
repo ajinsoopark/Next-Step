@@ -60,7 +60,8 @@ mapUserAnswerToRender = (array) => {
         <p> {el.answer_body} </p>
         {this.deleteButton(i,el.answers_id)}
         </div>
-        <Feedback />
+        <Feedback 
+         answer_id={el.answers_id}/>
         </div>
       )
     })
