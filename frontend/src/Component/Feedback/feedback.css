@@ -66,6 +66,9 @@
     padding: 2%;
 }
 
+.feedPosts {
+    min-height: 100%;
+}
 
 .feedbackInput {
     visibility: inherit;
@@ -86,12 +89,12 @@
 
 .feedbackInputButton {
     border-radius: 5px;
-    height: 5vh;
+    min-height: 5vh;
     cursor: pointer;
     outline: none;
     padding: 1%;
-    padding-bottom: 3%;
     font-size: 1em;
+    margin-right: 2%;
 }
 
 .feedbackInputButton:hover {
