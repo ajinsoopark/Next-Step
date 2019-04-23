@@ -1,28 +1,37 @@
 import React, { Component } from 'react'
 
-import axios from 'axios';
+import SinglePost from './singlePost'
 
 class FeedbackPosts extends Component {
-    constructor () {
-        super ()
-        this.state = {
-            answerFeedback: ''
-        }
-    }
 
-    fetchFeedback = () => {
-        if (this.props.expandedFeed) {
-            axios.get(`/feedbacks/answer/${this.props.answer_id}`)
-            .then(res => {
-                let feedback = res.data.feedback
-            })
+    containerClass = (isExpanded) => {
+        const componentClass = ['feedContainer']
+        if (isExpanded) {
+            componentClass.push('showFeed')
         }
+        let className = componentClass.join(' ')
+        return className
     }
 
     render () {
-        return (
-            <div className='feedbackFeedContainer'>
+        const { feedback, expandedFeed } = this.props
+        const feedbackPosts = feedback ? 
+                              feedback.map(feedbackObj => {
+                                  return (
+                                    <SinglePost 
+                                     key={feedbackObj.id}
+                                     id={feedbackObj.id}
+                                     user_id={feedbackObj.user_id}
+                                     answer_id={feedbackObj.answer_id}
+                                     feedback_body={feedbackObj.feedback_body}
+                                     username={feedbackObj.username}/>
+                                  )
+                              }) : ''
+
+                              return (
+            <div className={ this.containerClass(expandedFeed) }>
                 this is the feed for posts
+                {feedbackPosts}
             </div>
         )
     }

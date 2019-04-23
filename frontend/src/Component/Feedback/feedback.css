@@ -27,15 +27,28 @@
     height: 0;
     visibility: collapse;
     opacity: 0;
-    transition: height 0.5s ease-in-out;
-    transition-delay: all 0.5s;
+    transition: height 0.4s ease-in-out, opacity 0.1s ease 0.1s;
 }
 
-.feedbackInputContainer.show {
+.feedbackInputContainer.showInput {
     height: 20vh;
     opacity: 1;
     visibility: visible;
-    transition: all 0.5s;
+    transition: height 0.4s ease-in-out, opacity 0.1s ease 0.2s;
+}
+
+.feedContainer {
+    height: 0;
+    visibility: collapse;
+    opacity: 0;
+    transition: height 0.4s ease-in-out, opacity 0.3s ease 0.5s;
+}
+
+.feedContainer.showFeed {
+    height: 25vh;
+    opacity: 1;
+    visibility: visible;
+    transition: height 0.4s ease-in-out , opacity 0.3s ease 0.5s;
 }
 
 .feedbackInput {
@@ -82,3 +95,4 @@
     font-size: .7em;
     text-transform: none;
 }
+

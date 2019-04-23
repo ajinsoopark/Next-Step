@@ -15,7 +15,7 @@ class FeedbackInput extends Component {
     containerClass = (isExpanded) => {
         const componentClass = ['feedbackInputContainer']
         if (isExpanded) {
-            componentClass.push('show')
+            componentClass.push('showInput')
         }
         let className = componentClass.join(' ')
         return className

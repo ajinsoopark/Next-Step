@@ -32,7 +32,6 @@ class Likes extends Component {
 
     validateLikes = () => {
         let likedObj = this.state.currentLikes.find(likeObj => likeObj.answer_id === this.props.answer_id)
-        console.log(likedObj)
         if (likedObj) {
             this.setState({
                 liked: true,
@@ -82,7 +81,7 @@ class Likes extends Component {
     }
 
     render () {
-      console.log(this.sate)
+
         return (
             <div className='likesContainer'>
                 <button className='likeButton' onClick={this.handleLikeButton}>

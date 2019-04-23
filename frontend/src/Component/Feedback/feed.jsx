@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 
 import FeedbackInput from './input'
 import FeedbackPosts from './feedbackPosts'
@@ -15,7 +16,13 @@ class FeedbackFeed extends Component {
     }
 
     fetchFeedback = () => {
-
+        if (this.state.expandedFeed) {
+            axios.get(`/feedbacks/answer/${this.props.answer_id}`)
+            .then(res => {
+                let feedback = res.data.feedbacks
+                this.setState({ feedback: feedback })
+            }).catch(err => console.log(err))
+        }
     }
 
     toggleInputButton = () => {
@@ -46,6 +53,7 @@ class FeedbackFeed extends Component {
                 <button 
                  className='feedButton fButton' 
                  name='expandedFeed'
+                 id='showFeed'
                  onClick={this.handleToggleButton}>
                     Show Feedback
                 </button>
@@ -64,11 +72,17 @@ class FeedbackFeed extends Component {
 
     handleToggleButton = (event) => {
         event.preventDefault()
-        this.setState({ [event.target.name]: !this.state[event.target.name] })
+        if (event.target.id === 'showFeed') {
+            this.setState({ [event.target.name]: !this.state[event.target.name] }, () => {
+                this.fetchFeedback()
+            })
+        } else {
+            this.setState({ [event.target.name]: !this.state[event.target.name] })
+        }
     }
 
     render () {
-        console.log(this.props)
+        console.log(this.state)
         return (
             <div className='feedbackFeedContainer'>
                 <div className='feedbackButtons'>
@@ -79,8 +93,8 @@ class FeedbackFeed extends Component {
                  expandedInput={this.state.expandedInput}
                  answer_id={this.props.answer_id}/>
                  <FeedbackPosts 
-                  answer_id={this.props.answer_id}
-                  expandedFeed={this.state.expandedFeed}/>
+                  expandedFeed={this.state.expandedFeed}
+                  feedback={this.state.feedback}/>
             </div>
         )
     }
