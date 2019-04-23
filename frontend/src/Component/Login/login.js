@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {withRouter} from "react-router"
-
+import './login.css'
 import {NavLink} from 'react-router-dom';
 // import NavBar from "../Navbar/navBarContainer"
 
@@ -58,23 +58,19 @@ class Login extends Component{
     return(
       <div className ='loginContainer'>
 
-        <div>
-          <p>Sign In!</p>
-        </div>
-
-        <form onSubmit={this.handleSubmit} >
-
+        <div className='login'>
+          <h1>Member Login</h1>
+        <form className='login' onSubmit={this.handleSubmit} >
           <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
-
           <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
-
-
-          <input name = "submit" type = 'submit'/>
+          <button className='continue' type='submit'>Continue</button>
         </form>
-        <div>
-          <p>"Don't have an account?"</p>
-          <NavLink to='/signup'><button>Sign Up</button></NavLink>
-        </div>
+      </div>
+          <div className = 'signup'>
+            <p>Don't have an account?
+              <NavLink to='/signup'> Sign Up </NavLink>
+            </p>
+          </div>
       </div>
     )
   }
