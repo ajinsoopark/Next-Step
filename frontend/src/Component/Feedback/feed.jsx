@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import FeedbackInput from './input'
+import FeedbackPosts from './feedbackPosts'
 import './feedback.css'
 
 class FeedbackFeed extends Component {
@@ -77,6 +78,9 @@ class FeedbackFeed extends Component {
                 <FeedbackInput 
                  expandedInput={this.state.expandedInput}
                  answer_id={this.props.answer_id}/>
+                 <FeedbackPosts 
+                  answer_id={this.props.answer_id}
+                  expandedFeed={this.state.expandedFeed}/>
             </div>
         )
     }
