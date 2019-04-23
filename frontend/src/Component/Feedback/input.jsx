@@ -15,7 +15,7 @@ class FeedbackInput extends Component {
     containerClass = (isExpanded) => {
         const componentClass = ['feedbackInputContainer']
         if (isExpanded) {
-            componentClass.push('show')
+            componentClass.push('showInput')
         }
         let className = componentClass.join(' ')
         return className
@@ -39,6 +39,7 @@ class FeedbackInput extends Component {
         if (this.state.feedbackInput) {
             axios.post('/feedbacks', feedbackObj)
             .then(() => {
+                this.props.fetchFeedback()
                 this.setState({
                     feedbackInput: '',
                     error: false
