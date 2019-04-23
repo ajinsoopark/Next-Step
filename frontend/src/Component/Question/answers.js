@@ -119,7 +119,8 @@ mapAnswersToRender= (array) =>{
           </div>
         </div>
         <p> {el.answer} </p>
-        <Feedback />
+        <Feedback 
+         answer_id={el.answersId}/>
         </div>
       )
     })

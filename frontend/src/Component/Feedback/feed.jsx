@@ -67,6 +67,7 @@ class FeedbackFeed extends Component {
     }
 
     render () {
+        console.log(this.props)
         return (
             <div className='feedbackFeedContainer'>
                 <div className='feedbackButtons'>
@@ -74,7 +75,8 @@ class FeedbackFeed extends Component {
                     {this.toggleFeedButton()}
                 </div>
                 <FeedbackInput 
-                 expandedInput={this.state.expandedInput}/>
+                 expandedInput={this.state.expandedInput}
+                 answer_id={this.props.answer_id}/>
             </div>
         )
     }

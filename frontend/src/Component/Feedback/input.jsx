@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 
+import Auth from '../../Auth/Auth'
+import axios from 'axios';
+
 class FeedbackInput extends Component {
     constructor () {
         super ()
@@ -26,23 +29,41 @@ class FeedbackInput extends Component {
         })
     }
 
+    handleSubmit = (event) => {
+        event.preventDefault()
+        let feedbackObj = {
+            user_id: parseInt(Auth.getTokenID()),
+            answer_id: this.props.answer_id,
+            feedback_body: this.state.feedbackInput
+        }
+        if (this.state.feedbackInput) {
+            axios.post('/feedbacks', feedbackObj)
+            .then(() => {
+                this.setState({
+                    feedbackInput: '',
+                    error: false
+                })
+            }).catch(err => console.log(err))
+        } else this.setState({ error: true })
+    }
+
     render () {
         const { expandedInput } = this.props
         const { feedbackInput, error } = this.state
 
         return (
             <div className={ this.containerClass(expandedInput) }>
-                <small className='commentError error'>
+                <small className='error'>
                     { error ? '*Do not leave blank.' : '' }
                 </small>
-                <form className='feedbackForm'>
+                <form className='feedbackForm' onSubmit={ this.handleSubmit }>
                     <textarea 
                      className='feedbackInput'
                      value={feedbackInput}
                      name='feedbackInput'
                      placeholder='Feedback...'
                      onChange={this.handleTextChange}/>
-                     <input className='feedbackInputButton' type='submit' value='Add Feedback'/>
+                    <input className='feedbackInputButton' type='submit' value='Add Feedback'/>
                 </form>
             </div>
         )
