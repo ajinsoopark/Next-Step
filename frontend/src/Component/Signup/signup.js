@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom';
 // import NavBar from "../Navbar/navBarContainer"
 import axios from 'axios'
 import Auth from "../../Auth/Auth"
+import './signup.css'
 
 class Signup extends Component{
   constructor(props) {
@@ -59,21 +60,22 @@ class Signup extends Component{
   render(){
     const {first_name,last_name,username,password,email}=this.state
     return(
-      <div className ='loginContainer'>
-        <div>
+      <div className ='signupContainer'>
+        <div className = 'input'>
           <p>Join the community, and practice review!</p>
-        </div>
-        <form onSubmit={this.handleSubmit} >
+        <form className = 'input' onSubmit={this.handleSubmit} >
           <input type='text' name="first_name" value={first_name} placeholder="First Name" onChange={this.handleChange}/><br/>
           <input type='text' name="last_name" value={last_name} placeholder="Last Name" onChange={this.handleChange}/><br/>
           <input type='text' name="username" value={username} placeholder="Username" onChange={this.handleChange}/><br/>
           <input type='password' name="password" value={password} placeholder="Password" onChange={this.handleChange}/><br/>
           <input type='text' name="email" value={email} placeholder="E-mail" onChange={this.handleChange}/><br/>
-          <input type = 'submit'/>
+          <button type='submit'>Sign Up</button>
         </form>
-        <div>
-          <p>Already a user?</p>
-          <NavLink to='/login'><button>Login</button></NavLink>
+      </div>
+        <div className='login'>
+          <p>Already a user?
+            <NavLink to='/login'> Login </NavLink>
+          </p>
         </div>
       </div>
     )

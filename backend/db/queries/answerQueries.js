@@ -43,7 +43,7 @@ const getSingleAnswer = (req, res, next) => {
 
 const getAllQandAForOneUser = (req, res, next) => {
     let userId = parseInt(req.params.id);
-    db.any('SELECT username, question_body, answer_body, likesCount FROM answers JOIN users ON answers.user_id = users.id JOIN questions ON answers.question_id = questions.id FULL JOIN (SELECT answer_id, count(*) AS likesCount FROM likes GROUP BY answer_id) AS l ON answers.id = l.answer_id WHERE users.id=$1', [userId])
+    db.any ('SELECT username, question_id,question_body, answer_body, answers.id, likesCount FROM answers JOIN users ON answers.user_id = users.id JOIN questions ON answers.question_id = questions.id FULL JOIN (SELECT answer_id, count(*) AS likesCount FROM likes GROUP BY answer_id) AS l ON answers.id = l.answer_id WHERE users.id=$1', [userId])
     .then(answers => {
         res.status(200)
         .json({
@@ -137,7 +137,7 @@ const deleteSingleAnswer = (req, res, next) => {
 
 const getAllAnswersWithTheQuestion = (req, res, next) => {
     console.log(req)
-    db.any('SELECT questions.id AS Question_ID, question_body, answers.id AS answers_ID, answer_body, users.id AS USER_ID, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1 ORDER BY answers.id DESC',[req.query.id,req.query.user_id])
+    db.any('SELECT questions.id AS Question_ID, question_body, answers.id AS answers_ID, answer_body, users.id AS USER_ID, COALESCE (l.count, 0) AS like_count, username AS by_user FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON ANSWERS.id = l.answer_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID WHERE question_id = $1 ORDER BY answers.id DESC',[req.query.id,req.query.user_id])
     .then(answers => {
         res.status(200)
         .json({
@@ -159,7 +159,7 @@ const getAllAnswersWithTheQuestion = (req, res, next) => {
 const getAnswerByQuestionByUser = (req, res, next) => {
     // console.log(req.query.questionID)
     // console.log(req.query.userID)
-    db.any('SELECT questions.id AS Question_ID, answers.id AS answers_ID, answer_body, users.id AS user_id, username AS by_user, l.count AS like_count FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON ANSWERS.id = l.answer_id WHERE question_id = $1 AND users.id = $2 ORDER BY answers.id DESC',[req.query.questionID, req.query.userID])
+    db.any('SELECT questions.id AS Question_ID, answers.id AS answers_ID, answer_body, users.id AS user_id, username AS by_user, COALESCE (l.count, 0) AS like_count FROM QUESTIONS LEFT JOIN ANSWERS ON QUESTIONS.id = answers.question_id LEFT JOIN USERS ON ANSWERS.user_id = USERS.ID FULL JOIN (SELECT answer_id, COUNT(*) FROM likes GROUP BY answer_id) AS l ON ANSWERS.id = l.answer_id WHERE question_id = $1 AND users.id = $2 ORDER BY answers.id DESC',[req.query.questionID, req.query.userID])
     .then(answer => {
         res.status(200)
         .json({

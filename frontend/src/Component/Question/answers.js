@@ -6,6 +6,10 @@ import Avatar from "react-avatar"
 import "react-tabs/style/react-tabs.css";
 import axios from 'axios';
 import "./answers.css"
+import Likes from '../Likes/likes'
+import Auth from '../../Auth/Auth';
+import Feedback from '../Feedback/container'
+
 
 class Answers extends Component {
 constructor (props) {
@@ -40,15 +44,22 @@ postAnswer = (event) => {
 }
 
 mapUserAnswerToRender = (array) => {
-  // console.log(this.state)
-  return( 
+  return(
     array.map((el,i) => {
       return (
-        <div className = "answer" key = {i}> 
-        <h2> 
-        <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
-        </h2>
+    
+        <div className = "answer">
+          <div className='avatarLikes'>
+          <h2>
+          <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
+          </h2>
+          <div className='answerLikesContainer'>
+            {`${el.like_count} ${parseInt(el.like_count) === 1 ? 'like' : 'likes'}`}
+          </div>
+        </div>
         <p> {el.answer_body} </p>
+        <Feedback 
+         answer_id={el.answers_id}/>
         {this.deleteButton(i,el.answers_id)}
         </div>
       )
@@ -61,7 +72,7 @@ deleteAction = (event) => {
   this.setState({
     xbutton: event.currentTarget.value
   })
-  
+
 }
 
 deleteActionFinal = (event) => {
@@ -69,7 +80,7 @@ deleteActionFinal = (event) => {
   axios.delete(`/answers/${params}`).then(()=>{
     this.props.axiosGetUserAnswerByQuestion()
     })
-  
+
 }
 
 
@@ -82,22 +93,34 @@ mapUserAnswerBoxToRender = (array) => {
       </textarea>
       <input type = "Submit" />
       </form>
-      
+
       </div>
 
-      
+
     )
   }
 
 mapAnswersToRender= (array) =>{
   return(
-    array.map(el => {
+    array.map((el, i) => {
       return (
-        <div className = "answer" key ={el.author}>
-        <NavLink to={`/users/${el.authorId}`}>
-          <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
-        </NavLink>
+        <div className = "answer" key ={i}>
+        <div className='avatarLikes'>
+          <NavLink to={`/users/${el.authorId}`}>
+            <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
+          </NavLink>
+          <div className='answerLikesContainer'>
+            { el.authorId === parseInt(Auth.getTokenID()) ?
+              '' : <Likes
+                    axiosGetAnswers={this.props.axiosGetAnswers}
+                    axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
+                    answer_id={el.answersId}/> }
+            {`${el.likeCount} ${parseInt(el.likeCount) === 1 ? 'like' : 'likes'}`}
+          </div>
+        </div>
         <p> {el.answer} </p>
+        <Feedback 
+         answer_id={el.answersId}/>
         </div>
       )
     })
@@ -110,7 +133,7 @@ deleteButton = (i,answers_id) => {
 // console.log(answers_/id)
   if(parseInt(this.state.xbutton) === parseInt(answers_id)){
     return (
-      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} > 
+      <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} >
     <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/ok.png" alt ="delete_icon"/ >
 
     <p> confirm? </p>
@@ -119,9 +142,9 @@ deleteButton = (i,answers_id) => {
   }
   else {
 
-  return( 
+  return(
     <>
-    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} > 
+    <button value = {answers_id} className = "deleteButton" onClick = {this.deleteAction} >
     <img name = "xbutton"  src = "https://img.icons8.com/color/44/000000/cancel.png" alt ="delete_icon"/ >
 
     <p> delete </p>
@@ -133,7 +156,6 @@ deleteButton = (i,answers_id) => {
 
 
 render () {
-  // console.log(this.props.CurrentAnswers)
   return (
       <>
         <Tabs selectedIndex={this.props.tabIndex} onSelect={tabIndex => this.props.TabSelectedChange(tabIndex)}>
@@ -143,7 +165,7 @@ render () {
         <Tab> All Answers </Tab>
         </TabList>
 
-        <TabPanel> 
+        <TabPanel>
         {this.mapUserAnswerBoxToRender()}
         {this.mapUserAnswerToRender(this.props.userAnswer)}
 
@@ -152,7 +174,7 @@ render () {
         <TabPanel>
         {this.mapAnswersToRender(this.props.CurrentAnswers)}
         </TabPanel>
-      
+
         </Tabs>
       </>
   )

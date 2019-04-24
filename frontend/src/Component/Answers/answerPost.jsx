@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Likes from '../Likes/likesContainer'
+import Feedback from '../Feedback/container'
 
 class AnswerPost extends Component {
     constructor () {
@@ -11,7 +11,7 @@ class AnswerPost extends Component {
     }
 
     render () {
-        const { id, user_id, answer_body, username, question_body, category, like_count } = this.props
+        const { id, answer_body, question_body, category, like_count, sortIndex, categoryIndex } = this.props
 
         return (
             <div className='answerQuestionPostContainer'>
@@ -20,10 +20,9 @@ class AnswerPost extends Component {
                         {category}
                     </div>
                     <div className='answerLikeContainer'>
-                        <Likes 
-                         answer_id={id}
-                         category/>
-                        <div className='likeText'>{like_count ? like_count : 0} likes</div>
+                        <div className='likeText'>
+                        {`${like_count} ${parseInt(like_count) === 1 ? 'like' : 'likes'}`}
+                        </div>
                     </div>
                 </div>
                 <div className='answerQuestion'>
@@ -32,6 +31,8 @@ class AnswerPost extends Component {
                 <div className='answerBody'>
                     {answer_body}
                 </div>
+                <Feedback 
+                 answer_id={id}/>
             </div>
         )
     }

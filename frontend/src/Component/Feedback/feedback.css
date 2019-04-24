@@ -1,0 +1,134 @@
+.feedbackButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.feedButton {
+    margin-left: 1%;
+}
+
+.fButton:hover {
+    color: aliceblue;
+    transition: color 0.1s ease-in-out;
+}
+
+.fButton {
+    padding: 1%;
+    width: 17.5%;
+}
+
+.feedbackFeedContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.feedbackInputContainer {
+    height: 0;
+    visibility: collapse;
+    opacity: 0;
+    transition: height 0.4s ease-in-out, opacity 0.1s ease 0.1s;
+}
+
+.feedbackInputContainer.showInput {
+    height: 20vh;
+    opacity: 1;
+    visibility: visible;
+    transition: height 0.4s ease-in-out, opacity 0.1s ease 0.2s;
+}
+
+.feedContainer {
+    margin-top: 5%;
+    height: 0;
+    visibility: collapse;
+    opacity: 0;
+    transition: height 0.4s ease-in-out, opacity 0.3s ease 0.5s;
+}
+
+.feedContainer.showFeed {
+    height: 40vh;
+    max-height: 40vh;
+    width: inherit;
+    opacity: 1;
+    visibility: visible;
+    transition: height 0.4s ease-in-out , opacity 0.3s ease 0.5s;
+    background-color: #ECEEF7;
+    overflow: scroll;
+}
+
+.feedbackP {
+    font-size: 1.3em;
+    position: static;
+    text-align: center;
+    background-color: white;
+    width: 100%;
+    height: 2vh;
+    padding: 2%;
+}
+
+.feedPosts {
+    min-height: 100%;
+}
+
+.feedbackInput {
+    visibility: inherit;
+    transition: all 0.5s;
+    opacity: 1;
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    padding: 1%;
+    margin: 2%;
+    text-transform: none;
+    height: 15vh;
+    font-size: 1.3em;
+    width: 80%;
+    border-radius: 7px;
+}
+
+.feedbackInputButton {
+    border-radius: 5px;
+    min-height: 5vh;
+    cursor: pointer;
+    outline: none;
+    padding: 1%;
+    font-size: 1em;
+    margin-right: 2%;
+}
+
+.feedbackInputButton:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.719);
+    transition: all 0.2s ease-in-out;
+  }
+
+.feedbackForm {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.error {
+    color: red;
+    font-size: .7em;
+    text-transform: none;
+}
+
+.singleFeedbackContainer {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    padding-left: 2%;
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid wheat;
+}
+
+.singleFeedbackContainer h3 {
+    text-align: left;
+    padding-bottom: 2%;
+}
+
+.singleFeedbackContainer .feedbackBodyContainer {
+    text-align: left;
+}

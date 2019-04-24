@@ -2,14 +2,15 @@ import React, { Component } from 'react'
 import axios from 'axios'
 
 import Auth from '../../Auth/Auth'
-
-const heart = <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17.867 3.493l4.133 3.444v5.127l-10 8.333-10-8.334v-5.126l4.133-3.444 5.867 3.911 5.867-3.911zm.133-2.493l-6 4-6-4-6 5v7l12 10 12-10v-7l-6-5z"/></svg>
+import './likes.css'
 
 class Likes extends Component {
     constructor () {
         super ()
         this.state = {
-            currentLikes: ''
+            currentLikes: '',
+            liked: false,
+            likeId: ''
         }
     }
 
@@ -19,6 +20,9 @@ class Likes extends Component {
         .then(res => {
             let userLikes = res.data.likes
             this.setState({ currentLikes: userLikes })
+        })
+        .then(() => {
+            this.validateLikes()
         }).catch(err => console.log(err))
     }
 
@@ -27,13 +31,62 @@ class Likes extends Component {
     }
 
     validateLikes = () => {
+        let likedObj = this.state.currentLikes.find(likeObj => likeObj.answer_id === this.props.answer_id)
+        if (likedObj) {
+            this.setState({
+                liked: true,
+                likeId: likedObj.id
+            })
+        } else {
+            this.setState({
+                liked: false,
+                likeId: ''
+            })
+        }
+    }
 
+    likeAnswer = () => {
+        let userId = Auth.getTokenID()
+        let answerId = this.props.answer_id
+        axios.post('/likes', {
+            user_id: userId,
+            answer_id: answerId
+        })
+        .then(() => {
+            this.props.axiosGetAnswers()
+            this.props.axiosGetUserAnswerByQuestion()
+            this.setState({ liked: true })
+            this.fetchLikes()
+        }).catch(err => console.log(err))
+    }
+
+    unlikeAnswer = () => {
+        let likeId = this.state.likeId
+        axios.delete(`/likes/${likeId}`)
+        .then(() => {
+            this.props.axiosGetAnswers()
+            this.props.axiosGetUserAnswerByQuestion()
+            this.setState({ liked: false })
+            this.fetchLikes()
+        }).catch(err => console.log(err))
+    }
+
+    handleLikeButton = (event) => {
+        event.preventDefault()
+        if (this.state.liked) {
+            this.unlikeAnswer()
+        } else {
+            this.likeAnswer()
+        }
     }
 
     render () {
+
         return (
             <div className='likesContainer'>
-                {heart}
+                <button className='likeButton' onClick={this.handleLikeButton}>
+                    <svg className={ this.state.liked ? 'fullHeart heart' : 'heart' } xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26 26"><path d="M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z"/></svg>
+                </button>
             </div>
         )
     }

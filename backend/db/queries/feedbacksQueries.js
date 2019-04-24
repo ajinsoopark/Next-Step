@@ -2,11 +2,11 @@ const { db } = require('../index');
 
 const getAllFeedbacksForOneAnswer = (req, res, next) => {
   let answerId = parseInt(req.params.id);
-  db.any('SELECT * FROM feedbacks WHERE answer_id=$1', [answerId])
+  db.any('SELECT f.*, u.username FROM feedbacks AS f FULL JOIN users AS u ON f.user_id = u.id WHERE f.answer_id = $1 ORDER BY f.id DESC', [answerId])
     .then(feedbacks => {
       res.status(200).json({
         status: "success!",
-        feedbacks: feedbacks,
+        feedbacks,
         message: "got all feedback for one answer!"
       });
     })

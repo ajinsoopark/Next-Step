@@ -1,6 +1,6 @@
 .Menu {
   font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: rgb(187, 236, 255)
+  background-color: white
 }
 .logo img{
   width: 40%;
@@ -37,7 +37,7 @@ a {
   display: flex;
   margin-right: 2%;
   height: 50px;
-  width: 400px;
+  width: 250px;
   justify-content: space-around;
   align-items: center;
 }
@@ -55,11 +55,24 @@ a {
 }
 
 .search {
-  width: 40%;
+  width: 60%;
   padding-left: 10%;
+}
+
+.search input{
+  border-radius: 4px
 }
 
 .searchSubmit {
   font-size: 2vw;
   cursor: pointer;
+}
+
+.Menu button{
+  height: 40px;
+  width: 80px;
+  border-radius: 4px
+}
+.Menu button:hover{
+  background-color: #E2E2E2
 }

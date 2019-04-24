@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
 
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
-import { questionsIcon, leaderboardIcon, answerIcon, tipsIcon, aboutIcon } from './icons'
+// import { questionsIcon, leaderboardIcon, answerIcon, tipsIcon, aboutIcon } from './icons'
 
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './sideNav.css'

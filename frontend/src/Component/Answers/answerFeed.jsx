@@ -57,6 +57,7 @@ class AnswerFeed extends Component {
             case 1: return 'unpopular'
             case 2: return 'new'
             case 3: return 'old'
+            default: return null
         }
     }
 
@@ -132,7 +133,10 @@ class AnswerFeed extends Component {
                      username={answerObj.username}
                      question_body={answerObj.question_body}
                      category={answerObj.category}
-                     like_count={answerObj.like_count}/>
+                     like_count={answerObj.like_count}
+                     fetchSortedAnswers={this.fetchSortedAnswers}
+                     categoryIndex={this.state.categoryTabIndex}
+                     sortIndex={this.state.sortTabIndex}/>
                 )
             })
         }
