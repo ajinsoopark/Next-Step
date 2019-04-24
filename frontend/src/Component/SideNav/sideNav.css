@@ -22,9 +22,9 @@
   z-index: 1;
 }
 
-.tooltip:hover .tooltiptext {
+/* .tooltip:hover .tooltiptext {
   visibility: visible;
-}
+} */
 
 .sideBarIcon {
   padding-top: 10%;
@@ -41,4 +41,8 @@
 
 .sideBarIcon:hover .sidebarSVG {
   fill: whitesmoke;
+}
+
+.sidenav---navtext---1AE_f {
+  font-size: 1.35em;
 }
