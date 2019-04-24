@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import Likes from '../Likes/likesContainer'
+import Feedback from '../Feedback/container'
 
 class AnswerPost extends Component {
     constructor () {
@@ -29,6 +29,8 @@ class AnswerPost extends Component {
                 <div className='answerBody'>
                     {answer_body}
                 </div>
+                <Feedback 
+                 answer_id={id}/>
             </div>
         )
     }
