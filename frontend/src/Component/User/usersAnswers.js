@@ -1,6 +1,7 @@
 import React, {comp}  from 'react';
 import './usersAnswers.css'
 import axios from 'axios'
+import { NavLink } from 'react-router-dom'
 
 const postLikes= (loggedInUser,answer_id,getData)=>{
   axios.post(`/likes`,{
@@ -25,8 +26,8 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
 }
 
 const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
-  // console.log(data)
   console.log(likes)
+  console.log(data)
 
     if(data && likes){
     let likeThings=likes.map(a => a.answer_id)
@@ -51,8 +52,12 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
             }
             </div>
 
-            <div className='question'>Question:{el.question_body}</div>
-            <div className='answers'>Answer:{el.answer_body}</div>
+            <NavLink to={`/questions/${el.question_id}`}>
+              <div className='question'>
+                Question: {el.question_body}
+              </div>
+            </NavLink>
+            <div className='answers'>Answer: {el.answer_body}</div>
           </div>
         )
 
