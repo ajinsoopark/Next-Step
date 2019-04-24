@@ -4,9 +4,16 @@ import Auth from "../../Auth/Auth"
 import axios from "axios"
 import {withRouter} from "react-router"
 
+
 import Answers from "./answers"
+import Audio from "../TTS/audio.js"
+
+import createPonyfill from 'web-speech-cognitive-services/lib/SpeechServices';
+
 
 import "./question.css"
+
+// const rp = require('request-promise')
 
 class Question extends Component {
   constructor (props) {
@@ -16,7 +23,7 @@ class Question extends Component {
       CurrentAnswers: [],
       tabIndex: 0,
       userAnswer: []
-    })
+        })
   }
 
   mapAnswersToState = (array) =>{
@@ -39,6 +46,7 @@ class Question extends Component {
          user_id: userID
        }
      }).then((res)=>{
+      //  console.log(res.data)
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
@@ -88,18 +96,48 @@ class Question extends Component {
     console.log(this.state)
   }
 
+  getAccessToken = (subscriptionKey) => {
+  axios({
+        method: "post",
+        url:
+          "https://westus.api.cognitive.microsoft.com/sts/v1.0/issuetoken",
+        headers: {
+          "Ocp-Apim-Subscription-Key": "3aef4d0fd6904d808bd091cc3ce75b92"
+        }
+      }).then(response => {
+        return(response.data)
+      })
 
-  componentDidMount(){
+}
+   
+
+  async componentDidMount(){
+    
     //get Answers based on params URL
-    this.axiosGetAnswers()
-    this.axiosGetUserAnswerByQuestion()
+    await this.axiosGetAnswers()
+    await this.axiosGetUserAnswerByQuestion()
+
+      const ponyfill = await createPonyfill({
+      'region': 'westus',
+      'subscriptionKey': '3aef4d0fd6904d808bd091cc3ce75b92',
+      'authorizationToken': this.getAccessToken('3aef4d0fd6904d808bd091cc3ce75b92')
+
+    })
+
+     this.setState(() => ( {ponyfill} ))
 
   }
 
+
 render(){
+  console.log(this.state)
+  
     return(
         <div className="Question">
-        <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1>
+        <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1> 
+        <Audio ponyfill = {this.state.ponyfill}CurrentQuestion ={this.state.CurrentQuestion}
+
+        />
         <div className = "Answers" >
           <Answers tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
           CurrentAnswers = {this.state.CurrentAnswers}
@@ -118,4 +156,9 @@ render(){
 
 
 
+
 export default withRouter(Question)
+
+
+
+
