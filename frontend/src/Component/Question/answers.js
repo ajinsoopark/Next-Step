@@ -54,7 +54,7 @@ mapUserAnswerToRender = (array) => {
           <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
           </h2>
           <div className='answerLikesContainer'>
-            {`${el.like_count} likes`}
+            {`${el.like_count} ${parseInt(el.like_count) === 1 ? 'like' : 'likes'}`}
           </div>
         </div>
         <p> {el.answer_body} </p>
@@ -116,7 +116,7 @@ mapAnswersToRender= (array) =>{
                     axiosGetAnswers={this.props.axiosGetAnswers}
                     axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
                     answer_id={el.answersId}/> }
-            {`${el.likeCount} likes`}
+            {`${el.likeCount} ${parseInt(el.likeCount) === 1 ? 'like' : 'likes'}`}
           </div>
         </div>
         <p> {el.answer} </p>

@@ -20,7 +20,9 @@ class AnswerPost extends Component {
                         {category}
                     </div>
                     <div className='answerLikeContainer'>
-                        <div className='likeText'>{like_count ? like_count : 0} likes</div>
+                        <div className='likeText'>
+                        {`${like_count} ${parseInt(like_count) === 1 ? 'like' : 'likes'}`}
+                        </div>
                     </div>
                 </div>
                 <div className='answerQuestion'>
