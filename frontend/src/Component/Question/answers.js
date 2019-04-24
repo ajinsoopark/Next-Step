@@ -47,7 +47,7 @@ mapUserAnswerToRender = (array) => {
   return(
     array.map((el,i) => {
       return (
-        <div className = "Answers" key={i}>
+    
         <div className = "answer">
           <div className='avatarLikes'>
           <h2>
@@ -61,7 +61,6 @@ mapUserAnswerToRender = (array) => {
         <Feedback 
          answer_id={el.answers_id}/>
         {this.deleteButton(i,el.answers_id)}
-        </div>
         </div>
       )
     })
@@ -130,6 +129,8 @@ mapAnswersToRender= (array) =>{
 }
 
 deleteButton = (i,answers_id) => {
+// console.log(this.state.xbutton) 
+// console.log(answers_/id)
   if(parseInt(this.state.xbutton) === parseInt(answers_id)){
     return (
       <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} >
