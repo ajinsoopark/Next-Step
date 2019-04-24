@@ -25,9 +25,11 @@ class NavBar extends Component{
         </NavLink>
       </div>
       <div className = 'buttons'>
-        <NavLink to="/login" >Login</NavLink>
-        <NavLink to='/signup'>Sign Up</NavLink>
-        <NavLink to="/about" >About</NavLink>
+
+          <NavLink to="/login" ><button>Login</button></NavLink>
+          <NavLink to='/signup'><button>Sign Up</button></NavLink>
+          <NavLink to="/about" ><button>About</button></NavLink>
+
       </div>
       </div>
     )

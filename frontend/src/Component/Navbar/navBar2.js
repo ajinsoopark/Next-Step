@@ -48,19 +48,19 @@ class NavBar2 extends Component{
             <option value='users' >Users</option>
           </select>
           <input className='searchInput' type='text' name='filter' placeholder=' Search'/>
-          <input className='searchSubmit' type='submit'/>
+
         </form>
       </div>
 
       <div className = 'buttons'>
-      
+
           <NavLink to={`/users/${Auth.getTokenID()}`}>
             <Avatar size = "40" textSizeRatio = {2} max-initial = {3} name= {Auth.getToken()} round = {true}/>
           </NavLink>
 
-        <button>
-          <NavLink onClick={this.props.function_logout_user} to = "/"> Log Out </NavLink>
-        </button>
+
+          <NavLink onClick={this.props.function_logout_user} to = "/"> <button>Log Out</button> </NavLink>
+
 
       </div>
     </div>
