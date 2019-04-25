@@ -30,7 +30,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use(session({
     secret: "NextStepToTheNextStage",
     resave: false,
@@ -40,7 +40,9 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
 
-
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "../frontend/build/index.html"));
+});
 
 app.use('/users', usersRouter);
 app.use('/questions', questionsRouter);
@@ -53,10 +55,6 @@ app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 // app.use('/*', indexRouter);
 
-
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "../frontend/build/index.html"));
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
