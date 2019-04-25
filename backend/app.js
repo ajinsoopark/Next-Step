@@ -41,7 +41,7 @@ app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "../frontend/build/index.html"));
+  res.sendFile(path.join(__dirname + "/frontend/build/index.html"));
 });
 
 app.use('/users', usersRouter);
