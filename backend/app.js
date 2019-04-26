@@ -26,7 +26,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 
-
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -52,7 +51,7 @@ app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 
 app.get("*", (req, res) => {
-  res.render(path.join(__dirname + "/../frontend/build/index"));
+  res.sendFile(path.join(__dirname + "/../frontend/build/index"));
 });
 
 // catch 404 and forward to error handler
