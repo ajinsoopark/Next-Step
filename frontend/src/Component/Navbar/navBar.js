@@ -22,13 +22,13 @@ class NavBar extends Component{
       <div className = 'logoLanding'>
         <NavLink to="/" >
           <img src= {logo} alt="next-step_logo" />
+          <h2> Next Step </h2>
         </NavLink>
       </div>
-      <div className = 'buttons'>
-
-          <NavLink to="/login" ><button>Login</button></NavLink>
-          <NavLink to='/signup'><button>Sign Up</button></NavLink>
-          <NavLink to="/about" ><button>About</button></NavLink>
+      <div className = 'nav'>
+          <NavLink className = "nav" to="/login" > Login </NavLink>
+          <NavLink className = "nav" to='/signup'> Sign Up </NavLink>
+          <NavLink className = "nav" to="/about" > About </NavLink>
 
       </div>
       </div>
