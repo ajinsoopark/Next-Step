@@ -6,8 +6,12 @@ import {connect } from "react-redux";
 import {withRouter} from "react-router"
 import {login_user,checkUserAuthStatus} from "../../Redux/Actions/Auth_actions.js"
 
+import video1 from "../../Images/v-homepage.mp4"
+import video2 from "../../Images/Notebook-6378.mp4"
 
-let logo = require("../../Images/nextStepPlaceHolder.png")
+
+let logo = require("../../Images/nextStepLogo.png")
+
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,29 +28,39 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 }
 }
 
-
-
 class Body1 extends Component{
 
 render(){
-  // console.log(this.props)
   return(
+    <>
     <div className='body1'>
-      <div className='left'>
-        <img src={logo} alt=''/>
-      </div>
-      <div className='right'>
-          <img className='landingImg' src='https://image.flaticon.com/icons/svg/50/50443.svg' alt=''/>
-        <div className='letsTalk'>
-          Let's talk about your next step
-        </div>
-        <div className='links'>
-          <button className='demoSignup' onClick = {() => {this.props.function_login_user('a',"a")}}>Demo Login</button>
-          <NavLink to='/signup'><button className='demoSignup'>Sign Up</button></NavLink>
-        </div>
-      </div>
+
+
+    
+    <div className = "company_name"> 
+    <div className ="left">
+    <h1> NEXT STEP </h1>
     </div>
 
+    <div className="right">
+    <img src= {logo} alt="next-step_logo" />
+    </div>
+
+    <div className='links'>
+    <button className='demoSignup' onClick = {() => {this.props.function_login_user('a',"a")}}>Demo Login</button>
+    {/* <NavLink to='/signup'><button className='demoSignup'>Sign Up</button></NavLink> */}
+    </div>
+    </div>
+      
+
+
+    <div className = "videoLay">
+    <video id="background-video" loop autoPlay> 
+    <source src={video2} type="video/mp4"/> 
+    </video>
+    </div>
+    </div>
+    </>
   )
 }
 }

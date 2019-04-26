@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
 
-body {
-    background-color: #ECEEF7
-}
-
 .adviceTitle {
     display: flex;
     justify-content: center;

@@ -45,7 +45,7 @@ class Home extends Component {
         const { expanded } = this.state
 
         return (
-            <div>
+            <>
                 <NavBar2 logoutUser={this.props.logout_user} />
                 <SideNav toggleSideNav={this.toggleSideNav}/>
                     <div className={ expanded ? 'expanded home' : 'unexpanded home' }>
@@ -88,7 +88,7 @@ class Home extends Component {
 
                         </Switch>
                     </div>
-            </div>
+            </>
         )
 }
 

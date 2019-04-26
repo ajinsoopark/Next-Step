@@ -1,21 +1,36 @@
 import React, {Component} from "react"
-// import NavBar from "../Navbar/navBar.js"
+
+
+
+
+
+
 
 // import { Link } from 'react-router-dom'
 
 import "./about.css"
 
-const logo_linkdin = "https://img.icons8.com/windows/30/000000/linkedin.png"
-const logo_github = "https://img.icons8.com/material/30/000000/github.png"
+const developer1 = require("../../Images/developer1.png")
+const developer3 = require("../../Images/developer2.jpg")
+const developer2 = require("../../Images/developer3.png")
+const developer4 = require("../../Images/developer4.jpg")
+
+
+
+
+
+
+const logo_linkdin = "https://img.icons8.com/windows/50/000000/linkedin.png"
+const logo_github = "https://img.icons8.com/material/50/000000/github.png"
 
 const developers = {
-  0 : ["Jhenya Ezhova", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/evgeniya-jhenya-ezhova/", "https://github.com/evgeniyaezhova"]
+  0 : ["Jhenya Ezhova", developer1, "https://www.linkedin.com/in/evgeniya-jhenya-ezhova/", "https://github.com/evgeniyaezhova"]
   ,
-  1 : ["Tyson Pan", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/tysonpan/", "https://github.com/ThaiSonP" ]
+  1 : ["Tyson Pan", developer2, "https://www.linkedin.com/in/tysonpan/", "https://github.com/ThaiSonP" ]
   ,
-  2: ["Alex Park", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/alex-park-jinsoo/", "https://github.com/ajinsoopark" ]
+  2: ["Alex Park", developer3, "https://www.linkedin.com/in/alex-park-jinsoo/", "https://github.com/ajinsoopark" ]
   ,
-  3: ["Jacky Ong", "https://img.icons8.com/windows/96/000000/anonymous-mask.png", "https://www.linkedin.com/in/jacky-ong/", "https://github.com/JJGITTY2018" ]
+  3: ["Jacky Ong", developer4, "https://www.linkedin.com/in/jacky-ong/", "https://github.com/JJGITTY2018" ]
 }
 
 class About extends Component {
@@ -29,7 +44,9 @@ developers_map = (developers) =>{
   return developersValues.map(el => {
     return(
         <div key = {el[0]} className = "developer_info">
+        <div className = "developer_image">
           <img src = {el[1]}  alt = "developer_profile" />
+          </div>
           <h2>{el[0]}</h2>
 
           <div className = "developer_external" >
@@ -59,7 +76,7 @@ developers_map = (developers) =>{
     <div className='aboutBodyContainer'>  
       <div className = "about_body">
         <div className = "about_body_headers">
-        <h1> The Platform For You </h1>
+        <h1> The Platform Made For You </h1>
         <p> Next Step is for job-seekers that would like know what questions they should be prepare for. A hub for job-seekers to share their interview answers, and to recieve feedback from other job-seekers to prepare for their next interview!</p>
         </div>
       </div>
