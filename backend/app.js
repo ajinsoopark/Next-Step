@@ -29,7 +29,7 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-// app.use(express.static(path.join(__dirname + '/../frontend/build/')));
+app.use(express.static(path.join(__dirname + '/../frontend/build/')));
 app.use(session({
     secret: "NextStepToTheNextStage",
     resave: false,
@@ -51,6 +51,7 @@ app.use('/likes', likesRouter);
 app.use('/feedbacks',feedbacksRouter);
 
 app.get("*", (req, res) => {
+  debugger
   res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
 });
 
