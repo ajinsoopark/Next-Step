@@ -31,6 +31,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../frontend/build')));
+console.log(__dirname)
 app.use(session({
     secret: "NextStepToTheNextStage",
     resave: false,
