@@ -1,13 +1,10 @@
-.expanded {
-    margin-left: 240px;
-    padding: 15px 20px 0 20px;
-}
 
-.unexpanded {
-    margin-left: 64px;
-    padding: 15px 20px 0 20px;
-}
 
-.home {
+/* .home {
     padding-top: 5%;
+} */
+
+
+.about_component{
+    display: flex;
 }

@@ -1,0 +1,24 @@
+body {
+ background-color: rgb(7, 16, 46);
+
+}
+
+/* This Resets All Buttons to Empty Style */
+/* button {
+ background: none;
+ color: inherit;
+ border: none;
+ padding: 0;
+ font: inherit;
+ cursor: pointer;
+ font-style: #171A26;
+} */
+
+/* button {
+ outline: none;
+} */
+
+/* a {
+ outline: none;
+} */
+

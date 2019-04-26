@@ -1,25 +1,25 @@
 .sidenav---sidenav---_2tBP {
-  background-color: #232B49;
-  top: 12vh;
-  position: fixed;
+ background-color: #232B49;
+ top: 75px;
+ position: fixed;
 }
 
 .tooltip {
-  position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
+ position: relative;
+ display: inline-block;
+ border-bottom: 1px dotted black;
 }
 
 .tooltip .tooltiptext {
-  visibility: hidden;
-  width: 120px;
-  background-color: black;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px 0;
-  position: absolute;
-  z-index: 1;
+ visibility: hidden;
+ width: 120px;
+ background-color: black;
+ color: #fff;
+ text-align: center;
+ border-radius: 6px;
+ padding: 5px 0;
+ position: absolute;
+ z-index: 1;
 }
 
 /* .tooltip:hover .tooltiptext {
@@ -27,22 +27,36 @@
 } */
 
 .sideBarIcon {
-  padding-top: 10%;
+ padding-top: 10%;
 }
 
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
 
-  max-width: 5%;
+ max-width: 5%;
 }
 
 .sidebarSVG {
-  fill: #97A5DB;
+ fill: #97A5DB;
 }
 
 .sideBarIcon:hover .sidebarSVG {
-  fill: whitesmoke;
+ fill: whitesmoke;
 }
 
 .sidenav---navtext---1AE_f {
-  font-size: 1.35em;
+ font-size: 1.35em;
+}
+
+.expanded {
+ margin-left: 240px;
+ padding: 15px 20px 0 20px;
+ background-color: rgb(249, 249, 249);
+
+}
+
+.unexpanded {
+ margin-left: 64px;
+ padding: 15px 20px 0 20px;
+ background-color: rgb(249, 249, 249);
+
 }

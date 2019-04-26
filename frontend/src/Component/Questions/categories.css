@@ -1,20 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
 
-body {
-  background-color: #ECEEF7
-}
-
-/* This Resets All Buttons to Empty Style */
-button {
-  background: none;
-  color: inherit;
-  border: none;
-  padding: 0;
-  font: inherit;
-  cursor: pointer;
-  font-style: #171A26;
-}
-
 
 .questionsTitle {
   display: flex;

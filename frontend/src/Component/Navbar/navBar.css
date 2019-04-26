@@ -1,78 +1,184 @@
 .Menu {
-  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background-color: white
-}
-.logo img{
-  width: 40%;
+ background-color: rgb(0, 0, 0);
+ background-color: #232b49;
+
+ filter: overlay(100)
 }
 
-.logo {
-  width: 10.5%;
-  padding-left: 7%;
+
+
+.logoLanding {
+ color: white;
+ margin: 1px;
+ padding: 1px;
+ margin-left: 1vw;
+
 }
 
-.logoLanding img{
-  display: flex;
-  width: 8%;
-  padding-left: 13%;
+/* @media screen and (max-width: 640px) {} */
+
+.logoLanding img {
+ top: 100px;
+ filter: invert(100);
+ min-width: 50px;
+ width: 2vw;
+ max-width: 500px;
+
 }
 
-a {
-  text-decoration: none;
+.logoLanding a {
+ text-decoration: none;
+ color: rgb(255, 255, 255);
 }
 
-.Menu{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0px;
-  width: 100%;
-  z-index: 999;
-  height: 12vh;
+.logoLanding a:active {
+ text-decoration: none;
+ color: rgb(255, 255, 255);
 }
 
-.buttons{
-  display: flex;
-  margin-right: 2%;
-  height: 50px;
-  width: 250px;
-  justify-content: space-around;
-  align-items: center;
+.Menu {
+ display: flex;
+ /* flex-direction: row; */
+ justify-content: space-between;
+ align-items: center;
+ /* position: sticky; */
+ top: 0px;
+ width: 100%;
+ z-index: 999;
+ height: 12vh;
 }
+
+.nav {
+ display: flex;
+ margin: 10px;
+ margin-right: 5%;
+ /* height: 50px; */
+ width: 70vw;
+ justify-content: space-around;
+ align-items: flex-end;
+}
+
+.nav a {
+ /* font-size: 100%; */
+ border: 2px solid rgb(195, 204, 255);
+ border-radius: 10px;
+ text-align: center;
+ margin: 1px;
+ padding: 10px;
+ width: 99px;
+ height: 660px + 70vw;
+ font-size: 20px;
+ color: rgb(255, 255, 255);
+
+}
+
+.nav a:hover {
+ color: #FF3D57;
+ border: 2px solid #FF3D57;
+ border-radius: 10px;
+}
+
+
+
+.nav .active {
+ color: #FF3D57;
+ border: 2px solid #FF3D57;
+ border-radius: 10px;
+}
+
+.nav:focus {
+ text-decoration: none;
+}
+
+
+@media screen and (max-width: 640px) {
+
+ .logoLanding h2 {
+  font-size: 10px;
+  text-align: right;
+ }
+
+ .nav a {
+  /* font-size: 100%; */
+  border: 2px solid rgb(195, 204, 255);
+  border-radius: 10px;
+  text-align: center;
+  margin: 1px;
+  padding: 5px;
+  width: 99px;
+  height: 660px + 70vw;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+
+ }
+
+}
+
+
 
 .searchMenu {
-  font-size: 1.3vw;
-  margin-right: 2.5%;
+ font-size: 1.3vw;
+ margin-right: 2.5%;
 }
 
 .searchInput {
-  font-size: 1.4vw;
-  margin-right: 2%;
-  width: 50%;
-  outline: none;
+ font-size: 1.4vw;
+ margin-right: 2%;
+ width: 50%;
+ outline: none;
 }
 
 .search {
-  width: 60%;
-  padding-left: 10%;
+ width: 60%;
+ padding-left: 10%;
 }
 
-.search input{
-  border-radius: 4px
+.search input {
+ border-radius: 4px
 }
 
 .searchSubmit {
-  font-size: 2vw;
-  cursor: pointer;
+ font-size: 2vw;
+ cursor: pointer;
 }
 
-.Menu button{
-  height: 40px;
-  width: 80px;
-  border-radius: 4px
+
+.Menu2 {
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+ /* background-color: rgb(0, 0, 0); */
+ background-color: rgb(0, 55, 255);
+ position: sticky;
+ top: 0px;
+ height: 5vh;
+ min-height: 75px;
+ z-index: 9;
 }
-.Menu button:hover{
-  background-color: #E2E2E2
+
+.Menu2 button {
+ /* height: 40px; */
+ width: 80px;
+ border-radius: 4px
+}
+
+.Menu2 button:hover {
+ background-color: #E2E2E2
+}
+
+.logo img {
+ top: 100px;
+ filter: invert(100);
+ min-width: 50px;
+ width: 2vw;
+ max-width: 500px;
+}
+
+.logo {
+ width: 3vw;
+ max-width: 10vh;
+ color: white;
+ margin: 1px;
+ padding: 1px;
+ margin-left: 1vw;
+
 }

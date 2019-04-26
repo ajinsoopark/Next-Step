@@ -3,6 +3,7 @@ import {NavLink} from 'react-router-dom'
 import './navBar.css'
 import Auth from '../../Auth/Auth.js'
 import Avatar from "react-avatar"
+import './navBar.css'
 
 // this is when the user is logged in
 
@@ -33,7 +34,7 @@ class NavBar2 extends Component{
   render (){
     // console.log(this.props.state.CurrentAutState)
     return(
-    <div className='Menu'>
+    <div className='Menu2'>
 
       <div className = 'logo'>
         <NavLink to="/" >
