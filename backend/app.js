@@ -52,7 +52,7 @@ app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(__dirname + "../frontend/build/index.html");
+  res.sendFile(__dirname + "/../frontend/build/index.html");
 });
 
 // catch 404 and forward to error handler
