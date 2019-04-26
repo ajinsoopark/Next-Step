@@ -51,8 +51,13 @@ app.use('/likes', likesRouter);
 app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname , "/frontend/build/index.html"));
+//   console.log(__dirname)
+// });
+
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/frontend/build/index.html"));
+  res.sendFile("/frontend/build/index.html");
 });
 
 // catch 404 and forward to error handler
