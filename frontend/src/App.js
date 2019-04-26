@@ -60,7 +60,7 @@ class App extends Component {
       <div className="App">
       <Switch>
 
-      <PrivateRoute exact path = "/*" component = {Home} ></PrivateRoute>
+      <PrivateRoute exact path = "/" component = {Home} ></PrivateRoute>
 
       </Switch>
 
