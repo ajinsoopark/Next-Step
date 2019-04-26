@@ -31,7 +31,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, '../frontend/build')));
-console.log(__dirname)
 app.use(session({
     secret: "NextStepToTheNextStage",
     resave: false,
@@ -52,13 +51,8 @@ app.use('/likes', likesRouter);
 app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 
-// app.get("*", (req, res) => {
-//   res.sendFile(path.join(__dirname , "/frontend/build/index.html"));
-//   console.log(__dirname)
-// });
-
-app.get("/*", (req, res) => {
-  res.sendFile("../frontend/build/index.html");
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "../frontend/build/index.html"));
 });
 
 // catch 404 and forward to error handler
