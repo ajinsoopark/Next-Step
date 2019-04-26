@@ -40,7 +40,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
 
-app.use('/*', indexRouter);
+// app.use('/*', indexRouter);
 app.use('/users', usersRouter);
 app.use('/questions', questionsRouter);
 app.use('/answers', answersRouter);
@@ -51,14 +51,15 @@ app.use('/likes', likesRouter);
 app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/frontend/build/index.html"));
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/frontend/build/index.html"));
-});
 
 // error handler
 app.use(function(err, req, res, next) {
