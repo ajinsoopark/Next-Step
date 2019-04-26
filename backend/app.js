@@ -29,15 +29,15 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname + '/../frontend/build/')));
 app.use(session({
-    secret: "NextStepToTheNextStage",
-    resave: false,
-    saveUninitialized: true
-  }))
+  secret: "NextStepToTheNextStage",
+  resave: false,
+  saveUninitialized: true
+}))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
+app.use(express.static(path.join(__dirname + '/../frontend/build/')));
 
 // app.use('/*', indexRouter);
 app.use('/', indexRouter);
