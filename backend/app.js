@@ -51,7 +51,7 @@ app.use('/feedbacks',feedbacksRouter);
 app.use('/', indexRouter);
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname + "/../frontend/build/index"));
+  res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
 });
 
 // catch 404 and forward to error handler
