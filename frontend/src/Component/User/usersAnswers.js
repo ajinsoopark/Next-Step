@@ -26,7 +26,7 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
 }
 
 const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
-  console.log(likes)
+  // console.log(likes)
   console.log(data)
 
     if(data && likes){

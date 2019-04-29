@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Poppins:500');
+
+
+.results{
+  vertical-align: middle;
+  border: 1px solid #171A26;
+  border-radius: 4px;
+  background-color: #CFD6ED;
+  text-align: justify;
+  font-size: 20px;
+  margin: 1%;
+  padding: 2%;
+  font-family: Poppins;
+}

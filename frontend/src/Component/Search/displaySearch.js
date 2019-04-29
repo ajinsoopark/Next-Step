@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 import UserSearchCard from './userSearchCard'
+import  './displaySearch.css'
 
 const DisplaySearch = ({ search, data }) => {
   if (search && data.data){
@@ -16,7 +17,7 @@ const DisplaySearch = ({ search, data }) => {
     }else if(search ==='questions'){
       return(data.data.map((el)=>{
         return(
-          <div key={el.id}>
+          <div className='results' key={el.id}>
             <Link to={'/questions/'+ el.id}>
               {el.question_body}
             </Link>
