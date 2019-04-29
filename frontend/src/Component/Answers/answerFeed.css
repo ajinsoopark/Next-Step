@@ -1,70 +1,85 @@
 .personalAnswer {
-    display: flex;
-    justify-content: center;
-    font-size: 4vw;
-    font-weight: bold;
+ display: flex;
+ justify-content: center;
+ font-size: 4vw;
+ font-weight: bold;
 }
 
 .personalAnswerFeedContainer {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+ /* display: flex;
+ justify-content: center;
+ flex-direction: column; */
+ height: 100vh;
+}
+
+.categoryContainer {
+ font-size: 100%;
+ text-align: center;
+ width: 200px;
+}
+
+.answerTabs {
+ background-color: #F9F9F9;
+ overflow: hidden;
 }
 
 .answerQuestionPostContainer {
-    border: 1px solid rgb(106, 113, 138);
-    width: 70%;
-    margin: 2%;
-    border-radius: 5px;
-    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.719);
+ /* background-color: red; */
+ border: 1px solid rgb(106, 113, 138);
+ width: 80%;
+ margin: 2%;
+ border-radius: 6px;
+ display: grid;
+ grid-template-columns: 100px 1fr;
+ grid-template-rows: 15vh 15vh 1fr;
+ /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.719); */
 
 }
 
 .personalAnswerFeed {
-    display: flex;
-    justify-content: center; 
-    flex-direction: column;
-    align-items: center;
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ align-items: center;
 }
 
 .answerBody {
-    background-color: rgb(198, 200, 206);
-    padding: 3%;
-    border-top: 1px solid rgb(106, 113, 138);
-    border-bottom: 1px solid rgb(106, 113, 138);
-    margin-bottom: 2%;
+ background-color: rgb(198, 200, 206);
+ padding: 3%;
+ border-top: 1px solid rgb(106, 113, 138);
+ border-bottom: 1px solid rgb(106, 113, 138);
+ margin-bottom: 2%;
 }
 
 .answerQuestion {
-    padding: 3%;
-    background-color: #CFD6ED;
-    border-top: 1px solid rgb(106, 113, 138);
+
+ /* padding: 3%; */
+ /* background-color: #CFD6ED; */
+ /* border-top: 1px solid rgb(106, 113, 138); */
 }
 
-.userCategoryLikes {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 3%;
-}
+
+
 
 .pickCat {
-    font-size: 1.5vw;
-    font-weight: bold;
-    padding-bottom: 1%;
+ /* font-size: 2vw; */
+ color: #FF3D57;
+ font-weight: bold;
+ padding-bottom: 1%;
 }
 
 .pickSort {
-    font-size: 1.5vw;
-    font-weight: bold;
-    padding-top: 1.5%;
-    padding-bottom: 1%;
+ color: #FF3D57;
+ /* font-size: 1.5vw; */
+ font-weight: bold;
+ padding-top: 1.5%;
+ padding-bottom: 1%;
 }
 
 .sortedAnswerFeed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
 }
 
 /* .react-tabs__tab {
@@ -72,17 +87,116 @@
 } */
 
 .react-tabs__tab--selected {
-    background: #CFD6ED;
-    box-shadow: none;
+ background: rgb(215, 215, 215);
+ box-shadow: none;
 }
 
 .react-tabs__tab:hover {
-    text-decoration: underline;
+ /* text-decoration: underline; */
 }
 
 .answerLikeContainer {
-    display: flex;
-    flex-direction: row;
-    width: 6.5vw;
-    justify-content: space-between;
+ display: flex;
+ flex-direction: row;
+ width: 6.5vw;
+ justify-content: space-between;
+}
+
+.react-tabs__tab-list {
+ display: flex;
+ /* overflow: scroll; */
+ text-align: center;
+
+}
+
+
+/* .react-tabs__tab{
+    border-bottom: none;
+}  */
+
+
+.userCategoryLikes {
+ grid-column-start: 1;
+ transform: rotate(-90deg);
+ place-items: center;
+ grid-row-start: 4;
+ grid-row-end: 1;
+ display: flex;
+ justify-content: space-between;
+ flex-direction: row;
+ /* padding: 3%; */
+ transform: rotate(-90deg);
+ /* height: 500px; */
+}
+
+@media screen and (max-width: 640px) {
+ .react-tabs__tab-list {
+  display: flex;
+  /* overflow: scroll; */
+  flex-direction: column;
+  text-align: center;
+  white-space: wrap;
+  overflow: scroll;
+  text-overflow: ellipsis;
+ }
+
+ .pickCat {
+  margin-top: 4vh;
+  /* margin: 10px; */
+  /* font-size: 3vw; */
+  color: #FF3D57;
+  font-weight: bold;
+  padding-bottom: 1%;
+ }
+
+ .pickSort {
+  /* font-size: 1.5vw; */
+  font-weight: bold;
+  padding-top: 1.5%;
+  padding-bottom: 1%;
+  color: #FF3D57;
+ }
+
+ .personalAnswer {
+  display: flex;
+  justify-content: center;
+  font-size: 7vw;
+  text-align: center;
+  font-weight: bold;
+ }
+
+ .react-tabs__tab--selected {
+  background-color: #FF3D57;
+  color: white;
+  border-radius: 0px;
+ }
+
+ .react-tabs__tab-list {
+  background-color: #CED5ED;
+ }
+
+ .userCategoryLikes {
+  display: none;
+  transform: rotate(-90deg);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+ }
+
+ .categoryContainer {
+  display: none;
+  font-size: 100%;
+  text-align: center;
+  width: 200px;
+ }
+
+ .answerQuestionPostContainer {
+  /* background-color: red; */
+  border: 1px solid rgb(106, 113, 138);
+  width: 80%;
+  margin: 2%;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+ }
 }

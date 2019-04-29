@@ -19,11 +19,11 @@ class AnswerPost extends Component {
                     <div className='categoryContainer'>
                         {category}
                     </div>
-                    <div className='answerLikeContainer'>
+                    {/* <div className='answerLikeContainer'>
                         <div className='likeText'>
                         {`${like_count} ${parseInt(like_count) === 1 ? 'like' : 'likes'}`}
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <div className='answerQuestion'>
                     { question_body }
