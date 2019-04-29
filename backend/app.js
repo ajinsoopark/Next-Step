@@ -39,6 +39,7 @@ app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
 app.use(express.static(path.join(__dirname + '/../frontend/build/')));
 
+console.log(process.env)
 // app.use('/*', indexRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
