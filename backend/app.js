@@ -37,9 +37,11 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
-app.use(express.static(path.join(__dirname + '/../frontend/build/')));
 
-console.log(process.env)
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname + '/../frontend/build/')))
+}
+
 // app.use('/*', indexRouter);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -52,7 +54,6 @@ app.use('/likes', likesRouter);
 app.use('/feedbacks',feedbacksRouter);
 
 app.get("*", (req, res) => {
-  debugger
   res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
 });
 
