@@ -12,11 +12,7 @@
  height: 100vh;
 }
 
-.categoryContainer {
- font-size: 100%;
- text-align: center;
- width: 200px;
-}
+
 
 .answerTabs {
  background-color: #F9F9F9;
@@ -31,7 +27,7 @@
  border-radius: 6px;
  display: grid;
  grid-template-columns: 100px 1fr;
- grid-template-rows: 15vh 15vh 1fr;
+ grid-template-rows: 10vh 15vh 1fr;
  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.719); */
 
 }
@@ -44,15 +40,22 @@
 }
 
 .answerBody {
- background-color: rgb(198, 200, 206);
- padding: 3%;
+ /* background-color: rgb(198, 200, 206); */
+ /* padding: 3%; */
+ padding: 10px;
  border-top: 1px solid rgb(106, 113, 138);
  border-bottom: 1px solid rgb(106, 113, 138);
- margin-bottom: 2%;
+ margin: 10px;
+ color: rgb(0, 33, 82);
 }
 
 .answerQuestion {
-
+ align-self: center;
+ margin: 10px;
+ padding: 10px;
+ font-size: 130%;
+ text-align: left;
+ font-weight: bold;
  /* padding: 3%; */
  /* background-color: #CFD6ED; */
  /* border-top: 1px solid rgb(106, 113, 138); */
@@ -109,11 +112,9 @@
 
 }
 
-
 /* .react-tabs__tab{
     border-bottom: none;
 }  */
-
 
 .userCategoryLikes {
  grid-column-start: 1;
@@ -128,6 +129,15 @@
  transform: rotate(-90deg);
  /* height: 500px; */
 }
+
+.fButton {
+    height: 50px;
+    font-weight: 500;
+ color: #FF3D57;
+ border: 2px solid #FF3D57;
+ border-radius: 10px;
+}
+
 
 @media screen and (max-width: 640px) {
  .react-tabs__tab-list {
