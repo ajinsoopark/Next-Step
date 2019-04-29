@@ -1,54 +1,66 @@
 .answer {
-  border: 1px solid rgb(106, 113, 138);
-  background-color: rgb(198, 200, 206);
-  border-radius: 10px;
-  width: 80%;
-  margin: 2%;
-  padding: 4%;
+ border: 1px solid rgb(106, 113, 138);
+ background-color: rgb(198, 200, 206);
+ border-radius: 10px;
+ width: 80%;
+ margin: 2%;
+ padding: 4%;
+
 }
 
 .answer h2 {
-  text-align: left;
-  font-weight: bold;
+ text-align: left;
+ font-weight: bold;
 }
 
 .answer p {
-  margin: 1%;
-  padding: 1%;
-  line-height: 1.2;
-  white-space: pre-line;
+ margin: 1%;
+ padding: 1%;
+ line-height: 1.2;
+ white-space: pre-line;
 }
 
 .deleteButton {
-  font-size: 15px;
-  position: relative;
-  left: 50%;
+ font-size: 15px;
+ position: relative;
+ left: 50%;
 }
 
 .deleteButton img:hover {
-  filter: invert(30%);
+ filter: invert(30%);
 }
 
 .deleteButton img:active {
-  filter: invert(70%);
+ filter: invert(70%);
 }
 
 .react-tabs__tab--selected {
-  background-color: #ECEEF7;
+ background-color: #ECEEF7;
 }
 
 .answered {
-  position: relative;
-  z-index: 0;
-  left: 0px;
-  bottom: -15px;
-  margin: 0;
-  padding: 0;
+ position: relative;
+ z-index: 0;
+ left: 0px;
+ bottom: -15px;
+ margin: 0;
+ padding: 0;
 }
 
 .avatarLikes {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding-bottom: 2%;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ padding-bottom: 2%;
+}
+
+
+
+@media screen and (max-width: 640px) {
+
+ .personalAnswerFeedContainer{
+height: 100vh
+ }
+
+
 }
