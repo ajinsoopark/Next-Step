@@ -17,7 +17,7 @@ class Leaderboard extends Component{
         data:res.data.response
       })
     })
-    axios.get('/questions/count').then(res=>{
+    axios.get('/api/questions/count').then(res=>{
       this.setState({
         questions:+res.data.count[0].count
       })
