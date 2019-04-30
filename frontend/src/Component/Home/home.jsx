@@ -50,7 +50,7 @@ class Home extends Component {
                 <SideNav toggleSideNav={this.toggleSideNav}/>
                     <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
                         <Switch>
-                            <Route exact path='/' render={() => {
+                            <Route exact path='/*' render={() => {
                                 return (
                                 <Dashboard/>)
                             }}/>
