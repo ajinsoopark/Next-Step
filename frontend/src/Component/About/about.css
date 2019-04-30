@@ -164,8 +164,8 @@
 
  .about_body_headers p {
   text-emphasis: none;
-  margin: 5px;
-  padding: 5px;
+  /* margin: 5px;
+  padding: 5px; */
   font-size: 106%;
   text-align: justify;
   line-height: 1.2;
