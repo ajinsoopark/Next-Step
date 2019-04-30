@@ -14,15 +14,15 @@ render(){
       <div className = 'cardContainer'>
         <div className = 'cards'>
           <h2 className='cardLabel'>Practice</h2>
-          <p className='cardInfo'>"Listen to interview quesitons, and give us your answers. We'll keep track of your answers & progress."</p>
+          <p className='cardInfo'>Get access to an extensive list of interview questions asked at top companies today, and practice effectively answering them. Keep track of your answers & progress.</p>
         </div>
         <div className = 'cards'>
           <h2 className='cardLabel'>Feedback</h2>
-          <p className='cardInfo'>Have professionals, and others review and look at your answers. Receive constructive feedback, and more!</p>
+          <p className='cardInfo'>Receive valuable contructive feedback for your answers from professionals and other users. Read and review other users' interview answers.</p>
         </div>
         <div className = 'cards'>
-          <h2 className='cardLabel'>Tips & Tricks</h2>
-          <p className='cardInfo'>Take a look at some tips and tricks that will bring you above the competion. Small details help your big picture.</p>
+          <h2 className='cardLabel'>Advice</h2>
+          <p className='cardInfo'>Take a look at the helpful tips for before, during and after your interview that will give you a step above the competion. Small details make the big picture.</p>
         </div>
       </div>
     </div>
