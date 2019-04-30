@@ -9,6 +9,9 @@
     display: flex;
 }
 
-.home{
+div .home{
+    position: relative;
     overflow: scroll;
+    height: auto;
+    min-height: 100vh;
 }
