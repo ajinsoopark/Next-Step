@@ -11,7 +11,7 @@ class Leaderboard extends Component{
     })
   }
   componentDidMount(){
-    axios.get('/answers/progress').then(res=>{
+    axios.get('/api/answers/progress').then(res=>{
       // console.log(res.data.response)
       this.setState({
         data:res.data.response

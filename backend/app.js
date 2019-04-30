@@ -44,14 +44,14 @@ if (process.env.NODE_ENV === 'production') {
 
 // app.use('/*', indexRouter);
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/questions', questionsRouter);
-app.use('/answers', answersRouter);
-app.use('/categories', categoriesRouter);
-app.use('/tips', tipsRouter);
-app.use('/tipcats', tipcatsRouter);
-app.use('/likes', likesRouter);
-app.use('/feedbacks',feedbacksRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/questions', questionsRouter);
+app.use('/api/answers', answersRouter);
+app.use('/api/categories', categoriesRouter);
+app.use('/api/tips', tipsRouter);
+app.use('/api/tipcats', tipcatsRouter);
+app.use('/api/likes', likesRouter);
+app.use('/api/feedbacks',feedbacksRouter);
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));

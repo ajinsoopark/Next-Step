@@ -20,7 +20,7 @@ export default class Tips extends React.Component {
 
   getAllTips = () => {
     axios
-    .get("/tips")
+    .get("/api/tips")
     .then(res => {
       this.setState({
         allTips:res.data.tips
@@ -30,7 +30,7 @@ export default class Tips extends React.Component {
 
   getAllTipcats = () => {
     axios
-    .get("/tipcats")
+    .get("/api/tipcats")
     .then(res => {
       this.setState({
         allTipcats: res.data.tipcats

@@ -41,7 +41,7 @@ class Question extends Component {
     let paramsID = this.props.match.params.id
     let userID = Auth.getTokenID()
     paramsID ?
-     axios.get(`/answers/question`,{
+     axios.get(`/api/answers/question`,{
        params: 
        {
          id: paramsID,
@@ -68,7 +68,7 @@ class Question extends Component {
     // console.log(userID)
     paramsID ?
    //THIS IS AXIOS BY A QUERY
-     axios.get(`/answers/byuser/byquestion`,
+     axios.get(`/api/answers/byuser/byquestion`,
      {
        params :
        {userID : userID,

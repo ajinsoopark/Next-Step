@@ -23,7 +23,7 @@ export default class QuestionList extends React.Component {
 
   getAllQuestions = () => {
     axios
-    .get("/questions")
+    .get("/api/questions")
     .then(res => {
       console.log(res.data.question)
       this.setState({
@@ -35,7 +35,7 @@ export default class QuestionList extends React.Component {
     getUserAnsweredList = () => {
       let params = Auth.getTokenID()
     axios
-    .get(`/questions/answers/${params}`,)
+    .get(`/api/questions/answers/${params}`,)
     .then(res => {
       this.setState({
         userAnsweredList:res.data.answered
@@ -48,7 +48,7 @@ export default class QuestionList extends React.Component {
 
   getAllCategories = () => {
     axios
-    .get("/categories")
+    .get("/api/categories")
     .then(res => {
       console.log("this is ALL Categories: ", res)
       this.setState({
