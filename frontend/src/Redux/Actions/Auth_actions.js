@@ -12,7 +12,7 @@ const LOG_OUT_USER = "LOG_OUT_USER"
 
 //This is to check if (a) user has already login in the background. 
 export const checkUserAuthStatus = () => dispatch => {
-  axios.get("/users/log").then(res => {
+  axios.get("/api/users/log").then(res => {
     if(res.data.username === Auth.getToken()){
       dispatch({
         type: CHECK_AUTH_USER,
@@ -34,7 +34,7 @@ export const checkUserAuthStatus = () => dispatch => {
 //This is to login user. 
 export const login_user = (username, password) => dispatch => {
     axios
-      .post("/users/login", {
+      .post("/api/users/login", {
         username,
         password
       }).then(res => {
@@ -65,7 +65,7 @@ export const login_user = (username, password) => dispatch => {
 //This is to logout user
 export const logOutUser = ()=> dispatch => {
     axios
-      .post("/users/logout")
+      .post("/api/users/logout")
       .then(() => {
         dispatch({
           type:LOG_OUT_USER,

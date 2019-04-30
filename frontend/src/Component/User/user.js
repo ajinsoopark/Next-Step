@@ -16,32 +16,32 @@ class User extends Component {
 
  getData =()=>{
     const {userID,loggedInUser}=this.state
-    axios.get(`/users/${userID}`).then(res=>{
+    axios.get(`/api/users/${userID}`).then(res=>{
       this.setState({
         name:res.data.user.first_name +" "+ res.data.user.last_name,
         userName:res.data.user.username
       })
     })
 
-    axios.get(`/answers/count/user/${userID}`).then(res=>{
+    axios.get(`/api/answers/count/user/${userID}`).then(res=>{
       this.setState({
         answers:+res.data.count[0].count
       })
     })
 
-    axios.get('/questions/count').then(res=>{
+    axios.get('/api/questions/count').then(res=>{
       this.setState({
         questions:+res.data.count[0].count
       })
     })
 
-    axios.get(`/answers/user/${userID}`).then(res=>{
+    axios.get(`/api/answers/user/${userID}`).then(res=>{
       this.setState({
         data:res.data.answers
       })
     })
 
-    axios.get(`/likes/${loggedInUser}`).then(res=>{
+    axios.get(`/api/likes/${loggedInUser}`).then(res=>{
       this.setState({
         likes:res.data.likes
       })

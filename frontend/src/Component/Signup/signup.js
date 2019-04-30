@@ -28,12 +28,12 @@ class Signup extends Component{
 
     const {username,first_name,last_name,email,password}=this.state;
 
-    await axios.post('/users/signup',{username,first_name,last_name,email,password})
+    await axios.post('/api/users/signup',{username,first_name,last_name,email,password})
     .then(res=>{
       //THIS IS CAN BE SHORTEN BY PASSING LOGIN USER FROM APPS JS. We currently do not want to lose Public Route function.
 
       axios
-        .post("/users/login", {
+        .post("/api/users/login", {
           username,
           password
         }).then((res)=>{

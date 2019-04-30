@@ -22,42 +22,46 @@ const feedbacksRouter = require('./routes/feedbacks');
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+// app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
-
 
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
-    secret: "NextStepToTheNextStage",
-    resave: false,
-    saveUninitialized: true
-  }))
+  secret: "NextStepToTheNextStage",
+  resave: false,
+  saveUninitialized: true
+}))
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(cookieParser("NextStepToTheNextStage"));
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname + '/../frontend/build/')))
+}
 
-
-app.use('/users', usersRouter);
-app.use('/questions', questionsRouter);
-app.use('/answers', answersRouter);
-app.use('/categories', categoriesRouter);
-app.use('/tips', tipsRouter);
-app.use('/tipcats', tipcatsRouter);
-app.use('/likes', likesRouter);
-app.use('/feedbacks',feedbacksRouter);
-app.use('/', indexRouter);
 // app.use('/*', indexRouter);
+app.use('/', indexRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/questions', questionsRouter);
+app.use('/api/answers', answersRouter);
+app.use('/api/categories', categoriesRouter);
+app.use('/api/tips', tipsRouter);
+app.use('/api/tipcats', tipcatsRouter);
+app.use('/api/likes', likesRouter);
+app.use('/api/feedbacks',feedbacksRouter);
 
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

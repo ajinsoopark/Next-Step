@@ -4,7 +4,7 @@ import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 
 const postLikes= (loggedInUser,answer_id,getData)=>{
-  axios.post(`/likes`,{
+  axios.post(`/api/likes`,{
     user_id:loggedInUser,
     answer_id:answer_id
   })
@@ -12,7 +12,7 @@ const postLikes= (loggedInUser,answer_id,getData)=>{
 }
 
 const disLikes= (loggedInUser,answer_id,getData)=>{
-  axios.delete(`/likes`,{
+  axios.delete(`/api/likes`,{
     params: {
 
         user_id:loggedInUser,
