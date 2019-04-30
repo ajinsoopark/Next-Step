@@ -55,7 +55,7 @@ class NavBar2 extends Component{
 
       <div className = 'buttons'>
 
-          <NavLink to={`/api/users/${Auth.getTokenID()}`}>
+          <NavLink to={`/gusers/${Auth.getTokenID()}`}>
             <Avatar size = "40" textSizeRatio = {2} max-initial = {3} name= {Auth.getToken()} round = {true}/>
           </NavLink>
 
