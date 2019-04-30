@@ -11,7 +11,7 @@ const SEARCH = "SEARCH"
 export const onSearch = (search,filter) => dispatch => {
   console.log(search)
   search === 'questions' ?
-  axios.get(`/questions/search/${filter}`).then(res => {
+  axios.get(`/api/questions/search/${filter}`).then(res => {
     console.log(res)
     dispatch ({
       type : "SEARCH",
@@ -19,7 +19,7 @@ export const onSearch = (search,filter) => dispatch => {
     })
   })
   :
-  axios.get(`/users/search/${filter}`).then(res=>{
+  axios.get(`/api/users/search/${filter}`).then(res=>{
     dispatch ({
       type: "SEARCH",
       payload : res.data.users

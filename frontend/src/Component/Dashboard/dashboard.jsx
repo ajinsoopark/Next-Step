@@ -21,7 +21,7 @@ class Dashboard extends Component {
     componentDidMount () {
         console.log(this.props)
        this.props.function_checkStatus()
-       axios.get('/questions/random')
+       axios.get('/api/questions/random')
        .then(res => {
            let randomQuestion = res.data.question[0]
            this.setState({

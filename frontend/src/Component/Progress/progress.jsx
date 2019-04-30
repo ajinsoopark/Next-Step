@@ -17,14 +17,14 @@ class Progress extends Component {
 
     // get the userId & see how many questions they've answered
 
-     axios.get(`answers/count/user/${Auth.getTokenID()}`).then(
+     axios.get(`/api/answers/count/user/${Auth.getTokenID()}`).then(
       (res)=>{
           this.setState({answers:+(res.data.count[0].count)})
         }
       )
 
     // get a count of all questions
-     axios.get('/questions/count').then((res)=>{
+     axios.get('/api/questions/count').then((res)=>{
       this.setState({
         questions:parseInt(res.data.count[0].count)
       })
