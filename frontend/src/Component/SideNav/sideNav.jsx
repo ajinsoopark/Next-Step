@@ -7,11 +7,13 @@ import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import './sideNav.css'
 
+import homeIcon2 from "../../Images/icons8-home-page-48.png"
 import answerIcon2 from "../../Images/icons8-circled-a-48.png"
 import aboutIcon2 from "../../Images/icons8-info-50.png"
 import questionsIcon2 from "../../Images/icons8-circled-q-48.png"
 import leaderboardIcon2 from "../../Images/icons8-gold-medal-48.png"
 import tipsIcons2 from "../../Images/icons8-idea-filled-48.png"
+
 
 
 class SideNavMenu extends Component {
@@ -24,7 +26,6 @@ class SideNavMenu extends Component {
 
     render () {
         const { activeTab } = this.state
-
         return (
             <div className='sideContainer'>
                <SideNav onSelect={(selected) => {
@@ -37,26 +38,18 @@ class SideNavMenu extends Component {
                 }}>
                 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
                 <SideNav.Nav>
-
-                    <NavItem
-                    className = "sideNav_leaderboard"
-                    eventKey='leaderboard'
-                    active={activeTab === 'leaderboard' ? true : false}>
+                     <NavItem
+                    className = "dashboard"
+                    eventKey='home'
+                    active={activeTab === 'home' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/leaderboard'}>
-
                                 <div className='sideBarIcon'>
-                                    {/* {leaderboardIcon} */}
-                                    <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
+                                    {/* {questionsIcon} */}
+                                    <img src = {homeIcon2} alt = "Circled Home" width= "35" />
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-
-                            <NavLink className='sideNavLink' to={'/leaderboard'}>
-
-                                Leaderboard
-                            </NavLink>    
+                         Home
                         </NavText>
                     </NavItem>
 
@@ -71,7 +64,7 @@ class SideNavMenu extends Component {
                                 </div>
                         </NavIcon>
                         <NavText>
-                                Questions
+                            Questions
                         </NavText>
                     </NavItem>
 
@@ -103,10 +96,29 @@ class SideNavMenu extends Component {
                                 </div>
                         </NavIcon>
                         <NavText>
-                                Tips & Tricks
+                                Advice
                         </NavText>
                     </NavItem>
+                    <NavItem
+                    className = "sideNav_leaderboard"
+                    eventKey='leaderboard'
+                    active={activeTab === 'leaderboard' ? true : false}>
+                        <NavIcon>
+                            <NavLink className='sideNavLink' to={'/leaderboard'}>
 
+                                <div className='sideBarIcon'>
+                                    {/* {leaderboardIcon} */}
+                                    <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
+                                </div>
+                            </NavLink>
+                        </NavIcon>
+                        <NavText>
+
+                            <NavLink className='sideNavLink' to={'/leaderboard'}>
+                                Leaderboard
+                            </NavLink>    
+                        </NavText>
+                    </NavItem>
                     <NavItem
                     className = "sideNav_about"
                     eventKey='about'
