@@ -16,7 +16,7 @@ class Likes extends Component {
 
     fetchLikes = () => {
         let userId = Auth.getTokenID()
-        axios.get(`/likes/${userId}`)
+        axios.get(`/api/likes/${userId}`)
         .then(res => {
             let userLikes = res.data.likes
             this.setState({ currentLikes: userLikes })
@@ -48,7 +48,7 @@ class Likes extends Component {
     likeAnswer = () => {
         let userId = Auth.getTokenID()
         let answerId = this.props.answer_id
-        axios.post('/likes', {
+        axios.post('/api/likes', {
             user_id: userId,
             answer_id: answerId
         })
@@ -62,7 +62,7 @@ class Likes extends Component {
 
     unlikeAnswer = () => {
         let likeId = this.state.likeId
-        axios.delete(`/likes/${likeId}`)
+        axios.delete(`/api/likes/${likeId}`)
         .then(() => {
             this.props.axiosGetAnswers()
             this.props.axiosGetUserAnswerByQuestion()

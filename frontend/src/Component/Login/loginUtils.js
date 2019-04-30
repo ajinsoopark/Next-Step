@@ -5,7 +5,7 @@ import axios from "axios"
 
 export const checkUserAuthStatus = () => {
   console.log("CheckUserAuth")
-  axios.get("/users/log").then(res => {
+  axios.get("/api/users/log").then(res => {
     if(res.data.username === Auth.getToken()){
       this.setState({
         isLoggedin : Auth.isUserAuthenticated()
@@ -35,7 +35,7 @@ export const checkUserAuthStatus = () => {
 export const login_user = (username, password) => dispatch => {
   console.log("CALLING LOGIN")
     axios
-      .post("/users/login", {
+      .post("/api/users/login", {
         username,
         password
       }).then(res => {
@@ -72,7 +72,7 @@ export const login_user = (username, password) => dispatch => {
 export const logOutUser = ()=> dispatch => {
   console.log("I AM LOGGING OUT YO.")
     axios
-      .post("/users/logout")
+      .post("/api/users/logout")
       .then(() => {
         this.setState({
           current_user: null

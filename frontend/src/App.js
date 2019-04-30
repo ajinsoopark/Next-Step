@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import axios from "axios"
+// import axios from "axios"
 
 //IMPORTS:
 import {withRouter} from "react-router";
-import {Route, Switch} from "react-router-dom";
+import {Switch} from "react-router-dom";
 
 
 
 // import UserAuthRoutings from "./Auth/Auth.js" - These are middleware - to reroute users if they have login or not login.
 // import Auth from "./Auth/Auth.js"
 import PrivateRoute from "./Auth/PrivateRouting.js"
-import PublicRoute from "./Auth/PublicRouting.js";
+// import PublicRoute from "./Auth/PublicRouting.js";
 
 
 // Redux Actions - for onLoad page - component did mount
@@ -24,8 +24,8 @@ import './App.css';
 
 
 //Import Redux Containers from Redux
-import Login from "./Component/Login/loginContainer"
-import NavBar from "./Component/Navbar/navBarContainer"
+// import Login from "./Component/Login/loginContainer"
+// import NavBar from "./Component/Navbar/navBarContainer"
 import Home from './Component/Home/homeContainer.js';
 // import Dashboard from "./component/Dashboard/dashboard_container.js"
 
@@ -33,10 +33,10 @@ import Home from './Component/Home/homeContainer.js';
 
 
 // Import Component from Components
-import Signup from "./Component/Signup/signup";
-import About from "./Component/About/about.js"
+// import Signup from "./Component/Signup/signup";
+// import About from "./Component/About/about.js"
 // import PublicNavBar from "./navBar/public_navBar.js"
-import Landing from './Component/LandingPage/landingPage'
+// import Landing from './Component/LandingPage/landingPage'
 // import Login from "./component/login/login";
 // import NavBar from "./component/navbar/navBar.js"
 // import Dashboard from "./component/Dashboard/dashboard.js"

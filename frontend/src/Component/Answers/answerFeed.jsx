@@ -25,7 +25,7 @@ class AnswerFeed extends Component {
         this.props.function_checkStatus()
         this.fetchSortedAnswers(this.state.categoryTabIndex, this.state.sortTabIndex)
             .then(() => {
-                axios.get('/categories')
+                axios.get('/api/categories')
                 .then(res => {
                     let categories = res.data.categories
                     categories.unshift(all)
@@ -36,7 +36,7 @@ class AnswerFeed extends Component {
 
     fetchSortedAnswers = async (category, sort) => {
         if (category === 0) {
-            axios.get(`/answers/${this.convertSort(sort)}/${Auth.getTokenID()}`)
+            axios.get(`/api/answers/${this.convertSort(sort)}/${Auth.getTokenID()}`)
             .then(res => {
                 console.log(res)
                 let answers = res.data.answers

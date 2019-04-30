@@ -28,7 +28,7 @@ class FeedbackPosts extends Component {
                                   )
                               }) : ''
 
-                              return (
+        return (
             <div className={ this.containerClass(expandedFeed) }>
                 <div className='feedbackP'>Feedback</div>
                 <div className='feedPosts'>

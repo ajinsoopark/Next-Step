@@ -37,7 +37,7 @@ class FeedbackInput extends Component {
             feedback_body: this.state.feedbackInput
         }
         if (this.state.feedbackInput) {
-            axios.post('/feedbacks', feedbackObj)
+            axios.post('/api/feedbacks', feedbackObj)
             .then(() => {
                 this.props.fetchFeedback()
                 this.setState({

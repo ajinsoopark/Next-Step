@@ -29,7 +29,7 @@ postAnswer = (event) => {
   event.preventDefault()
 
   if(this.state.answer_body.length > 20){
-  axios.post('/answers',{
+  axios.post('/api/answers',{
     user_id: this.props.currentUser,
     question_id: this.props.questionID,
     answer_body: this.state.answer_body
@@ -77,7 +77,7 @@ deleteAction = (event) => {
 
 deleteActionFinal = (event) => {
   let params = this.state.xbutton
-  axios.delete(`/answers/${params}`).then(()=>{
+  axios.delete(`/api/answers/${params}`).then(()=>{
     this.props.axiosGetUserAnswerByQuestion()
     })
 
@@ -106,7 +106,7 @@ mapAnswersToRender= (array) =>{
       return (
         <div className = "answer" key ={i}>
         <div className='avatarLikes'>
-          <NavLink to={`/users/${el.authorId}`}>
+          <NavLink to={`/api/users/${el.authorId}`}>
             <h2> <Avatar size = "50" textSizeRatio = {2} max-initial = {2} name= {el.author} round = {true}/> {el.author} </h2>
           </NavLink>
           <div className='answerLikesContainer'>

@@ -17,7 +17,7 @@ class FeedbackFeed extends Component {
 
     fetchFeedback = () => {
         if (this.state.expandedFeed) {
-            axios.get(`/feedbacks/answer/${this.props.answer_id}`)
+            axios.get(`/api/feedbacks/answer/${this.props.answer_id}`)
             .then(res => {
                 let feedback = res.data.feedbacks
                 this.setState({ feedback: feedback })

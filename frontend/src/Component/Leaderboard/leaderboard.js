@@ -11,13 +11,13 @@ class Leaderboard extends Component{
     })
   }
   componentDidMount(){
-    axios.get('/answers/progress').then(res=>{
+    axios.get('/api/answers/progress').then(res=>{
       // console.log(res.data.response)
       this.setState({
         data:res.data.response
       })
     })
-    axios.get('/questions/count').then(res=>{
+    axios.get('/api/questions/count').then(res=>{
       this.setState({
         questions:+res.data.count[0].count
       })

@@ -41,14 +41,13 @@ class Question extends Component {
     let paramsID = this.props.match.params.id
     let userID = Auth.getTokenID()
     paramsID ?
-     axios.get(`/answers/question`,{
+     axios.get(`/api/answers/question`,{
        params: 
        {
          id: paramsID,
          user_id: userID
        }
      }).then((res)=>{
-      //  console.log(res.data)
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
@@ -68,7 +67,7 @@ class Question extends Component {
     // console.log(userID)
     paramsID ?
    //THIS IS AXIOS BY A QUERY
-     axios.get(`/answers/byuser/byquestion`,
+     axios.get(`/api/answers/byuser/byquestion`,
      {
        params :
        {userID : userID,
