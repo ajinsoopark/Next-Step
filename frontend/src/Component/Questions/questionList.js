@@ -9,9 +9,10 @@ export default class QuestionList extends React.Component {
     super()
     this.state = {
       allCategories: [],
-      selectedCategory: "Leadership & Decision Making",
+      categoryIndex: 0,
       allQuestions: [],
-      userAnsweredList: []
+      userAnsweredList: [],
+      selectedCategory: 'Leadership & Decision Making'
     }
   }
 
@@ -25,7 +26,6 @@ export default class QuestionList extends React.Component {
     axios
     .get("/api/questions")
     .then(res => {
-      console.log(res.data.question)
       this.setState({
         allQuestions:res.data.question
       })
@@ -40,9 +40,7 @@ export default class QuestionList extends React.Component {
       this.setState({
         userAnsweredList:res.data.answered
       })
-      
-      // console.log(this.state)
-    })
+          })
   }
 
 
@@ -50,20 +48,34 @@ export default class QuestionList extends React.Component {
     axios
     .get("/api/categories")
     .then(res => {
-      console.log("this is ALL Categories: ", res)
       this.setState({
         allCategories:res.data.categories
       })
     })
   }
 
-  handleChange = (e) => {
+  handleChange = (tabIndex) => {
+    let currentCategory = this.convertIndexToCat(tabIndex)
     this.setState({
-      selectedCategory: e.target.value
+      categoryIndex: tabIndex,
+      selectedCategory: currentCategory
     })
   }
 
+  convertIndexToCat = (index) => {
+    switch (index) {
+      case 0: return 'Leadership & Decision Making'
+      case 1: return 'Interpersonal Skills'
+      case 2: return 'Time & Stress Management'
+      case 3: return 'Sales & Customer Service'
+      case 4: return'Analytical Skills'
+      case 5: return 'Miscellaneous'
+      case 6: return 'General Qs'
+    }
+  }
+
 render(){
+  console.log(this.state)
   return(
 
         <div className="questionList">
@@ -74,7 +86,12 @@ render(){
           </div>
           <div>
             <DisplayAllCategories 
-            userAnsweredList= {this.state.userAnsweredList}allCategories={this.state.allCategories} selectedCategory={this.state.selectedCategory} allQuestions={this.state.allQuestions} handleChange={this.handleChange} />
+            userAnsweredList= {this.state.userAnsweredList}
+            allCategories={this.state.allCategories} 
+            categoryIndex={this.state.categoryIndex}
+            allQuestions={this.state.allQuestions} 
+            handleChange={this.handleChange} 
+            selectedCategory={this.state.selectedCategory}/>
           </div>
         </div>
   )
