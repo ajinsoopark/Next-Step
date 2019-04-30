@@ -61,7 +61,7 @@ class Signup extends Component{
     const {first_name,last_name,username,password,email}=this.state
     return(
       <div className ='signupContainer'>
-        <div className = 'input'>
+        <div className = 'inputbox'>
           <p>Join the community, and practice review!</p>
         <form className = 'input' onSubmit={this.handleSubmit} >
           <input type='text' name="first_name" value={first_name} placeholder="First Name" onChange={this.handleChange}/><br/>

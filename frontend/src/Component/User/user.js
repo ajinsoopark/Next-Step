@@ -52,7 +52,7 @@ class User extends Component {
   }
 
   render(){
-    // console.log(this.state.likes)
+    console.log(this.state)
     const {name,userName,questions,answers,data,likes,loggedInUser}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
@@ -70,9 +70,6 @@ class User extends Component {
           </div>
           <div className='join'>
             <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
-            <p>
-              join data
-            </p>
           </div>
         </div>
 

@@ -5,7 +5,7 @@ import Progress from '../Progress/progress'
 import DashSplash from './dashSplash'
 import RandomQuestion from './randomQuestion'
 
-
+import Leaderboard from "../Leaderboard/leaderboard"
 import './dashboard.css'
 
 class Dashboard extends Component {
@@ -45,8 +45,10 @@ class Dashboard extends Component {
                      categoryId={categoryId}
                      questionBody={questionBody}
                      category={category}/>
+                     <Progress userID={this.props.state.CurrentAutState.userID}/>
+                     <Leaderboard />
                 </div>
-                <Progress userID={this.props.state.CurrentAutState.userID}/>
+                
             </div>
         )
     }

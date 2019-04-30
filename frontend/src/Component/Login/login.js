@@ -58,19 +58,21 @@ class Login extends Component{
     return(
       <div className ='loginContainer'>
 
-        <div className='login'>
+        <div className='loginbox'>
           <h1>Member Login</h1>
         <form className='login' onSubmit={this.handleSubmit} >
           <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
           <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
-          <button className='continue' type='submit'>Continue</button>
+          <button className='continue' type='submit'>Enter</button>
         </form>
-      </div>
+        
+          </div>
           <div className = 'signup'>
             <p>Don't have an account?
               <NavLink to='/signup'> Sign Up </NavLink>
             </p>
-          </div>
+      </div>
+          
       </div>
     )
   }
