@@ -74,14 +74,12 @@ export default class DisplayTips extends React.Component {
                         <ExpansionPanel expanded={expanded === `panel${i}`} onChange={this.handleChange(`panel${i}`)} >
                             <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
                                 <Typography className="tipTypography">
-                                    <div className="tipTitle">
                                         {tip.tip_title}
-                                    </div>
                                 </Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
                                 <Typography>
-                                <div>{tip.tip_body}</div>
+                                {tip.tip_body}
                                 </Typography>
                             </ExpansionPanelDetails>
                         </ ExpansionPanel>
