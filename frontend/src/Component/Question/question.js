@@ -48,7 +48,6 @@ class Question extends Component {
          user_id: userID
        }
      }).then((res)=>{
-      //  console.log(res.data)
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
