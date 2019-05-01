@@ -19,8 +19,6 @@
   text-align: left;
   align-items: stretch;
   font-weight: bolder;
-
-
 }
 
 .left h1 {
@@ -132,3 +130,42 @@
   }
 
 }
+
+
+@media (max-height: 540px) {
+
+  .company_name {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    text-align: center;
+    color: white;
+    top: 25%;
+  }
+
+  .company_name .left h1 {
+    font-size: 15vw;
+    text-align: left;
+    align-items: stretch;
+    font-weight: bolder;
+  }
+  
+  .left h1 {
+    position: relative;
+    left: 5%;
+  
+  }
+  
+  .company_name .right {
+    position: relative;
+  
+  }
+  
+  .company_name .right img {
+    filter: invert(100);
+    top: 19px;
+    width: 30vw;
+  }
+}
+
+
