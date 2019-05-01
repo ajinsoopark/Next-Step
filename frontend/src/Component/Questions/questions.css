@@ -16,26 +16,37 @@
 
 .questionsParent {
   vertical-align: middle;
-  border: 1px solid #171A26;
+  border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #CFD6ED;
+  background-color: #F9F9F9;
   text-align: justify;
   font-size: 20px;
   margin: 1%;
   padding: 2%;
   font-family: Poppins;
+  color: black;
 }
 
 .questionsParent:hover {
   color: #171A26;
   text-decoration: none;
-  transition: ease-in;
-  transition-delay: 5ms;
-  background-color: rgba(139, 183, 255, 0.644);
-
+  /* transition: ease-in;
+  transition-delay: 5ms; */
+  border: 1px solid #171A26;
+  background-color: #F9F9F9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
+  transition: all 0.5s cubic-bezier(0.27, 0.37, 0.1, 1);
 }
 
 /* .questionsParent::before {
   counter-increment: section;
   content: "Q"counter(section) ":  ";
 } */
+
+.questionLink {
+  color: black;
+}
+
+.questionLink:active {
+  color: black;
+}
