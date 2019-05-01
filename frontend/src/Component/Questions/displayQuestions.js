@@ -25,7 +25,7 @@ const DisplayQuestions = ({ allQuestions, selectedCategory , userAnsweredList}) 
         else {
                if(question.category === selectedCategory){
             return(
-                    <NavLink key = {i} to={"/questions/" + question.id}>
+                    <NavLink className='questionLink' key = {i} to={"/questions/" + question.id}>
                         <div className = "questionsParent">
                             {question.question_body}
                         </div>
