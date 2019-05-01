@@ -6,7 +6,6 @@ class AnswerPost extends Component {
 
     render () {
         const { id, answer_body, question_body, category, user_id } = this.props
-        console.log(this.props)
         return (
             <div className='answerQuestionPostContainer'>
                 <div className='userCategoryLikes'>
