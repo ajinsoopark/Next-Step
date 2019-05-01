@@ -13,7 +13,7 @@
  color: white;
  margin: 1px;
  padding: 1px;
- margin-left: 1vw;
+ margin-left: 3vw;
 
 }
 
@@ -75,16 +75,17 @@
 }
 
 .nav a:hover {
- color: #FF3D57;
- border: 2px solid #FF3D57;
- border-radius: 10px;
+ /* color: #30a5e1; */
+ /* border: 0px solid #FF3D57; */
+ background-color:#30a5e1;
+
 }
 
 
 
 .nav .active {
- color: #FF3D57;
- border: 2px solid #FF3D57;
+ background-color: #FF3D57;
+
  border-radius: 10px;
 }
 

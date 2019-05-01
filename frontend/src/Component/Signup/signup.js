@@ -62,6 +62,7 @@ class Signup extends Component{
     return(
       <div className ='signupContainer'>
         <div className = 'inputbox'>
+        <h1> Sign Up </h1>
           <p>Join the community, and practice review!</p>
         <form className = 'input' onSubmit={this.handleSubmit} >
           <input type='text' name="first_name" value={first_name} placeholder="First Name" onChange={this.handleChange}/><br/>
