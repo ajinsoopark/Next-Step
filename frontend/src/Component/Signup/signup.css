@@ -1,7 +1,7 @@
 .signupContainer {
  color: white;
  text-align: center;
- height: 100vh;
+ height: 120vh;
  width: 100vw;
  display: flex;
  flex-direction: column;
@@ -13,9 +13,18 @@
 .signupContainer a {
  color: #FF3D57;
 }
+.signup p {
+  margin: 10px;
+  padding: 10px;
+}
+.login p {
+  margin: 10px;
+  padding: 10px;
+ }
 
 .inputbox {
  width: 50vw;
+ background: white;
  border: 2px solid white;
  border-radius: 10px;
  margin: 10px;
@@ -71,6 +80,40 @@ align-self: center;
  background-color: #FF3D57;
 
 }
+.form-group {
+  position:relative;  
+
+  margin-top: 30px;
+}
+.form-label {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #999;
+  /* background-color: rgb(255, 0, 0); */
+  z-index: 10;
+  /* transition: transform 150ms ease-out, font-size 150ms ease-out; */
+}
+
+.focused .form-label {
+  transform: translateY(-125%);
+  font-size: .75em;
+}
+
+.form-input {
+  
+  position: relative;
+  padding: 12px 0px 5px 0;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 1px 0 0 #e5e5e5;
+  transition: box-shadow 150ms ease-out;}
+
+  /* .form-input:focus{
+    box-shadow: 0 2px 0 0; 
+  } */
 
 .login {
  display: flex;
@@ -90,6 +133,8 @@ align-self: center;
  color: #FF3D57;
  border-radius: 10px;
 }
+
+
 
 @media screen and (max-width: 640px) {
 
