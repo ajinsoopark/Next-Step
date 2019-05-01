@@ -4,21 +4,21 @@ body {
 }
 
 /* This Resets All Buttons to Empty Style */
-/* button {
+button {
  background: none;
- color: inherit;
+ /* color: inherit; */
  border: none;
  padding: 0;
  font: inherit;
  cursor: pointer;
- font-style: #171A26;
-} */
+ /* font-style: #171A26; */
+}
 
-/* button {
+button {
  outline: none;
-} */
+}
 
-/* a {
+a {
  outline: none;
-} */
+}
 
