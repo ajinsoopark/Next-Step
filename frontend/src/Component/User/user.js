@@ -11,6 +11,7 @@ class User extends Component {
     this.state=({
       userID:+this.props.match.params.id,
       loggedInUser:+Auth.getTokenID(),
+      display:true,
     })
   }
 
@@ -18,7 +19,7 @@ class User extends Component {
     const {userID,loggedInUser}=this.state
     axios.get(`/api/users/${userID}`).then(res=>{
       this.setState({
-        name:res.data.user.first_name +" "+ res.data.user.last_name,
+        name:res.data.user.email,
         userName:res.data.user.username
       })
     })
@@ -47,8 +48,33 @@ class User extends Component {
       })
     })
   }
+
+  displayAnswers=()=>{
+    this.setState({
+      display:true
+    })
+  }
+  displayFavorites=()=>{
+    this.setState({
+      display:false
+    })
+  }
+
   componentDidMount(){
     this.getData()
+  }
+
+  displayThings=()=>{
+    const {display,data,likes,loggedInUser}= this.state
+
+    if(display){
+      return(
+        <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+      )
+    }return(
+      <p>display likes</p>
+    )
+
   }
 
   render(){
@@ -64,17 +90,15 @@ class User extends Component {
     return(
       <div className = 'profileContainer'>
         <div className='userInfo'>
-          <div className='words'>
-            <p>UserName: {userName}</p>
-            <p>Full Name: {name}</p>
-          </div>
-          <div className='join'>
             <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
-          </div>
+            <section>
+            <p> {userName} </p>
+            <p> {name} </p>
+            </section>
         </div>
 
 
-        Question Progress:
+      <div className='progressContainer'>
         <div className='pbar'>
           <div className ='innerBar' style={style}>
           </div>
@@ -82,10 +106,13 @@ class User extends Component {
             {completion}
           </div>
         </div>
-
-        <div>
-          <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
-        </div>
+        Question Progress
+      </div>
+      <div className='userInfo'>
+        <button onClick={this.displayAnswers}>Answers </button>
+        <button onClick={this.displayFavorites}>Favorites </button>
+      </div>
+        {this.displayThings()}
       </div>
     )
   }
