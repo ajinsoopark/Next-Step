@@ -11,10 +11,12 @@
 }
 
 .body2 .wrapper {
- /* background-color: #232b49f5;
- background-color: #2B3454; */
+ /* background-color: #232b49f5; */
  width: 100%;
  height: 100%;
+ /* background-color: #3EA2D6; */
+ background-color: #246994;
+
 
 
 }
@@ -39,6 +41,8 @@
 }
 
 .cardContainer {
+ /* background-color: #3EA2D6; */
+
  display: grid;
  grid-template-columns: 1fr 1fr 1fr;
  place-items: center;
@@ -58,6 +62,8 @@
 .tools {
  padding-top: 8%;
  padding-bottom: 8%;
+ font-weight: bolder;
+ letter-spacing: 2px;
 
  font-size: 4.7vw;
  color: white;
@@ -83,19 +89,20 @@
   display: grid;
   grid-template-columns: 1fr;
   width: 100vw;
-  grid-gap: 10px;
+  grid-gap: 15px;
   /* padding: 10px; */
   overflow: hidden;
+  padding-bottom: 66px;
  }
 
  .cards {
   place-self: center;
-  height: 24vh;
+  height: 100%;
   /* background-color: rgba(255, 255, 255, 0); */
   width: 80vw;
   min-height: 2vh;
-  margin: 10px;
-  padding: 10px;
+  /* margin-bottom: 10px; */
+  /* padding: 10px; */
  }
 
  .tools {

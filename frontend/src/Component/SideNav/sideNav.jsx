@@ -134,6 +134,21 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
+                    <NavItem
+                    className = "sideNav_logout"
+                    eventKey='logout'
+                    active={activeTab === 'about' ? true : false}>
+                        <NavIcon>
+                                <div className='sideBarIcon'>
+                                    {/* {aboutIcon2} */}
+                                    <img src = {aboutIcon2} alt = "Circled I" width = "35" />
+                                </div>
+                        </NavIcon>
+                        <NavText>
+                                Logout
+                        </NavText>
+                    </NavItem>
+
                 </SideNav.Nav>
             </SideNav>
             </div>

@@ -42,14 +42,14 @@ class NavBar2 extends Component{
             <option value='questions' >Questions</option>
             <option value='users' >Users</option>
           </select>
-          <input className='searchInput' type='text' name='filter' placeholder=' Search'/>
+          <input className='searchInput' type='text' name='filter' placeholder='Search'/>
 
         </form>
       </div>
 
       <div className = 'buttons'>
 
-          <NavLink to={`/gusers/${Auth.getTokenID()}`}>
+          <NavLink to={`/users/${Auth.getTokenID()}`}>
             <Avatar size = "40" textSizeRatio = {2} max-initial = {3} name= {Auth.getToken()} round = {true}/>
           </NavLink>
 

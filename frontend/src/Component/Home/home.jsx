@@ -13,6 +13,9 @@ import QuestionList from "../Questions/questionList"
 import Question from "../Question/question.js"
 
 import Dashboard from '../Dashboard/dashboardContainer'
+
+import Logout from '../Logout/logoutContainer'
+
 import Leaderboard from '../Leaderboard/leaderboard'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
@@ -65,6 +68,7 @@ class Home extends Component {
     )
     }}/>
 
+    <Route exact path='/logout' component={Logout}/>
     <Route exact path ="/questions/:id" render = {()=>{
     return (
         <Question/>

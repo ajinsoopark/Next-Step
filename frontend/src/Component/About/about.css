@@ -1,8 +1,11 @@
 .about_component {
- background-color: #1c1e26;
- padding-left: 5%;
+ /* background-color: #1c1e26; */
+ /* background-color: #0f6994; */
+ background-color: #3EA2D6;
+
+ /* padding-left: 5%;
  padding-right: 5%;
- padding-top: 3%;
+ padding-top: 3%; */
  font-size: 100%;
  margin: 0%;
  text-align: center;
@@ -15,9 +18,10 @@
 .aboutHeader {
  /* padding: 10%; */
  margin: 5%;
- /* padding: 10px; */
  font-size: 5vw;
  color: white;
+ font-weight: bolder;
+ letter-spacing: 2px;
 }
 
 
@@ -63,6 +67,8 @@
 
 
 .about_body_developers {
+ font-weight: bolder;
+ letter-spacing: 2px;
  padding-top: 5vh;
 
 }
@@ -106,7 +112,7 @@
 
 .developer_info {
  font-size: 2.0vw;
- height: 15vh;
+ /* height: 15vh; */
  width: 15vw;
  min-height: 200px;
  min-width: 200px;
@@ -119,8 +125,8 @@
  /* object-position: 100% 0; */
  /* height: 100px; */
  position: relative;
- width: 15vw;
- height: 15vh;
+ /* width: 20vw; */
+ height: 25vh;
  display: block;
  margin-left: auto;
  margin-right: auto;
