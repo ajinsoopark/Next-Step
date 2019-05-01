@@ -125,19 +125,82 @@
 }
 
 .searchInput {
- font-size: 1.4vw;
+ font-size: 1.5vw;
  margin-right: 2%;
  width: 50%;
  outline: none;
+ padding: 1%;
+ width: 70%;
+ border: 0;
+ font-family: inherit;
+ font-weight: 500;
+ border-bottom: 2px solid rgba(200, 204, 212, 0.253);
+ background: none;
+ border-radius: 0; 
+ color: #223254;
+ transition: all .15s ease;
+ color: white;
+}
+
+.searchInput:hover {
+    background-color: #2a3752
+}
+
+.searchInput:not(:placeholder-shown)
++ span {
+  color: #5A667F;
+  transform: translateY(-26px) scale(.75);
+}
+
+.bottomBorder {
+    position: absolute;
+    top: 3.9vh;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: white;
+    transform: scaleX(0);
+    transform-origin: 0 0;
+    transition: all .5s ease;
+}
+
+.searchInput:focus {
+    background: none;
+    outline: none;
+}
+.searchInput:focus + .searchSpan {
+    color: white;
+    transform: translateY(-26px) scale(.75);
+    font-size: 1.3em;
+}
+
+.searchInput:focus ~ .bottomBorder {
+    transform: scaleX(1);
+}
+
+.searchLabel {
+    position: relative;
+    margin: auto;
+    width: 25%;
+    max-width: 25%;
+    cursor: text;
+}
+
+.searchSpan {
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    font-size: 16px;
+    color: #9098A9;
+    font-weight: 500;
+    transform-origin: 0 0;
+    transition: all .5s ease;
+    z-index: 0;
 }
 
 .search {
  width: 60%;
  padding-left: 10%;
-}
-
-.search input {
- border-radius: 4px
 }
 
 .searchSubmit {
@@ -146,16 +209,26 @@
 }
 
 
-.Menu2 {
+/* .Menu2 {
  display: grid;
  grid-template-columns: 1fr 1fr 1fr;
- /* background-color: rgb(0, 0, 0); */
- /* background-color: #232B49; */
+ background-color: rgb(0, 0, 0);
+ background-color: #232B49;
  position: sticky;
  top: 0px;
  height: 5vh;
  min-height: 65px;
  z-index: 9;
+} */
+
+.Menu2 {
+    display: flex;
+    justify-content: center;
+    height: 10vh;
+    position: sticky;
+    background-color: #232B49;
+    z-index: 9;
+    align-items: center;
 }
 
 .Menu2 button {
