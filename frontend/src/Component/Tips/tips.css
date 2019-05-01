@@ -30,8 +30,3 @@
 .tipPanels {
     padding-top: .8%;
 }
-
-.MuiExpansionPanelSummary-root:hover {
-    background-color: wheat;
-    transition: background-color 0.2s ease-in-out;
-}

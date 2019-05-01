@@ -6,11 +6,6 @@ import "./categories.css"
 import "./questions.css"
 
 const DisplayAllCategories = ({ userAnsweredList,allCategories, allQuestions, categoryIndex, handleChange, selectedCategory }) => {
-    // let categoryList = allCategories.map((category, i) => {
-    //     return(
-    //             <button key = {i} className = "allButtons" type="button" onClick={handleChange} value={category.category}>{category.category}</button>
-    //     )
-    // })
     
     const categoryTabs = allCategories.map(categoryObj => {
         return <Tab key={categoryObj.id}>{categoryObj.category}</Tab>
@@ -31,7 +26,6 @@ const DisplayAllCategories = ({ userAnsweredList,allCategories, allQuestions, ca
 
     return(
         <div>
-            {/* <div className="categoryList"> */}
             <Tabs selectedIndex={categoryIndex} onSelect={tabIndex => handleChange(tabIndex)}>
             
                 <TabList>
@@ -43,13 +37,6 @@ const DisplayAllCategories = ({ userAnsweredList,allCategories, allQuestions, ca
                     </div>
                 </div>
             </Tabs>
-
-            {/* </div> */}
-            {/* <div className="displayQuestions">
-                <div className="displayQuestionsChild">
-                    <DisplayQuestions userAnsweredList = {userAnsweredList} allQuestions={allQuestions} selectedCategory={selectedCategory} />
-                </div>
-            </div> */}
         </div>
     )
 }
