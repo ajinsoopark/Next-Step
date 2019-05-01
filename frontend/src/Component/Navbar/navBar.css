@@ -1,8 +1,9 @@
 .Menu {
- background-color: rgb(0, 0, 0);
- background-color: #232b49;
- position: sticky;
- top:0px;
+ background-color: #246994;
+  /* background-color: #3EA2D6; */
+  /* background-color: #232b49; */
+  position: sticky;
+ top: 0px;
  filter: overlay(100)
 }
 
@@ -148,7 +149,7 @@
  display: grid;
  grid-template-columns: 1fr 1fr 1fr;
  /* background-color: rgb(0, 0, 0); */
- background-color: #232B49;
+ /* background-color: #232B49; */
  position: sticky;
  top: 0px;
  height: 5vh;

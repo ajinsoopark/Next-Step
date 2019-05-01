@@ -15,7 +15,9 @@
  grid-template-columns: 1fr 1fr;
  text-align: center;
  /* color: #6d87dccf; */
- color: #232B49;
+ /* color: #379BE2; */
+ color: white;
+
  /* left: 6%; */
  top: 25%;
 
@@ -25,6 +27,8 @@
  font-size: 20vw;
  text-align: left;
  align-items: stretch;
+ font-weight: bolder;
+
 }
 
 .left h1 {
@@ -38,9 +42,9 @@
 
 .company_name .right img {
  filter: invert(100);
- top: 5%;
- opacity: .44;
- width: 25vw;
+ top: 19px;
+ /* opacity: .44; */
+ width: 35vw;
 }
 
 .videoLay {
@@ -50,10 +54,10 @@
  /* position: relative; */
  object-fit: cover;
  /* background: rgb(0, 0, 0); */
- /* background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
+ background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
  background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
  background: linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
- filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1); */
+ filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
 
 }
 
@@ -98,7 +102,7 @@
 
 
 .demoSignup:hover {
- color:red;
+ color: red;
  /* background-color: rgba(255, 61, 87, 0.365); */
  border: 2px solid rgb(255, 65, 91);
  border-radius: 10px;

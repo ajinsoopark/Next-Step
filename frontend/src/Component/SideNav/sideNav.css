@@ -40,7 +40,7 @@
 }
 
 .sideBarIcon:hover .sidebarSVG {
- fill: whitesmoke;
+ /* fill: whitesmoke; */
 }
 
 .sidenav---navtext---1AE_f {
@@ -50,7 +50,8 @@
 .expanded {
  margin-left: 240px;
  padding: 15px 20px 0 20px;
- background-color: rgb(249, 249, 249);
+ /* background-color: rgb(249, 249, 249); */
+ background-color: white;
 
 }
 

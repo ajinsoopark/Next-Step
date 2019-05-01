@@ -42,7 +42,7 @@ class NavBar2 extends Component{
             <option value='questions' >Questions</option>
             <option value='users' >Users</option>
           </select>
-          <input className='searchInput' type='text' name='filter' placeholder=' Search'/>
+          <input className='searchInput' type='text' name='filter' placeholder='Search'/>
 
         </form>
       </div>
