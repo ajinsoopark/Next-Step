@@ -27,7 +27,7 @@ const DisplayAllCategories = ({ userAnsweredList,allCategories, allQuestions, ca
     return(
         <div>
             <Tabs selectedIndex={categoryIndex} onSelect={tabIndex => handleChange(tabIndex)}>
-            
+            <h2 className='pickCategory'>Pick a category</h2>
                 <TabList>
                     {categoryTabs}
                 </TabList>

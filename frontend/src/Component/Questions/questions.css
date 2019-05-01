@@ -50,3 +50,8 @@
 .questionLink:active {
   color: black;
 }
+
+.pickCategory {
+  font-size: 1.2em;
+  padding: 1.3%;
+}
