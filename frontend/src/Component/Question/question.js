@@ -48,7 +48,6 @@ class Question extends Component {
          user_id: userID
        }
      }).then((res)=>{
-      //  console.log(res.data)
        let answersArray = this.mapAnswersToState(res.data.answers)
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
@@ -89,7 +88,6 @@ class Question extends Component {
     console.log("Is EMPTY?")
   }
 
-
   TabSelectedChange = (tabIndex) =>{
     this.setState({
       tabIndex: tabIndex
@@ -102,31 +100,29 @@ class Question extends Component {
         url:
           "https://westus.api.cognitive.microsoft.com/sts/v1.0/issuetoken",
         headers: {
-          "Ocp-Apim-Subscription-Key": "3aef4d0fd6904d808bd091cc3ce75b92"
+          "Ocp-Apim-Subscription-Key": "87d77b525a614d25b2e8ff9674bb8070"
         }
       }).then(response => {
         return(response.data)
       })
-
 }
    
+async componentDidMount(){
+  
+  //get Answers based on params URL
+  await this.axiosGetAnswers()
+  await this.axiosGetUserAnswerByQuestion()
 
-  async componentDidMount(){
-    
-    //get Answers based on params URL
-    await this.axiosGetAnswers()
-    await this.axiosGetUserAnswerByQuestion()
+    const ponyfill = await createPonyfill({
+    'region': 'westus',
+    'subscriptionKey': '3aef4d0fd6904d808bd091cc3ce75b92',
+    'authorizationToken': this.getAccessToken('3aef4d0fd6904d808bd091cc3ce75b92')
 
-      const ponyfill = await createPonyfill({
-      'region': 'westus',
-      'subscriptionKey': '3aef4d0fd6904d808bd091cc3ce75b92',
-      'authorizationToken': this.getAccessToken('3aef4d0fd6904d808bd091cc3ce75b92')
+  })
 
-    })
+    this.setState(() => ( {ponyfill} ))
 
-     this.setState(() => ( {ponyfill} ))
-
-  }
+}
 
 
 render(){

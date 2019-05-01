@@ -53,8 +53,9 @@
  align-self: center;
  margin: 10px;
  padding: 10px;
- font-size: 130%;
- text-align: left;
+ font-size: 105%;
+ text-align: center;
+ /* text-align: left; */
  font-weight: bold;
  /* padding: 3%; */
  /* background-color: #CFD6ED; */
@@ -131,9 +132,17 @@
 }
 
 .fButton {
-    height: 50px;
-    font-weight: 500;
- color: #FF3D57;
+ height: 50px;
+ font-weight: 500;
+ color: rgb(0, 0, 0);
+ border: 2px solid rgb(0, 0, 0);
+ border-radius: 10px;
+}
+
+.fButton:hover {
+ height: 50px;
+ font-weight: 500;
+ color: rgb(238, 11, 11);
  border: 2px solid #FF3D57;
  border-radius: 10px;
 }
@@ -209,4 +218,12 @@
   display: flex;
   flex-direction: column;
  }
+}
+
+
+.feedbackInput{
+    border: 1px solid rgba(65, 65, 65, 0.687);
+    margin: 10px;
+    padding:10px;
+
 }

@@ -41,7 +41,6 @@ app.use(cookieParser("NextStepToTheNextStage"));
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname + '/../frontend/build/')))
 }
-
 // app.use('/*', indexRouter);
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);

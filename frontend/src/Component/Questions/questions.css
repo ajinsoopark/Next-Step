@@ -35,7 +35,7 @@
 
 }
 
-.questionsParent::before {
+/* .questionsParent::before {
   counter-increment: section;
   content: "Q"counter(section) ":  ";
-}
+} */

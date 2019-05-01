@@ -36,12 +36,6 @@ class NavBar2 extends Component{
     return(
     <div className='Menu2'>
 
-      <div className = 'logo'>
-        <NavLink to="/" >
-          <img src= {logo} alt="next-step_logo" />
-        </NavLink>
-      </div>
-
       <div className = 'search'>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <select className='searchMenu' name='search'>

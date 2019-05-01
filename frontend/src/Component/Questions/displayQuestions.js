@@ -3,7 +3,7 @@ import {NavLink} from "react-router-dom";
 import "./questions.css"
 
 
-const DisplayQuestions = ({ allQuestions, selectedCategory,userAnsweredList}) => {
+const DisplayQuestions = ({ allQuestions, selectedCategory , userAnsweredList}) => {
     return(allQuestions.map((question, i) => {
 
         if(userAnsweredList.includes(question.id)){
@@ -25,10 +25,10 @@ const DisplayQuestions = ({ allQuestions, selectedCategory,userAnsweredList}) =>
         else {
                if(question.category === selectedCategory){
             return(
-                    <NavLink key = {i} className = "questionsParent" to={"/questions/" + question.id}>
-
-                    {question.question_body}
-
+                    <NavLink key = {i} to={"/questions/" + question.id}>
+                        <div className = "questionsParent">
+                            {question.question_body}
+                        </div>
 
                     </NavLink>
             )

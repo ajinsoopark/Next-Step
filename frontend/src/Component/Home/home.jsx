@@ -43,53 +43,52 @@ class Home extends Component {
 
     render () {
         const { expanded } = this.state
-
         return (
-            <>
-                <NavBar2 logoutUser={this.props.logout_user} />
-                <SideNav toggleSideNav={this.toggleSideNav}/>
-                    <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
-                        <Switch>
-                            <Route exact path='/*' render={() => {
-                                return (
-                                <Dashboard/>)
-                            }}/>
+    <>
+    <NavBar2 logoutUser={this.props.logout_user} />
+    <SideNav toggleSideNav={this.toggleSideNav}/>
+    <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
+    <Switch>
+    <Route exact path='/questions' render={() => {
+    return (
+    <QuestionList/>)
+    }}/>
+    <Route exact path='/about' render={() => {
+    return (
+        <About/>
+    )
+    }}/>
 
-                            <Route exact path='/questions' render={() => {
-                                return (
-                                <QuestionList/>)
-                                }}/>
-                            <Route exact path='/about' render={() => {
-                                return (
-                                    <About/>
-                                )
-                            }}/>
+    <Route exact path='/advice' render={() => {
+    return (
+        <Tips/>
+    )
+    }}/>
 
-                            <Route exact path='/advice' render={() => {
-                                return (
-                                    <Tips/>
-                                )
-                            }}/>
+    <Route exact path ="/questions/:id" render = {()=>{
+    return (
+        <Question/>
+    )
+    }}/>
+    <Route path = '/search/:search/:filter'
+    render={(props) => <Search{...props} />}
+    />
 
-                            <Route exact path ="/questions/:id" render = {()=>{
-                                return (
-                                    <Question/>
-                                )
-                            }}/>
-                          <Route path = '/search/:search/:filter'
-                              render={(props) => <Search{...props} />}
-                              />
+    <Route path = '/users/:id'
+    render={(props) => <User{...props} />}
+    />
+    <Route path='/answers' render={() => <AnswerFeed />}/>
+    <Route path='/leaderboard' render={() => <Leaderboard />}/>
 
-                            <Route path = '/users/:id'
-                              render={(props) => <User{...props} />}
-                              />
-                          <Route path='/answers' render={() => <AnswerFeed />}/>
-                          <Route path='/leaderboard' render={() => <Leaderboard />}/>
+    <Route exact path='/*' render={() => {
+    return (
+    <Dashboard/>)
+    }}/>
 
-                        </Switch>
-                    </div>
-            </>
-        )
+    </Switch>
+    </div>
+    </>
+    )
 }
 
 

@@ -35,7 +35,7 @@
  flex-direction: column;
  align-items: center; */
  background-color: white;
- border-radius: 20px;
+ border-radius: 6px;
 }
 
 .cardContainer {
@@ -107,6 +107,9 @@
  }
 
  .cardLabel {
+  margin: 5px;
+  padding: 5px;
+
   text-align: left;
   padding-top: 1vh;
   font-size: 110%;
@@ -117,7 +120,7 @@
  }
 
  .cardInfo {
-  text-align: center;
+  text-align: left;
   margin: 5px;
   padding: 5px;
   font-size: 106%;
@@ -133,4 +136,3 @@
 
 
 }
-
