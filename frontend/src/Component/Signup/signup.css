@@ -1,8 +1,7 @@
 .signupContainer {
  color: white;
- /* font-size: 150%; */
  text-align: center;
- height: 100vh;
+ height: 120vh;
  width: 100vw;
  display: flex;
  flex-direction: column;
@@ -14,23 +13,26 @@
 .signupContainer a {
  color: #FF3D57;
 }
+.signup p {
+  margin: 10px;
+  padding: 10px;
+}
+.login p {
+  margin: 10px;
+  padding: 10px;
+ }
 
 .inputbox {
- height: 70vh;
  width: 50vw;
+ background: white;
  border: 2px solid white;
  border-radius: 10px;
- /* background-color: #b5c5ff9c; */
- background-color: white;
  margin: 10px;
  padding: 10px;
  display: grid;
  grid-template-columns: 1fr;
  grid-gap: 5px;
- /* display: flex; */
- /* flex-direction: column; */
- /* justify-content: center; */
- /* padding: 1%; */
+ justify-content: center;
 }
 .inputbox h1 {
   align-self: center;
@@ -78,6 +80,40 @@ align-self: center;
  background-color: #FF3D57;
 
 }
+.form-group {
+  position:relative;  
+
+  margin-top: 30px;
+}
+.form-label {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 10px;
+  color: #999;
+  /* background-color: rgb(255, 0, 0); */
+  z-index: 10;
+  /* transition: transform 150ms ease-out, font-size 150ms ease-out; */
+}
+
+.focused .form-label {
+  transform: translateY(-125%);
+  font-size: .75em;
+}
+
+.form-input {
+  
+  position: relative;
+  padding: 12px 0px 5px 0;
+  width: 100%;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 1px 0 0 #e5e5e5;
+  transition: box-shadow 150ms ease-out;}
+
+  /* .form-input:focus{
+    box-shadow: 0 2px 0 0; 
+  } */
 
 .login {
  display: flex;
@@ -98,29 +134,28 @@ align-self: center;
  border-radius: 10px;
 }
 
+
+
 @media screen and (max-width: 640px) {
 
  .signupContainer {
   color: white;
   font-size: 100%;
   text-align: center;
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  place-items: center;
-  /* padding: 30px */
+  flex-grow: 1;
+
  }
 
  .inputbox {
-  /* height: 90%; */
-  width: 100%;
-  /* border: 2px solid white; */
   border-radius: 10px;
   background-color: white;
   margin: 10px;
   padding: 10px;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: .25fr 1fr;
