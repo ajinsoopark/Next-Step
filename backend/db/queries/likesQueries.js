@@ -67,8 +67,28 @@ const deleteLikesWithUserID = (req, res, next) => {
   })
 };
 
+const getAllLikesAndInfoForUser = (req, res, next) => {
+  let userId = parseInt(req.params.id);
+  db.any('SELECT likes.id AS likes_id, answer_id, answers.answer_body, questions.question_body, questions.id AS questions_id, users.username,users.id AS user_id FROM likes JOIN answers ON likes.answer_id = answers.id JOIN questions ON answers.question_id = questions.id JOIN users ON answers.user_id = users.id WHERE likes.user_id =$1', [userId])
+    .then((favorites) => {
+      res.status(200).json({
+        message: "got all likes for one user",
+        favorites
+      })
+    })
+    .catch(err => {
+      console.log(err)
+      res.json({
+          status: 'Failed',
+          message: err
+      })
+      return next(err)
+  })
+};
+
 module.exports = {
   getAllLikesForUser,
+  getAllLikesAndInfoForUser,
   addNewLike,
   deleteSingleLike,
   deleteLikesWithUserID

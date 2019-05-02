@@ -3,6 +3,7 @@ import axios from 'axios'
 import './user.css'
 import Avatar from 'react-avatar';
 import UsersAnswers from './usersAnswers'
+import UsersFavorites from './usersFavorites'
 import Auth from '../../Auth/Auth.js'
 
 class User extends Component {
@@ -47,7 +48,13 @@ class User extends Component {
         likes:res.data.likes
       })
     })
-  }
+
+    axios.get(`/api/likes/info/${userID}`).then(res=>{
+      this.setState({
+        favorites:res.data.favorites
+      })
+    })
+}
 
   displayAnswers=()=>{
     this.setState({
@@ -65,21 +72,21 @@ class User extends Component {
   }
 
   displayThings=()=>{
-    const {display,data,likes,loggedInUser}= this.state
+    const {display,data,likes,loggedInUser,favorites}= this.state
 
     if(display){
       return(
         <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
       )
     }return(
-      <p>display likes</p>
+        <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
     )
 
   }
 
   render(){
-    console.log(this.state)
-    const {name,userName,questions,answers,data,likes,loggedInUser}=this.state
+    // console.log(this.state)
+    const {name,userName,questions,answers,data,likes}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
     const style = {
@@ -98,15 +105,15 @@ class User extends Component {
         </div>
 
 
-      <div className='progressContainer'>
+      <div className='pBarContainer'>
+        Completion progress:
         <div className='pbar'>
           <div className ='innerBar' style={style}>
-          </div>
-          <div className='completed'>
             {completion}
           </div>
+          <div className='completed'>
+          </div>
         </div>
-        Question Progress
       </div>
       <div className='userInfo'>
         <button onClick={this.displayAnswers}>Answers </button>
