@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Auth from '../../Auth/Auth'
 
 import FeedbackInput from './input'
 import FeedbackPosts from './feedbackPosts'
@@ -82,17 +83,18 @@ class FeedbackFeed extends Component {
     }
 
     render () {
-        console.log(this.state)
+        const { user_id } = this.props
         return (
             <div className='feedbackFeedContainer'>
                 <div className='feedbackButtons'>
-                    {this.toggleInputButton()}
+                    { user_id === parseInt(Auth.getTokenID()) ? '' : this.toggleInputButton()}
                     {this.toggleFeedButton()}
                 </div>
-                <FeedbackInput 
-                 expandedInput={this.state.expandedInput}
-                 answer_id={this.props.answer_id}
-                 fetchFeedback={this.fetchFeedback}/>
+                { user_id === parseInt(Auth.getTokenID()) ? 
+                  '' : <FeedbackInput 
+                  expandedInput={this.state.expandedInput}
+                  answer_id={this.props.answer_id}
+                  fetchFeedback={this.fetchFeedback}/>}
                  <FeedbackPosts 
                   expandedFeed={this.state.expandedFeed}
                   feedback={this.state.feedback}/>

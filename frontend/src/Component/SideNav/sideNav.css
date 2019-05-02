@@ -1,5 +1,6 @@
 .sidenav---sidenav---_2tBP {
- background-color: #232B49;
+ background-color: #246893;
+
  top: 0px;
  position: fixed;
 }
@@ -31,16 +32,15 @@
 }
 
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
-
  max-width: 5%;
 }
 
 .sidebarSVG {
- fill: #97A5DB;
+ fill: rgb(0, 51, 255);
 }
 
 .sideBarIcon:hover .sidebarSVG {
- fill: whitesmoke;
+ /* fill: whitesmoke; */
 }
 
 .sidenav---navtext---1AE_f {
@@ -50,13 +50,41 @@
 .expanded {
  margin-left: 240px;
  padding: 15px 20px 0 20px;
- background-color: rgb(249, 249, 249);
+ /* background-color: rgb(249, 249, 249); */
+ background-color: white;
 
 }
 
 .unexpanded {
  margin-left: 64px;
  padding: 15px 20px 0 20px;
- background-color: rgb(249, 249, 249);
+ background-color: white;
 
+}
+
+
+
+.sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u>.sidenav---navitem---9uL5T::after,
+.sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u>.sidenav---navitem---9uL5T::after {
+ /* filter: invert(100); */
+ /* color: white; */
+ /* background: black; */
+ background-color: #232B49;
+
+ opacity: 1;
+}
+
+/* sidenav---sidenav---_2tBP sidenav---expanded---1KdUL {
+ color: blue;
+} */
+
+.sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ->.sidenav---navitem---9uL5T .sidenav---navicon---3gCRo,
+.sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ->.sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
+ color: white;
+}
+
+@media screen and (max-width:600px) {
+ .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
+  min-width: 100vh;
+ }
 }

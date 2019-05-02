@@ -13,6 +13,10 @@ import aboutIcon2 from "../../Images/icons8-info-50.png"
 import questionsIcon2 from "../../Images/icons8-circled-q-48.png"
 import leaderboardIcon2 from "../../Images/icons8-gold-medal-48.png"
 import tipsIcons2 from "../../Images/icons8-idea-filled-48.png"
+import searchIcon2 from "../../Images/icons8-search-filled-50.png"
+
+
+import shutdownIcon2 from "../../Images/icons8-shutdown-filled-52.png"
 
 
 
@@ -84,6 +88,7 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
+                    
 
                     <NavItem
                     className = "sideNav_tips"
@@ -102,23 +107,19 @@ class SideNavMenu extends Component {
                     <NavItem
                     className = "sideNav_leaderboard"
                     eventKey='leaderboard'
-                    active={activeTab === 'leaderboard' ? true : false}>
+                    active={ activeTab === 'leaderboard' ? true : false}>
                         <NavIcon>
-                            <NavLink className='sideNavLink' to={'/leaderboard'}>
-
                                 <div className='sideBarIcon'>
-                                    {/* {leaderboardIcon} */}
-                                    <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
+                                    {/* {tipsIcon} */}
+                                    <img src = {leaderboardIcon2} alt = "Leaderboard icon " width = "35" />
                                 </div>
-                            </NavLink>
                         </NavIcon>
                         <NavText>
-
-                            <NavLink className='sideNavLink' to={'/leaderboard'}>
                                 Leaderboard
-                            </NavLink>    
                         </NavText>
                     </NavItem>
+                    
+                    
                     <NavItem
                     className = "sideNav_about"
                     eventKey='about'
@@ -134,6 +135,21 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
+                    <NavItem
+                    className = "sideNav_logout"
+                    eventKey='logout'
+                    active={activeTab === 'logout' ? true : false}>
+                        <NavIcon>
+                                <div className='sideBarIcon'>
+                                    {/* {aboutIcon2} */}
+                                    <img src = {shutdownIcon2} alt = "Circled Shutdown" width = "35" />
+                                </div>
+                        </NavIcon>
+                        <NavText>
+                                Logout
+                        </NavText>
+                    </NavItem>
+
                 </SideNav.Nav>
             </SideNav>
             </div>
@@ -142,3 +158,21 @@ class SideNavMenu extends Component {
 }
 
 export default withRouter(SideNavMenu)
+
+
+
+
+// <NavItem
+//                     className = "sideNav_logout"
+//                     eventKey='/search/:search/:filter'
+//                     active={activeTab === '/search/:search/:filter' ? true : false}>
+//                         <NavIcon>
+//                                 <div className='sideBarIcon'>
+//                                     {/* {aboutIcon2} */}
+//                                     <img src = {searchIcon2} alt = "Circled S" width = "35" />
+//                                 </div>
+//                         </NavIcon>
+//                         <NavText>
+//                                 Search
+//                         </NavText>
+//                     </NavItem>

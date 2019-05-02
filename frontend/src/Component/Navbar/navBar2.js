@@ -15,6 +15,7 @@ class NavBar2 extends Component{
     this.state={
       search:'questions',
       filter:null,
+      inputFocus: false
     }
   }
 
@@ -31,32 +32,22 @@ class NavBar2 extends Component{
     this.props.history.push(`/search/${search}/${filter}`)
   }
 
-  render (){
-    // console.log(this.props.state.CurrentAutState)
+  render () {
+
     return(
     <div className='Menu2'>
-
       <div className = 'search'>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <select className='searchMenu' name='search'>
             <option value='questions' >Questions</option>
             <option value='users' >Users</option>
           </select>
-          <input className='searchInput' type='text' name='filter' placeholder=' Search'/>
-
+          <label htmlFor='searchInput' className='searchLabel'>
+            <input className='searchInput' id='searchInput' type='text' name='filter' placeholder='&nbsp;'/>
+            <span className="searchSpan">Search</span>
+            <span className='bottomBorder'></span>
+          </label>
         </form>
-      </div>
-
-      <div className = 'buttons'>
-
-          <NavLink to={`/users/${Auth.getTokenID()}`}>
-            <Avatar size = "40" textSizeRatio = {2} max-initial = {3} name= {Auth.getToken()} round = {true}/>
-          </NavLink>
-
-
-          <NavLink onClick={this.props.function_logout_user} to = "/"> <button>Log Out</button> </NavLink>
-
-
       </div>
     </div>
     )

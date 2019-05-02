@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Switch, Route } from 'react-router-dom'
 
-
 //Import Redux Containers
 import NavBar2 from "../Navbar/navBarContainer.js"
 
@@ -13,6 +12,9 @@ import QuestionList from "../Questions/questionList"
 import Question from "../Question/question.js"
 
 import Dashboard from '../Dashboard/dashboardContainer'
+
+import Logout from '../Logout/logoutContainer'
+
 import Leaderboard from '../Leaderboard/leaderboard'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
@@ -45,7 +47,7 @@ class Home extends Component {
         const { expanded } = this.state
         return (
     <>
-    <NavBar2 logoutUser={this.props.logout_user} />
+  
     <SideNav toggleSideNav={this.toggleSideNav}/>
     <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
     <Switch>
@@ -65,6 +67,7 @@ class Home extends Component {
     )
     }}/>
 
+    <Route exact path='/logout' component={Logout}/>
     <Route exact path ="/questions/:id" render = {()=>{
     return (
         <Question/>
@@ -95,3 +98,25 @@ class Home extends Component {
 }
 
 export default Home
+
+
+
+
+
+
+// <NavItem
+//                     className = "sideNav_leaderboard"
+//                     eventKey='leaderboard'
+//                     active={activeTab === 'leaderboard' ? true : false}>
+//                         <NavIcon>
+//                                 <div className='sideBarIcon'>
+//                                     {/* {leaderboardIcon} */}
+//                                     <img src = {leaderboardIcon2} alt = "Circled Q" width= "35" />
+//                                 </div>
+//                         </NavIcon>
+//                         <NavText>
+//                             <NavLink className='sideNavLink' to={'/leaderboard'}>
+//                                 Leaderboard
+//                             </NavLink>    
+//                         </NavText>
+//                     </NavItem>

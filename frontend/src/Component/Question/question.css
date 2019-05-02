@@ -1,91 +1,95 @@
 .Question {
-  text-align: center;
-  font-size: 1.5vw;
+ text-align: center;
+ font-size: 1.5vw;
 }
 
 .QuestionTitle::before {
-  content: "Q:";
-  margin: 1%;
-  padding: 1%;
-  font-weight: bolder;
+ content: "Q:";
+ margin: 1%;
+ padding: 1%;
+ font-weight: bolder;
 }
 
 .QuestionTitle {
-  font-size: 2.4vw;
-  margin: 1%;
-  padding: 1%;
-  font-weight: bolder;
-  overflow: hidden;
-  word-wrap: none;
+ font-size: 2.4vw;
+ margin: 1%;
+ padding: 1%;
+ font-weight: bolder;
+ overflow: hidden;
+ word-wrap: none;
 }
 
 .Answers {
-  display: grid;
-  grid-template-columns: 1fr;
-  place-items: center;
+ display: grid;
+ grid-template-columns: 1fr;
+ place-items: center;
 }
 
+.userAnswerArea {
+ width: 100vw;
+}
 
 
 .userAnswerArea form {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+ display: flex;
+ flex-direction: row;
+ justify-content: flex-start;
 }
 
 .userAnswerArea textarea {
-  min-width: 66vw;
-  min-height: 15vh;
-  resize: none;
-  border: 1px solid rgb(106, 113, 138);
-  background-color: rgb(230, 232, 240);
-  border-radius: 5px;
-  margin: 1%;
-  padding: 1%;
-  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+  text-decoration: none;
+ min-width: 66vw;
+ min-height: 15vh;
+ resize: none;
+ border: 1px solid rgba(83, 0, 0, 0);
+ background-color: rgba(83, 83, 83, 0.144);
+ border-radius: 6px;
+ margin: 1%;
+ padding: 1%;
+ font-size: calc(20px + 6 * ((100vw - 320px) / 680));
 }
 
 .userAnswerArea input[type="Submit"] {
-  margin: 1%;
-  /* padding: 1%; */
-  min-height: 15vh;
-  /* height: calc(25px + 6 * ((100vw - 320px) / 680)); */
-  border: 1px solid rgb(23, 48, 138);
-  background-color: rgb(230, 232, 240);
-  border-radius: 5px;
-  font-size: calc(15px + 6 * ((100vw - 320px) / 680));
+ margin: 1%;
+ /* padding: 1%; */
+ min-height: 15vh;
+ border-radius: 5px;
+ font-size: calc(15px + 6 * ((100vw - 320px) / 680));
+ text-align: center;
+ width: 150px;
+ border-radius: 6px;
 }
 
 
 .userAnswerArea input[type="Submit"]:hover {
-  transition: cubic-bezier(0.47, 0, 0.745, 0.715);
-  background-color: rgb(128, 123, 207);
+ transition: cubic-bezier(0.47, 0, 0.745, 0.715);
+ background-color: rgba(0, 38, 255, 0.548);
 }
 
 .userAnswerArea input[type="Submit"]:focus {
-  background-color: rgb(22, 134, 246);
+ background-color: rgba(246, 22, 78, 0.603);
 }
 
 
 
 @media screen and (max-width: 560px) {
-  .QuestionTitle {
-    text-align: center;
-    font-size: calc(18px + 6 * ((100vw - 560px) / 680));
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
+ .QuestionTitle {
+  text-align: center;
+  font-size: calc(18px + 6 * ((100vw - 560px) / 680));
+  overflow: hidden;
+  text-overflow: ellipsis;
+ }
 
-  .answer p {
-    width: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    /* margin: 10px; */
-  }
+ .answer p {
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* margin: 10px; */
+ }
 
-  .Answers {
-    display: flex;
-    flex-direction: column;
-  }
+ .Answers {
+  display: flex;
+  flex-direction: column;
+ }
 }

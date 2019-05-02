@@ -47,8 +47,7 @@ mapUserAnswerToRender = (array) => {
   return(
     array.map((el,i) => {
       return (
-    
-        <div className = "answer">
+        <div key={i} className = "answer">
           <div className='avatarLikes'>
           <h2>
           <Avatar size = "60" textSizeRatio = {2} max-initial = {3} name= {el.by_user}  round = {true}/>
@@ -59,7 +58,8 @@ mapUserAnswerToRender = (array) => {
         </div>
         <p> {el.answer_body} </p>
         <Feedback 
-         answer_id={el.answers_id}/>
+         answer_id={el.answers_id}
+         user_id={el.user_id}/>
         {this.deleteButton(i,el.answers_id)}
         </div>
       )
@@ -120,7 +120,8 @@ mapAnswersToRender= (array) =>{
         </div>
         <p> {el.answer} </p>
         <Feedback 
-         answer_id={el.answersId}/>
+         answer_id={el.answersId}
+         user_id={el.authorId}/>
         </div>
       )
     })
@@ -129,8 +130,6 @@ mapAnswersToRender= (array) =>{
 }
 
 deleteButton = (i,answers_id) => {
-// console.log(this.state.xbutton) 
-// console.log(answers_/id)
   if(parseInt(this.state.xbutton) === parseInt(answers_id)){
     return (
       <button value = {answers_id} className = "deleteButton" onClick = {this.deleteActionFinal} >
@@ -167,12 +166,13 @@ render () {
 
         <TabPanel>
         {this.mapUserAnswerBoxToRender()}
-        {this.mapUserAnswerToRender(this.props.userAnswer)}
-
+        <div class= "YourAnswers" >{this.mapUserAnswerToRender(this.props.userAnswer)} </div>
         </TabPanel>
 
         <TabPanel>
+        <div className = "AllAnswers">
         {this.mapAnswersToRender(this.props.CurrentAnswers)}
+        </div>
         </TabPanel>
 
         </Tabs>

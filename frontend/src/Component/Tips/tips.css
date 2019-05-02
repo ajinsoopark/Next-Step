@@ -10,7 +10,7 @@
 }
 
 .adviceTitleChild {
-    font-size: 45px;
+    font-size: 4vw;
     font-weight: bold;
 }
 
@@ -29,9 +29,4 @@
 
 .tipPanels {
     padding-top: .8%;
-}
-
-.MuiExpansionPanelSummary-root:hover {
-    background-color: wheat;
-    transition: background-color 0.2s ease-in-out;
 }

@@ -2,6 +2,7 @@ import React from "react"
 import axios from "axios"
 import DisplayTipcats from "./displayTipcats"
 import "./tips.css"
+import { parse } from "url";
 
 export default class Tips extends React.Component {
   constructor(){
@@ -9,7 +10,8 @@ export default class Tips extends React.Component {
     this.state = {
       allTips: [],
       allTipcats: [],
-      selectedTipcat: 1
+      selectedTipcat: 1,
+      tabIndex: 0
     }
   }
 
@@ -38,13 +40,11 @@ export default class Tips extends React.Component {
     })
   }
 
-  handleClick = (e) => {
-    this.setState({
-        selectedTipcat: e.target.value
-    })
-  }
+  handleClick = (index) => this.setState({ tabIndex: index, selectedTipcat: index + 1 })
+  
 
 render(){
+  console.log(this.state)
   return(
 
         <div className="tipsList">
@@ -54,7 +54,12 @@ render(){
               </div>
           </div>
           <div>
-            <DisplayTipcats allTips={this.state.allTips} allTipcats={this.state.allTipcats} selectedTipcat={this.state.selectedTipcat} handleClick={this.handleClick} />
+            <DisplayTipcats 
+             allTips={this.state.allTips} 
+             allTipcats={this.state.allTipcats} 
+             selectedTipcat={this.state.selectedTipcat} 
+             handleClick={this.handleClick} 
+             tabIndex={this.state.tabIndex}/>
           </div>
     
         </div>

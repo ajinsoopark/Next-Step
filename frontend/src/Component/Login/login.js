@@ -59,7 +59,7 @@ class Login extends Component{
       <div className ='loginContainer'>
 
         <div className='loginbox'>
-          <h1>Member Login</h1>
+          <h1>Login</h1>
         <form className='login' onSubmit={this.handleSubmit} >
           <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
           <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
