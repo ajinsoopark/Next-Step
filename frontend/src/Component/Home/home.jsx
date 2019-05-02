@@ -49,6 +49,8 @@ class Home extends Component {
     <>
   
     <SideNav toggleSideNav={this.toggleSideNav}/>
+    <NavBar2 logoutUser={this.props.logout_user} />
+
     <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
     <Switch>
     <Route exact path='/questions' render={() => {
