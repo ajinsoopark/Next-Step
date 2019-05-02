@@ -18,7 +18,7 @@
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #F9F9F9;
+  background-color: rgb(255, 255, 255);
   text-align: justify;
   font-size: 20px;
   margin: 1%;
@@ -33,7 +33,7 @@
   /* transition: ease-in;
   transition-delay: 5ms; */
   border: 1px solid #171A26;
-  background-color: #F9F9F9;
+  background-color: rgba(206, 206, 206, 0.226);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
   transition: all 0.5s cubic-bezier(0.27, 0.37, 0.1, 1);
 }
