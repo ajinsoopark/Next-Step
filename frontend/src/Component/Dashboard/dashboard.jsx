@@ -5,6 +5,10 @@ import Progress from '../Progress/progress'
 import DashSplash from './dashSplash'
 import RandomQuestion from './randomQuestion'
 
+import NavBar2 from '../Navbar/navBar2'
+import Search from '../Search/searchContainer'
+
+
 import Leaderboard from "../Leaderboard/leaderboard"
 import './dashboard.css'
 
@@ -39,7 +43,9 @@ class Dashboard extends Component {
         return (
             <div className='dashboardContainer'>
                 <div className='splashAndQuestion'>
+                  
                     <DashSplash userName={ this.props.state.CurrentAutState.username }/>
+                    <NavBar2 logoutUser={this.props.logout_user} />
                     <RandomQuestion
                      questionId={questionId}
                      categoryId={categoryId}
@@ -47,6 +53,7 @@ class Dashboard extends Component {
                      category={category}/>
                      <Progress userID={this.props.state.CurrentAutState.userID}/>
                      <Leaderboard />
+                     
                 </div>
                 
             </div>

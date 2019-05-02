@@ -88,21 +88,7 @@ class SideNavMenu extends Component {
                         </NavText>
                     </NavItem>
 
-                    <NavItem
-                    className = "sideNav_logout"
-                    eventKey='search'
-                    active={activeTab === 'search' ? true : false}>
-                        <NavIcon>
-                                <div className='sideBarIcon'>
-                                    {/* {aboutIcon2} */}
-                                    <img src = {searchIcon2} alt = "Circled S" width = "35" />
-                                </div>
-                        </NavIcon>
-                        <NavText>
-                                Search
-                        </NavText>
-                    </NavItem>
-
+                    
 
                     <NavItem
                     className = "sideNav_tips"
@@ -172,3 +158,21 @@ class SideNavMenu extends Component {
 }
 
 export default withRouter(SideNavMenu)
+
+
+
+
+// <NavItem
+//                     className = "sideNav_logout"
+//                     eventKey='/search/:search/:filter'
+//                     active={activeTab === '/search/:search/:filter' ? true : false}>
+//                         <NavIcon>
+//                                 <div className='sideBarIcon'>
+//                                     {/* {aboutIcon2} */}
+//                                     <img src = {searchIcon2} alt = "Circled S" width = "35" />
+//                                 </div>
+//                         </NavIcon>
+//                         <NavText>
+//                                 Search
+//                         </NavText>
+//                     </NavItem>

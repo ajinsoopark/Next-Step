@@ -100,7 +100,7 @@ class Home extends Component {
 export default Home
 
 
-//   <NavBar2 logoutUser={this.props.logout_user} />
+
 
 
 
