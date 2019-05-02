@@ -54,7 +54,19 @@
  padding-bottom: 2%;
 }
 
+.answerInput:focus {
+    background: white;
+    outline: none;
+    border: 1px solid black;
+    transition: all 0.3s ease-in;
+}
 
+.answerInput {
+    background: #ECEEF7;
+    outline: none;
+    border: 1px solid #25709e;
+    transition: all 0.3s ease-in;
+}
 
 @media screen and (max-width: 640px) {
 
