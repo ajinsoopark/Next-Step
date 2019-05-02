@@ -14,7 +14,7 @@ class NavBar2 extends Component{
     super(props)
     this.state={
       search:'questions',
-      filter:null,
+      filter: null,
       inputFocus: false
     }
   }
