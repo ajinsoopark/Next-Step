@@ -14,7 +14,7 @@ render(){
       <div className = 'cardContainer'>
         <div className = 'cards'>
           <h2 className='cardLabel'>Practice</h2>
-          <p className='cardInfo'>"Listen to interview quesitons, and give us your answers. We'll keep track of your answers & progress."</p>
+          <p className='cardInfo'>{"Listen to interview quesitons, and give us your answers. We'll keep track of your answers & progress."}</p>
         </div>
         <div className = 'cards'>
           <h2 className='cardLabel'>Feedback</h2>
