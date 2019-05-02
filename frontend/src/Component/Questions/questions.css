@@ -25,6 +25,7 @@
   padding: 2%;
   font-family: Poppins;
   color: black;
+  line-height: 6vh;
 }
 
 .questionsParent:hover {
