@@ -37,10 +37,11 @@ class NavBar2 extends Component{
     return(
     <div className='Menu2'>
       <div className = 'search'>
+        <p>Search Option:</p>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <select className='searchMenu' name='search'>
-            <option value='questions' >Questions</option>
-            <option value='users' >Users</option>
+            <option className='options' value='questions' >Questions</option>
+            <option className='options' value='users' >Users</option>
           </select>
           <label htmlFor='searchInput' className='searchLabel'>
             <input className='searchInput' id='searchInput' type='text' name='filter' placeholder='&nbsp;'/>
