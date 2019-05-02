@@ -166,7 +166,7 @@ render () {
 
         <TabPanel>
         {this.mapUserAnswerBoxToRender()}
-        <div class= "YourAnswers" >{this.mapUserAnswerToRender(this.props.userAnswer)} </div>
+        <div className= "YourAnswers" >{this.mapUserAnswerToRender(this.props.userAnswer)} </div>
         </TabPanel>
 
         <TabPanel>
