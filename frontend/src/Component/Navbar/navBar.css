@@ -225,10 +225,11 @@
     display: flex;
     /* justify-content: center; */
     height: 10vh;
-    /* position: sticky; */
-    /* background-color: #232B49; */
+    position: fixed;
+    background-color: #232B49;
     z-index: 9;
-    /* align-items: center; */
+    align-items: center;
+    width: 100%;
 }
 
 .Menu2 button {
