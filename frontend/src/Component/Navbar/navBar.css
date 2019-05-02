@@ -47,7 +47,7 @@
  top: 0px;
  width: 100%;
  z-index: 999;
- height: 12vh;
+ /* height: 12vh; */
 }
 
 .nav {
@@ -169,7 +169,7 @@
     outline: none;
 }
 .searchInput:focus + .searchSpan {
-    color: white;
+    color: rgb(14, 0, 0);
     transform: translateY(-26px) scale(.75);
     font-size: 1.3em;
 }
@@ -199,7 +199,7 @@
 }
 
 .search {
- width: 60%;
+ /* width: 60%; */
  padding-left: 10%;
 }
 
@@ -223,7 +223,7 @@
 
 .Menu2 {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     height: 10vh;
     position: fixed;
     background-color: #232B49;

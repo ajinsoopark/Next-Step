@@ -1,11 +1,6 @@
 import React, {Component} from "react"
 
 
-
-
-
-
-
 // import { Link } from 'react-router-dom'
 
 import "./about.css"
@@ -13,11 +8,7 @@ import "./about.css"
 const developer1 = "https://media.licdn.com/dms/image/C5603AQFIPSvxiB8kvw/profile-displayphoto-shrink_200_200/0?e=1561593600&v=beta&t=DCpNSVXrrm3uNMa3Uk3kGKGisDOUUNMbjiwbgsyx1qw"
 const developer3 = "https://media.licdn.com/dms/image/C4D03AQEHt4b6oaU_9Q/profile-displayphoto-shrink_200_200/0?e=1561593600&v=beta&t=GMoKxS9cojUu_B2UrA_Wj_38S5XWIr9bc5xlhTXqoG4"
 const developer2 = require("../../Images/developer3.png")
-const developer4 = require("../../Images/developer4.jpg")
-
-
-
-
+const developer4 = require("../../Images/developer4.png")
 
 
 const logo_linkdin = "https://img.icons8.com/windows/50/000000/linkedin.png"
@@ -112,10 +103,6 @@ developers_map = (developers) =>{
       </>
     )
   }
-
-
-
-
 
 
 }

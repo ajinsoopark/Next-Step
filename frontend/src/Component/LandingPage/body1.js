@@ -47,7 +47,7 @@ render(){
     </div>
 
     <div className='links'>
-    <button className='demoSignup' onClick = {() => {this.props.function_login_user('a',"a")}}>Demo Login</button>
+    <button className='demoSignup' onClick = {() => {this.props.function_login_user("JanaSia2019","a")}}>Demo Login</button>
     {/* <NavLink to='/signup'><button className='demoSignup'>Sign Up</button></NavLink> */}
     </div>
     </div>

@@ -53,63 +53,106 @@
 }
 
 .randomQuestionContainer {
- background-color: rgb(255, 0, 0);
+ box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ /* background-color: rgb(255, 0, 0); */
  /* padding: 2%; */
  /* border: 1px solid black; */
- border-radius: 6px;
+ /* border-radius: 6px; */
  /* margin-left: 2%; */
  padding: 10px;
+ margin: 10px;
  /* width: 100%; */
  color: black;
 }
 
 .randomQuestionContainer:hover {
- box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ box-shadow: 0 6px 10px rgba(78, 67, 233, 0.486);
  transition: box-shadow 0.2s ease-in-out;
 }
 
 .randomQuestionP {
  font-size: 3vw;
  font-weight: bold;
-
- /* padding: 2%; */
- /* padding-bottom: 4%; */
 }
 
 .dashCategory {
- /* padding-bottom: 5%; */
  line-height: 2;
 }
 
-
-
-.splashEmote {
- width: 40%;
-}
-
 .progressContainer {
- background-color: rgb(110, 19, 19);
- margin: 0px;
- width: 100%;
+ box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ transition: box-shadow 0.2s ease-in-out;
+ margin: 10px;
+ /* width: 100%; */
  padding: 0px;
- border-radius: 6px;
- border: 1px solid rgba(255, 0, 0, 0);
+ /* border-radius: 6px; */
+ border: 0px solid rgba(255, 0, 0, 0);
  height: 20vh;
 }
 
 
+.progressContainer p {
+ margin: 10px;
+ padding: 10px;
+ text-align: center;
+}
+
 .progressContainer:hover {
- box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ box-shadow: 0 6px 10px rgba(202, 11, 161, 0.486);
  transition: box-shadow 0.2s ease-in-out;
 }
 
 .leaderboardContainer {
+ box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+ transition: box-shadow 0.2s ease-in-out;
+ margin: 10px;
  /* border: 1px solid red; */
- background-color: wheat;
+ /* background-color: wheat; */
  border-radius: 6px;
  height: 500px;
  grid-column-start: 1;
  grid-column-end: 3;
+}
+
+.leaderboardContainer h1 {
+ font-size: 4vw;
+ color: rgb(53, 53, 0);
+ font-weight: bold;
+ padding-bottom: 10px;
+ 
+}
+
+.tableHeader {
+ display: flex;
+ width: 100%;
+ flex-direction: row;
+ justify-content: space-around;
+ font-size: 2vw;
+ text-align: justify;
+ color: rgb(19, 90, 149);
+ font-weight: bolder;
+ /* margin: 10px; */
+ /* padding:inherit; */
+}
+
+
+.tableHead p {
+ font-size: 1.5vw;
+ text-align: left;
+ color: rgb(19, 90, 149);
+ font-weight: bolder;
+ margin: 10px;
+ /* padding:inherit; */
+}
+
+.leaderboardContainer .table {
+ font-size: 2vw;
+
+}
+
+.leaderboardContainer:hover {
+ box-shadow: 0 6px 10px rgba(11, 216, 199, 0.486);
+ transition: box-shadow 0.2s ease-in-out;
 }
 
 
@@ -171,14 +214,16 @@
   padding: 0px;
   height: 100%;
   width: 100%;
-  margin: 0px;
+  /* margin: 0px; */
   border-radius: 6px;
   color: black;
-  border-bottom: 1px solid black;
+  /* border-bottom: 1px solid black; */
   margin-bottom: 2.5vh;
   margin-top: 2.5vh;
   border-radius: 0;
-
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease-in-out;
+  margin: 10px;
  }
 
  .progressContainer {
@@ -187,17 +232,19 @@
   width: 70vw;
   padding: 0px;
   border-radius: 6px;
-  border: 1px solid rgba(255, 0, 0, 0);
+  /* border: 1px solid rgba(255, 0, 0, 0); */
   height: 20vh;
  }
 
 
  .leaderboardContainer {
-  /* border: 1px solid red; */
-  background-color: wheat;
-  border-radius: 6px;
-  height: 67vw;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+  transition: box-shadow 0.2s ease-in-out;
   margin: 10px;
+  /* border: 1px solid red; */
+  /* background-color: wheat; */
+  /* border-radius: 6px; */
+  height: 67vw;
   width: 88%;
  }
 

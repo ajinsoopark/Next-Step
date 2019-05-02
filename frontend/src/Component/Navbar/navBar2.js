@@ -36,7 +36,6 @@ class NavBar2 extends Component{
 
     return(
     <div className='Menu2'>
-
       <div className = 'search'>
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <select className='searchMenu' name='search'>
