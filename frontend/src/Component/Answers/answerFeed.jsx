@@ -149,7 +149,7 @@ class AnswerFeed extends Component {
         return (
             <div className='personalAnswerFeedContainer'>
                 <div className='personalAnswer'>
-                    Personal Answers
+                    My Answers
                 </div>
                 <div className='pickCat'>Pick a Category</div>
                 <div className='answerTabs'>

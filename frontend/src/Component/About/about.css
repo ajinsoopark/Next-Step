@@ -122,7 +122,6 @@
 
 }
 
-
 .developer_image img {
   filter: brightness(105%);
   border-radius: 3px;
@@ -135,8 +134,6 @@
   z-index: -1;
 
 }
-
-
 
 @media screen and (max-width: 640px) {
 

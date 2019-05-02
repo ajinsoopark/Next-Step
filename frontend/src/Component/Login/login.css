@@ -17,9 +17,8 @@
 }
 
 .loginbox {
- /* height: 50vh; */
  width: 35vw;
- /* border: 2px solid white; */
+
  border-radius: 10px;
  background-color: white;
  margin: 10px;
@@ -28,10 +27,7 @@
  grid-template-columns: 1fr;
  grid-template-rows: .25fr 1fr;
  grid-gap: 5px;
- /* display: flex; */
- /* flex-direction: column; */
- /* justify-content: center; */
- /* padding: 1%; */
+
 }
 
 .login {
