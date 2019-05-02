@@ -23,13 +23,13 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
 }
 
 const UsersFavorites = ({ favorites, likes, loggedInUser, getData }) => {
-  console.log(likes)
+  // console.log(likes)
   // console.log(data)
 
     if(favorites && likes){
     let likeThings=likes.map(a => a.answer_id)
 
-      console.log(likeThings)
+      // console.log(likeThings)
       return (favorites.map((el,i)=>{
         // console.log(el.likescount)
         return(
