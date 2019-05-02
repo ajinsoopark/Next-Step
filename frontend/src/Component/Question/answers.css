@@ -1,7 +1,7 @@
 .answer {
- border: 1px solid rgb(106, 113, 138);
- background-color: rgb(198, 200, 206);
- border-radius: 10px;
+ /* border: 1px solid rgb(106, 113, 138); */
+ background-color: rgba(198, 200, 206, 0.424);
+ border-radius: 6px;
  width: 80%;
  margin: 2%;
  padding: 4%;
