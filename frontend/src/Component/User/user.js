@@ -3,6 +3,7 @@ import axios from 'axios'
 import './user.css'
 import Avatar from 'react-avatar';
 import UsersAnswers from './usersAnswers'
+import UsersFavorites from './usersFavorites'
 import Auth from '../../Auth/Auth.js'
 
 class User extends Component {
@@ -11,6 +12,7 @@ class User extends Component {
     this.state=({
       userID:+this.props.match.params.id,
       loggedInUser:+Auth.getTokenID(),
+      display:true,
     })
   }
 
@@ -18,7 +20,7 @@ class User extends Component {
     const {userID,loggedInUser}=this.state
     axios.get(`/api/users/${userID}`).then(res=>{
       this.setState({
-        name:res.data.user.first_name +" "+ res.data.user.last_name,
+        name:res.data.user.email,
         userName:res.data.user.username
       })
     })
@@ -46,14 +48,45 @@ class User extends Component {
         likes:res.data.likes
       })
     })
+
+    axios.get(`/api/likes/info/${userID}`).then(res=>{
+      this.setState({
+        favorites:res.data.favorites
+      })
+    })
+}
+
+  displayAnswers=()=>{
+    this.setState({
+      display:true
+    })
   }
+  displayFavorites=()=>{
+    this.setState({
+      display:false
+    })
+  }
+
   componentDidMount(){
     this.getData()
   }
 
+  displayThings=()=>{
+    const {display,data,likes,loggedInUser,favorites}= this.state
+
+    if(display){
+      return(
+        <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+      )
+    }return(
+        <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+    )
+
+  }
+
   render(){
-    console.log(this.state)
-    const {name,userName,questions,answers,data,likes,loggedInUser}=this.state
+    // console.log(this.state)
+    const {name,userName,questions,answers,data,likes}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
     const style = {
@@ -64,28 +97,29 @@ class User extends Component {
     return(
       <div className = 'profileContainer'>
         <div className='userInfo'>
-          <div className='words'>
-            <p>UserName: {userName}</p>
-            <p>Full Name: {name}</p>
-          </div>
-          <div className='join'>
             <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
-          </div>
+            <section>
+            <p> {userName} </p>
+            <p> {name} </p>
+            </section>
         </div>
 
 
-        Question Progress:
+      <div className='pBarContainer'>
+        Completion progress:
         <div className='pbar'>
           <div className ='innerBar' style={style}>
-          </div>
-          <div className='completed'>
             {completion}
           </div>
+          <div className='completed'>
+          </div>
         </div>
-
-        <div>
-          <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
-        </div>
+      </div>
+      <div className='userInfo'>
+        <button onClick={this.displayAnswers}>Answers </button>
+        <button onClick={this.displayFavorites}>Favorites </button>
+      </div>
+        {this.displayThings()}
       </div>
     )
   }
