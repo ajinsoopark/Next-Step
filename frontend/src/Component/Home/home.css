@@ -1,17 +1,12 @@
 /* .home {
     padding-top: 5%;
-}
+} */
 
 
-<<<<<<< HEAD
-div .home{
-=======
-
-.home{
->>>>>>> ee7dbd49107fe755bda587864a7ec23e1c869b93
+.home {
     position: relative;
     overflow: scroll;
     height: auto;
     min-height: 100vh;
     padding-top: 13vh;
-} */
+} 
