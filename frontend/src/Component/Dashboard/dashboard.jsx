@@ -45,7 +45,7 @@ class Dashboard extends Component {
                 <div className='splashAndQuestion'>
                   
                     <DashSplash userName={ this.props.state.CurrentAutState.username }/>
-                    <NavBar2 logoutUser={this.props.logout_user} />
+                    {/* <NavBar2 logoutUser={this.props.logout_user} /> */}
                     <RandomQuestion
                      questionId={questionId}
                      categoryId={categoryId}
