@@ -56,12 +56,16 @@ CREATE TABLE tips (
   tip_body VARCHAR NOT NULL
 );
 
+\COPY questions(category_id, question_body) FROM '../db/questions.csv' DELIMITER ',' CSV HEADER;
+\COPY answers(question_id, user_id, answer_body) FROM '../db/answers.csv' DELIMITER ',' CSV HEADER;
+\COPY feedbacks(answer_id, user_id, feedback_body) FROM '../db/answers.csv' DELIMITER ',' CSV HEADER;
+
 INSERT INTO users(username, first_name, last_name, email, password_digest) VALUES
 ('Jhenya', 'Jhenya', 'Ezhova', 'evgeniyaezhova@pursuit.org', 'password1'),
 ('jinsoo93', 'Alex', 'Park', 'alexparkqueens@gmail.com', 'password2'),
 ('thaiSonP', 'Tyson', 'Pan', 'tpan25@gmail', '$2a$10$wDfVs.zbsHLdELTYXEdI0uJXP017wdzjAJkH7H3YNXfI7BGG7AJve'),
-('J@Pursuit', 'Jacky', 'O.', 'jackyong@pursuit.org', 'password4'),
-('a', 'a', 'a', 'a', '$2a$10$7OrzSPK5MJ0fDJenNxYHv.ey4BDW25qXYjnJq26QbGGUv7Krr2jFi');
+('J@Pursuit', 'Jacky', 'O.', 'jacky@bunnyhopper.org', 'password4'),
+('JanaSia2019', 'Jana', 'Sia', 'apple@sal.com', '$2a$10$7OrzSPK5MJ0fDJenNxYHv.ey4BDW25qXYjnJq26QbGGUv7Krr2jFi');
 
 INSERT INTO categories(category) VALUES
 ('Leadership & Decision Making'),
