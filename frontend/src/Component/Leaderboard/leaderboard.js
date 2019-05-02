@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import './leaderboard.css'
+import metal from "../../Images/gold-medal-svgrepo-com.svg"
 
 class Leaderboard extends Component{
   constructor(props){
@@ -46,14 +47,13 @@ class Leaderboard extends Component{
     // console.log(this.state)
     return(
       <div className = 'leaderboardContainer'>
-        <div>
-          This is a progress table:
-        </div>
+      <img src = {metal} alt="metal" height = "50px" />
+      <h1> Leaderboard </h1>
         <div className='table'>
-          <div className = 'tableHead'>
-            <p>Rank</p>
-            <p>Username</p>
-            <p>Progress</p>
+          <div className = 'tableHeader'>
+            <h2>Rank</h2>
+            <h2>Username</h2>
+            <h2>Progress</h2>
           </div>
               {this.makeTable()}
 

@@ -113,27 +113,25 @@ async componentDidMount(){
   await this.axiosGetAnswers()
   await this.axiosGetUserAnswerByQuestion()
 
-    const ponyfill = await createPonyfill({
-    'region': 'westus',
-    'subscriptionKey': '3aef4d0fd6904d808bd091cc3ce75b92',
-    'authorizationToken': this.getAccessToken('3aef4d0fd6904d808bd091cc3ce75b92')
+  //   const ponyfill = await createPonyfill({
+  //   'region': 'westus',
+  //   'subscriptionKey': '3aef4d0fd6904d808bd091cc3ce75b92',
+  //   'authorizationToken': this.getAccessToken('3aef4d0fd6904d808bd091cc3ce75b92')
 
-  })
+  // })
 
-    this.setState(() => ( {ponyfill} ))
+  //   this.setState(() => ( {ponyfill} ))
 
 }
 
 
 render(){
-  console.log(this.state)
-  
     return(
         <div className="Question">
         <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1> 
-        <Audio ponyfill = {this.state.ponyfill}CurrentQuestion ={this.state.CurrentQuestion}
+        {/* <Audio ponyfill = {this.state.ponyfill}CurrentQuestion ={this.state.CurrentQuestion}
 
-        />
+        /> */}
         <div className = "Answers" >
           <Answers tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
           CurrentAnswers = {this.state.CurrentAnswers}

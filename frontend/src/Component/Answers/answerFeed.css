@@ -132,7 +132,7 @@
 }
 
 .fButton {
- height: 50px;
+ /* height: 50px; */
  font-weight: 500;
  color: rgb(0, 0, 0);
  border: 2px solid rgb(0, 0, 0);
@@ -140,7 +140,6 @@
 }
 
 .fButton:hover {
- height: 50px;
  font-weight: 500;
  color: rgb(238, 11, 11);
  border: 2px solid #FF3D57;
