@@ -1,7 +1,7 @@
--- DROP DATABASE IF EXISTS nextstep;
--- CREATE DATABASE nextstep;
+DROP DATABASE IF EXISTS nextstep;
+CREATE DATABASE nextstep;
 
--- \c nextstep;
+\c nextstep;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -56,10 +56,6 @@ CREATE TABLE tips (
   tip_body VARCHAR NOT NULL
 );
 
-\COPY questions(category_id, question_body) FROM '../db/questions.csv' DELIMITER ',' CSV HEADER;
-\COPY answers(question_id, user_id, answer_body) FROM '../db/answers.csv' DELIMITER ',' CSV HEADER;
-\COPY feedbacks(answer_id, user_id, feedback_body) FROM '../db/answers.csv' DELIMITER ',' CSV HEADER;
-
 INSERT INTO users(username, first_name, last_name, email, password_digest) VALUES
 ('Jhenya', 'Jhenya', 'Ezhova', 'evgeniyaezhova@pursuit.org', 'password1'),
 ('jinsoo93', 'Alex', 'Park', 'alexparkqueens@gmail.com', 'password2'),
@@ -76,9 +72,11 @@ INSERT INTO categories(category) VALUES
 ('Miscellaneous'),
 ('General Qs');
 
+
 \COPY questions(category_id, question_body) FROM '../db/questions.csv' DELIMITER ',' CSV HEADER;
 \COPY answers(question_id, user_id, answer_body) FROM '../db/answers.csv' DELIMITER ',' CSV HEADER;
 \COPY feedbacks(answer_id, user_id, feedback_body) FROM '../db/answers.csv' DELIMITER ',' CSV HEADER;
+
 
 INSERT INTO likes(answer_id, user_id) VALUES
 (1, 2),
@@ -125,9 +123,7 @@ INSERT INTO likes(answer_id, user_id) VALUES
 (60, 3),
 (62, 4),
 (63, 2),
-(101, 2),
-(102, 3);
-
+(101, 2);
 
 INSERT INTO tipcats(tipcat) VALUES
 ('Before'),
