@@ -26,6 +26,7 @@
   font-family: Poppins;
   color: black;
   line-height: 6vh;
+  border: 1px solid rgba(175, 175, 175, 0.733)
 }
 
 .questionsParent:hover {
@@ -55,4 +56,5 @@
 .pickCategory {
   font-size: 1.2em;
   padding: 1.3%;
+  color: red;
 }
