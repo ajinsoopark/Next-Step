@@ -169,6 +169,10 @@
  color: white;
 }
 
+.searchInput:-webkit-autofill-selected {
+    background-color: none;
+}
+
 .searchInput:hover {
     background-color: #3e7da5
 }
