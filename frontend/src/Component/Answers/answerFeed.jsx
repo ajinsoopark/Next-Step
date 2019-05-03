@@ -38,12 +38,11 @@ class AnswerFeed extends Component {
         if (category === 0) {
             axios.get(`/api/answers/${this.convertSort(sort)}/${Auth.getTokenID()}`)
             .then(res => {
-                console.log(res)
                 let answers = res.data.answers
                 this.setState({ currentUserAnswers: answers })
             }).catch(err => console.log(err))
         } else {
-            axios.get(`/answers/category/${this.convertSort(sort)}/${Auth.getTokenID()}/${this.state.categoryTabIndex}`)
+            axios.get(`/api/answers/category/${this.convertSort(sort)}/${Auth.getTokenID()}/${this.state.categoryTabIndex}`)
             .then(res => {
                 let answers = res.data.answers
                 this.setState({ currentUserAnswers: answers })
@@ -143,7 +142,7 @@ class AnswerFeed extends Component {
     }
 
     render () {
-
+        console.log(this.state)
         const { categoryTabIndex, sortTabIndex } = this.state
 
         return (
