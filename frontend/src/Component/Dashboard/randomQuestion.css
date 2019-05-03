@@ -3,7 +3,7 @@
     transition: box-shadow 0.2s ease-in-out;
     margin: 10px;
     border-radius: 6px;
-    height: 400px;
+    min-height: 400px;
     background-color: #F4F9FC;
     display: flex;
     justify-content: center;
