@@ -38,23 +38,23 @@ class Progress extends Component {
 
     const style = {
       width:completion,
-      backgroundColor: 'yellow',
+      backgroundColor: '#F6FFA7'
     }
     return (
 
       <div className='progressContainer'>
-        <p>
+        <div className='completionText'>
           You have completed {answers} out of {questions} questions.
-        </p>
+        </div>
 
         <div className='pbar'>
           <div className ='innerBar' style={style}>
           </div>
+          <div className='percentDiv'>
+            {completion}
         </div>
+      </div>
 
-        <div className='percentDiv'>
-          <p>{completion}</p>
-        </div>
         
       </div>
     )
