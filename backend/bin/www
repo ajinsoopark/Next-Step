@@ -12,6 +12,11 @@ var http = require('http');
  * Get port from environment and store in Express.
  */
 
+
+setInterval(() => {
+    http.get('https://morning-hollows-24499.herokuapp.com/');
+}, 300000)
+
 var port = normalizePort(process.env.PORT || '3210');
 app.set('port', port);
 
