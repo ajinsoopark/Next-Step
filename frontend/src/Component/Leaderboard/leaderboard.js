@@ -47,17 +47,19 @@ class Leaderboard extends Component{
     // console.log(this.state)
     return(
       <div className = 'leaderboardContainer'>
-      <img src = {metal} alt="metal" height = "50px" />
-      <h1> Leaderboard </h1>
-        <div className='table'>
-          <div className = 'tableHeader'>
-            <h2>Rank</h2>
-            <h2>Username</h2>
-            <h2>Progress</h2>
-          </div>
-              {this.makeTable()}
+      
+          <img src = {metal} alt="metal" height = "50px" />
+          <h1 className='leaderboardText'> Leaderboard </h1>
+            <div className='table'>
+              <div className = 'tableHeader'>
+                <h2>Rank</h2>
+                <h2>Username</h2>
+                <h2>Progress</h2>
+              </div>
+                  {this.makeTable()}
 
-        </div>
+            </div>
+
       </div>
     )
   }

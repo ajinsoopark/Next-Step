@@ -1,8 +1,14 @@
 .leaderboardContainer{
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   flex-direction: column;
+  padding-top: 10px;
+
+}
+
+.leaderboardText{
+  margin-bottom: 20px
 }
 
 .tableHead p{
@@ -11,6 +17,7 @@
   display: flex;
   justify-content: center;
 }
+
 .table{
   width: 100%;
   display: flex;
