@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DisplaySearch from './displaySearch'
+// import  './displaySearch.css'
 
 class Search extends Component {
   constructor(props){
@@ -29,10 +30,10 @@ componentDidUpdate = ()=>{
     const{SearchState}=this.props.state
 
     return(
-      <>
+      <div >
         Search results for {search} containing {filter}
         <DisplaySearch search={search} data={SearchState}/>
-      </>
+      </div>
     )
   }
 }

@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
 
+.results a {
+  color: black
+}
 
 .results{
+  display: flex;
+  justify-content: space-around;
   vertical-align: middle;
   border: 1px solid transparent;
   border-radius: 4px;
@@ -10,15 +15,17 @@
   font-size: 20px;
   margin: 1%;
   padding: 2%;
-  font-family: Poppins;
+  font-family: 'Poppins', sans-serif;
   color: black;
   line-height: 6vh;
   border: 1px solid rgba(175, 175, 175, 0.733);
+  font-size: 20px;
 }
 .results:hover {
-  background-color: rgb(94, 126, 245);
-}
-
-.results:focus {
-  background-color: rgb(151, 170, 238);
+  color: #171A26;
+  text-decoration: none;
+  border: 1px solid #171A26;
+  background-color: rgba(206, 206, 206, 0.226);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
+  transition: all 0.5s cubic-bezier(0.27, 0.37, 0.1, 1);
 }

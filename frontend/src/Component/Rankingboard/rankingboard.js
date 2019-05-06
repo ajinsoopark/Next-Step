@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
-import './leaderboard.css'
+import './rankingboard.css'
 import metal from "../../Images/gold-medal-svgrepo-com.svg"
 
-class Leaderboard extends Component{
+class Rankingboard extends Component{
   constructor(props){
     super(props)
     this.state=({
@@ -27,21 +27,18 @@ class Leaderboard extends Component{
 
   makeTable=()=>{
     const {data}=this.state
-    let answer= []
 
     if(data){
       // console.log(data)
-
-      for(let i=0;i<5;i++){
-        answer.push(
-          <div className='tableHead'>
+      return data.map((el,i)=>{
+        return (
+          <div className='tableHead' key={i}>
             <p>{i+1}</p>
-            <p><NavLink to={`/users/${data[i].id}`}>{data[i].username} </NavLink></p>
-            <p> {data[i].count} / {this.state.questions}</p>
+            <p><NavLink to={`/users/${el.id}`}>{el.username} </NavLink></p>
+            <p> {el.count} / {this.state.questions}</p>
           </div>
         )
-      }
-      return answer
+      })
     }
     return null
   }
@@ -52,7 +49,7 @@ class Leaderboard extends Component{
       <div className = 'leaderboardContainer'>
 
           <img src = {metal} alt="metal" height = "50px" />
-          <h1 className='leaderboardText'> Leaderboard </h1>
+          <h1 className='leaderboardText'> Rankingboard </h1>
             <div className='table'>
               <div className = 'tableHeader'>
                 <h2>Rank</h2>
@@ -67,4 +64,4 @@ class Leaderboard extends Component{
   }
 }
 
-export default Leaderboard
+export default Rankingboard
