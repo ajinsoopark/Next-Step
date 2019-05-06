@@ -88,7 +88,7 @@ mapUserAnswerBoxToRender = (array) => {
     return (
       <div className = "userAnswerArea" >
       <form onSubmit = {this.postAnswer}>
-       <textarea onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
+       <textarea className='answerInput' onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
         placeholder = "Enter your Answer Here">
       </textarea>
       <input type = "Submit" />
@@ -166,7 +166,7 @@ render () {
 
         <TabPanel>
         {this.mapUserAnswerBoxToRender()}
-        <div class= "YourAnswers" >{this.mapUserAnswerToRender(this.props.userAnswer)} </div>
+        <div className= "YourAnswers" >{this.mapUserAnswerToRender(this.props.userAnswer)} </div>
         </TabPanel>
 
         <TabPanel>

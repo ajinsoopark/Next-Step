@@ -4,6 +4,7 @@ import axios from 'axios'
 import Progress from '../Progress/progress'
 import DashSplash from './dashSplash'
 import RandomQuestion from './randomQuestion'
+import WelcomeMessage from './welcomeMessage'
 
 import NavBar2 from '../Navbar/navBar2'
 import Search from '../Search/searchContainer'
@@ -44,15 +45,25 @@ class Dashboard extends Component {
             <div className='dashboardContainer'>
                 <div className='splashAndQuestion'>
                   
+                <div className="dashsplashDiv">
                     <DashSplash userName={ this.props.state.CurrentAutState.username }/>
-                    {/* <NavBar2 logoutUser={this.props.logout_user} /> */}
+                    </div>
+                    <div className="welcomeMessageDiv">
+                    <WelcomeMessage />
+                    </div>
+                    <div className="progressDiv">
+                     <Progress userID={this.props.state.CurrentAutState.userID}/>
+                    </div>
+                    <div className="randomQdiv">
                     <RandomQuestion
                      questionId={questionId}
                      categoryId={categoryId}
                      questionBody={questionBody}
                      category={category}/>
-                     <Progress userID={this.props.state.CurrentAutState.userID}/>
+                    </div>
+                    <div className="leaderBoarddiv">
                      <Leaderboard />
+                    </div>
                      
                 </div>
                 

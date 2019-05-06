@@ -1,7 +1,7 @@
 .sidenav---sidenav---_2tBP {
  background-color: #25709e;
 
- top: 0px;
+ padding-top: .6%;
  position: fixed;
 }
 
@@ -56,7 +56,7 @@
 }
 
 .unexpanded {
- margin-left: 64px;
+ margin-left: 5vw;
  padding: 15px 20px 0 20px;
  background-color: white;
 

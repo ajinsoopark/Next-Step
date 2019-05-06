@@ -26,9 +26,13 @@
 }
 
 .userAnswerArea {
- width: 100vw;
+ /* width: 100vw; */
 }
 
+.questionsParent svg {
+  width: 2.5%;
+  fill: green;
+}
 
 .userAnswerArea form {
  display: flex;
@@ -41,12 +45,16 @@
  min-width: 66vw;
  min-height: 15vh;
  resize: none;
- border: 1px solid rgba(83, 0, 0, 0);
- background-color: rgba(83, 83, 83, 0.144);
+ /* border: 1px solid rgba(83, 0, 0, 0);
+ background-color: rgba(83, 83, 83, 0.144); */
  border-radius: 6px;
  margin: 1%;
  padding: 1%;
  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+ background: #ECEEF7;
+ outline: none;
+ border: 1px solid #25709e;
+ transition: all 0.3s ease-in;
 }
 
 .userAnswerArea input[type="Submit"] {
