@@ -14,26 +14,34 @@ class NavBar2 extends Component{
     super(props)
     this.state={
       search:'questions',
-      filter: null,
-      inputFocus: false
+      filter: '',
+      inputFocus: false,
+      error: false
     }
   }
 
   handleChange  =(e)=>{
     this.setState({
+      error: false,
       [e.target.name]:e.target.value
     })
   }
 
   handleSubmit =(e)=>{
-    const{filter,search}=this.state
     e.preventDefault()
-    this.props.function_search(search, filter)
-    this.props.history.push(`/search/${search}/${filter}`)
+    if (this.state.filter) {
+      const{filter,search}=this.state
+      this.props.function_search(search, filter)
+      this.props.history.push(`/search/${search}/${filter}`)
+      this.setState({ filter: '' })
+    } else {
+      this.setState({ error: true })
+    }
+
   }
 
   render () {
-
+    console.log(this.props)
     return(
     <div className='Menu2'>
       <div className = 'search'>
@@ -44,11 +52,12 @@ class NavBar2 extends Component{
             <option className='options' value='users' >Users</option>
           </select>
           <label htmlFor='searchInput' className='searchLabel'>
-            <input autoComplete='off' className='searchInput' id='searchInput' type='text' name='filter' placeholder='&nbsp;'/>
+            <input autoComplete='off' className='searchInput' id='searchInput' onChange={this.handleChange} value={this.state.filter} type='text' name='filter' placeholder='&nbsp;'/>
             <span className="searchSpan">Search</span>
             <span className='bottomBorder'></span>
           </label>
         </form>
+        {this.state.error ? <small className='searchError'>Please Do Not Leave Blank.</small> : ''}
       </div>
     </div>
     )

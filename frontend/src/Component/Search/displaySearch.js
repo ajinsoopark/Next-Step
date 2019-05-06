@@ -17,7 +17,7 @@ const DisplaySearch = ({ search, data }) => {
     }else if(search ==='questions'){
       return(data.data.map((el)=>{
         return(
-            <NavLink  to={'/questions/'+ el.id}>
+            <NavLink key={el.id}  to={'/questions/'+ el.id}>
               <div className='results'>
                 {el.question_body}
               </div>
