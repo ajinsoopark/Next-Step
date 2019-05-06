@@ -1,14 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:600|Poppins:500');
+@import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
 
 
 .results{
   vertical-align: middle;
-  border: 1px solid #171A26;
+  border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #CFD6ED;
+  background-color: rgb(255, 255, 255);
   text-align: justify;
   font-size: 20px;
   margin: 1%;
   padding: 2%;
   font-family: Poppins;
+  color: black;
+  line-height: 6vh;
+  border: 1px solid rgba(175, 175, 175, 0.733);
+}
+.results:hover {
+  background-color: rgb(94, 126, 245);
+}
+
+.results:focus {
+  background-color: rgb(151, 170, 238);
 }

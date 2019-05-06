@@ -1,5 +1,5 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import {NavLink} from "react-router-dom";
 import UserSearchCard from './userSearchCard'
 import  './displaySearch.css'
 
@@ -18,9 +18,9 @@ const DisplaySearch = ({ search, data }) => {
       return(data.data.map((el)=>{
         return(
           <div className='results' key={el.id}>
-            <Link to={'/questions/'+ el.id}>
+            <NavLink to={'/questions/'+ el.id}>
               {el.question_body}
-            </Link>
+            </NavLink>
           </div>
         )
       }))
