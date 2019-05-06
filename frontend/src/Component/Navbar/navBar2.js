@@ -38,7 +38,7 @@ class NavBar2 extends Component{
     <div className='Menu2'>
       <div className = 'search'>
         <p>Search Option:</p>
-        <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+        <form onChange={this.handleChange} onSubmit={this.handleSubmit} autoComplete="off">
           <select className='searchMenu' name='search'>
             <option className='options' value='questions' >Questions</option>
             <option className='options' value='users' >Users</option>
