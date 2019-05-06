@@ -44,7 +44,7 @@ class NavBar2 extends Component{
             <option className='options' value='users' >Users</option>
           </select>
           <label htmlFor='searchInput' className='searchLabel'>
-            <input className='searchInput' id='searchInput' type='text' name='filter' placeholder='&nbsp;'/>
+            <input autoComplete='off' className='searchInput' id='searchInput' type='text' name='filter' placeholder='&nbsp;'/>
             <span className="searchSpan">Search</span>
             <span className='bottomBorder'></span>
           </label>
