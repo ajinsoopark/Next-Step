@@ -22,7 +22,8 @@ class Question extends Component {
       CurrentQuestion: null,
       CurrentAnswers: [],
       tabIndex: 0,
-      userAnswer: []
+      userAnswer: [],
+      questionId: ''
         })
   }
 
@@ -49,9 +50,11 @@ class Question extends Component {
        }
      }).then((res)=>{
        let answersArray = this.mapAnswersToState(res.data.answers)
+       let questionId = res.data.answers[0].question_id
        this.setState({
          CurrentQuestion: res.data.answers[0].question_body,
-         CurrentAnswers: answersArray
+         CurrentAnswers: answersArray,
+         questionId: questionId
        })
      }).then(() => {
      }).catch((err) => {
@@ -124,14 +127,25 @@ async componentDidMount(){
 
 }
 
+handleForwardButton = (e) => {
+  e.preventDefault()
+  let nextQuestionId = this.state.questionId + 1
+  this.props.history.push(`/questions/${nextQuestionId}`)
+}
+
 
 render(){
+  console.log(this.props.history)
     return(
         <div className="Question">
         <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1> 
         {/* <Audio ponyfill = {this.state.ponyfill}CurrentQuestion ={this.state.CurrentQuestion}
 
         /> */}
+        <div className='backAndForth'>
+          <button className='backButton' >Back</button>
+          <button className='forthButton' onClick={this.handleForwardButton}>Forth</button>
+        </div>
         <div className = "Answers" >
           <Answers tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
           CurrentAnswers = {this.state.CurrentAnswers}
