@@ -48,7 +48,7 @@ class Home extends Component {
         return (
     <>
   
-    <SideNav toggleSideNav={this.toggleSideNav}/>
+    <SideNav expanded={this.state.expanded} toggleSideNav={this.toggleSideNav}/>
     <NavBar2 logoutUser={this.props.logout_user} />
 
     <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
