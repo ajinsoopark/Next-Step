@@ -40,7 +40,7 @@ const NavHeader = styled.div`
 
 // height: 20px + 10px + 10px = 40px
 const NavTitle = styled.div`
-    font-size: 1.4em;
+    font-size: 1.8em;
     ${'' /* line-height: 20px; */}
     padding: 25px 0 0 0;
 `;
@@ -77,7 +77,8 @@ class SideNavMenu extends Component {
                 
 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
 <NavHeader expanded = {this.props.expanded} >
-<NavTitle>Next Step</NavTitle>
+
+<NavTitle> Next Step <img className = "sideBarLogo" src = {logo} alt = "Circled Home" width= "20" /> </NavTitle>
 {/* <NavSubTitle> The Platform To Help You With Your Next Step. </NavSubTitle> */}
 </NavHeader>
 
@@ -87,8 +88,8 @@ className = "dashboard"
 eventKey='home'
 active={activeTab === 'home' ? true : false}>
                         <NavIcon>
-                                <div className='sideBarLogo'>
-                                    <img src = {logo} alt = "Circled logo" width= "30" />
+                                <div className='sideBarIcon'>
+                                    <img src = {homeIcon2} alt = "Circled Home" width= "35" />
                                 </div>
                         </NavIcon>
                         <NavText>

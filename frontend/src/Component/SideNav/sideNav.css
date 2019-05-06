@@ -30,6 +30,9 @@
  visibility: visible;
 }
 
+.logo_oas{
+  filter: (invert(100))
+}
 
 .sideBarIcon {
  padding-top: 10%;
@@ -45,7 +48,7 @@
 }
 
 .sideBarLogo {
- padding-top: 10%;
+ /* padding-top: 10%; */
  filter: invert(100)
 }
 
