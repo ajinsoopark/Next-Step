@@ -17,11 +17,11 @@ const DisplaySearch = ({ search, data }) => {
     }else if(search ==='questions'){
       return(data.data.map((el)=>{
         return(
-          <div className='results' key={el.id}>
-            <NavLink to={'/questions/'+ el.id}>
-              {el.question_body}
+            <NavLink  to={'/questions/'+ el.id}>
+              <div className='results'>
+                {el.question_body}
+              </div>
             </NavLink>
-          </div>
         )
       }))
     }
