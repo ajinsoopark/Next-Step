@@ -86,13 +86,14 @@ class User extends Component {
 
   checkUser=()=>{
     const {userID}=this.state
-    if(userID!=+this.props.match.params.id){
+    if(userID!= (+this.props.match.params.id)){
 
       this.setState({
         userID:+this.props.match.params.id
       })
       this.getData();
-      
+      console.log(this.state)
+      debugger
     }
   }
   componentDidUpdate=()=>{
@@ -100,7 +101,7 @@ class User extends Component {
   }
 
   render(){
-    console.log(this.state.userID)
+    // console.log(this.state.userID)
     const {name,userName,questions,answers}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
