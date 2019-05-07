@@ -4,7 +4,7 @@
 }
 
 .QuestionTitle::before {
- content: "Q:";
+ /* content: "Q:"; */
  margin: 1%;
  padding: 1%;
  font-weight: bolder;

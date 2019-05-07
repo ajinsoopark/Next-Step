@@ -1,19 +1,14 @@
 import React, {Component} from "react";
-// import {Link} from "react-router-dom";
 import Auth from "../../Auth/Auth"
 import axios from "axios"
-import {withRouter} from "react-router"
-
+import { NavLink, withRouter } from 'react-router-dom'
 
 import Answers from "./answers"
-import Audio from "../TTS/audio.js"
+// import Audio from "../TTS/audio.js"
 
-import createPonyfill from 'web-speech-cognitive-services/lib/SpeechServices';
-
+// import createPonyfill from 'web-speech-cognitive-services/lib/SpeechServices';
 
 import "./question.css"
-
-// const rp = require('request-promise')
 
 class Question extends Component {
   constructor (props) {
@@ -50,11 +45,8 @@ class Question extends Component {
        }
      }).then((res)=>{
        let answersArray = this.mapAnswersToState(res.data.answers)
-       let questionId = res.data.answers[0].question_id
        this.setState({
-         CurrentQuestion: res.data.answers[0].question_body,
          CurrentAnswers: answersArray,
-         questionId: questionId
        })
      }).then(() => {
      }).catch((err) => {
@@ -64,10 +56,22 @@ class Question extends Component {
     console.log("Is EMPTY?")
   }
 
+  fetchQuestion = () => {
+    let questionId = this.props.match.params.id
+    axios.get(`/api/questions/${questionId}`)
+    .then(res => {
+      let question = res.data.question.question_body
+      let id = res.data.question.id
+      this.setState({ 
+        CurrentQuestion: question,
+        questionId: id
+       })
+    })
+  }
+
   axiosGetUserAnswerByQuestion = () =>{
     let paramsID = this.props.match.params.id
     let userID = Auth.getTokenID()
-    // console.log(userID)
     paramsID ?
    //THIS IS AXIOS BY A QUERY
      axios.get(`/api/answers/byuser/byquestion`,
@@ -82,8 +86,6 @@ class Question extends Component {
          userAnswerStatus: res.data.status,
          userAnswer: res.data.answer
        })
-     }).then(() => {
-      //  console.log(this.state)
      }).catch((err) => {
        console.log(err)
      })
@@ -115,7 +117,7 @@ async componentDidMount(){
   //get Answers based on params URL
   await this.axiosGetAnswers()
   await this.axiosGetUserAnswerByQuestion()
-
+  await this.fetchQuestion()
   //   const ponyfill = await createPonyfill({
   //   'region': 'westus',
   //   'subscriptionKey': '3aef4d0fd6904d808bd091cc3ce75b92',
@@ -133,10 +135,19 @@ handleForwardButton = (e) => {
   this.props.history.push(`/questions/${nextQuestionId}`)
 }
 
+componentDidUpdate =  (prevProps) => {
+  if (this.props.location.pathname !== prevProps.location.pathname) {
+  this.axiosGetAnswers()
+  this.axiosGetUserAnswerByQuestion()
+  this.fetchQuestion()
+  }
+}
+
 
 render(){
-  console.log(this.props.history)
-    return(
+  const { questionId } = this.state
+
+  return(
         <div className="Question">
         <h1 className = "QuestionTitle"> {this.state.CurrentQuestion} </h1> 
         {/* <Audio ponyfill = {this.state.ponyfill}CurrentQuestion ={this.state.CurrentQuestion}
@@ -144,7 +155,7 @@ render(){
         /> */}
         <div className='backAndForth'>
           <button className='backButton' >Back</button>
-          <button className='forthButton' onClick={this.handleForwardButton}>Forth</button>
+          <NavLink className='forthButton' to={`/questions/${questionId + 1}`}>Forth</NavLink>
         </div>
         <div className = "Answers" >
           <Answers tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
