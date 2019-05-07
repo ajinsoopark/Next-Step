@@ -25,7 +25,7 @@ import shutdownIcon2 from "../../Images/icons8-shutdown-filled-52.png"
 
 const NavHeader = styled.div`
     display: ${props => (props.expanded ? 'block' : 'none')};
-    font-weight: bolder;
+    font-weight: bold;
     -webkit-transition: width 2s; /* Safari */
     transition: width 2s;
     white-space: nowrap;
