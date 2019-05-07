@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
+import styled from 'styled-components';
+
 
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
 // import { questionsIcon, leaderboardIcon, answerIcon, tipsIcon, aboutIcon } from './icons'
@@ -15,10 +17,41 @@ import leaderboardIcon2 from "../../Images/icons8-gold-medal-48.png"
 import tipsIcons2 from "../../Images/icons8-idea-filled-48.png"
 import searchIcon2 from "../../Images/icons8-search-filled-50.png"
 
+import logo from "../../Images/nextStepLogo.png"
 
 import shutdownIcon2 from "../../Images/icons8-shutdown-filled-52.png"
 
 
+
+const NavHeader = styled.div`
+    display: ${props => (props.expanded ? 'block' : 'none')};
+    font-weight: bold;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+    white-space: nowrap;
+    ${'' /* background-color: #db3d44; */}
+    color: #fff;
+    > * {
+        color: inherit;
+        background-color: inherit;
+    }
+
+`;
+
+// height: 20px + 10px + 10px = 40px
+const NavTitle = styled.div`
+    font-size: 1.8em;
+    ${'' /* line-height: 20px; */}
+    padding: 25px 0 0 0;
+`;
+
+// height: 20px + 4px = 24px;
+const NavSubTitle = styled.div`
+    font-size: .2em;
+    line-height: 20px;
+    padding-bottom: 1px;
+    width: 50%;
+`;
 
 class SideNavMenu extends Component {
     constructor () {
@@ -29,6 +62,7 @@ class SideNavMenu extends Component {
     }
 
     render () {
+        console.log()
         const { activeTab } = this.state
         return (
             <div className='sideContainer'>
@@ -40,15 +74,21 @@ class SideNavMenu extends Component {
                    }
                    this.setState({ activeTab: selected })
                 }}>
-                <SideNav.Toggle onClick={this.props.toggleSideNav}/>
-                <SideNav.Nav>
-                     <NavItem
-                    className = "dashboard"
-                    eventKey='home'
-                    active={activeTab === 'home' ? true : false}>
+                
+<SideNav.Toggle onClick={this.props.toggleSideNav}/>
+<NavHeader expanded = {this.props.expanded} >
+
+<NavTitle> Next Step <img className = "sideBarLogo" src = {logo} alt = "Circled Home" width= "20" /> </NavTitle>
+{/* <NavSubTitle> The Platform To Help You With Your Next Step. </NavSubTitle> */}
+</NavHeader>
+
+<SideNav.Nav>         
+<NavItem
+className = "dashboard"
+eventKey='home'
+active={activeTab === 'home' ? true : false}>
                         <NavIcon>
                                 <div className='sideBarIcon'>
-                                    {/* {questionsIcon} */}
                                     <img src = {homeIcon2} alt = "Circled Home" width= "35" />
                                 </div>
                         </NavIcon>

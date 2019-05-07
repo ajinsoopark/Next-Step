@@ -184,8 +184,8 @@
     font-size: 1.3em;
 }
 
-.searchInput:focus ~ .bottomBorder {
-    transform: scaleX(1);
+.searchInput:focus~.bottomBorder {
+ transform: scaleX(1);
 }
 
 .searchInput::-webkit-input-placeholder::before {
@@ -193,11 +193,11 @@
 }
 
 .searchLabel {
-    position: relative;
-    margin: auto;
-    width: 25%;
-    max-width: 25%;
-    cursor: text;
+ position: relative;
+ margin: auto;
+ width: 25%;
+ max-width: 25%;
+ cursor: text;
 }
 
 .searchSpan {
@@ -275,4 +275,18 @@
  padding: 1px;
  margin-left: 1vw;
 
+}
+
+
+@media screen and (max-width: 600px) {
+ .Menu2 {
+  display: flex;
+  justify-content: center;
+  height: 64px;
+  position: fixed;
+  background-color: #25709e;
+  z-index: 9;
+  align-items: center;
+  width: 100%;
+ }
 }
