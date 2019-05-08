@@ -130,3 +130,16 @@
 .nextButton {
   text-align: right;
 }
+
+.react-tabs__tab {
+  font-family: Poppins, sans-serif;
+}
+
+input {
+  font-family: Poppins, sans-serif;
+}
+
+a {
+  font-family: Poppins, sans-serif;
+  color: #1B124E
+}

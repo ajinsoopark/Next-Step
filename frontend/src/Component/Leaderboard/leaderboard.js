@@ -36,7 +36,7 @@ class Leaderboard extends Component{
         answer.push(
           <div className='tableHead'>
             <p>{i+1}</p>
-            <p><NavLink to={`/users/${data[i].id}`}>{data[i].username} </NavLink></p>
+            <p><NavLink className='rankingUser' to={`/users/${data[i].id}`}>{data[i].username} </NavLink></p>
             <p> {data[i].count} / {this.state.questions}</p>
           </div>
         )
