@@ -414,6 +414,7 @@ const getSearchResult = (req,res,next)=>{
 }
 
 module.exports = {
+    getSearchResult,
     getAllAnswers,
     getSingleAnswer,
     getAllQandAForOneUser,

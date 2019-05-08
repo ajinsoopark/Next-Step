@@ -16,40 +16,40 @@ class User extends Component {
     })
   }
 
- getData =()=>{
+ getData = async ()=>{
     const {userID,loggedInUser}=this.state
-    axios.get(`/api/users/${userID}`).then(res=>{
+    await axios.get(`/api/users/${userID}`).then(res=>{
       this.setState({
         name:res.data.user.email,
         userName:res.data.user.username
       })
     })
 
-    axios.get(`/api/answers/count/user/${userID}`).then(res=>{
+    await axios.get(`/api/answers/count/user/${userID}`).then(res=>{
       this.setState({
         answers:+res.data.count[0].count
       })
     })
 
-    axios.get('/api/questions/count').then(res=>{
+    await axios.get('/api/questions/count').then(res=>{
       this.setState({
         questions:+res.data.count[0].count
       })
     })
 
-    axios.get(`/api/answers/user/${userID}`).then(res=>{
+    await axios.get(`/api/answers/user/${userID}`).then(res=>{
       this.setState({
         data:res.data.answers
       })
     })
 
-    axios.get(`/api/likes/${loggedInUser}`).then(res=>{
+    await axios.get(`/api/likes/${loggedInUser}`).then(res=>{
       this.setState({
         likes:res.data.likes
       })
     })
 
-    axios.get(`/api/likes/info/${userID}`).then(res=>{
+    await axios.get(`/api/likes/info/${userID}`).then(res=>{
       this.setState({
         favorites:res.data.favorites
       })
@@ -69,6 +69,7 @@ class User extends Component {
 
   componentDidMount(){
     this.getData()
+   
   }
 
   displayThings=()=>{
@@ -84,20 +85,23 @@ class User extends Component {
 
   }
 
-  checkUser=()=>{
-    const {userID}=this.state
-    if(userID!= (+this.props.match.params.id)){
+  checkUser= async ()=>{
+     const {userID}=this.state
+    console.log(userID)
+    console.log(+this.props.match.params.id)
 
-      this.setState({
+    if(userID != (+this.props.match.params.id)){
+
+      await this.setState({
         userID:+this.props.match.params.id
       })
-      this.getData();
-      console.log(this.state)
-      debugger
+
+      await this.getData();
+
     }
   }
   componentDidUpdate=()=>{
-    this.checkUser();
+    this.checkUser();    
   }
 
   render(){
@@ -113,7 +117,7 @@ class User extends Component {
     return(
       <div className = 'profileContainer'>
         <div className='userInfo'>
-            <Avatar textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
+            <Avatar size = {25} textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
             <section>
             <p> {userName} </p>
             <p> {name} </p>
@@ -133,6 +137,7 @@ class User extends Component {
       </div>
       <div className='userInfo'>
         <button onClick={this.displayAnswers}>Answers </button>
+        <div> | </div>
         <button onClick={this.displayFavorites}>Favorites </button>
       </div>
         {this.displayThings()}
