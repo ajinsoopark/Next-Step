@@ -101,3 +101,32 @@
   flex-direction: column;
  }
 }
+
+.lastNextContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 1%;
+  padding-bottom: 3%;
+}
+
+.lastNextContainer a {
+  background-color: white;
+  color: #1B124E;
+  font-size: 1.1em;
+  font-family: Poppins, sans-serif;
+  padding: 1vh;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(49, 49, 49, 0.619);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.lastNextContainer a:hover {
+  box-shadow: 0 2px 3px rgba(49, 49, 49, 0.619);
+  transition: box-shadow 0.1s ease-in;
+}
+
+.nextButton {
+  text-align: right;
+}
