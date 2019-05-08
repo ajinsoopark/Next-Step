@@ -38,8 +38,8 @@ render(){
     <div className='body1'>
 
 
-    
-    <div className = "company_name"> 
+
+    <div className = "company_name">
     <div className ="left">
     <h1> NEXT STEP </h1>
     </div>
@@ -49,11 +49,11 @@ render(){
     </div>
 
     <div className='links'>
-    <button className='demoSignup' onClick = {() => {this.props.function_login_user("JanaSia2019","a")}}>Demo Login</button>
+    <button className='demoSignup' onClick = {() => {this.props.function_login_user("thaiSonP","password3")}}>Demo Login</button>
     {/* <NavLink to='/signup'><button className='demoSignup'>Sign Up</button></NavLink> */}
     </div>
     </div>
-      
+
 
 
     <div className = "videoLay">
