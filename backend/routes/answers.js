@@ -18,6 +18,7 @@ const { getAllAnswers,
         getAnswersByLeastPop,
         getAnswersByNewest,
         getAnswersByOldest,
+        getSearchResult,
         getAnswersByMostPop } = require('../db/queries/answerQueries')
 
 //Answers with no sorting method
@@ -48,5 +49,6 @@ router.post('/', addNewAnswer);
 router.delete('/:id', deleteSingleAnswer);
 router.patch('/:id', editSingleAnswer);
 
+router.get('/search/:search',getSearchResult);
 
 module.exports = router;
