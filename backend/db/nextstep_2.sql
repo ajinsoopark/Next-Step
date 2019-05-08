@@ -35,7 +35,8 @@ CREATE TABLE feedbacks (
   id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   answer_id INT NOT NULL REFERENCES answers(id) ON DELETE CASCADE,
-  feedback_body VARCHAR NOT NULL
+  feedback_body VARCHAR NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE likes (

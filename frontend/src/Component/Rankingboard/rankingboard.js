@@ -34,7 +34,7 @@ class Rankingboard extends Component{
         return (
           <div className='tableHead' key={i}>
             <p>{i+1}</p>
-            <p><NavLink to={`/users/${el.id}`}>{el.username} </NavLink></p>
+            <p><NavLink className='rankingUser' to={`/users/${el.id}`}>{el.username} </NavLink></p>
             <p> {el.count} / {this.state.questions}</p>
           </div>
         )
