@@ -17,7 +17,7 @@ class FeedbackFeed extends Component {
     }
 
     fetchFeedback = () => {
-        if (this.state.expandedFeed) {
+        if (this.state.expandedFeedback) {
             axios.get(`/api/feedbacks/answer/${this.props.answer_id}`)
             .then(res => {
                 let feedback = res.data.feedbacks
@@ -51,19 +51,10 @@ class FeedbackFeed extends Component {
 
     handleToggleButton = (event) => {
         event.preventDefault()
-        this.fetchFeedback()
         this.setState({
             expandedFeedback: !this.state.expandedFeedback,
             expandedInput: !this.state.expandedInput
-        })
-        // if (event.target.id === 'showFeed') {
-        //     this.setState({ [event.target.name]: !this.state[event.target.name] }, () => {
-        //         this.fetchFeedback()
-        //     })
-        // } else {
-        //     this.setState({ [event.target.name]: !this.state[event.target.name] })
-        // }
-
+        }, () => this.fetchFeedback())
     }
 
     render () {
@@ -71,7 +62,6 @@ class FeedbackFeed extends Component {
         return (
             <div className='feedbackFeedContainer'>
                 <div className='feedbackButtons'>
-                    {/* { user_id === parseInt(Auth.getTokenID()) ? '' : this.toggleInputButton()} */}
                     {this.toggleFeedButton()}
                 </div>
                 { user_id === parseInt(Auth.getTokenID()) ? 
