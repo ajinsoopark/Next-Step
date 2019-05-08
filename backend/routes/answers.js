@@ -18,9 +18,12 @@ const { getAllAnswers,
         getAnswersByLeastPop,
         getAnswersByNewest,
         getAnswersByOldest,
-        getAnswersByMostPop } = require('../db/queries/answerQueries')
+        getAnswersByMostPop,
+       getSearchResult} = require('../db/queries/answerQueries')
 
 //Answers with no sorting method
+router.get('/search/:search', getSearchResult)
+
 router.get('/withlikes/:id', getAllAnswersWithQuestionsLikes)
 //Answers for user based on category, popularity, or time
 router.get('/category/old/:userId/:catId', getAnswersByCategoryAndOld)
