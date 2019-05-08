@@ -14,7 +14,7 @@ class FeedbackPosts extends Component {
     }
 
     render () {
-        const { feedback, expandedFeed } = this.props
+        const { feedback, expandedFeedback } = this.props
         const feedbackPosts = feedback ? 
                               feedback.map(feedbackObj => {
                                   return (
@@ -29,7 +29,7 @@ class FeedbackPosts extends Component {
                               }) : ''
 
         return (
-            <div className={ this.containerClass(expandedFeed) }>
+            <div className={ this.containerClass(expandedFeedback) }>
                 <div className='feedbackP'>Feedback</div>
                 <div className='feedPosts'>
                     {feedbackPosts}
