@@ -135,9 +135,25 @@
  /* border-bottom: 1px solid wheat; */
 }
 
-.singleFeedbackContainer h3 {
+.singleFeedbackContainer a {
+ display: table;
  text-align: left;
  padding-bottom: 2%;
+ font-family: Roboto, sans-serif;
+ font-weight: bold;
+ font-size: 1.2em;
+ width: auto;
+ white-space: nowrap;
+}
+
+.singleFeedbackContainer a:hover {
+    color: #DE4276;
+}
+
+.singleFeedbackContainer time {
+    text-align: right;
+    font-family: Poppins, sans-serif;
+    text-decoration: underline;
 }
 
 .singleFeedbackContainer .feedbackBodyContainer {
@@ -145,5 +161,9 @@
 }
 
 button {
+    font-family: Poppins, sans-serif;
+}
+
+.feedbackBodyContainer {
     font-family: Poppins, sans-serif;
 }
