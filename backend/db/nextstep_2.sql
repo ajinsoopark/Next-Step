@@ -35,7 +35,8 @@ CREATE TABLE feedbacks (
   id SERIAL PRIMARY KEY,
   user_id INT NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   answer_id INT NOT NULL REFERENCES answers(id) ON DELETE CASCADE,
-  feedback_body VARCHAR NOT NULL
+  feedback_body VARCHAR NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE likes (
@@ -57,7 +58,7 @@ CREATE TABLE tips (
 );
 
 INSERT INTO users(username, first_name, last_name, email, password_digest) VALUES
-('Jhenya', 'Jhenya', 'Ezhova', 'evgeniyaezhova@pursuit.org', 'password1'),
+('Jhenya', 'Jhenya', 'Ezhova', 'evgeniyaezhova@pursuit.org', '$2a$10$zrlQbCi2vAKlTqSgxEpvVO2.0OTlCFHVvCfM13Tvz6KXjBPVrhj3C'),
 ('jinsoo93', 'Alex', 'Park', 'alexparkqueens@gmail.com', 'password2'),
 ('thaiSonP', 'Tyson', 'Pan', 'tpan25@gmail', '$2a$10$wDfVs.zbsHLdELTYXEdI0uJXP017wdzjAJkH7H3YNXfI7BGG7AJve'),
 ('J@Pursuit', 'Jacky', 'O.', 'jacky@bunnyhopper.org', 'password4'),
