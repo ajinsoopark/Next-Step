@@ -1,7 +1,8 @@
 .randomQuestionContainer{
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
     transition: box-shadow 0.2s ease-in-out;
-    margin: 10px;
+    margin-top: 12px;
+    /* padding: 10px; */
     border-radius: 6px;
     min-height: 400px;
     background-color: #F4F9FC;
@@ -17,14 +18,14 @@
 
 .randomQuestionText{
     color: #0E162C;
-    font-size: 275%;
+    font-size: 1.8em;
     font-weight: 700;
     text-align: center;
 }
 
 .dashCategory{
     color: #0E162C;
-    font-size: 165%;
+    font-size: 1.2em;
     font-weight: 600;
     text-align: center;
     padding-bottom: 5%;
@@ -34,7 +35,7 @@
 
 .dashQuestion{
     color: #0E162C;
-    font-size: 145%;
+    font-size: 1.3em;
     font-weight: 500;
     text-align: center;
     line-height: 1.8;

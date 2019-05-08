@@ -15,7 +15,7 @@
 }
 
 .company_name .left h1 {
-  font-size: 20vw;
+  font-size: 15vw;
   text-align: left;
   align-items: stretch;
   font-weight: bolder;
@@ -23,19 +23,21 @@
 
 .left h1 {
   position: relative;
-  left: 5%;
-
+  left: 20%;
+  color: white;
+  font-size: .5em;
 }
 
 .company_name .right {
   position: relative;
-
+  right: 18%;
 }
 
 .company_name .right img {
   filter: invert(100);
-  top: 19px;
-  width: 35vw;
+  top: 20vh;
+  right: 50px;
+  width: 28vw;
 }
 
 .videoLay {
@@ -43,15 +45,15 @@
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-  background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
+  /* background: -moz-linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
   background: -webkit-linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.8393732492997199) 0%, rgba(0, 0, 0, 0.44441526610644255) 15%, rgba(0, 0, 0, 0.46682422969187676) 84%, rgba(0, 0, 0, 0.8169642857142857) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#000000", GradientType=1); */
 
 }
 
 #background-video {
-  filter: blur(1px) grayscale(100);
+  /* filter: blur(1px) grayscale(100); */
   position: relative;
   object-fit: cover;
   object-position: 30% 30%;
@@ -76,11 +78,12 @@
   background-color: rgba(255, 255, 255, 0.707);
   border-radius: 12px;
   font-weight: bolder;
+  color: #4831d4;
 }
 
 
 .demoSignup:hover {
-    background-color: #30a5e1;
+    background-color: #4831d4;
     color: white;
   border-radius: 10px;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.419);

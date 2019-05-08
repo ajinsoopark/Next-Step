@@ -49,7 +49,7 @@ class Rankingboard extends Component{
       <div className = 'leaderboardContainer'>
 
           <img src = {metal} alt="metal" height = "50px" />
-          <h1 className='leaderboardText'> Rankingboard </h1>
+          <h1 className='leaderboardText'> Rankings </h1>
             <div className='table'>
               <div className = 'tableHeader'>
                 <h2>Rank</h2>
