@@ -25,13 +25,9 @@
  place-items: center;
 }
 
-.userAnswerArea {
- /* width: 100vw; */
-}
-
 .questionsParent svg {
   width: 2.5%;
-  fill: green;
+  fill: rgb(219, 48, 105);
 }
 
 .userAnswerArea form {
@@ -58,24 +54,28 @@
 }
 
 .userAnswerArea input[type="Submit"] {
+  cursor: pointer;
  margin: 1%;
  /* padding: 1%; */
- min-height: 15vh;
- border-radius: 5px;
+ height: 10vh;
  font-size: calc(15px + 6 * ((100vw - 320px) / 680));
  text-align: center;
  width: 150px;
- border-radius: 6px;
+ color: rgb(0, 0, 0);
+ border-radius: 10px;
+ outline: none;
+ box-shadow: 0 3px 7px rgba(0, 0, 0, 0.15);
 }
 
 
 .userAnswerArea input[type="Submit"]:hover {
  transition: cubic-bezier(0.47, 0, 0.745, 0.715);
- background-color: rgba(0, 38, 255, 0.548);
+ outline: none;
+ box-shadow: 0 3px 7px #1B124E;
 }
 
 .userAnswerArea input[type="Submit"]:focus {
- background-color: rgba(246, 22, 78, 0.603);
+ outline: none;
 }
 
 

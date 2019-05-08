@@ -1,5 +1,5 @@
 .about_component {
-  background-color: #3EA2D6;
+  background-color: #eceafa;
   text-align: center;
   font-size: 100%;
   margin: 0%;
@@ -10,13 +10,17 @@
 }
 
 .aboutHeader {
-  margin: 5%;
+  margin-top: 2.5%;
   font-size: 5vw;
-  color: white;
+  color: #1b124e;
   font-weight: bolder;
   letter-spacing: 2px;
+  line-height: 10vh;
 }
 
+.aboutHeader p {
+  font-size: 2.5vw;
+}
 
 .aboutBodyContainer {
   width: 80%;
@@ -42,12 +46,12 @@
 }
 
 .about_body_headers h1 {
-  color: red;
+  color: #ec0063;
   margin: 10px;
   padding: 10px;
-  font-size: 110%;
+  font-size: 1.6em;
   font-weight: bolder;
-  text-align: left;
+  text-align: center;
 }
 
 .about_body_headers p {
@@ -55,7 +59,8 @@
   margin: 10px;
   padding: 10px;
   font-size: 106%;
-  text-align: justify;
+  text-align: center;
+  font-size: 1.19em;
   line-height: 1.5;
 }
 
@@ -69,7 +74,7 @@
 .about_page_titles h1 {
   padding-bottom: 5vh;
   font-size: 5vw;
-  color: white;
+  color: #1b124e;
 }
 
 
@@ -80,19 +85,20 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-items: center;
   grid-gap: 10px;
-  padding-bottom: 25%;
+  padding-bottom: 15%;
   overflow: hidden;
 
 }
 
 .developer_external a img {
   width: 50px;
+
 }
 
 .developer_external a img:hover {
-  width: 52px;
-  filter: invert(100);
-  background-color: rgba(219, 33, 33, 0.808);
+  /* width: 52px; */
+  /* filter: invert(100); */
+  background-color: rgb(224, 217, 233);
   border-radius: 45%;
 }
 
@@ -106,6 +112,7 @@
   width: 15vw;
   min-height: 200px;
   min-width: 200px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619);
 }
 
 .developer_image {
@@ -150,6 +157,7 @@
     font-size: 106%;
     text-align: justify;
     line-height: 1.2;
+    color: #1F3263;
   }
 
   .about_page_titles h1 {
@@ -157,6 +165,12 @@
     font-size: 9vw;
     padding-top: 10%;
   }
+
+  .about_body_headers h1 {
+    font-weight: bolder;
+    font-size: 1.5em;
+  }
+
 
   .developers {
     width: 100%;
@@ -166,8 +180,6 @@
     justify-items: center;
     grid-gap: 20px;
     padding-bottom: 20%;
-
-
   }
 
   .aboutBodyContainer {
