@@ -201,7 +201,7 @@ const getAllAnswersWithQuestionsLikes = (req, res, next) => {
 }
 
 const getAllUserProgress =(req,res)=>{
-  db.any('SELECT users.id, users.username, COUNT (DISTINCT question_id) FROM answers JOIN users ON answers.user_id=users.id GROUP BY users.id, users.username ORDER BY COUNT desc')
+  db.any('SELECT users.id, users.username, COUNT (DISTINCT question_id) FROM answers FULL JOIN users ON answers.user_id=users.id GROUP BY users.id, users.username ORDER BY COUNT desc')
   .then(response=>{
     res.status(200)
     .json({

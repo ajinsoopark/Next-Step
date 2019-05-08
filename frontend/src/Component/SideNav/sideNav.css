@@ -1,8 +1,11 @@
 .sidenav---sidenav---_2tBP {
- background-color: #25709e;
+ background-color: #4831d4;
+ /* background-color: #286992; */
 
  padding-top: .6%;
+ top: 0vh;
  position: fixed;
+ /* width: 64px; */
 }
 
 .tooltip {
@@ -23,12 +26,30 @@
  z-index: 1;
 }
 
-/* .tooltip:hover .tooltiptext {
-  visibility: visible;
-} */
+.tooltip:hover .tooltiptext {
+ visibility: visible;
+}
+
+.logo_oas{
+  filter: (invert(100))
+}
 
 .sideBarIcon {
  padding-top: 10%;
+ /* padding-top: 25%; */
+}
+
+/* this is to control the height of the text to the icons.. */
+.sidenav---navtext---1AE_f {
+ /* padding-top:25%; */
+ /* padding-top: 1vh; */
+ /* padding-top: 10%; */
+
+}
+
+.sideBarLogo {
+ /* padding-top: 10%; */
+ filter: invert(100)
 }
 
 .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
@@ -63,26 +84,54 @@
 }
 
 
+/* this is the control for the sie of the sidebar menus */
+.sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ->.sidenav---navitem---9uL5T {
+ position: relative;
+ display: block;
+ line-height: 50px;
+ /* height: 64px; */
+ white-space: nowrap;
+ text-decoration: none;
+ color: #fff;
+ font-size: 14px;
+ cursor: pointer;
+}
 
+/* this is slection color for the side border  -- Jacky */
 .sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ-.sidenav---highlighted---oUx9u>.sidenav---navitem---9uL5T::after,
 .sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ-:hover.sidenav---highlighted---oUx9u>.sidenav---navitem---9uL5T::after {
- /* filter: invert(100); */
- /* color: white; */
- /* background: black; */
- background-color: #3796d1;
-
+ background-color: #6a56dbda;
  opacity: 1;
 }
 
-/* sidenav---sidenav---_2tBP sidenav---expanded---1KdUL {
- color: blue;
-} */
+
+/* this controls the inner alignment of the icons and text for sidebars */
+.sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ->.sidenav---navitem---9uL5T .sidenav---navicon---3gCRo {
+ display: block;
+ float: left;
+ /* width: 64px; */
+ /* height: 50px; */
+ /* margin-right: -6px; */
+ vertical-align: center;
+ background-repeat: no-repeat;
+ /* background-position: center center; */
+ /* background-color: transparent; */
+ /* opacity: 0.7; */
+ -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
+ filter: alpha(opacity=70);
+ line-height: 50px;
+ text-align: center;
+
+}
+
 
 .sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ->.sidenav---navitem---9uL5T .sidenav---navicon---3gCRo,
 .sidenav---sidenav-nav---3tvij>.sidenav---sidenav-navitem---uwIJ->.sidenav---navitem---9uL5T .sidenav---navtext---1AE_f {
  color: white;
 }
 
+
+/* on Media Screen fill the page when burger bar is clicked */
 @media screen and (max-width:600px) {
  .sidenav---sidenav---_2tBP.sidenav---expanded---1KdUL {
   min-width: 100vh;

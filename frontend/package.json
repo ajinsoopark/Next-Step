@@ -27,6 +27,7 @@
     "redux-thunk": "^2.3.0",
     "request": "^2.88.0",
     "request-promise": "^4.2.4",
+    "styled-components": "^4.2.0",
     "thunk": "0.0.1",
     "web-speech-cognitive-services": "^4.0.1-master.e1aa407",
     "xmlbuilder": "^12.0.0"

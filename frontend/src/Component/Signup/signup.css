@@ -1,17 +1,17 @@
 .signupContainer {
  color: white;
  text-align: center;
- height: 120vh;
+ height: 79.5vh;
  width: 100vw;
  display: flex;
  flex-direction: column;
- justify-content: center;
  place-items: center;
- background-color: #30a6e1;
+ padding-top: 5%;
+ background-color: white;
 }
 
 .signupContainer a {
- color: #FF3D57;
+ color: #db3069;
 }
 .signup p {
   margin: 10px;
@@ -20,53 +20,52 @@
 .login p {
   margin: 10px;
   padding: 10px;
+  color: #1b124e;
  }
 
 .inputbox {
- width: 50vw;
- background: white;
- border: 2px solid white;
+ width: 40vw;
+ background: #dadae6be;
+ border: 2px solid #dadae6be;
  border-radius: 10px;
- margin: 10px;
  padding: 10px;
  display: grid;
  grid-template-columns: 1fr;
  grid-gap: 5px;
  justify-content: center;
+ box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619);
+ height: 65vh;
 }
 .inputbox h1 {
   align-self: center;
-  text-align: left;
-  color: #FF3D57;
+  color: #1F3263;
   font-weight: bolder;
-  font-size: 140%;
-  margin: 10px;
-  padding: 10px;
+  font-size: 2em;
   border-radius: 6px;
-  /* width: 60%; */
+  padding: 3%;
  }
+
  .inputbox p {
    font-size: 110%;
-  color: #FF3D57;
-align-self: center;
+  color: #1F3263;
+  align-self: center;
  }
 
 
 
 .input input {
- width: 45vw;
+ width: 70%;
  font-size: 100%;
- margin: 10px;
+ /* margin: 10px; */
  padding: 10px;
  border-radius: 6px;
  /* width: 60%; */
  -webkit-appearance: none;
  /* border-style: none; */
- border: 1px solid rgba(255, 61, 87, 0.726);
+ /* border: 1px solid #db3069; */
 }
 
 .input button {
- /* border: 2px solid rgb(195, 204, 255); */
  border-radius: 10px;
  text-align: center;
  margin: 10px;
@@ -77,13 +76,12 @@ align-self: center;
  font-size: 25px;
  color: rgb(255, 255, 255);
  /* background-color: #232B49; */
- background-color: #FF3D57;
+ background-color: #db3069;
 
 }
 .form-group {
   position:relative;  
-
-  margin-top: 30px;
+  padding: 2%;
 }
 .form-label {
   display: none;
@@ -129,8 +127,8 @@ align-self: center;
 
 .signupContainer button:hover {
  /* background-color: #00061c9c; */
- border: 2px solid #FF3D57;
- color: #FF3D57;
+ border: 2px solid #db3069;
+ background-color: #da527f;
  border-radius: 10px;
 }
 

@@ -12,11 +12,11 @@ const WelcomeMessage = () => {
                     <div>
                         <h1>Are you ready to become an interview ninja?</h1>
                     </div>
-                    <div>
+                    <p>
                         Click on the side bar to your left to go straight to the interview questions. 
                         Be sure to check out our recommendations on the the best practices of answering behavioral questions, as well as helpful advice on what to do before, during, and after your interview.
                         And please follow our Community Guidelines.
-                    </div>
+                    </p>
                     <div>
                         Now let's take you to your next step!
                     </div>

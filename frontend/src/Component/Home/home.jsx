@@ -15,7 +15,7 @@ import Dashboard from '../Dashboard/dashboardContainer'
 
 import Logout from '../Logout/logoutContainer'
 
-import Leaderboard from '../Leaderboard/leaderboard'
+import Rankingboard from '../Rankingboard/rankingboard'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
@@ -48,7 +48,7 @@ class Home extends Component {
         return (
     <>
   
-    <SideNav toggleSideNav={this.toggleSideNav}/>
+    <SideNav expanded={this.state.expanded} toggleSideNav={this.toggleSideNav}/>
     <NavBar2 logoutUser={this.props.logout_user} />
 
     <div className={ expanded ? 'expanded home'  : 'unexpanded home' }>
@@ -83,7 +83,7 @@ class Home extends Component {
     render={(props) => <User{...props} />}
     />
     <Route path='/answers' render={() => <AnswerFeed />}/>
-    <Route path='/leaderboard' render={() => <Leaderboard />}/>
+    <Route path='/leaderboard' render={() => <Rankingboard />}/>
 
     <Route exact path='/*' render={() => {
     return (
@@ -119,6 +119,6 @@ export default Home
 //                         <NavText>
 //                             <NavLink className='sideNavLink' to={'/leaderboard'}>
 //                                 Leaderboard
-//                             </NavLink>    
+//                             </NavLink>
 //                         </NavText>
 //                     </NavItem>
