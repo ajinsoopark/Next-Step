@@ -24,7 +24,8 @@ class FeedbackPosts extends Component {
                                      user_id={feedbackObj.user_id}
                                      answer_id={feedbackObj.answer_id}
                                      feedback_body={feedbackObj.feedback_body}
-                                     username={feedbackObj.username}/>
+                                     username={feedbackObj.username}
+                                     created_at={feedbackObj.created_at}/>
                                   )
                               }) : ''
 
