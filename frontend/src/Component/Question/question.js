@@ -153,10 +153,14 @@ render(){
         {/* <Audio ponyfill = {this.state.ponyfill}CurrentQuestion ={this.state.CurrentQuestion}
 
         /> */}
-        <div className='backAndForth'>
-          <button className='backButton' >Back</button>
-          <NavLink className='forthButton' to={`/questions/${questionId + 1}`}>Forth</NavLink>
-        </div>
+        <div className='lastNextContainer'>
+          <div className='backContainer'>
+            { questionId === 1 ? '' : <NavLink className='backButton' to={`/questions/${questionId - 1}`}>Last Question</NavLink> }
+          </div>
+          <div className='nextContainer'>  
+            { questionId === 128 ? '' : <NavLink className='nextButton' to={`/questions/${questionId + 1}`}>Next Question</NavLink> }
+          </div>
+          </div>
         <div className = "Answers" >
           <Answers tabIndex = {this.state.tabIndex} TabSelectedChange = {this.TabSelectedChange}
           CurrentAnswers = {this.state.CurrentAnswers}
