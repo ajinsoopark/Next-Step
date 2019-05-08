@@ -31,3 +31,7 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+.rankingUser:hover {
+  color: #DE4276;
+}
