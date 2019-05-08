@@ -394,8 +394,8 @@ const getAnswersByOldest = (req, res, next) => {
 }
 
 const getSearchResult = (req,res,next)=>{
-  let search = (req.params.search)
-  db.any('SELECT users.username, answers.user_id,answers.question_id,answers.answer_body,questions.question_body FROM users JOIN answers ON users.id = answers.user_id JOIN questions ON questions.id = answers.question_id WHERE username LIKE '%search%' OR answer_body LIKE '%search%' OR question_body LIKE '%search%' where search=$1' , [search])
+  let search = ("%" + req.params.search + "%")
+  db.any('SELECT users.username, answers.user_id,answers.question_id,answers.answer_body,questions.question_body FROM users JOIN answers ON users.id = answers.user_id JOIN questions ON questions.id = answers.question_id WHERE username LIKE $1 OR answer_body LIKE $1 OR question_body LIKE $1 ' , [search])
   .then(results=>{
     res.status(200)
     .json({

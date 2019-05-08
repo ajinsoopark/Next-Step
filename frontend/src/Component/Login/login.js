@@ -16,7 +16,7 @@ class Login extends Component{
   }
 
   handleRedirect = ()=>{
-    console.log(this.props)
+    // console.log(this.props)
     if(this.props === "true"){
       this.props.props.history.push("/")
 
@@ -30,7 +30,7 @@ class Login extends Component{
   }
 
   handleSubmit = (e)=>{
-    console.log(this.props)
+    // console.log(this.props)
     e.preventDefault();
 
     this.props.function_login_user(this.state.username,this.state.password)
@@ -50,7 +50,7 @@ class Login extends Component{
   }
 
   componentDidMount() {
-    console.log(this.props)
+    // console.log(this.props)
   }
 
   render(){
@@ -65,14 +65,14 @@ class Login extends Component{
           <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
           <button className='continue' type='submit'>Enter</button>
         </form>
-        
+
           </div>
           <div className = 'signup'>
             <p>Don't have an account?
               <NavLink to='/signup'> Sign Up </NavLink>
             </p>
       </div>
-          
+
       </div>
     )
   }
