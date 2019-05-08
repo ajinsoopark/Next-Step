@@ -12,7 +12,7 @@ componentDidMount() {
   setTimeout(() => {
    this.props.history.push("/bye")
    this.props.function_logout_user()
-  }, 1000);
+  }, 872);
 }
 
 
@@ -20,7 +20,7 @@ render () {
   return (
       <>
       <div className = "logout"> 
-      <h1> Logging Out </h1>
+      <h1> See You Soon</h1>
       </div>
       </>
   )

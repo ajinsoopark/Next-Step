@@ -16,27 +16,22 @@
 
 .questionsParent {
   vertical-align: middle;
-  border: 1px solid transparent;
   border-radius: 4px;
-  background-color: rgb(255, 255, 255);
+  background-color: white;
   text-align: justify;
   font-size: 20px;
   margin: 1%;
   padding: 2%;
-  font-family: Poppins;
+  font-family: Roboto, sans-serif;
   color: black;
   line-height: 6vh;
-  border: 1px solid rgba(175, 175, 175, 0.733)
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .questionsParent:hover {
   color: #171A26;
   text-decoration: none;
-  /* transition: ease-in;
-  transition-delay: 5ms; */
-  border: 1px solid #171A26;
-  background-color: rgba(206, 206, 206, 0.226);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
+  box-shadow: 0 4px 8px #1b124e;
   transition: all 0.5s cubic-bezier(0.27, 0.37, 0.1, 1);
 }
 
@@ -56,5 +51,7 @@
 .pickCategory {
   font-size: 1.2em;
   padding: 1.3%;
-  color: red;
+  font-weight: bold;
+  font-family: Poppins, sans-serif;
+  color: rgb(219, 48, 105);
 }

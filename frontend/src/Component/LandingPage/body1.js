@@ -8,6 +8,8 @@ import {login_user,checkUserAuthStatus} from "../../Redux/Actions/Auth_actions.j
 
 import video1 from "../../Images/v-homepage.mp4"
 import video2 from "../../Images/Notebook-6378.mp4"
+import video3 from "../../Images/Notebook-6378 (online-video-cutter.com).mp4"
+
 
 
 let logo = require("../../Images/nextStepLogo.png")
@@ -56,7 +58,7 @@ render(){
 
     <div className = "videoLay">
     <video id="background-video" loop autoPlay> 
-    <source src={video2} type="video/mp4"/> 
+    <source src={video3} type="video/mp4"/> 
     </video>
     </div>
     </div>

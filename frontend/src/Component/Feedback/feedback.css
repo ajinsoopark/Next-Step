@@ -4,6 +4,7 @@
  justify-content: flex-end;
  margin: 10px;
  padding: 10px;
+ padding-top: 5%;
 }
 
 .feedButton {
@@ -118,7 +119,7 @@
 }
 
 .error {
- color: red;
+ color: rgb(219, 48, 105);
  font-size: .7em;
  text-transform: none;
 }

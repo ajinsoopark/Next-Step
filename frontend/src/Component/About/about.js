@@ -62,28 +62,38 @@ developers_map = (developers) =>{
       <>
   <div className = "about_component" >
         <div className = "aboutHeader" >
-          Welcome to Next Step, the site where you hone your skills
+          Next Step.
+          <p>The platform where you hone your interview skills.</p>
       </div>
     <div className='aboutBodyContainer'>  
       <div className = "about_body">
         <div className = "about_body_headers">
-        <h1> The Platform Made For You </h1>
-        <p> Next Step is for job-seekers that would like know what questions they should be prepare for. A hub for job-seekers to share their interview answers, and to recieve feedback from other job-seekers to prepare for their next interview!</p>
+        <h1> Platform </h1>
+        <p>Next Step is an interactive web platform built to help you
+            become a better candidate during the interview process. At Next
+            Step you can practice answering behavioral and general interview
+            questions while getting constructive feedback from professionals
+            and other users.</p>
         </div>
       </div>
 
     <div className = "about_body">
         <div className = "about_body_headers">
         <h1> Practice </h1>
-        <p> Next Step helps you keep track of how many questions you answer. You can watch your progress grow.
-        Rather than just reading a questions, Next Step allows you to hear the question like a real interview. Prepare now, and be ready for your future interview. </p>
+        <p> Next Step helps you keep track of how many questions you
+            answer. You can watch your progress grow.
+            Prepare now, and be
+            ready for your future interview.</p>
         </div>
       </div>
 
     <div className = "about_body">
         <div className = "about_body_headers">
         <h1> Feedback </h1>
-        <p> Collective reviews and construtive feedback from  interview professionals, field experts, and fellow job-seekers. Next Step gives you an open space for you to sharpen and deliver your interview answers.  </p>
+        <p> Collective reviews and constructive feedback from
+            professional recruiters, field experts, and fellow job-seekers. Next Step
+            gives you an open space to sharpen and deliver your
+            interview answers. </p>
         </div>
       </div>
     </div>  
