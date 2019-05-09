@@ -90,18 +90,26 @@
 
 }
 
-.developer_external a img {
-  width: 50px;
+.developer_external {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 10%;
 
 }
 
-.developer_external a img:hover {
-  /* width: 52px; */
-  /* filter: invert(100); */
-  background-color: rgb(224, 217, 233);
-  border-radius: 45%;
+.aboutLogo {
+  width: 40%;
+  fill: #1b124e;
+  transition: all 0.2s ease-in;
+  border-radius: 9px;
 }
 
+.aboutLogo:hover {
+  /* fill: #FF3D57; */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619);
+  transition: all 0.2s ease-in-out;
+}
 
 .developer_info {
   border-radius: 6px;
