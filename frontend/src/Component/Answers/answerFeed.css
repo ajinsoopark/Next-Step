@@ -32,6 +32,7 @@ body {
  border-radius: 6px;
  display: grid;
  grid-template-columns: 100px 1fr;
+ padding-right: 2%;
  /* grid-template-rows: 10vh 1fr 1fr; */
  /* box-shadow: 0 2px 3px rgba(0, 0, 0, 0.719); */
  font-family: Poppins, sans-serif;
@@ -50,9 +51,11 @@ body {
 .answerBody {
  /* background-color: rgb(198, 200, 206); */
  /* padding: 3%; */
- padding: 10px;
+ padding-top: 3%;
+ /* padding-bottom: 4%;
  border-top: 1px solid rgb(106, 113, 138);
- border-bottom: 1px solid rgb(106, 113, 138);
+ border-bottom: 1px solid rgb(106, 113, 138); */
+ line-height: 4vh;
  margin: 10px;
  color: rgb(0, 33, 82);
  font-family: Poppins, sans-serif;
@@ -60,13 +63,15 @@ body {
 }
 
 .answerQuestion {
- align-self: center;
+ /* align-self: left; */
  margin: 10px;
  padding: 10px;
  font-size: 105%;
  text-align: center;
  /* text-align: left; */
  font-weight: bold;
+ line-height: 3.5vh;
+ text-align: left;
  /* padding: 3%; */
  /* background-color: #CFD6ED; */
  /* border-top: 1px solid rgb(106, 113, 138); */
@@ -238,6 +243,7 @@ body {
 
 .answerLikesContainer {
     width: 10%;
+    font-family: Poppins, sans-serif;
 }
 
 .react-tabs__tab--selected {
