@@ -18,6 +18,7 @@
 .fButton {
  padding: 1%;
  width: 17.5%;
+ font-size: 1.4vw;
 }
 
 .feedbackFeedContainer {
@@ -167,4 +168,5 @@ button {
 
 .feedbackBodyContainer {
     font-family: Poppins, sans-serif;
+    line-height: 3vh;
 }
