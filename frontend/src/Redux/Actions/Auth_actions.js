@@ -45,6 +45,7 @@ return  axios
          return res
       }
       ).then((res)=>{
+  
         Auth.authenticateUser(username)
         Auth.authenticateUserID(res.data.id)
         return res.data.id
@@ -76,6 +77,9 @@ export const logOutUser = ()=> dispatch => {
         Auth.deauthenticateUser()
       }).then(()=>{
         dispatch(checkUserAuthStatus())
+      }).then(()=>{
+        Auth.deauthenticateUser()
+        
       })
   }
 

@@ -117,7 +117,7 @@ const updateLoginTime = (req, res, next) => {
 
 const createUser = (req, res, next) => {
   const hash = authHelpers.createHash(req.body.password);
-  console.log(hash)
+  // console.log(hash)
   db.none(
     "INSERT INTO users (username, first_name, last_name, email,  password_digest) VALUES (${username}, ${first_name}, ${last_name}, ${email}, ${password_digest})",
     { username: req.body.username, first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, password_digest: hash }
@@ -133,7 +133,7 @@ const createUser = (req, res, next) => {
 }
 
 const logoutUser = (req, res, next) => {
-  console.log(req)
+  // console.log(req)
   req.logout();
   res.status(200).json({ message: "log out success" });
 }
@@ -147,7 +147,7 @@ const isLoggedIn = (req, res) => {
   db.oneOrNone('SELECT * FROM USERS WHERE username=${params}',{
     params: req.user
   }).then((data)=>{
-    console.log(data)
+    // console.log(data)
     if(data){
     res.json({
       username: data.username,

@@ -10,7 +10,7 @@ import {Switch} from "react-router-dom";
 // import UserAuthRoutings from "./Auth/Auth.js" - These are middleware - to reroute users if they have login or not login.
 // import Auth from "./Auth/Auth.js"
 import PrivateRoute from "./Auth/PrivateRouting.js"
-// import PublicRoute from "./Auth/PublicRouting.js";
+import PublicRoute from "./Auth/PublicRouting.js";
 
 
 // Redux Actions - for onLoad page - component did mount
@@ -27,6 +27,7 @@ import './App.css';
 // import Login from "./Component/Login/loginContainer"
 // import NavBar from "./Component/Navbar/navBarContainer"
 import Home from './Component/Home/homeContainer.js';
+import Landing from './Component/LandingPage/landingPage.js';
 // import Dashboard from "./component/Dashboard/dashboard_container.js"
 
 
@@ -59,7 +60,7 @@ class App extends Component {
     return (
       <div className="App">
       <Switch>
-
+         <PublicRoute exact path = "/signoff" component = {Landing} ></PublicRoute>
       <PrivateRoute exact path = "/*" component = {Home} ></PrivateRoute>
 
       </Switch>
