@@ -31,11 +31,10 @@ class Login extends Component{
     })
   }
 
-  handleSubmit = (e)=>{
+  handleSubmit = async (e)=>{
     e.preventDefault();
-    this.props.function_login_user(this.state.username,this.state.password)
-    console.log(this.props.function_login_user(this.state.username,this.state.password))
-
+   let userErr = await this.props.function_login_user(this.state.username,this.state.password)
+    console.log(userErr)
     this.setState({
     loggedin: true,
     username: "",
