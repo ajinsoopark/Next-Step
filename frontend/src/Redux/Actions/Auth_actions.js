@@ -33,7 +33,7 @@ export const checkUserAuthStatus = () => dispatch => {
 
 //This is to login user. 
 export const login_user = (username, password) => dispatch => {
-    axios
+return  axios
       .post("/api/users/login", {
         username,
         password
@@ -45,7 +45,7 @@ export const login_user = (username, password) => dispatch => {
          return res
       }
       ).then((res)=>{
-        // console.log(res)
+  
         Auth.authenticateUser(username)
         Auth.authenticateUserID(res.data.id)
         return res.data.id
@@ -58,6 +58,7 @@ export const login_user = (username, password) => dispatch => {
       )
       .catch(err => {
         console.log(err)
+        return err
       })
 
 }

@@ -11,7 +11,8 @@ class Login extends Component{
     this.state={
       loggedin : false,
       username: "",
-      password: ""
+      password: "",
+      error: false
     }
   }
 
@@ -25,44 +26,45 @@ class Login extends Component{
 
   handleChange = (e)=>{
     this.setState({
-      [e.target.name]:e.target.value
+      [e.target.name]:e.target.value,
+      error: false
     })
   }
 
-  handleSubmit = (e)=>{
-    // console.log(this.props)
+  handleSubmit = async (e)=>{
     e.preventDefault();
-
-    this.props.function_login_user(this.state.username,this.state.password)
-
+   let userErr = await this.props.function_login_user(this.state.username,this.state.password)
+    console.log(userErr)
     this.setState({
     loggedin: true,
     username: "",
     password: ""
-    })
-
-    setTimeout(() => {
-      if(this.state.loggedin){
-      this.props.history.push("/")
-      }
-    }, 550);
+    }, () => this.validateAndRouteUser())
 
   }
 
-  componentDidMount() {
-    // console.log(this.props)
+  validateAndRouteUser = () => {
+    if (this.state.loggedin) {
+      setTimeout(() => {
+        this.props.history.push("/")
+      }, 550);
+    } else { 
+      this.setState({ error: true })
+    }
   }
 
   render(){
-    const {username,password}=this.state
+    // console.log(this.props)
+    const { username, password, error }=this.state
     return(
       <div className ='loginContainer'>
 
         <div className='loginbox'>
           <h1>Login</h1>
+          { error ? <small className='loginError'>Invalid Username or Password.</small> : '' }
         <form className='login' onSubmit={this.handleSubmit} >
-          <input onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
-          <input onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
+          <input autoComplete='off' onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
+          <input autoComplete='off' onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
           <button className='continue' type='submit'>Enter</button>
         </form>
 
