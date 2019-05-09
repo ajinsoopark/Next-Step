@@ -167,9 +167,9 @@ a:visited {
  text-decoration: none;
 }
 
-a:active {
+/* a:active {
  text-decoration: underline;
-}
+} */
 
 a:visited {
  text-decoration: none;

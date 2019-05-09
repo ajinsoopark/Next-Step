@@ -107,10 +107,6 @@ body {
  box-shadow: none;
 }
 
-.react-tabs__tab:hover {
- /* text-decoration: underline; */
-}
-
 .answerLikeContainer {
  display: flex;
  flex-direction: row;

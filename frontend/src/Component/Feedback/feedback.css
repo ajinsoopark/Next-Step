@@ -3,8 +3,7 @@
  flex-direction: row;
  justify-content: flex-end;
  margin: 10px;
- padding: 10px;
- padding-top: 5%;
+ padding-top: 1.5%;
 }
 
 .feedButton {
@@ -61,6 +60,7 @@
  overflow: scroll;
  border: 1px solid rgb(172, 172, 172);
  border-radius: 6px;
+ margin-left: 1.2%;
 }
 
 .feedbackP {
@@ -93,7 +93,6 @@
  height: 15vh;
  font-size: 1.3em;
  width: 80%;
- border-radius: 7px;
 }
 
 .feedbackInputButton {
@@ -125,13 +124,14 @@
 }
 
 .singleFeedbackContainer {
- background-color: rgba(245, 222, 179, 0.596);
+ background-color: #ECEAFA;
  margin: 10px;
  padding-top: 1.5%;
  padding-bottom: 1.5%;
  padding-left: 2%;
  display: flex;
  flex-direction: column;
+ padding-right: 2%;
  /* border-bottom: 1px solid wheat; */
 }
 
@@ -148,12 +148,13 @@
 
 .singleFeedbackContainer a:hover {
     color: #DE4276;
+    text-decoration: underline;
 }
 
 .singleFeedbackContainer time {
     text-align: right;
     font-family: Poppins, sans-serif;
-    text-decoration: underline;
+    padding-bottom: 2%;
 }
 
 .singleFeedbackContainer .feedbackBodyContainer {
