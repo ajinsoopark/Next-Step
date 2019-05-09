@@ -58,6 +58,7 @@ export const login_user = (username, password) => dispatch => {
       )
       .catch(err => {
         console.log(err)
+        return err
       })
 
 }
