@@ -10,7 +10,7 @@ class AnswerPost extends Component {
         return (
             <div className='answerQuestionPostContainer'>
                 <div className='personalLikes'>
-                    {`${like_count} ${parseInt(like_count) === 0 ? 'like' : 'likes'}`}
+                    {`${like_count} ${parseInt(like_count) === 1 ? 'like' : 'likes'}`}
                 </div>
                 <div className='userCategoryLikes'>
                     <div className='categoryContainer'>
