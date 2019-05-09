@@ -144,6 +144,16 @@ body {
  /* height: 500px; */
 }
 
+.personalLikes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-row-end: 1;
+    grid-column-end: 1;
+}
+
 .fButton {
  /* height: 50px; */
  font-weight: 500;
