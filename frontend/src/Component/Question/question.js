@@ -155,7 +155,7 @@ render(){
         /> */}
         <div className='lastNextContainer'>
           <div className='backContainer'>
-            { questionId === 1 ? '' : <NavLink className='backButton' to={`/questions/${questionId - 1}`}>Last Question</NavLink> }
+            { questionId === 1 ? '' : <NavLink className='backButton' to={`/questions/${questionId - 1}`}>Previous Question</NavLink> }
           </div>
           <div className='nextContainer'>  
             { questionId === 128 ? '' : <NavLink className='nextButton' to={`/questions/${questionId + 1}`}>Next Question</NavLink> }

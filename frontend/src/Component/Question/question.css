@@ -19,11 +19,13 @@
  word-wrap: none;
 }
 
-.Answers {
- display: grid;
- grid-template-columns: 1fr;
- place-items: center;
+.YourAnswers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
 
 .questionsParent svg {
   width: 2.5%;
