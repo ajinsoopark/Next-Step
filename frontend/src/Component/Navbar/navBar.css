@@ -131,6 +131,11 @@
   border-color: #fff transparent transparent transparent;
 }
 
+.searchInput::placeholder {
+    font-family: Poppins, sans-serif;
+    font-size: 1.3vw;
+}
+
 .searchInput {
  font-size: 1em;
  width: 50%;

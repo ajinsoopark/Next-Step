@@ -92,7 +92,7 @@ mapUserAnswerBoxToRender = (array) => {
       <div className = "userAnswerArea" >
       <form onSubmit = {this.postAnswer}>
        <textarea className='answerInput' onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
-        placeholder = "Enter your Answer Here">
+        placeholder = "Enter your answer here">
       </textarea>
       <input type = "Submit" />
       </form>
@@ -107,7 +107,7 @@ mapAnswersToRender= (array) =>{
   if (array.length === 0) {
     return (
       <div className='emptyAnswers'>
-        Be the first to answer this question.
+        Be the first to answer this question!
       </div>
     )
   } else {
