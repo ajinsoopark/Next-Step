@@ -20,7 +20,7 @@ const { db } = require("../db/index.js");
 //calling db to check if user exists and password is good then login user to localStrategy.
 passport.use(
   new LocalStrategy((username, password, done) => {
-    console.log(username)
+    // console.log(username)
     db.one("SELECT * FROM users WHERE username = ${username}", {
         username: username
       })

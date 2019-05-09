@@ -45,7 +45,7 @@ export const login_user = (username, password) => dispatch => {
          return res
       }
       ).then((res)=>{
-        console.log(res)
+        // console.log(res)
         Auth.authenticateUser(username)
         Auth.authenticateUserID(res.data.id)
         return res.data.id
@@ -76,6 +76,9 @@ export const logOutUser = ()=> dispatch => {
         Auth.deauthenticateUser()
       }).then(()=>{
         dispatch(checkUserAuthStatus())
+      }).then(()=>{
+        Auth.deauthenticateUser()
+        
       })
   }
 

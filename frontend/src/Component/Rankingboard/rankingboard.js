@@ -13,7 +13,7 @@ class Rankingboard extends Component{
   }
   componentDidMount(){
     axios.get('/api/answers/progress').then(res=>{
-      console.log(res.data.response)
+      // console.log(res.data.response)
       this.setState({
         data:res.data.response
       })

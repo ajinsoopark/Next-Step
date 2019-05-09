@@ -87,8 +87,8 @@ class User extends Component {
 
   checkUser= async ()=>{
      const {userID}=this.state
-    console.log(userID)
-    console.log(+this.props.match.params.id)
+    // console.log(userID)
+    // console.log(+this.props.match.params.id)
 
     if(userID != (+this.props.match.params.id)){
 
