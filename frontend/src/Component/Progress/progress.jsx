@@ -38,7 +38,7 @@ class Progress extends Component {
 
     const style = {
       width:completion,
-      backgroundColor: '#db3069',
+      backgroundColor: '#FF3D57',
       borderRadius: '4px'
     }
     return (

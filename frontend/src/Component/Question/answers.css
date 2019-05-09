@@ -66,6 +66,21 @@
  background-color: #ECEEF7;
 }
 
+.emptyAnswers {
+    margin-top: 10%;
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.619);
+    font-family: Robot, sans-serif;
+    color: #1B124E;
+    font-size: 2vw;
+    background-color: white;
+}
+
+textarea::placeholder {
+    font-family: Roboto, sans-serif;
+}
+
 .answered {
  position: relative;
  z-index: 0;
