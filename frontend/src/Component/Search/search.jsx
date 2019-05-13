@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DisplaySearch from './displaySearch'
-// import  './displaySearch.css'
+import  './displaySearch.css'
 
 class Search extends Component {
   constructor(props){
@@ -26,40 +26,51 @@ componentDidUpdate = ()=>{
 filterThings = ()=>{
   const{filter}=this.state
   const{SearchState}=this.props.state
-  if (SearchState.data){
-
 
     let test = this.state.filter
+    let results = SearchState.data
     test = test.split(' ').map(el=>el.toLowerCase())
 
-    let results = SearchState.data
-
-    let idx = 0
-
-    while(idx < test.length){
-      results = results.filter(el=>el.question_body.toLowerCase().includes(test[idx]));
-      idx++
-    }
-    // for(i=0;i<test.length;i++){
-    //   results = results.filter(el=>el.question_body.toLowerCase().includes(test[i]))
-    // }
+    if(test.length>1){
+      for(let i=0;i<test.length;i++){
+        results = results.filter(el=>el.question_body.toLowerCase().includes(test[i]))
+      }
+      console.log(results)
+      return(results.map((el,i)=>{
+        return(
+          <div key={i} className = 'results'>
+            <section>
+            {el.username}
+            <p>{el.question_body}</p>
+            <p>{el.answer_body}</p>
+          </section>
+          </div>
+        )
+      }))
+    }else if (test.length===1 && results){
     console.log(results)
-  }
-  return null
+    return(results.map((el,i)=>{
+      return(
+        <div key={i} className = 'results'>
+          <section>
+          {el.username}
+          <p>{el.question_body}</p>
+          <p>{el.answer_body}</p>
+        </section>
+        </div>
+      )
+      }))
+    }
 }
 
   render() {
     const{filter}=this.state
     const{SearchState}=this.props.state
-    // console.log(this.state)
-    // console.log(SearchState.data)
-
 
     return(
       <div >
         Search results for {filter}
         {this.filterThings()}
-        {//<DisplaySearch search={search} data={SearchState}/>//
       }
       </div>
     )
