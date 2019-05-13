@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
 import styled from 'styled-components';
+import axios from "axios"
 
 
 import SideNav, { NavItem, NavIcon, NavText } from '@trendmicro/react-sidenav';
@@ -20,8 +21,7 @@ import searchIcon2 from "../../Images/icons8-search-filled-50.png"
 import logo from "../../Images/nextStepLogo.png"
 
 import shutdownIcon2 from "../../Images/icons8-shutdown-filled-52.png"
-
-
+import Auth from "../../Auth/Auth"
 
 const NavHeader = styled.div`
     display: ${props => (props.expanded ? 'block' : 'none')};
@@ -61,8 +61,18 @@ class SideNavMenu extends Component {
         }
     }
 
+    logOutUser = ()=> {
+    axios
+      .post("/api/users/logout")
+      .then(() => {
+        Auth.deauthenticateUser()
+      }).then(()=>{
+          Auth.deauthenticateUser()
+      })
+  }
+
+
     render () {
-        console.log()
         const { activeTab } = this.state
         return (
             <div className='sideContainer'>
@@ -155,7 +165,7 @@ active={activeTab === 'home' ? true : false}>
                                 </div>
                         </NavIcon>
                         <NavText>
-                                Rankings
+                                Ranking Board
                         </NavText>
                     </NavItem>
 
@@ -176,9 +186,11 @@ active={activeTab === 'home' ? true : false}>
                     </NavItem>
 
                     <NavItem
+
                     className = "sideNav_logout"
                     eventKey='logout'
-                    active={activeTab === 'logout' ? true : false}>
+                    active={activeTab === 'logout' ? true : false}
+                    >
                         <NavIcon>
                                 <div className='sideBarIcon'>
                                     {/* {aboutIcon2} */}
@@ -189,7 +201,6 @@ active={activeTab === 'home' ? true : false}>
                                 Logout
                         </NavText>
                     </NavItem>
-
                 </SideNav.Nav>
             </SideNav>
             </div>

@@ -1,12 +1,12 @@
 .signupContainer {
  color: white;
  text-align: center;
- height: 79.5vh;
+ height: 82.5vh;
  width: 100vw;
  display: flex;
  flex-direction: column;
  place-items: center;
- padding-top: 5%;
+ padding-top: 3%;
  background-color: white;
 }
 
@@ -34,7 +34,7 @@
  grid-gap: 5px;
  justify-content: center;
  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619);
- height: 65vh;
+ height: 70vh;
 }
 .inputbox h1 {
   align-self: center;

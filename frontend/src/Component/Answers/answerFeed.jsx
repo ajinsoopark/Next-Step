@@ -142,7 +142,7 @@ class AnswerFeed extends Component {
     }
 
     render () {
-        console.log(this.state)
+
         const { categoryTabIndex, sortTabIndex } = this.state
 
         return (
