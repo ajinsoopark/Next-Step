@@ -34,7 +34,7 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
 
       return (data.map((el,i)=>{
         return(
-          <div key={i} className='answerContainer'>
+          <div key={i} className='answerQuestionPostContainer'>
             <div className='likes'>
               Likes: {el.likescount ? el.likescount : 0}
 
@@ -57,7 +57,12 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
                 Question: {el.question_body}
               </div>
             </NavLink>
-            <div className='answers'>Answer: {el.answer_body}</div>
+            
+            <div> 
+
+            </div>
+
+            <div className='answerBody'>Answer: {el.answer_body}</div>
           </div>
         )
 

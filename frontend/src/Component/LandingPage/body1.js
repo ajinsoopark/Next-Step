@@ -31,7 +31,7 @@ class Body1 extends Component{
 demo_function = () =>{
   setTimeout(() => {
     this.props.function_login_user("thaiSonP","password3")
-  }, 899);
+  }, 234);
 this.props.history.push("/home")
   }
 
