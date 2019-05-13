@@ -1,23 +1,22 @@
 import React, { Component } from 'react';
-import DisplaySearch from './displaySearch'
-// import  './displaySearch.css'
+import {NavLink} from 'react-router-dom';
+import  './displaySearch.css'
+// import '../Answers/answerFeed.css'
 
 class Search extends Component {
   constructor(props){
   super(props)
   this.state={
-    search:props.match.params.search,
-    filter:props.match.params.filter
+    filter:props.match.params.filter,
   }
 }
 
 componentDidUpdate = ()=>{
   const{params}=this.props.match
-  const{search,filter}=this.state
+  const{filter}=this.state
 
-  if(params.search !== search || params.filter !== filter){
+  if( params.filter !== filter){
     this.setState({
-      search:params.search,
       filter:params.filter
     })
   }
@@ -25,14 +24,63 @@ componentDidUpdate = ()=>{
 
 
 
+filterThings = ()=>{
+  const{filter}=this.state
+  const{SearchState}=this.props.state
+
+    let test = this.state.filter
+    let results = SearchState.data
+    test = test.split(' ').map(el=>el.toLowerCase())
+
+    if(test.length>1 && results){
+      for(let i=0;i<test.length;i++){
+        results = results.filter(el=>el.question_body.toLowerCase().includes(test[i]))
+      }
+      return(results.map((el,i)=>{
+        return(
+          <div key={i} className = 'answerQuestionPostContainer'>
+
+              <NavLink to={`/users/${el.user_id}`}>
+                <p>{el.username}</p>
+              </NavLink>
+              <NavLink to={`/questions/${el.question_id}`}>
+              <div className='answerQuestion'>{el.question_body}</div>
+              </NavLink>
+            <div className='answerBody'>{el.answer_body}</div>
+
+          </div>
+        )
+      }))
+    }else if (test.length===1 && results){
+
+    return(results.map((el,i)=>{
+      return(
+        <div key={i} className = 'answerQuestionPostContainer'>
+
+            <NavLink to={`/users/${el.user_id}`}>
+              <p>{el.username}</p>
+            </NavLink>
+            <NavLink to={`/questions/${el.question_id}`}>
+              <div className='answerQuestion'>{el.question_body}</div>
+            </NavLink>
+            <div></div>
+          <div className='answerBody'>{el.answer_body}</div>
+
+        </div>
+      )
+      }))
+    }
+}
+
   render() {
-    const{search,filter}=this.state
-    const{SearchState}=this.props.state
+    const{filter}=this.state
 
     return(
       <div >
-        Search results for {search} containing {filter}
-        <DisplaySearch search={search} data={SearchState}/>
+        Results for {filter}
+        <div className='sortedAnswerFeed'>
+          {this.filterThings()}
+        </div>
       </div>
     )
   }
