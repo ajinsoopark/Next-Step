@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Auth from "../../Auth/PrivateRouting"
-import { NavLink } from 'react-router-dom'
 import "./logout.css"
 
 
@@ -29,9 +28,7 @@ render () {
       <div className = "logout_wrapper">
       <form> <h1> Do you want to logout ?
       </h1>
-      <NavLink to='/'>
         <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
-      </NavLink>
         <button onClick = {this.onClickRedirect}>  <label> NO </label> </button>
 
       </form>
