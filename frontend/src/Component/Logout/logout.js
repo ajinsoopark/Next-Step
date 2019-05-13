@@ -9,10 +9,7 @@ constructor (props) {
 }
 
 onClickLogOut = async () =>{
-
-   await this.props.history.push("/logout?")
     await  this.props.function_logout_user()
-    // this.props.history.push("/home")
 
 }
 
