@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 import Progress from '../Progress/progress'
 import DashSplash from './dashSplash'
@@ -35,7 +35,6 @@ class Dashboard extends Component {
     }
 
     render () {
-      // console.log(this.props.state.CurrentAutState.userID)
         const { questionId, categoryId, questionBody, category } = this.state
         return (
             <div className='dashboardContainer'>
@@ -48,9 +47,9 @@ class Dashboard extends Component {
                     <WelcomeMessage />
                     </div>
                     <div className="progressDiv">
-                     <Link to="/answers">
+                     <NavLink to="/answers"> 
                         <Progress userID={this.props.state.CurrentAutState.userID}/>
-                     </Link>
+                     </NavLink>
                     </div>
                     <div className="randomQdiv">
                         <RandomQuestion
@@ -60,9 +59,9 @@ class Dashboard extends Component {
                         category={category}/>
                     </div>
                     <div className="leaderBoarddiv">
-
+                     {/* <NavLink to="/leaderboard"> */}
                      <Leaderboard />
-
+                     {/* </NavLink> */}
                     </div>
 
                 </div>
