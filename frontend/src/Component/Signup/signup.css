@@ -35,6 +35,7 @@
  justify-content: center;
  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619);
  height: 70vh;
+ padding-bottom: 2%;
 }
 .inputbox h1 {
   align-self: center;
@@ -81,7 +82,7 @@
 }
 .form-group {
   position:relative;  
-  padding: 2%;
+  padding: 1%;
 }
 .form-label {
   display: none;
@@ -189,4 +190,20 @@
   /* border-style: none; */
   border: 1px solid rgba(255, 61, 87, 0.726);
  }
+}
+
+.signUpErr {
+  font-size: .8em;
+  color: transparent;
+  padding-top: .5%;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.errColor {
+  color: #da527f;
 }

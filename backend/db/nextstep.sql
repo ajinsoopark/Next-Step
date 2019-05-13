@@ -8,7 +8,7 @@ CREATE TABLE users (
   username VARCHAR NOT NULL UNIQUE,
   first_name VARCHAR NOT NULL,
   last_name VARCHAR,
-  email VARCHAR NOT NULL UNIQUE,
+  email VARCHAR NOT NULL,
   password_digest VARCHAR NOT NULL,
   last_login TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
