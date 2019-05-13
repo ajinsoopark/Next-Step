@@ -19,15 +19,18 @@ constructor (props) {
   super(props)
   this.state = {
     answer_body: "",
-    xbutton: "140"
+    xbutton: "140",
+    answerErr: false
   }
 }
 
 onChange = (event) =>{
   this.setState({
-    [event.target.name] : event.target.value
+    [event.target.name] : event.target.value,
+    answerErr: false
   })
 }
+
 postAnswer = (event) => {
   event.preventDefault()
 
@@ -43,6 +46,8 @@ postAnswer = (event) => {
       answer_body: ""
     })
   })
+  } else {
+    this.setState({ answerErr: true })
   }
 }
 
@@ -96,7 +101,9 @@ mapUserAnswerBoxToRender = (array) => {
       </textarea>
       <input type = "Submit" />
       </form>
-
+      <small className={this.state.answerErr ? 'answerErr errColor' : 'answerErr'}>
+        Must be minimum 20 characters.
+      </small>
       </div>
 
 
