@@ -77,6 +77,15 @@
     background-color: white;
 }
 
+.answerErr {
+    color: transparent;
+    font-size: .8em;
+}
+
+.errColor {
+  color: #da527f;
+}
+
 textarea::placeholder {
     font-family: Roboto, sans-serif;
 }
