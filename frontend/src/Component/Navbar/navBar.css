@@ -171,7 +171,7 @@
     width: 100%;
     background: #4831d4;
     transform: scaleX(0);
-    transform-origin: 0 0;
+    transform-origin: 100% 100%;
     transition: all .5s ease;
 }
 
@@ -182,10 +182,11 @@
 }
 .searchInput:focus + .searchSpan {
     transform: translateY(36px) scale(.75);
-    font-size: 1.3em;
+    opacity: 0;
+    transition: 0.4s ease-in;
 }
 
-.searchInput:focus~.bottomBorder {
+.searchInput:focus ~ .bottomBorder {
  transform: scaleX(1);
 }
 
@@ -201,13 +202,18 @@
     font-family: Poppins, sans-serif;
     position: absolute;
     top: 15%;
-    left: 5%;
+    left: 70%;
     font-size: 16px;
     color: #1B124E;
     font-weight: 500;
     transform-origin: 0 0;
     transition: all .5s ease;
     z-index: 0;
+    width: 40%;
+}
+
+.withText {
+    opacity: 0;
 }
 
 .Menu2:focus-within  {
@@ -237,9 +243,9 @@
 }
 
 .searchSVG {
-    width: 9%;
+    /* padding-top: 7%; */
+    width: 10.5%;
     fill: #FF3D57;
-    padding-right: 1%;
 }
 
 .searchSpan {
