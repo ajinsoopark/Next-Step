@@ -17,7 +17,6 @@ class Login extends Component{
   }
 
   handleRedirect = ()=>{
-    // console.log(this.props)
     if(this.props === "true"){
       this.props.props.history.push("/")
 
@@ -34,7 +33,6 @@ class Login extends Component{
   handleSubmit = async (e)=>{
     e.preventDefault();
    let userErr = await this.props.function_login_user(this.state.username,this.state.password)
-    console.log(typeof userErr)
     if (!userErr) {
       this.setState({
         loggedin: true,
