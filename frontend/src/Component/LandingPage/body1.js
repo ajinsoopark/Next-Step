@@ -30,8 +30,8 @@ class Body1 extends Component{
 
 demo_function = () =>{
   setTimeout(() => {
-    this.props.function_login_user("thaiSonP","password3")
-  }, 234);
+    this.props.function_login_user("Jacky","password3")
+  }, 899);
 this.props.history.push("/home")
   }
 
@@ -59,8 +59,8 @@ render(){
     </div>
 
     <div className = "videoLay">
-    <video id="background-video" loop autoPlay> 
-    <source src={video3} type="video/mp4"/> 
+    <video id="background-video" loop autoPlay>
+    <source src={video3} type="video/mp4"/>
     </video>
     </div>
     </div>

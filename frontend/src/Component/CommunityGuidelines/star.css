@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
+
+
+.starParent{
+    /* display: grid;
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+    grid-template-columns: 14; */
+    display: flex;
+    flex-direction: column;
+    align-content: center
+}
+
+.starTitle{
+    color: #1B124E;
+    font-size: 30px;
+    font-weight: bolder;
+    text-align: center;
+    padding-bottom: 10px;
+    /* vertical-align: middle; */
+
+    /* grid-row: 1;
+    grid-column: 1 / span 14; */
+}
+
+.liTitle{
+    font-family: Poppin, sans-serif;
+    font-size: 17px;
+    font-weight: bolder
+}

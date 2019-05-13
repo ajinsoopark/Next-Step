@@ -19,6 +19,8 @@ import Rankingboard from '../Rankingboard/rankingboard'
 import Search from '../Search/searchContainer'
 import About from '../About/about';
 import Tips from "../Tips/tips"
+import StarAnswer from "../CommunityGuidelines/star"
+import CommunityGuidelines from "../CommunityGuidelines/communityGuidelines"
 
 import User from '../User/user'
 
@@ -47,7 +49,7 @@ class Home extends Component {
         const { expanded } = this.state
         return (
     <>
-  
+
     <SideNav expanded={this.state.expanded} toggleSideNav={this.toggleSideNav}/>
     <NavBar2 logoutUser={this.props.logout_user} />
 
@@ -79,7 +81,7 @@ class Home extends Component {
         <Question/>
     )
     }}/>
-    <Route path = '/search/:search/:filter'
+    <Route path = '/search/:filter'
     render={(props) => <Search{...props} />}
     />
 
@@ -88,6 +90,10 @@ class Home extends Component {
     />
     <Route path='/answers' render={() => <AnswerFeed />}/>
     <Route path='/leaderboard' render={() => <Rankingboard />}/>
+
+    <Route path='/communityguidelines' render={() => <CommunityGuidelines />}/>
+    <Route path='/star' render={() => <StarAnswer />}/>
+
 
     <Route exact path='/*' render={() => {
     return (

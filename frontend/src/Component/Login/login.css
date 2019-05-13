@@ -23,9 +23,9 @@
  padding-top: 2%;
  display: grid;
  grid-template-columns: 1fr;
- grid-template-rows: .25fr 1fr;
+ grid-template-rows: .25fr .1fr 1fr;
  grid-gap: 5px;
- box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619);
+ /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619); */
 
 }
 
@@ -57,6 +57,11 @@ input {
  -webkit-appearance: none;
  /* border-style: none; */
  border: 0px solid rgba(255, 61, 87, 0.726);
+}
+
+.loginError {
+  position: relative;
+  color: #db3069;
 }
 
 .login button {

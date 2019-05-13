@@ -13,7 +13,6 @@ class NavBar2 extends Component{
   constructor (props) {
     super(props)
     this.state={
-      search:'questions',
       filter: '',
       inputFocus: false,
       error: false,
@@ -31,10 +30,12 @@ class NavBar2 extends Component{
   handleSubmit =(e)=>{
     e.preventDefault()
     if (this.state.filter) {
-      const{filter,search}=this.state
-      this.props.function_search(search, filter)
-      this.props.history.push(`/search/${search}/${filter}`)
-      this.setState({ filter: '' })
+      const{filter}=this.state
+      let test = filter
+      test = test.split(' ').map(el=>el.toLowerCase())
+      this.props.function_search( test.shift())
+      this.props.history.push(`/search/${filter}`)
+      // this.setState({ filter: '' })
     } else {
       this.setState({ error: true })
     }
@@ -45,6 +46,7 @@ class NavBar2 extends Component{
   handleSearchFocusOut = () => this.setState({ inputPlaceholder: ' ' })
 
   render () {
+    // console.log(this.state.filter)
     const searchSVG = <svg className='searchSVG' viewBox="0 0 24 24"><path d="M9.145 18.29c-5.042 0-9.145-4.102-9.145-9.145s4.103-9.145 9.145-9.145 9.145 4.103 9.145 9.145-4.102 9.145-9.145 9.145zm0-15.167c-3.321 0-6.022 2.702-6.022 6.022s2.702 6.022 6.022 6.022 6.023-2.702 6.023-6.022-2.702-6.022-6.023-6.022zm9.263 12.443c-.817 1.176-1.852 2.188-3.046 2.981l5.452 5.453 3.014-3.013-5.42-5.421z"/></svg>
 
     return(
@@ -57,16 +59,16 @@ class NavBar2 extends Component{
             <option className='options' value='users' >Users</option>
           </select> */}
           <label htmlFor='searchInput' className='searchLabel'>
-            <input 
-             autoComplete='off' 
-             className='searchInput' 
-             id='searchInput' 
-             onChange={this.handleChange} 
-             value={this.state.filter} 
+            <input
+             autoComplete='off'
+             className='searchInput'
+             id='searchInput'
+             onChange={this.handleChange}
+             value={this.state.filter}
              onFocus={this.handleSearchFocus}
              onBlur={this.handleSearchFocusOut}
-             type='text' 
-             name='filter' 
+             type='text'
+             name='filter'
              placeholder={this.state.inputPlaceholder}/>
             <span className="searchSpan">{searchSVG}  Search</span>
             <span className='bottomBorder'></span>

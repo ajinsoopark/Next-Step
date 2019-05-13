@@ -60,7 +60,7 @@ class SideNavMenu extends Component {
             activeTab: ''
         }
     }
-    
+
     logOutUser = ()=> {
     axios
       .post("/api/users/logout")
@@ -84,7 +84,7 @@ class SideNavMenu extends Component {
                    }
                    this.setState({ activeTab: selected })
                 }}>
-                
+
 <SideNav.Toggle onClick={this.props.toggleSideNav}/>
 <NavHeader expanded = {this.props.expanded} >
 
@@ -92,7 +92,7 @@ class SideNavMenu extends Component {
 {/* <NavSubTitle> The Platform To Help You With Your Next Step. </NavSubTitle> */}
 </NavHeader>
 
-<SideNav.Nav>         
+<SideNav.Nav>
 <NavItem
 className = "dashboard"
 eventKey='home'
@@ -138,7 +138,7 @@ active={activeTab === 'home' ? true : false}>
                         </NavText>
                     </NavItem>
 
-                    
+
 
                     <NavItem
                     className = "sideNav_tips"
@@ -168,8 +168,8 @@ active={activeTab === 'home' ? true : false}>
                                 Ranking Board
                         </NavText>
                     </NavItem>
-                    
-                    
+
+
                     <NavItem
                     className = "sideNav_about"
                     eventKey='about'
@@ -186,7 +186,7 @@ active={activeTab === 'home' ? true : false}>
                     </NavItem>
 
                     <NavItem
-              
+
                     className = "sideNav_logout"
                     eventKey='logout'
                     active={activeTab === 'logout' ? true : false}
@@ -227,6 +227,3 @@ export default withRouter(SideNavMenu)
 //                                 Search
 //                         </NavText>
 //                     </NavItem>
-
-
-
