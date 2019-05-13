@@ -23,7 +23,7 @@
  padding-top: 2%;
  display: grid;
  grid-template-columns: 1fr;
- grid-template-rows: .25fr 1fr;
+ grid-template-rows: .25fr .1fr 1fr;
  grid-gap: 5px;
  /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.619); */
 
