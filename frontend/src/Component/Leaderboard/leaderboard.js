@@ -34,7 +34,7 @@ class Leaderboard extends Component{
 
       for(let i=0;i<5;i++){
         answer.push(
-          <div className='tableHead'>
+          <div className='tableHead' key={i}>
             <p>{i+1}</p>
             <p><NavLink className='rankingUser' to={`/users/${data[i].id}`}>{data[i].username} </NavLink></p>
             <p> {data[i].count} / {this.state.questions}</p>

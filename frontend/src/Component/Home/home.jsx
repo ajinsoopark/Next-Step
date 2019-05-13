@@ -47,7 +47,7 @@ class Home extends Component {
         const { expanded } = this.state
         return (
     <>
-  
+
     <SideNav expanded={this.state.expanded} toggleSideNav={this.toggleSideNav}/>
     <NavBar2 logoutUser={this.props.logout_user} />
 
@@ -75,7 +75,7 @@ class Home extends Component {
         <Question/>
     )
     }}/>
-    <Route path = '/search/:search/:filter'
+    <Route path = '/search/:filter'
     render={(props) => <Search{...props} />}
     />
 
