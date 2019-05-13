@@ -2,6 +2,11 @@ import React, {comp}  from 'react';
 import './usersAnswers.css'
 import axios from 'axios'
 import { NavLink } from 'react-router-dom'
+import Avatar from 'react-avatar';
+
+import Likes from '../Likes/likesContainer'
+import Auth from '../../Auth/Auth.js'
+
 
 const postLikes= (loggedInUser,answer_id,getData)=>{
   axios.post(`/api/likes`,{
@@ -31,12 +36,30 @@ const UsersFavorites = ({ favorites, likes, loggedInUser, getData }) => {
 
       // console.log(likeThings)
       return (favorites.map((el,i)=>{
-        // console.log(el.likescount)
+        console.log(el)
+        debugger
         return(
-          <div key={i} className='answerContainer'>
-          <div className='likes'>
+          <div key={i} className='answer'>
+            <div className='likes'>
             Likes: {el.likescount ? el.likescount : 0}
+            <div>
+       <div className='answerLikesContainer'>
+              { el.user_id === parseInt(Auth.getTokenID()) ?
+                '' : <Likes
+                      axiosGetAnswers={this.props.axiosGetAnswers}
+                      axiosGetUserAnswerByQuestion={this.props.axiosGetUserAnswerByQuestion}
+                      answer_id={el.answersId}/> }
+              {`${el.likeCount} ${parseInt(el.likeCount) === 1 ? 'like' : 'likes'}`}
+            </div>
+     
 
+
+            
+            <Avatar size = {30} textSizeRatio = {2} max-initial = {2} name= {el.username} round = {true}/>
+                  <NavLink to={`/users/${el.user_id}`}>
+               <strong>{el.username}</strong>
+            </NavLink>
+            </div>
 
               {likeThings.includes(parseInt(el.id)) ?
               <button onClick = { () => {
@@ -53,16 +76,11 @@ const UsersFavorites = ({ favorites, likes, loggedInUser, getData }) => {
 
 
             <NavLink to={`/questions/${el.questions_id}`}>
-              <div className='question'>
-              Question: {el.question_body}
+              <div className='answerQuestion'>{el.question_body}
               </div>
             </NavLink>
-            <NavLink to={`/users/${el.user_id}`}>
-              <div className='question'>
-               {el.username}
-              </div>
-            </NavLink>
-            <div className='answers'>Answer: {el.answer_body}</div>
+        
+            <div className='answerBody'> {el.answer_body}</div>
           </div>
         )
         })

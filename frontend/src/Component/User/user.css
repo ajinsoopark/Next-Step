@@ -63,11 +63,20 @@ strong {
  place-items: center;
 }
 
-.answerQuestionPostContainer {
- width: 100%;
-
+.answerBody {
+ margin: 10px;
+ padding: 10px;
 }
 
-.question{
-background-color: none;
+
+.likesContainer2 {
+ /* width: 10%; */
+ display: flex;
+ justify-content: space-between;
+ margin: 10px;
+ padding: 10px;
+}
+
+.likebuttonselector{
+  width: 50px;
 }

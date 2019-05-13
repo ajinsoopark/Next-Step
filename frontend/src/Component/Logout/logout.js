@@ -9,6 +9,7 @@ constructor (props) {
 }
 
 onClickLogOut = async () =>{
+  // event.preventDefault()
     await  this.props.function_logout_user()
 
 }
@@ -27,12 +28,12 @@ render () {
       <>
       <div className = "logout_container"> 
       <div className = "logout_wrapper">
-      <form> <h1> Do you want to logout ? 
+      <div> <h1> Do you want to logout ? 
       </h1>
       <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
         <button onClick = {this.onClickRedirect}>  <label> NO </label> </button>
       
-      </form>
+      </div>
       </div> 
       </div>
       </>

@@ -7,8 +7,9 @@ import UsersFavorites from './usersFavorites'
 import Auth from '../../Auth/Auth.js'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-import './user.css'
 import '../Answers/answerFeed.css'
+import './user.css'
+
 
 
 class User extends Component {
@@ -78,18 +79,18 @@ class User extends Component {
    
   }
 
-  displayThings=()=>{
-    const {display,data,likes,loggedInUser,favorites}= this.state
-    console.log()
-    if(display){
-      return(
-        <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
-      )
-    }return(
-        <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
-    )
+  // displayThings=()=>{
+  //   const {display,data,likes,loggedInUser,favorites}= this.state
+  //   console.log()
+  //   if(display){
+  //     return(
+  //       <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+  //     )
+  //   }return(
+  //       <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+  //   )
 
-  }
+  // }
 
   checkUser= async ()=>{
      const {userID}=this.state
@@ -152,11 +153,15 @@ class User extends Component {
         </TabList>
 
         <TabPanel>
+        <div className = "sortedAnswerFeed" >
                <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+               </ div>
         </TabPanel>
 
         <TabPanel >
+         <div className = "sortedAnswerFeed">
                     <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+                    </div>
         </TabPanel>
 
         </Tabs>

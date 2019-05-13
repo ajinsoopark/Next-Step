@@ -40,9 +40,6 @@ class Dashboard extends Component {
     }
 
     render () {
-      console.log(this.props)
-      console.log(this.state)
-      debugger
         const { questionId, categoryId, questionBody, category } = this.state
         return (
             <div className='dashboardContainer'>
