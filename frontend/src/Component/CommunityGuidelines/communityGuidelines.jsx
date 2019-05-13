@@ -5,12 +5,14 @@ const CommunityGuidelines = () => {
 
     return (
         <div className='guideParent'>
+          <div className='guideChild'>
                 <div className='guideTitle'>
                     Community Guidelines
                 </div>
-                <div className='guideIntro'>
-                When you use Next Step, you join a community of professionals looking to improve on their interview skills by practicing answering various interview questions and giving as well as getting valuable feedback to those answers. We trust you to be courteous and professional when creating content on this platform, but just in case we’ve put together some general guidelines:
-                </div>
+                <div className="guideOne">
+                    <div className='guideIntro'>
+                        When you use Next Step, you join a community of  professionals looking to improve on their interview skills by practicing answering various interview questions and giving as well as getting valuable feedback to those answers. We trust you to be courteous and professional when creating content on this platform, but just in case we’ve put together some general guidelines:
+                     </div>
                 <div className='unorderedGuide'>
                     <ul>
                         <li>
@@ -24,7 +26,9 @@ const CommunityGuidelines = () => {
                         </li>
                 
                     </ul>
-
+                </div>  
+                </div>  
+                <div className="guideTwo">
                     <div className='constructiveIntro'>
                     If you are not sure how to be constructive when giving feedback please refer to these guiding principles:
                     </div>
@@ -51,10 +55,10 @@ const CommunityGuidelines = () => {
                         
                         </ol>
                     </div>
-
                 </div>
-
-        </div>
+                </div>
+            </div>
+      
     )
 }
 
