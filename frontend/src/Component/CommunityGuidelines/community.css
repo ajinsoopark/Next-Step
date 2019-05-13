@@ -6,15 +6,22 @@
     grid-auto-rows: minmax(100px, auto);
     grid-template-columns: 14; */
     display: flex;
-    flex-direction: column;
-    align-content: center
+    justify-content: center;
+    counter-reset: section;
+    line-height: 1.5
+}
+
+.guideChild{
+    width: 90%
 }
 
 .guideTitle{
     color: #1B124E;
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bolder;
     text-align: center;
+    padding-bottom: 15px;
+    font-family: Poppins, sans-serif;
     /* vertical-align: middle; */
 
     /* grid-row: 1;
@@ -22,26 +29,55 @@
 }
 
 .guideIntro{
+    color: black;
+    font-family: Roboto, sans-serif;
     font-size: 18px;
-
-    width: 80%;
+    
     /* grid-row: 2;
     grid-column: 3 / span 10; */
 }
 
+
 .unorderedGuide{
+    color: black;
+    font-family: Roboto, sans-serif;
     font-size: 18px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
     /* width: 80%; */
     /* grid-row: 3;
     grid-column: 2 / span 12; */
 }
 
 .constructiveIntro{
+  
     /* grid-row: 4;
     grid-column: 2 / span 12; */
 }
 
 .orderedGuide{
+   
     /* grid-row: 5;
     grid-column: 2 / span 12; */
+}
+
+.guideOne{
+    background-color: white;
+    border-radius: 10px;
+    padding: 2%;
+    margin-bottom: 20px;
+    color: black;
+    font-family: Roboto, sans-serif;
+    font-size: 17px;
+}
+
+.guideTwo{
+    background-color: white;
+    border-radius: 10px;
+    padding: 2%;
+    margin-bottom: 20px;
+    color: black;
+    font-family: Roboto, sans-serif;
+    font-size: 18px;
 }

@@ -40,13 +40,14 @@ filterThings = ()=>{
         return(
           <div key={i} className = 'answerQuestionPostContainer'>
 
-              <NavLink to={`/users/${el.user_id}`}>
-                <p>{el.username}</p>
-              </NavLink>
-              <NavLink to={`/questions/${el.question_id}`}>
+            <NavLink to={`/users/${el.user_id}`}>
+              <p>{el.username}</p>
+            </NavLink>
+            <NavLink to={`/questions/${el.question_id}`}>
               <div className='answerQuestion'>{el.question_body}</div>
-              </NavLink>
-            <div className='answerBody'>{el.answer_body}</div>
+            </NavLink>
+            <div></div>
+          <div className='answerBody'>{el.answer_body}</div>
 
           </div>
         )

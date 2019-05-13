@@ -1,18 +1,32 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
 
 .dashboardContainer {
- min-height: 100vh;
- height: 100%;
- width: 100%;
- background-color: #eceafa;
- padding-bottom: 5%;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    background-color: #eceafa;
+    padding-bottom: 5%;
 }
 
 .welcome {
- text-align: center;
- font-weight: bold;
- font-size: 5vw;
- color: #1b124e;
+    text-align: center;
+    font-weight: bold;
+    font-size: 5vw;
+    color: #1b124e;
+}
+
+.welcomeLink{
+    color: #FF3D57;
+    font-size: 1.85vw;
+    font-family: Roboto, sans-serif;
+}
+
+.welmsg{
+    font-family: Roboto, sans-serif;
+    font-size: 1.6vw;
+    text-align: center;
+    padding-left: 4%;
+    padding-right: 4%;
 }
 
 .userSplash {
@@ -45,9 +59,9 @@
 }
 
 .randomQuestionContainer {
- box-shadow: 0 2px 4px #1b124e;
- color: #1b124e;
- background-color: white;
+    box-shadow: 0 2px 4px #1b124e;
+    color: #1b124e;
+    background-color: white;
 }
 
 .dashsplashDiv{
@@ -84,12 +98,6 @@
      /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); */
 }
 
-.welmsg{
-    font-family: Roboto, sans-serif;
-    text-align: center;
-    padding-left: 4%;
-    padding-right: 4%;
-   }
 
 .randomQuestionContainer:hover {
  box-shadow: 0 6px 10px #1b124e;

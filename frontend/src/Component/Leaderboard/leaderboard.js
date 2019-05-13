@@ -13,7 +13,6 @@ class Leaderboard extends Component{
   }
   componentDidMount(){
     axios.get('/api/answers/progress').then(res=>{
-      console.log(res.data.response)
       this.setState({
         data:res.data.response
       })
@@ -30,13 +29,13 @@ class Leaderboard extends Component{
     let answer= []
 
     if(data){
-      // console.log(data)
-
       for(let i=0;i<5;i++){
         answer.push(
           <div className='tableHead' key={i}>
             <p>{i+1}</p>
-            <p><NavLink className='rankingUser' to={`/users/${data[i].id}`}>{data[i].username} </NavLink></p>
+            <p><NavLink className='rankingUser' to={`/users/${data[i].id}`}>
+                {data[i].username}
+              </NavLink></p>
             <p> {data[i].count} / {this.state.questions}</p>
           </div>
         )
@@ -47,7 +46,6 @@ class Leaderboard extends Component{
   }
 
   render(){
-    // console.log(this.state)
     return(
       <div className = 'leaderboardContainer'>
 
