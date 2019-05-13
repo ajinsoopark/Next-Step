@@ -7,10 +7,6 @@ import DashSplash from './dashSplash'
 import RandomQuestion from './randomQuestion'
 import WelcomeMessage from './welcomeMessage'
 
-import NavBar2 from '../Navbar/navBar2'
-import Search from '../Search/searchContainer'
-
-
 import Leaderboard from "../Leaderboard/leaderboard"
 import './dashboard.css'
 
@@ -25,7 +21,6 @@ class Dashboard extends Component {
         }
     }
     componentDidMount () {
-        console.log(this.props)
        this.props.function_checkStatus()
        axios.get('/api/questions/random')
        .then(res => {
@@ -45,7 +40,7 @@ class Dashboard extends Component {
         return (
             <div className='dashboardContainer'>
                 <div className='splashAndQuestion'>
-                  
+
                 <div className="dashsplashDiv">
                     <DashSplash userName={ this.props.state.CurrentAutState.username }/>
                     </div>
@@ -53,7 +48,7 @@ class Dashboard extends Component {
                     <WelcomeMessage />
                     </div>
                     <div className="progressDiv">
-                     <Link to="/answers"> 
+                     <Link to="/answers">
                         <Progress userID={this.props.state.CurrentAutState.userID}/>
                      </Link>
                     </div>
@@ -65,18 +60,16 @@ class Dashboard extends Component {
                         category={category}/>
                     </div>
                     <div className="leaderBoarddiv">
-                     <Link to="/leaderboard">
+
                      <Leaderboard />
-                     </Link>
+
                     </div>
-                     
+
                 </div>
-                
+
             </div>
         )
     }
 }
 
 export default Dashboard
-
-

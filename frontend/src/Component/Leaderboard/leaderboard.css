@@ -17,6 +17,12 @@
   display: flex;
   justify-content: center;
 }
+.tableHeader h2{
+  padding: 2px;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+}
 
 .table{
   width: 100%;
