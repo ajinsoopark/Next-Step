@@ -70,7 +70,7 @@ class NavBar2 extends Component{
              type='text'
              name='filter'
              placeholder={this.state.inputPlaceholder}/>
-            <span className="searchSpan">{searchSVG}  Search</span>
+            <span className={ this.state.filter ? 'searchSpan withText' : 'searchSpan' }>{searchSVG}  Search</span>
             <span className='bottomBorder'></span>
           </label>
         </form>
