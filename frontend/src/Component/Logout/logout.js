@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Auth from "../../Auth/PrivateRouting"
+import { NavLink } from 'react-router-dom'
 import "./logout.css"
 
 
@@ -10,7 +11,6 @@ constructor (props) {
 
 onClickLogOut = async () =>{
     await  this.props.function_logout_user()
-
 }
 
 onClickRedirect = () =>{
@@ -25,15 +25,17 @@ componentDidMount() {
 render () {
   return (
       <>
-      <div className = "logout_container"> 
+      <div className = "logout_container">
       <div className = "logout_wrapper">
-      <form> <h1> Do you want to logout ? 
+      <form> <h1> Do you want to logout ?
       </h1>
-      <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
+      <NavLink to='/'>
+        <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
+      </NavLink>
         <button onClick = {this.onClickRedirect}>  <label> NO </label> </button>
-      
+
       </form>
-      </div> 
+      </div>
       </div>
       </>
   )
@@ -42,5 +44,3 @@ render () {
 }
 
 export default Logout
-
-
