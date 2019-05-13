@@ -14,13 +14,9 @@ const postLikes= (loggedInUser,answer_id,getData)=>{
 const disLikes= (loggedInUser,answer_id,getData)=>{
   axios.delete(`/api/likes`,{
     params: {
-
         user_id:loggedInUser,
         answer_id:answer_id
-
     }
-
-
   })
   getData()
 }
