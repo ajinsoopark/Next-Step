@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import DisplaySearch from './displaySearch'
+import {NavLink} from 'react-router-dom';
 import  './displaySearch.css'
+// import '../Answers/answerFeed.css'
 
 class Search extends Component {
   constructor(props){
@@ -31,32 +32,40 @@ filterThings = ()=>{
     let results = SearchState.data
     test = test.split(' ').map(el=>el.toLowerCase())
 
-    if(test.length>1){
+    if(test.length>1 && results){
       for(let i=0;i<test.length;i++){
         results = results.filter(el=>el.question_body.toLowerCase().includes(test[i]))
       }
-      console.log(results)
       return(results.map((el,i)=>{
         return(
-          <div key={i} className = 'results'>
-            <section>
-            {el.username}
-            <p>{el.question_body}</p>
-            <p>{el.answer_body}</p>
-          </section>
+          <div key={i} className = 'answerQuestionPostContainer'>
+
+              <NavLink to={`/users/${el.user_id}`}>
+                <p>{el.username}</p>
+              </NavLink>
+              <NavLink to={`/questions/${el.question_id}`}>
+              <div className='answerQuestion'>{el.question_body}</div>
+              </NavLink>
+            <div className='answerBody'>{el.answer_body}</div>
+
           </div>
         )
       }))
     }else if (test.length===1 && results){
-    console.log(results)
+
     return(results.map((el,i)=>{
       return(
-        <div key={i} className = 'results'>
-          <section>
-          {el.username}
-          <p>{el.question_body}</p>
-          <p>{el.answer_body}</p>
-        </section>
+        <div key={i} className = 'answerQuestionPostContainer'>
+
+            <NavLink to={`/users/${el.user_id}`}>
+              <p>{el.username}</p>
+            </NavLink>
+            <NavLink to={`/questions/${el.question_id}`}>
+              <div className='answerQuestion'>{el.question_body}</div>
+            </NavLink>
+            <div></div>
+          <div className='answerBody'>{el.answer_body}</div>
+
         </div>
       )
       }))
@@ -65,13 +74,13 @@ filterThings = ()=>{
 
   render() {
     const{filter}=this.state
-    const{SearchState}=this.props.state
 
     return(
       <div >
-        Search results for {filter}
-        {this.filterThings()}
-      }
+        Results for {filter}
+        <div className='sortedAnswerFeed'>
+          {this.filterThings()}
+        </div>
       </div>
     )
   }

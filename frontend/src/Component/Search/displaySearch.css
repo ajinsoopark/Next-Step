@@ -1,31 +1,39 @@
 @import url('https://fonts.googleapis.com/css?family=Cabin:600|Open+Sans:600|Poppins:500');
 
-.results a {
-  color: black
+.answerQuestionPostContainer a{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.results{
-  display: flex;
-  justify-content: space-around;
-  vertical-align: middle;
-  border: 1px solid transparent;
-  border-radius: 4px;
-  background-color: rgb(255, 255, 255);
-  text-align: justify;
-  font-size: 20px;
-  margin: 1%;
-  padding: 2%;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-  line-height: 6vh;
-  border: 1px solid rgba(175, 175, 175, 0.733);
-  font-size: 20px;
+.answerQuestionPostContainer {
+ width: 80%;
+ margin: 2%;
+ border-radius: 6px;
+ display: grid;
+ grid-template-columns: 100px 1fr;
+ padding-right: 2%;
+ font-family: Poppins, sans-serif;
+ background-color: white;
+ box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
-.results:hover {
-  color: #171A26;
-  text-decoration: none;
-  border: 1px solid #171A26;
-  background-color: rgba(206, 206, 206, 0.226);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.726);
-  transition: all 0.5s cubic-bezier(0.27, 0.37, 0.1, 1);
+
+.answerQuestion {
+ margin: 10px;
+ padding: 10px;
+ font-size: 105%;
+ text-align: center;
+ font-weight: bold;
+ line-height: 3.5vh;
+ text-align: left;
+}
+
+.answerBody {
+ padding-top: 3%;
+ line-height: 4vh;
+ margin: 10px;
+ color: rgb(0, 33, 82);
+ font-family: Poppins, sans-serif;
+ height: 100%;
 }
