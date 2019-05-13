@@ -58,9 +58,8 @@ class FeedbackFeed extends Component {
     }
 
     render () {
-        console.log(this.state)
-
         const { user_id } = this.props
+        
         return (
             <div className='feedbackFeedContainer'>
                 <div className='feedbackButtons'>

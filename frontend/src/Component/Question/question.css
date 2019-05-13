@@ -19,11 +19,13 @@
  word-wrap: none;
 }
 
-.Answers {
- display: grid;
- grid-template-columns: 1fr;
- place-items: center;
+.YourAnswers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
 
 .questionsParent svg {
   width: 2.5%;
@@ -33,7 +35,7 @@
 .userAnswerArea form {
  display: flex;
  flex-direction: row;
- justify-content: flex-start;
+ justify-content: center;
 }
 
 .userAnswerArea textarea {
@@ -43,13 +45,13 @@
  resize: none;
  /* border: 1px solid rgba(83, 0, 0, 0);
  background-color: rgba(83, 83, 83, 0.144); */
- border-radius: 6px;
+ /* border-radius: 6px; */
  margin: 1%;
  padding: 1%;
  font-size: calc(20px + 6 * ((100vw - 320px) / 680));
- background: #ECEEF7;
+ /* background: #ECEEF7; */
  outline: none;
- border: 1px solid #25709e;
+ border: 1px solid black;
  transition: all 0.3s ease-in;
 }
 

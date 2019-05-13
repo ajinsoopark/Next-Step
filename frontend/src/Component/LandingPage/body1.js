@@ -10,11 +10,7 @@ import video1 from "../../Images/v-homepage.mp4"
 import video2 from "../../Images/Notebook-6378.mp4"
 import video3 from "../../Images/Notebook-6378 (online-video-cutter.com).mp4"
 
-
-
 let logo = require("../../Images/nextStepLogo.png")
-
-
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -32,10 +28,19 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 
 class Body1 extends Component{
 
+demo_function = () =>{
+  setTimeout(() => {
+    this.props.function_login_user("thaiSonP","password3")
+  }, 899);
+this.props.history.push("/home")
+  }
+
+
 render(){
   return(
     <>
     <div className='body1'>
+
 
 
 
@@ -49,12 +54,9 @@ render(){
     </div>
 
     <div className='links'>
-    <button className='demoSignup' onClick = {() => {this.props.function_login_user("thaiSonP","password3")}}>Demo Login</button>
-    {/* <NavLink to='/signup'><button className='demoSignup'>Sign Up</button></NavLink> */}
+    <button className='demoSignup' onClick = {() => this.demo_function()}>Demo Login</button>
     </div>
     </div>
-
-
 
     <div className = "videoLay">
     <video id="background-video" loop autoPlay> 

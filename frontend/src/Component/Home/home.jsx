@@ -71,7 +71,11 @@ class Home extends Component {
     )
     }}/>
 
-    <Route exact path='/logout' component={Logout}/>
+    <Route exact path='/logout' render={() => {
+    return (
+        <Logout/>
+    )
+    }}/>
     <Route exact path ="/questions/:id" render = {()=>{
     return (
         <Question/>

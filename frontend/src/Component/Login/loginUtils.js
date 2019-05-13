@@ -4,7 +4,7 @@ import axios from "axios"
 //This check if user already login in the back or not.
 
 export const checkUserAuthStatus = () => {
-  console.log("CheckUserAuth")
+  // console.log("CheckUserAuth")
   axios.get("/api/users/log").then(res => {
     if(res.data.username === Auth.getToken()){
       this.setState({
@@ -33,7 +33,7 @@ export const checkUserAuthStatus = () => {
 
 
 export const login_user = (username, password) => dispatch => {
-  console.log("CALLING LOGIN")
+  // console.log("CALLING LOGIN")
     axios
       .post("/api/users/login", {
         username,
@@ -59,7 +59,7 @@ export const login_user = (username, password) => dispatch => {
         // dispatch(checkUserAuthStatus())
       }).then(
         () => {
-          console.log("End of LOGIN ACTON")
+          // console.log("End of LOGIN ACTON")
 
         }
       )

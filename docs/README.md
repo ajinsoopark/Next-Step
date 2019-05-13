@@ -1,17 +1,18 @@
 # Next-Step
+
+Next Step is an interactive web platform built to help the user become a better candidate during the interview process. At Next Step users can practice answering behavioral and general interview questions while getting constructive feedback from professionals and other users. 
+
+Exploring and using the site is easy! You can sign up, log in, or demo login on the landing page of the app. Once logged in you will be able to navigate through the app using the handy side bar. 
+In the section Questions you will see an extensive list of categorized questions. When you click on any question you'll be taken to a separate page and will be able to enter your own answer and read other people's answers to that question. Each answer has a heart in the top left corner - you can "like" as well as "unlike" any answer except your own (demo user's). 
+You can click on any user name and you'll be redirected to that user's page with all of their answers - sorted according to their categories, as well as their progress bar.
+In the section My Answers you will see all your (demo user's) answers sorted by categories, as well as your progress bar that shows how many questions you've answered in total.
+Interview Advice section contains helpful tips and reminders on the best practices before, during and after the interview.
+In the section Leaderboard you can see the ranking of all users depending on the level of their activity (how many questions they have answered). Find your name there!
+
+Check out the site! [Next Step: designed to give you a step above the competition](https://morning-hollows-24499.herokuapp.com)
+
+
 [Trello Link](https://trello.com/b/HhKQOq6N/51-capstone-group-7)
-<h2>Description: </h2>
-
-Describe a time you went out of your way to please a customer.<br/>
-Why do you want to join this company? <br/>
-Tell me about a time when you failed. <br/>
-
-Next-Step will coach you towards better answers for these questions at your next interview.
-To use the app, select a question category, then pick the question you want to practice.
-The question will be read to you as if you were in an interview.
-You can submit your answer via text or an audio recording.
-Next, you can see answers submitted via other users.
-Each answer contains a comments section where our staff and other users offer suggestions to enhance each answer.
 
 <section>
   <h2>
@@ -56,13 +57,10 @@ Each answer contains a comments section where our staff and other users offer su
     Beyond the MVP
   </h2>
   <ul>
-    <li>Each time a user submits the answer to the question they get a point. Rank users by how active they are.</li>
     <li>Audio responses</li>
     <li>Video responses</li>
-    <li>Categorize the questions by categories/industries.</li>
     <li>Private/Public Answers</li>
     <li>Questions can be read to users (text-to-speech);</li>
-    <li>“Tips and tricks”</li>
     <li>Question page has pages</li>
     <li>Edit user account (email, username, password)</li>
     

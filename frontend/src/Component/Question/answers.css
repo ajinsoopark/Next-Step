@@ -5,8 +5,9 @@
  border-radius: 6px;
  width: 80%;
  margin: 2%;
- padding: 4%;
-
+ padding-top: 3%;
+ padding-right: 2%;
+ padding-left: 2%;
 }
 
 .answer h2 {
@@ -17,14 +18,40 @@
 .answer p {
  margin: 1%;
  padding: 1%;
- line-height: 1.2;
+ line-height: 1.5;
+ text-align: left;
  white-space: pre-line;
+ font-family: Poppins, sans-serif;
 }
 
 .deleteButton {
- font-size: 15px;
+ font-size: .8em;
  position: relative;
- left: 50%;
+ width: 7%;
+ left: 90%;
+ bottom: 3.5vh;
+ text-transform: capitalize;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+.deleteIcon {
+    width: 33%;
+    fill: #E6E8E6;
+}
+
+.confirmIcon {
+    width: 38%;
+    fill: #E6E8E6;
+}
+
+.deleteButton:hover .confirmIcon {
+    fill: #4831D4;
+}
+
+.deleteButton:hover .deleteIcon {
+    fill: #DE4276;
 }
 
 .deleteButton img:hover {
@@ -37,6 +64,21 @@
 
 .react-tabs__tab--selected {
  background-color: #ECEEF7;
+}
+
+.emptyAnswers {
+    margin-top: 10%;
+    padding: 2%;
+    border-radius: 5px;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.619);
+    font-family: Robot, sans-serif;
+    color: #1B124E;
+    font-size: 2vw;
+    background-color: white;
+}
+
+textarea::placeholder {
+    font-family: Roboto, sans-serif;
 }
 
 .answered {
@@ -67,6 +109,12 @@
     outline: none;
     border: 2px solid rgb(0, 0, 0);
     transition: all 0.3s ease-in;
+}
+
+.AllAnswers {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 @media screen and (max-width: 640px) {

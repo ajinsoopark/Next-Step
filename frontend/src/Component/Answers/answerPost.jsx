@@ -5,9 +5,13 @@ import Feedback from '../Feedback/container'
 class AnswerPost extends Component {
 
     render () {
-        const { id, answer_body, question_body, category, user_id } = this.props
+        const { id, answer_body, question_body, category, user_id, like_count } = this.props
+
         return (
             <div className='answerQuestionPostContainer'>
+                <div className='personalLikes'>
+                    {`${like_count} ${parseInt(like_count) === 1 ? 'like' : 'likes'}`}
+                </div>
                 <div className='userCategoryLikes'>
                     <div className='categoryContainer'>
                         {category}
