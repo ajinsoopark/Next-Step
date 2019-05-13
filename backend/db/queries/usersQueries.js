@@ -128,7 +128,8 @@ const createUser = (req, res, next) => {
       });
     })
     .catch(err => {
-      next(err);
+      console.log(err)
+      next(err.detail)
     });
 }
 
