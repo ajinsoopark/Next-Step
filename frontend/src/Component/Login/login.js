@@ -34,13 +34,21 @@ class Login extends Component{
   handleSubmit = async (e)=>{
     e.preventDefault();
    let userErr = await this.props.function_login_user(this.state.username,this.state.password)
-    console.log(userErr)
-    this.setState({
-    loggedin: true,
-    username: "",
-    password: ""
-    }, () => this.validateAndRouteUser())
-
+    console.log(typeof userErr)
+    if (!userErr) {
+      this.setState({
+        loggedin: true,
+        username: "",
+        password: ""
+        }, () => this.validateAndRouteUser())
+    } else if (userErr) {
+      this.setState({
+        loggedin: false,
+        username: '',
+        password: '',
+        error: true
+      })
+    }
   }
 
   validateAndRouteUser = () => {
@@ -61,7 +69,7 @@ class Login extends Component{
 
         <div className='loginbox'>
           <h1>Login</h1>
-          { error ? <small className='loginError'>Invalid Username or Password.</small> : '' }
+          { error ? <small className='loginError'>Invalid Username or Password</small> : <small></small> }
         <form className='login' onSubmit={this.handleSubmit} >
           <input autoComplete='off' onChange={this.handleChange} type='text' name="username" placeholder="Username" value = {username} /> <br/>
           <input autoComplete='off' onChange={this.handleChange} type='password' name="password" placeholder="Password" value = {password} /> <br/>
