@@ -45,7 +45,7 @@ class Dashboard extends Component {
         return (
             <div className='dashboardContainer'>
                 <div className='splashAndQuestion'>
-                  
+
                 <div className="dashsplashDiv">
                     <DashSplash userName={ this.props.state.CurrentAutState.username }/>
                     </div>
@@ -53,7 +53,7 @@ class Dashboard extends Component {
                     <WelcomeMessage />
                     </div>
                     <div className="progressDiv">
-                     <Link to="/answers"> 
+                     <Link to="/answers">
                         <Progress userID={this.props.state.CurrentAutState.userID}/>
                      </Link>
                     </div>
@@ -65,18 +65,16 @@ class Dashboard extends Component {
                         category={category}/>
                     </div>
                     <div className="leaderBoarddiv">
-                     <Link to="/leaderboard">
+
                      <Leaderboard />
-                     </Link>
+                  
                     </div>
-                     
+
                 </div>
-                
+
             </div>
         )
     }
 }
 
 export default Dashboard
-
-
