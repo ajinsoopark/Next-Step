@@ -160,7 +160,9 @@ class User extends Component {
 
         <TabPanel >
          <div className = "sortedAnswerFeed">
-                    <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+                    <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}
+                    currentProfile = {this.props.match.params.id}
+                    />
                     </div>
         </TabPanel>
 
