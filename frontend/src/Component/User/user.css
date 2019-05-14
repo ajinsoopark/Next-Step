@@ -77,6 +77,15 @@ strong {
  padding: 10px;
 }
 
-.likebuttonselector{
-  width: 50px;
+.likebuttonselector {
+ width: 50px;
+}
+
+/* .react-tabs__tab{
+  min-width: 500px;
+  text-align: center;
+} */
+
+.react-tab-wrapper{
+  min-width: 80vw;
 }

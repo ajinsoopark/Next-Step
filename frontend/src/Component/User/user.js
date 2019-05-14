@@ -146,11 +146,12 @@ class User extends Component {
 
 <Tabs >
 {this.state.userName + "'s"}
+        <div className = "react-tab-wrapper">
         <TabList>
-        
         <Tab onClick={this.displayAnswers}>  Answers </Tab>
         <Tab onClick={this.displayAnswers}>  Favorites </Tab>
         </TabList>
+        </div>
 
         <TabPanel>
         <div className = "sortedAnswerFeed" >
