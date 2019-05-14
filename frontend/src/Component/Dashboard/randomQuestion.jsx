@@ -9,7 +9,7 @@ const RandomQuestion = ({ questionId, categoryId, questionBody, category }) => {
          <div className='randomQuestionContainer' >
             <div className='randomQ'>
                 <div className='randomQuestionText'>
-                    Random Question!
+                    Random Question
                 </div>
                 <div className='dashCategory'>
                      <u>Category</u>: {category}
