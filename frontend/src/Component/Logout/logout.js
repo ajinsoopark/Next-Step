@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Auth from "../../Auth/PrivateRouting"
 import "./logout.css"
-
+import { NavLink } from 'react-router-dom'
 
 class Logout extends Component {
 constructor (props) {
@@ -27,13 +27,15 @@ render () {
       <>
       <div className = "logout_container">
       <div className = "logout_wrapper">
-      <div> <h1> Do you want to logout ? 
+      <div> <h1> Do you want to logout ?
       </h1>
-        <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
+        <NavLink to='/'>
+          <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
+        </NavLink>
         <button onClick = {this.onClickRedirect}>  <label> NO </label> </button>
-      
+
       </div>
-      </div> 
+      </div>
       </div>
       </>
   )

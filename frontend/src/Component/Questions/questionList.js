@@ -68,7 +68,7 @@ export default class QuestionList extends React.Component {
       case 1: return 'Interpersonal Skills'
       case 2: return 'Time & Stress Management'
       case 3: return 'Sales & Customer Service'
-      case 4: return'Analytical Skills'
+      case 4: return 'Analytical Skills'
       case 5: return 'Miscellaneous'
       case 6: return 'General Qs'
     }
@@ -85,16 +85,15 @@ render(){
               </div>
           </div>
           <div>
-            <DisplayAllCategories 
+            <DisplayAllCategories
             userAnsweredList= {this.state.userAnsweredList}
-            allCategories={this.state.allCategories} 
+            allCategories={this.state.allCategories}
             categoryIndex={this.state.categoryIndex}
-            allQuestions={this.state.allQuestions} 
-            handleChange={this.handleChange} 
+            allQuestions={this.state.allQuestions}
+            handleChange={this.handleChange}
             selectedCategory={this.state.selectedCategory}/>
           </div>
         </div>
   )
 }
 }
-

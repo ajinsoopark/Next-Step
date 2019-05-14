@@ -24,10 +24,8 @@ const postLikes= (loggedInUser,answer_id,getData)=>{
 const disLikes= (loggedInUser,answer_id,getData)=>{
   axios.delete(`/api/likes`,{
     params: {
-
         user_id:loggedInUser,
         answer_id:answer_id
-
     }
 
   })
@@ -46,7 +44,7 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
           <div key={i} className='answer'>
             <div className='likesContainer2'>
 
-            <div className = "likebutton" > 
+            <div className = "likebutton" >
               Likes: {el.likescount ? el.likescount : 0}
             </div>
 
@@ -63,12 +61,12 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
                       postLikes(loggedInUser,el.id,getData)}}>
                       {emptyHeart}
                 </button>
-                
+
               }</div>
             }
 
             </div>
-                  
+
 
             <NavLink to={`/questions/${el.question_id}`}>
               <div className='answerQuestion'>
@@ -76,7 +74,7 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
               </div>
             </NavLink>
 
-            <div> 
+            <div>
 
             </div>
 

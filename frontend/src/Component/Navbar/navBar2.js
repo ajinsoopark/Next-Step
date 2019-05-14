@@ -36,8 +36,11 @@ class NavBar2 extends Component{
       this.props.function_search( test.shift())
       this.props.history.push(`/search/${filter}`)
       // this.setState({ filter: '' })
+      this.setState({
+        filter:''
+      })
     } else {
-      this.setState({ error: true })
+      this.setState({ error: true, filter:'' })
     }
 
   }
