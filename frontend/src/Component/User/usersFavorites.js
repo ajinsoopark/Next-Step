@@ -48,7 +48,8 @@ const UsersFavorites = ({ favorites, likes, loggedInUser, getData, currentProfil
             <div className='likesContainer2'>
 
             <div>
-            <Avatar size = {30} textSizeRatio = {2} max-initial = {2} name= {el.username} round = {true}/>
+            <Avatar size = {30} textSizeRatio = {2} max-initial = {2} name= {el.username} round = {true}/> 
+            <p></p>
                   <NavLink to={`/users/${el.user_id}`}>
                <strong>{el.username}</strong>
             </NavLink>
@@ -57,7 +58,7 @@ const UsersFavorites = ({ favorites, likes, loggedInUser, getData, currentProfil
     <div className = "likebutton" >
             Likes: {el.likescount ? el.likescount : 0}
             </div>
-{ +currentProfile !== +Auth.getTokenID() ? <div></div> :
+{ +currentProfile !== +Auth.getTokenID() ? "" :
               <div className = "likebuttonselector" >{likeThings.includes(parseInt(el.id)) ?
 
                   <button className = "likeButton" onClick = { () => {
