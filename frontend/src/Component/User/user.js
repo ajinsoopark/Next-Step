@@ -146,11 +146,12 @@ class User extends Component {
 
 <Tabs >
 {this.state.userName + "'s"}
+        <div className = "react-tab-wrapper">
         <TabList>
-        
         <Tab onClick={this.displayAnswers}>  Answers </Tab>
         <Tab onClick={this.displayAnswers}>  Favorites </Tab>
         </TabList>
+        </div>
 
         <TabPanel>
         <div className = "sortedAnswerFeed" >
@@ -160,7 +161,9 @@ class User extends Component {
 
         <TabPanel >
          <div className = "sortedAnswerFeed">
-                    <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+                    <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}
+                    currentProfile = {this.props.match.params.id}
+                    />
                     </div>
         </TabPanel>
 

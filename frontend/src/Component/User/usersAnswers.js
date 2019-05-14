@@ -35,14 +35,13 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
 }
 
 const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
-  console.log(likes)
-  console.log(data)
-  console.log(loggedInUser,"As")
+
 
     if(data && likes){
     let likeThings=likes.map(a => a.answer_id)
 
       return (data.map((el,i)=>{
+
         return(
           <div key={i} className='answer'>
             <div className='likesContainer2'>
@@ -51,7 +50,7 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
               Likes: {el.likescount ? el.likescount : 0}
             </div>
 
-            {loggedInUser === Auth.getTokenID() ? <div> </div> :
+            {el.username === Auth.getToken() ? <div></div> :
               <div className = "likebuttonselector" >{likeThings.includes(parseInt(el.id)) ?
 
                   <button className = "likeButton" onClick = { () => {
