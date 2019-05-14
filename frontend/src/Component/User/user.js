@@ -1,10 +1,16 @@
 import React, {Component} from 'react';
 import axios from 'axios'
-import './user.css'
+
 import Avatar from 'react-avatar';
 import UsersAnswers from './usersAnswers'
 import UsersFavorites from './usersFavorites'
 import Auth from '../../Auth/Auth.js'
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+
+import '../Answers/answerFeed.css'
+import './user.css'
+
+
 
 class User extends Component {
   constructor(props){
@@ -19,8 +25,9 @@ class User extends Component {
  getData = async ()=>{
     const {userID,loggedInUser}=this.state
     await axios.get(`/api/users/${userID}`).then(res=>{
+      // console.log(res.data)
       this.setState({
-        name:res.data.user.email,
+        name:res.data.user.first_name + " " + res.data.user.last_name,
         userName:res.data.user.username
       })
     })
@@ -72,18 +79,18 @@ class User extends Component {
    
   }
 
-  displayThings=()=>{
-    const {display,data,likes,loggedInUser,favorites}= this.state
+  // displayThings=()=>{
+  //   const {display,data,likes,loggedInUser,favorites}= this.state
+  //   console.log()
+  //   if(display){
+  //     return(
+  //       <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+  //     )
+  //   }return(
+  //       <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+  //   )
 
-    if(display){
-      return(
-        <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
-      )
-    }return(
-        <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
-    )
-
-  }
+  // }
 
   checkUser= async ()=>{
      const {userID}=this.state
@@ -105,7 +112,7 @@ class User extends Component {
   }
 
   render(){
-    // console.log(this.state.userID)
+     const {display,data,likes,loggedInUser,favorites}= this.state
     const {name,userName,questions,answers}=this.state
     let completion = Math.round((answers/questions)*100)+'%'
 
@@ -117,16 +124,16 @@ class User extends Component {
     return(
       <div className = 'profileContainer'>
         <div className='userInfo'>
-            <Avatar size = {25} textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
+            <Avatar size = {100} textSizeRatio = {2} max-initial = {3} name= {userName} round = {true}/>
             <section>
-            <p> {userName} </p>
-            <p> {name} </p>
+            <p> <strong> Username: </strong> {userName} </p>
+            <p> <strong> Name : </strong> {name} </p>
             </section>
         </div>
 
 
       <div className='pBarContainer'>
-        Completion progress:
+         Progress:
         <div className='pbar'>
           <div className ='innerBar' style={style}>
             {completion}
@@ -136,14 +143,43 @@ class User extends Component {
         </div>
       </div>
       <div className='userInfo'>
-        <button onClick={this.displayAnswers}>Answers </button>
-        <div> | </div>
-        <button onClick={this.displayFavorites}>Favorites </button>
+
+<Tabs >
+{this.state.userName + "'s"}
+        <div className = "react-tab-wrapper">
+        <TabList>
+        <Tab onClick={this.displayAnswers}>  Answers </Tab>
+        <Tab onClick={this.displayAnswers}>  Favorites </Tab>
+        </TabList>
+        </div>
+
+        <TabPanel>
+        <div className = "sortedAnswerFeed" >
+               <UsersAnswers data={data} likes={likes} loggedInUser={loggedInUser} getData={this.getData}/>
+               </ div>
+        </TabPanel>
+
+        <TabPanel >
+         <div className = "sortedAnswerFeed">
+                    <UsersFavorites favorites={favorites} likes={likes} loggedInUser={loggedInUser} getData={this.getData}
+                    currentProfile = {this.props.match.params.id}
+                    />
+                    </div>
+        </TabPanel>
+
+        </Tabs>
+
       </div>
-        {this.displayThings()}
       </div>
     )
   }
 }
 
 export default User
+
+
+
+
+        // <button onClick={this.displayAnswers}>Answers </button>
+        // <div> | </div>
+        // <button onClick={this.displayFavorites}>Favorites </button>

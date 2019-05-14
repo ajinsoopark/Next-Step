@@ -30,6 +30,7 @@
 }
 
 .answerBody {
+  text-align: justify; 
  padding-top: 3%;
  line-height: 4vh;
  margin: 10px;

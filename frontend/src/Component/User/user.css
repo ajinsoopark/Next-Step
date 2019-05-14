@@ -1,37 +1,91 @@
-.profileContainer{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.profileContainer {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
 
-.pBarContainer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%
+.pBarContainer {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ width: 90%
 }
 
-.innerBar{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.innerBar {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 5px;
 }
 
-.userInfo{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.userInfo {
+ display: flex;
+ align-items: center;
+ justify-content: center;
 }
 
-.join{
-  display: flex;
-  flex-direction: column;
+.join {
+ display: flex;
+ flex-direction: column;
 }
 
-.completed{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%
+.completed {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%
+}
+
+
+.profileContainer {
+ font-family: Poppins, sans-serif;
+
+}
+
+section {
+ margin: 10px;
+ padding: 10px;
+}
+
+strong {
+ font-weight: bolder;
+}
+
+.profileContainer .userInfo {
+ /* font-size: 1.5em; */
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ margin: 10px;
+ padding: 10px;
+ place-content: center;
+ place-items: center;
+}
+
+.answerBody {
+ margin: 10px;
+ padding: 10px;
+}
+
+
+.likesContainer2 {
+ /* width: 10%; */
+ display: flex;
+ justify-content: space-between;
+ margin: 10px;
+ padding: 10px;
+}
+
+.likebuttonselector {
+ width: 50px;
+}
+
+/* .react-tabs__tab{
+  min-width: 500px;
+  text-align: center;
+} */
+
+.react-tab-wrapper{
+  min-width: 80vw;
 }
