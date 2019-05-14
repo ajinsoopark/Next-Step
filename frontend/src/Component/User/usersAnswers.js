@@ -27,10 +27,7 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
         user_id:loggedInUser,
         answer_id:answer_id
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> 386ad54edb30f89c1a36927cea6dc95c796b417a
   })
   getData()
 }
@@ -47,7 +44,7 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
           <div key={i} className='answer'>
             <div className='likesContainer2'>
 
-            <div className = "likebutton" > 
+            <div className = "likebutton" >
               Likes: {el.likescount ? el.likescount : 0}
             </div>
 
@@ -64,12 +61,12 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
                       postLikes(loggedInUser,el.id,getData)}}>
                       {emptyHeart}
                 </button>
-                
+
               }</div>
             }
 
             </div>
-                  
+
 
             <NavLink to={`/questions/${el.question_id}`}>
               <div className='answerQuestion'>
@@ -77,7 +74,7 @@ const UsersAnswers = ({ data, likes, loggedInUser, getData }) => {
               </div>
             </NavLink>
 
-            <div> 
+            <div>
 
             </div>
 
