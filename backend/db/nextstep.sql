@@ -1,7 +1,7 @@
-DROP DATABASE IF EXISTS nextstep;
-CREATE DATABASE nextstep;
+-- DROP DATABASE IF EXISTS nextstep;
+-- CREATE DATABASE nextstep;
 
-\c nextstep;
+-- \c nextstep;
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
