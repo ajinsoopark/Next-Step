@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles';
 import MuiExpansionPanel from '@material-ui/core/ExpansionPanel';
 import MuiExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
@@ -48,12 +49,46 @@ const ExpansionPanel = withStyles({
     },
   }))(MuiExpansionPanelDetails);
 
-export default class DisplayTips extends React.Component { 
+const colorOnHover = () => {
+
+}
+
+const styles = theme => ({
+
+  
+  root: {
+    width: '100%',
+  },
+  panel: {
+    backgroundColor: 'white',
+    borderTopLeftRadius: '5px',
+    borderTopRightRadius: '5px',
+    border: '1px solid transparent',
+    '&:hover': {
+    }
+  },
+  heading: {
+    fontSize: theme.typography.pxToRem(20),
+    backgroundColor: 'white',
+    fontFamily: 'Poppins, sans-serif',
+    color: '#1b124e',
+  },
+  details: {
+    color: '#1b124e',
+    fontSize: '1.1em',
+  },
+  expandButton: {
+    color: '#1b124e',
+  }
+});
+
+class DisplayTips extends React.Component { 
     constructor(props){
         super(props)
         
         this.state = {
-            expanded: ""
+            expanded: "",
+
         }
     }
 
@@ -62,23 +97,30 @@ export default class DisplayTips extends React.Component {
           expanded: expanded ? panel : false,
         });
       };
+    
+    handleHover = event => {
+        this.setState({
+          hovered: event.target.id
+        })
+    }
 
     render() {
         const { expanded } = this.state;
-
+        const { classes } = this.props
+  
         return(this.props.allTips.map((tip, i) => {
             if(tip.tip_category == this.props.selectedTipcat){     
                 return(
-                    <div key={i} className='tipPanels'>
-                        <div className='panel'>
+                    <div onHover={this.handleHover} id={i} key={i} className='tipPanels'>
+                        <div className={classes.root}>
                         <ExpansionPanel expanded={expanded === `panel${i}`} onChange={this.handleChange(`panel${i}`)} >
-                            <ExpansionPanelSummary expandIcon={<ExpandMoreIcon />} >
-                                <Typography className="tipTypography">
+                            <ExpansionPanelSummary className={classes.panel} expandIcon={<ExpandMoreIcon className={classes.expandButton} />} >
+                                <Typography className={classes.heading}>
                                         {tip.tip_title}
                                 </Typography>
                             </ExpansionPanelSummary>
                             <ExpansionPanelDetails>
-                                <Typography>
+                                <Typography className={classes.details}>
                                 {tip.tip_body}
                                 </Typography>
                             </ExpansionPanelDetails>
@@ -90,4 +132,9 @@ export default class DisplayTips extends React.Component {
             }))
         }
     }
+
+DisplayTips.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
     
+export default withStyles(styles)(DisplayTips)
