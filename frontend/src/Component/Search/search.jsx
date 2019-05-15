@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import {NavLink} from 'react-router-dom';
 import  './displaySearch.css'
 // import '../Answers/answerFeed.css'
+import Avatar from 'react-avatar';
+
 
 class Search extends Component {
   constructor(props){
@@ -57,9 +59,9 @@ filterThings = ()=>{
     return(results.map((el,i)=>{
       return(
         <div key={i} className = 'answerQuestionPostContainer'>
-
             <NavLink to={`/users/${el.user_id}`}>
-              <p>{el.username}</p>
+            <Avatar size = {30} textSizeRatio = {2} max-initial = {3} name= {el.username} round = {true}/>
+              <strong>{el.username}</strong>
             </NavLink>
             <NavLink to={`/questions/${el.question_id}`}>
               <div className='answerQuestion'>{el.question_body}</div>
