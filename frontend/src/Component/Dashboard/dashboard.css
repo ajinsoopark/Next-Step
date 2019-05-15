@@ -70,7 +70,7 @@
 }
 
 .welcomeMessageDiv{
-    grid-row: 2;
+    grid-row: 3;
     grid-column: 2 / span 12;
     background-color: white;
     border-radius: 6px;
@@ -81,19 +81,19 @@
 }
 
 .progressDiv{
-    grid-row: 3;
+    grid-row: 2;
     grid-column: 2 / span 12;
 }
 
 .randomQdiv{
     /* background-color: #8BB9CF; */
     grid-row: 4;
-    grid-column: 2 / span 5;
+    grid-column: 2 / span 6;
 }
 
 .leaderBoarddiv{
     grid-row: 4;
-    grid-column: 7 / span 7;
+    grid-column: 8 / span 6;
     /* background-color: #D9E8EF; */
      /* box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); */
 }
@@ -144,7 +144,6 @@
  box-shadow: 0 2px 4px #1b124e;
  transition: box-shadow 0.2s ease-in-out;
  padding: 10px;
- margin-top: 12px;
  border-radius: 6px;
  height: 400px;
 background-color: white;
@@ -168,8 +167,9 @@ padding-bottom: 2.5%;
 }
 
 .leaderboardContainer h1 {
- font-size: 4vw;
- color: rgb(53, 53, 0);
+ font-size: 1.8em;
+ color: black;
+ font-family: Poppins, sans-serif;
  font-weight: bold;
  padding-bottom: 10px;
  
