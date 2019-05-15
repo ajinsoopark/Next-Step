@@ -118,7 +118,7 @@ class User extends Component {
 
     const style = {
       width:completion,
-      backgroundColor: 'yellow',
+      backgroundColor: '#FF3D57',
     }
 
     return(

@@ -4,7 +4,7 @@ import axios from 'axios'
 import { NavLink } from 'react-router-dom'
 import Avatar from 'react-avatar';
 
-import Likes from '../Likes/likesContainer'
+// import Likes from '../Likes/likesContainer'
 import Auth from '../../Auth/Auth.js'
 
 
@@ -36,7 +36,7 @@ const disLikes= (loggedInUser,answer_id,getData)=>{
 
 const UsersFavorites = ({ favorites, likes, loggedInUser, getData, currentProfile}) => {
   
-  console.log( +currentProfile)
+  // console.log( +currentProfile)
 
     if(favorites && likes){
     let likeThings=likes.map(a => a.answer_id)
