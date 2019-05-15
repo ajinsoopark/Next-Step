@@ -64,8 +64,12 @@ const styles = theme => ({
     borderTopLeftRadius: '5px',
     borderTopRightRadius: '5px',
     border: '1px solid transparent',
-    '&:hover': {
-    }
+    '&:hover .DisplayTips-heading-3': {
+      color: '#db3069',
+    },
+    '&:hover .DisplayTips-expandButton-5': {
+      color: '#db3069',
+    },
   },
   heading: {
     fontSize: theme.typography.pxToRem(20),
@@ -98,20 +102,14 @@ class DisplayTips extends React.Component {
         });
       };
     
-    handleHover = event => {
-        this.setState({
-          hovered: event.target.id
-        })
-    }
-
     render() {
         const { expanded } = this.state;
         const { classes } = this.props
-  
+        console.log(classes)
         return(this.props.allTips.map((tip, i) => {
             if(tip.tip_category == this.props.selectedTipcat){     
                 return(
-                    <div onHover={this.handleHover} id={i} key={i} className='tipPanels'>
+                    <div id={i} key={i} className='tipPanels'>
                         <div className={classes.root}>
                         <ExpansionPanel expanded={expanded === `panel${i}`} onChange={this.handleChange(`panel${i}`)} >
                             <ExpansionPanelSummary className={classes.panel} expandIcon={<ExpandMoreIcon className={classes.expandButton} />} >

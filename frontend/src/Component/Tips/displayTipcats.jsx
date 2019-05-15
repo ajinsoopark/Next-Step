@@ -19,7 +19,7 @@ const DisplayTipcats = ({ allTipcats, allTips, selectedTipcat, handleClick, tabI
     })
 
     return(
-        <div>
+        <div className='tipContainer'>
             <Tabs selectedIndex={tabIndex} onSelect={index => handleClick(index)}>
                 <TabList>
                     {tipTabs}
