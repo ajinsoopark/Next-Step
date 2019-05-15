@@ -33,7 +33,7 @@ filterThings = ()=>{
     let test = this.state.filter
     let results = SearchState.data
     test = test.split(' ').map(el=>el.toLowerCase())
-
+    console.log(results)
     if(test.length>1 && results){
       for(let i=0;i<test.length;i++){
         results = results.filter(el=>el.question_body.toLowerCase().includes(test[i]))
