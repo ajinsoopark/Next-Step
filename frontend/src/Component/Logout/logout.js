@@ -29,9 +29,9 @@ render () {
       <div className = "logout_wrapper">
       <div> <h1> Do you want to logout ?
       </h1>
-        <NavLink to='/'>
+        {/* <NavLink to='/'> */}
           <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
-        </NavLink>
+        {/* </NavLink> */}
         <button onClick = {this.onClickRedirect}>  <label> NO </label> </button>
 
       </div>
