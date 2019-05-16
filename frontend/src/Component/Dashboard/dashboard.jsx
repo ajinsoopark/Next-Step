@@ -34,7 +34,7 @@ class Dashboard extends Component {
            })
        }).then(()=>{
            console.log(this.props)
-            this.props.history.push("/bsd")
+            this.props.history.push("/home")
        })
     }
 
