@@ -65,6 +65,7 @@ return  axios
 
 //This is to logout user
 export const logOutUser = ()=> dispatch => {
+
     axios
       .post("/api/users/logout")
       .then(() => {
@@ -79,7 +80,6 @@ export const logOutUser = ()=> dispatch => {
         dispatch(checkUserAuthStatus())
       }).then(()=>{
         Auth.deauthenticateUser()
-        
       })
   }
 

@@ -45,6 +45,10 @@ class Home extends Component {
         })
     }
 
+    componentDidMount() {
+     
+    }
+
     render () {
         const { expanded } = this.state
         return (
@@ -95,9 +99,14 @@ class Home extends Component {
     <Route path='/star' render={() => <StarAnswer />}/>
 
 
-    <Route exact path='/*' render={() => {
+    <Route exact path='/home' render={() => {
     return (
     <Dashboard/>)
+    }}/>
+
+      <Route  path='/*' render={() => {
+    return (
+    <LandingPage/>)
     }}/>
 
     </Switch>
