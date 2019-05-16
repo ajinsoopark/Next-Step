@@ -138,7 +138,20 @@ active={activeTab === 'home' ? true : false}>
                         </NavText>
                     </NavItem>
 
-
+                    <NavItem
+                    className = "sideNav_leaderboard"
+                    eventKey='leaderboard'
+                    active={ activeTab === 'leaderboard' ? true : false}>
+                        <NavIcon>
+                                <div className='sideBarIcon'>
+                                    {/* {tipsIcon} */}
+                                    <img src = {leaderboardIcon2} alt = "ranking icon " width = "35" />
+                                </div>
+                        </NavIcon>
+                        <NavText>
+                                Ranking Board
+                        </NavText>
+                    </NavItem>
 
                     <NavItem
                     className = "sideNav_tips"
@@ -154,20 +167,7 @@ active={activeTab === 'home' ? true : false}>
                                 Advice
                         </NavText>
                     </NavItem>
-                    <NavItem
-                    className = "sideNav_leaderboard"
-                    eventKey='leaderboard'
-                    active={ activeTab === 'leaderboard' ? true : false}>
-                        <NavIcon>
-                                <div className='sideBarIcon'>
-                                    {/* {tipsIcon} */}
-                                    <img src = {leaderboardIcon2} alt = "Leaderboard icon " width = "35" />
-                                </div>
-                        </NavIcon>
-                        <NavText>
-                                Ranking Board
-                        </NavText>
-                    </NavItem>
+
 
 
                     <NavItem
