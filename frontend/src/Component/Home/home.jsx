@@ -104,7 +104,12 @@ class Home extends Component {
     <Dashboard/>)
     }}/>
 
-      <Route  path='/*' render={() => {
+    <Route path='/' render={() => {
+    return (
+    <Dashboard/>)
+    }}/>
+
+      <Route path='/*' render={() => {
     return (
     <LandingPage/>)
     }}/>
