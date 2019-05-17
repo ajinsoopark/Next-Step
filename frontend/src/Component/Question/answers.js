@@ -91,12 +91,19 @@ deleteActionFinal = (event) => {
 
 }
 
+demoAnswerTextOnClick = () =>{
+  this.setState({
+    answer_body: "When we were working on our capstone project at Pursuit we all had equal roles, no leader - it was up to us to decide who was working on what. I felt that I had the right skills to lead in group in the right direction…"
+  })
+
+}
+
 
 mapUserAnswerBoxToRender = (array) => {
     return (
       <div className = "userAnswerArea" >
       <form onSubmit = {this.postAnswer}>
-       <textarea className='answerInput' onChange = {this.onChange}value = {this.state.answer_body} name = "answer_body"
+       <textarea className='answerInput' onClick = {this.demoAnswerTextOnClick} onChange = {this.onChange} value = {this.state.answer_body} name = "answer_body"
         placeholder = "Enter your answer here">
       </textarea>
       <input type = "Submit" />
