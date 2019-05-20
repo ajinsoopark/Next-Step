@@ -48,6 +48,12 @@ class FeedbackInput extends Component {
         } else this.setState({ error: true })
     }
 
+    demoAutoFeedback = () =>{
+        this.setState({
+            feedbackInput: "Good answer! I like your answer on how you negotiate and work with your team on making the project workout and how you took the lead on the process. You should elaborate more on ..."
+        })
+    }
+
     render () {
         const { expandedInput } = this.props
         const { feedbackInput, error } = this.state
@@ -57,7 +63,7 @@ class FeedbackInput extends Component {
                 <small className='error'>
                     { error ? '*Do not leave blank.' : '' }
                 </small>
-                <form className='feedbackForm' onSubmit={ this.handleSubmit }>
+                <form className='feedbackForm' onClick = {this.demoAutoFeedback} onSubmit={ this.handleSubmit }>
                     <textarea 
                      className='feedbackInput'
                      value={feedbackInput}
