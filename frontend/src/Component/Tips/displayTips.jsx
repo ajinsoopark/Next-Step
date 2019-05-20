@@ -64,10 +64,10 @@ const styles = theme => ({
     borderTopLeftRadius: '5px',
     borderTopRightRadius: '5px',
     border: '1px solid transparent',
-    '&:hover .DisplayTips-heading-3': {
+    '&:hover p': {
       color: '#db3069',
     },
-    '&:hover .DisplayTips-expandButton-5': {
+    '&:hover svg': {
       color: '#db3069',
     },
   },
