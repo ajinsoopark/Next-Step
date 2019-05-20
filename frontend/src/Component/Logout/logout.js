@@ -35,9 +35,9 @@ render () {
       <div> <h1> Do you want to logout ?
       </h1>
 
-//         {/* <NavLink to='/'> */}
-//           <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
-//         {/* </NavLink> */}
+         {/* <NavLink to='/'>
+          <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
+         </NavLink> */}
 
      
           <button onClick = {this.onClickLogOut}> <label> YES </label> </button>
