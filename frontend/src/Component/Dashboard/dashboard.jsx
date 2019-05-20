@@ -21,6 +21,7 @@ class Dashboard extends Component {
         }
     }
     componentDidMount () {
+       
        this.props.function_checkStatus()
        axios.get('/api/questions/random')
        .then(res => {
@@ -31,6 +32,9 @@ class Dashboard extends Component {
                questionBody: randomQuestion.question_body,
                category: randomQuestion.category
            })
+       }).then(()=>{
+           console.log(this.props)
+            this.props.history.push("/home")
        })
     }
 

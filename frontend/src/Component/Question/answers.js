@@ -34,7 +34,7 @@ onChange = (event) =>{
 postAnswer = (event) => {
   event.preventDefault()
 
-  if(this.state.answer_body.length > 20){
+  if(this.state.answer_body.length > 5){
   axios.post('/api/answers',{
     user_id: this.props.currentUser,
     question_id: this.props.questionID,
@@ -102,7 +102,7 @@ mapUserAnswerBoxToRender = (array) => {
       <input type = "Submit" />
       </form>
       <small className={this.state.answerErr ? 'answerErr errColor' : 'answerErr'}>
-        Must be minimum 20 characters.
+        Must be minimum 5 characters or more.
       </small>
       </div>
 
