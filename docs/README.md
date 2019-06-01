@@ -70,7 +70,7 @@ Check out the site! [Next Step: designed to give you a step above the competitio
 <section>
 <h2><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Photos</span></span></span></h2>
 
-<h2><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Home Page&nbsp;</span></span></span></h2>
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Home Page&nbsp;</span></span></span></p>
 
 <p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/1. Home Page.png?raw=true" target="_blank"><img alt="Home Page" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/1.%20Home%20Page.png?raw=true" style="width: 250px; height: 245px;" /></a></span></span></span></p>
 
