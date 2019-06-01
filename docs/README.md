@@ -68,12 +68,53 @@ Check out the site! [Next Step: designed to give you a step above the competitio
 </section>
 
 <section>
-  <h2>
-  Photos
-  </h2>
-  <ul>
-    <img src='https://github.com/ajinsoopark/Next-Step/blob/master/photo/1.%20Home%20Page.png' width = "500" / >
+<h2><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Photos</span></span></span></h2>
 
-    
-  </ul>  
+<h2><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Home Page&nbsp;</span></span></span></h2>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/1. Home Page.png?raw=true" target="_blank"><img alt="Home Page" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/1.%20Home%20Page.png?raw=true" style="width: 250px; height: 245px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Login Page&nbsp;</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/2. Login.png?raw=true" target="_blank"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/2.%20Login.png?raw=true" style="width: 250px; height: 114px; border-width: 1px; border-style: solid;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Sign Up</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/3. Sign Up.png?raw=true" target="_blank"><img alt="Sign Up Page" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/3.%20Sign%20Up.png?raw=true" style="width: 250px; height: 116px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Dashboard</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/4. Dashboard.png?raw=true" target="_blank"><img alt="Dashboard" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/4.%20Dashboard.png?raw=true" style="width: 250px; height: 170px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Questions</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/5. Questions.png?raw=true"><img alt="Questions Page" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/5.%20Questions.png?raw=true" style="width: 250px; height: 172px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Question</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/6. Question.png?raw=true" target="_blank"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/6.%20Question.png?raw=true" style="width: 250px; height: 174px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">All Answers</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/7. All Answers.png?raw=true"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/7.%20All%20Answers.png?raw=true" style="width: 250px; height: 533px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Search Results</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/8. Search Users Questions Answers.png?raw=true"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/8.%20Search%20Users%20Questions%20Answers.png?raw=true" style="width: 250px; height: 114px;" /></a></span></span></span></p>
+
+<p>&nbsp;</p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Profile</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><a href="https://github.com/ajinsoopark/Next-Step/blob/master/photo/9. Profile.png?raw=true"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/9.%20Profile.png?raw=true" style="width: 250px; height: 269px;" /></a></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">My Answers</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/10.%20My%20Answers.png?raw=true" style="width: 250px; height: 228px;" /></span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl">Ranking Board</span></span></span></p>
+
+<p><span style="font-size:10px;"><span style="font-family:arial,helvetica,sans-serif;"><span dir="rtl"><img alt="" src="https://github.com/ajinsoopark/Next-Step/blob/master/photo/11.%20Ranking%20Board.png?raw=true" style="width: 250px; height: 197px;" /></span></span></span></p>
+
+
 </section>
