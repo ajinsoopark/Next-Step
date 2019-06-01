@@ -72,7 +72,7 @@ Check out the site! [Next Step: designed to give you a step above the competitio
   Photos
   </h2>
   <ul>
-    <img href='https://github.com/ajinsoopark/Next-Step/blob/master/photo/1.%20Home%20Page.png?raw=true' width = "500" >Home Page</a>
+    <img src='https://github.com/ajinsoopark/Next-Step/blob/master/photo/1.%20Home%20Page.png' width = "500" >Home Page</a>
 
     
   </ul>  
